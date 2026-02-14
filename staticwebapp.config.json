@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {
+      "route": "/cennik",
+      "redirect": "https://app.aitherapy.support/pricing",
+      "statusCode": 301
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/404.html"
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".webp": "image/webp",
+    ".avif": "image/avif"
+  }
+}

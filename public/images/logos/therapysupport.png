@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="pl-PL" prefix="og: https://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+		<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer data-cookieconsent="ignore">
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- Optymalizacja wyszukiwarek według Rank Math - https://rankmath.com/ -->
+<title>Page Not Found - Therapy Support</title>
+<meta name="robots" content="follow, noindex"/>
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Page Not Found - Therapy Support" />
+<meta property="og:site_name" content="Therapy Support" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Page Not Found - Therapy Support" />
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://aitherapy.support/#person","name":"Therapy Support","image":{"@type":"ImageObject","@id":"https://aitherapy.support/#logo","url":"https://aitherapy.support/wp-content/uploads/2025/10/therapysupport-150x126.png","contentUrl":"https://aitherapy.support/wp-content/uploads/2025/10/therapysupport-150x126.png","caption":"Therapy Support","inLanguage":"pl-PL"}},{"@type":"WebSite","@id":"https://aitherapy.support/#website","url":"https://aitherapy.support","name":"Therapy Support","publisher":{"@id":"https://aitherapy.support/#person"},"inLanguage":"pl-PL"},{"@type":"WebPage","@id":"#webpage","url":"","name":"Page Not Found - Therapy Support","isPartOf":{"@id":"https://aitherapy.support/#website"},"inLanguage":"pl-PL"}]}</script>
+<!-- /Wtyczka Rank Math WordPress SEO -->
+
+<link rel="alternate" type="application/rss+xml" title="Therapy Support &raquo; Kanał z wpisami" href="https://aitherapy.support/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Therapy Support &raquo; Kanał z komentarzami" href="https://aitherapy.support/comments/feed/" />
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/aitherapy.support\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://aitherapy.support/wp-includes/css/dist/block-library/style.min.css?ver=6.8.3' media='all' />
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root { --wp--style--global--content-size: 800px;--wp--style--global--wide-size: 1200px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 24px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 24px; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='https://aitherapy.support/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1.2' media='all' />
+<link rel='stylesheet' id='hello-elementor-css' href='https://aitherapy.support/wp-content/themes/hello-elementor/assets/css/reset.css?ver=3.4.5' media='all' />
+<link rel='stylesheet' id='hello-elementor-theme-style-css' href='https://aitherapy.support/wp-content/themes/hello-elementor/assets/css/theme.css?ver=3.4.5' media='all' />
+<link rel='stylesheet' id='hello-elementor-header-footer-css' href='https://aitherapy.support/wp-content/themes/hello-elementor/assets/css/header-footer.css?ver=3.4.5' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://aitherapy.support/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='elementor-post-499-css' href='https://aitherapy.support/wp-content/uploads/elementor/css/post-499.css?ver=1770769734' media='all' />
+<link rel='stylesheet' id='widget-image-css' href='https://aitherapy.support/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='e-animation-grow-css' href='https://aitherapy.support/wp-content/plugins/elementor/assets/lib/animations/styles/e-animation-grow.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='widget-nav-menu-css' href='https://aitherapy.support/wp-content/plugins/elementor-pro/assets/css/widget-nav-menu.min.css?ver=3.32.2' media='all' />
+<link rel='stylesheet' id='e-sticky-css' href='https://aitherapy.support/wp-content/plugins/elementor-pro/assets/css/modules/sticky.min.css?ver=3.32.2' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='https://aitherapy.support/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='widget-post-info-css' href='https://aitherapy.support/wp-content/plugins/elementor-pro/assets/css/widget-post-info.min.css?ver=3.32.2' media='all' />
+<link rel='stylesheet' id='widget-icon-list-css' href='https://aitherapy.support/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='widget-author-box-css' href='https://aitherapy.support/wp-content/plugins/elementor-pro/assets/css/widget-author-box.min.css?ver=3.32.2' media='all' />
+<link rel='stylesheet' id='widget-loop-common-css' href='https://aitherapy.support/wp-content/plugins/elementor-pro/assets/css/widget-loop-common.min.css?ver=3.32.2' media='all' />
+<link rel='stylesheet' id='widget-loop-grid-css' href='https://aitherapy.support/wp-content/plugins/elementor-pro/assets/css/widget-loop-grid.min.css?ver=3.32.2' media='all' />
+<link rel='stylesheet' id='elementor-post-476-css' href='https://aitherapy.support/wp-content/uploads/elementor/css/post-476.css?ver=1770769735' media='all' />
+<link rel='stylesheet' id='elementor-post-609-css' href='https://aitherapy.support/wp-content/uploads/elementor/css/post-609.css?ver=1770769735' media='all' />
+<link rel='stylesheet' id='elementor-post-737-css' href='https://aitherapy.support/wp-content/uploads/elementor/css/post-737.css?ver=1770769738' media='all' />
+<link rel='stylesheet' id='elementor-gf-plusjakartasans-css' href='https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;display=swap&#038;subset=latin-ext' media='all' />
+<link rel='stylesheet' id='elementor-gf-inter-css' href='https://fonts.googleapis.com/css?family=Inter:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;display=swap&#038;subset=latin-ext' media='all' />
+<script src="https://aitherapy.support/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="https://aitherapy.support/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://aitherapy.support/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://aitherapy.support/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to automatic -->
+<script data-cfasync="false" data-pagespeed-no-defer data-cookieconsent="ignore">
+	var dataLayer_content = {"pagePostType":"404-error"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script data-cfasync="false" data-pagespeed-no-defer data-cookieconsent="ignore">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M9G6HVT5');
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><meta name="generator" content="Elementor 3.32.4; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="https://aitherapy.support/wp-content/uploads/2025/10/cropped-favicon-ats-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://aitherapy.support/wp-content/uploads/2025/10/cropped-favicon-ats-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://aitherapy.support/wp-content/uploads/2025/10/cropped-favicon-ats-180x180.png" />
+<meta name="msapplication-TileImage" content="https://aitherapy.support/wp-content/uploads/2025/10/cropped-favicon-ats-270x270.png" />
+</head>
+<body class="error404 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-kit-499 elementor-page-737">
+
+
+<!-- GTM Container placement set to automatic -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9G6HVT5" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip-link screen-reader-text" href="#content">Przejdź do treści</a>
+
+		<header data-elementor-type="header" data-elementor-id="476" class="elementor elementor-476 elementor-location-header" data-elementor-post-type="elementor_library">
+			<div class="elementor-element elementor-element-020c853 e-flex e-con-boxed e-con e-parent" data-id="020c853" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-c6dee70 elementor-widget elementor-widget-image" data-id="c6dee70" data-element_type="widget" data-widget_type="image.default">
+																<a href="https://aitherapy.support">
+							<img src="https://aitherapy.support/wp-content/uploads/elementor/thumbs/ai-therapy-logo-light-rfwsvko4w5cgk0bfr1p3lvlu8iw72jlkdwkgjjvyvm.png" title="ai-therapy-logo-light" alt="ai-therapy-logo-light" loading="lazy" />								</a>
+															</div>
+				<div class="elementor-element elementor-element-d7bbde9 elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="d7bbde9" data-element_type="widget" data-settings="{&quot;toggle_icon_hover_animation&quot;:&quot;grow&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;e-font-icon-svg e-fas-caret-down\&quot; viewBox=\&quot;0 0 320 512\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot;&gt;&lt;path d=\&quot;M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\&quot;&gt;&lt;\/path&gt;&lt;\/svg&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+								<nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-slide">
+				<ul id="menu-1-d7bbde9" class="elementor-nav-menu"><li class="home-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1038"><a href="https://aitherapy.support/" class="elementor-item">⌂</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-1059"><a href="https://aitherapy.support/" class="elementor-item">Aplikacja</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-490"><a href="https://aitherapy.support/bezpieczenstwo/" class="elementor-sub-item">Bezpieczeństwo</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-489"><a href="https://aitherapy.support/funkcjonalnosci/" class="elementor-sub-item">Funkcjonalności</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1040"><a href="https://app.aitherapy.support/pricing" class="elementor-item">Cennik</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-492"><a href="https://aitherapy.support/o-firmie/" class="elementor-item">O firmie</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1090"><a href="https://aitherapy.support/o-firmie/" class="elementor-sub-item">Zespół</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1009"><a href="https://aitherapy.support/czego-nie-robimy/" class="elementor-sub-item">Nasze 5 NIE</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1060"><a href="https://aitherapy.support/zapisy-na-sesje-feedbackowe/" class="elementor-item">Współpraca</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1054"><a href="https://aitherapy.support/zapisy-na-sesje-feedbackowe/" class="elementor-sub-item">Sesje Feedbackowe</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1010"><a href="https://aitherapy.support/zostan-testerem/" class="elementor-sub-item">Zostań Testerem</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-493"><a href="https://aitherapy.support/kontakt/" class="elementor-item">Kontakt</a></li>
+</ul>			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<svg aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open elementor-animation-grow e-font-icon-svg e-eicon-menu-bar" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z"></path></svg><svg aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close elementor-animation-grow e-font-icon-svg e-eicon-close" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z"></path></svg>		</div>
+					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+				<ul id="menu-2-d7bbde9" class="elementor-nav-menu"><li class="home-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1038"><a href="https://aitherapy.support/" class="elementor-item" tabindex="-1">⌂</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-1059"><a href="https://aitherapy.support/" class="elementor-item" tabindex="-1">Aplikacja</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-490"><a href="https://aitherapy.support/bezpieczenstwo/" class="elementor-sub-item" tabindex="-1">Bezpieczeństwo</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-489"><a href="https://aitherapy.support/funkcjonalnosci/" class="elementor-sub-item" tabindex="-1">Funkcjonalności</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1040"><a href="https://app.aitherapy.support/pricing" class="elementor-item" tabindex="-1">Cennik</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-492"><a href="https://aitherapy.support/o-firmie/" class="elementor-item" tabindex="-1">O firmie</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1090"><a href="https://aitherapy.support/o-firmie/" class="elementor-sub-item" tabindex="-1">Zespół</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1009"><a href="https://aitherapy.support/czego-nie-robimy/" class="elementor-sub-item" tabindex="-1">Nasze 5 NIE</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1060"><a href="https://aitherapy.support/zapisy-na-sesje-feedbackowe/" class="elementor-item" tabindex="-1">Współpraca</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1054"><a href="https://aitherapy.support/zapisy-na-sesje-feedbackowe/" class="elementor-sub-item" tabindex="-1">Sesje Feedbackowe</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1010"><a href="https://aitherapy.support/zostan-testerem/" class="elementor-sub-item" tabindex="-1">Zostań Testerem</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-493"><a href="https://aitherapy.support/kontakt/" class="elementor-item" tabindex="-1">Kontakt</a></li>
+</ul>			</nav>
+						</div>
+				<div class="elementor-element elementor-element-7254904 elementor-hidden-mobile platform-login elementor-widget elementor-widget-button" data-id="7254904" data-element_type="widget" data-widget_type="button.default">
+										<a class="elementor-button elementor-button-link elementor-size-sm" href="https://app.aitherapy.support">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Logowanie</span>
+					</span>
+					</a>
+								</div>
+					</div>
+				</div>
+				</header>
+				<div data-elementor-type="single-post" data-elementor-id="737" class="elementor elementor-737 elementor-location-single" data-elementor-post-type="elementor_library">
+			<div class="elementor-element elementor-element-0469267 e-flex e-con-boxed e-con e-parent" data-id="0469267" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-d16ec79 e-con-full e-flex e-con e-child" data-id="d16ec79" data-element_type="container">
+				<div class="elementor-element elementor-element-24fd96b elementor-align-center elementor-widget elementor-widget-post-info" data-id="24fd96b" data-element_type="widget" data-widget_type="post-info.default">
+							<ul class="elementor-inline-items elementor-icon-list-items elementor-post-info">
+								<li class="elementor-icon-list-item elementor-repeater-item-49aab88 elementor-inline-item" itemprop="about">
+													<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms">
+										<span class="elementor-post-info__terms-list">
+				<a href="https://aitherapy.support/category/inne/" class="elementor-post-info__terms-list-item">Inne</a>				</span>
+					</span>
+								</li>
+				<li class="elementor-icon-list-item elementor-repeater-item-cd40d1b elementor-inline-item" itemprop="datePublished">
+													<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-date">
+										<time>12 lutego, 2026</time>					</span>
+								</li>
+				</ul>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-540826f elementor-widget elementor-widget-heading" data-id="540826f" data-element_type="widget" data-widget_type="heading.default">
+					<h1 class="elementor-heading-title elementor-size-default">Release Notes — 12 lutego 2026</h1>				</div>
+				<div class="elementor-element elementor-element-8d6b070 elementor-author-box--image-valign-middle elementor-author-box--avatar-yes elementor-author-box--name-yes elementor-author-box--biography-yes elementor-author-box--link-no elementor-widget elementor-widget-author-box" data-id="8d6b070" data-element_type="widget" data-widget_type="author-box.default">
+							<div class="elementor-author-box">
+							<div  class="elementor-author-box__avatar">
+					<img src="https://secure.gravatar.com/avatar/dac329377703a32e884a4ab14954a4f71cb8bdba29d1cecfa3c26536b9c57355?s=300&#038;d=mm&#038;r=g" alt="Picture of bartlomiej.glowacki" loading="lazy">
+				</div>
+			
+			<div class="elementor-author-box__text">
+									<div >
+						<h4 class="elementor-author-box__name">
+							bartlomiej.glowacki						</h4>
+					</div>
+				
+									<div class="elementor-author-box__bio">
+											</div>
+				
+							</div>
+		</div>
+						</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-df800a4 e-flex e-con-boxed e-con e-parent" data-id="df800a4" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-ace2a31 elementor-widget elementor-widget-theme-post-content" data-id="ace2a31" data-element_type="widget" data-widget_type="theme-post-content.default">
+					<p style="font-size:1.1em; color:#475569;">Dzisiejszy release zawiera <strong>krytyczne poprawki stabilności</strong> i nowe funkcje. Poniżej znajdziecie opis zmian oraz <strong>instrukcje testowania</strong> dla każdej z nich.</p>
+<p style="background:#f0fdf4; border-left:4px solid #22c55e; padding:12px 16px; border-radius:4px;">💚 <strong>Dziękujemy Jagodzie i Marcie</strong> za dzisiejsze uwagi i zgłoszenia — dzięki Wam mogliśmy szybko zidentyfikować i naprawić kilka ważnych problemów!</p>
+<hr />
+<h2>1. 🕐 Naprawa godzin w Google Calendar (KRYTYCZNE)</h2>
+<h3>Co się działo?</h3>
+<p>Sesje dodawane w aplikacji o godzinie np. <strong>16:00</strong> pojawiały się w Google Calendar o <strong>17:00</strong> — przesunięcie o dokładnie 1 godzinę.</p>
+<h3>Co naprawiliśmy?</h3>
+<p>Poprawiliśmy sposób, w jaki serwer przelicza godziny między strefami czasowymi. Dodatkowo usunęliśmy sztywne ustawienie strefy „Europa/Warszawa&#8221; — teraz system pobiera strefę czasową z profilu terapeuty.</p>
+<h3>✅ Jak przetestować?</h3>
+<ol>
+<li>Zaloguj się jako terapeuta</li>
+<li>Utwórz nową sesję na konkretną godzinę, np. <strong>15:00</strong></li>
+<li>Sprawdź w Google Calendar — sesja powinna pojawić się o <strong>15:00</strong> (nie 16:00!)</li>
+<li>Edytuj sesję i zmień godzinę na <strong>17:00</strong> → sprawdź czy Google Calendar też pokazuje 17:00</li>
+<li>Utwórz sesję cykliczną → sprawdź czy wszystkie wystąpienia mają prawidłowe godziny</li>
+<li>Sprawdź widok dostępności (busy/free) — godziny powinny się zgadzać</li>
+</ol>
+<hr />
+<h2>2. 🤖 Auto-zapis wyników AI</h2>
+<h3>Co się działo?</h3>
+<p>Wyniki generowane przez AI (mechanizmy, konceptualizacja, ocena sesji) <strong>znikały po przeładowaniu strony</strong> — nie były zapisywane do bazy danych.</p>
+<h3>Co naprawiliśmy?</h3>
+<p><strong>Mechanizmy (Level 2 — „Dlaczego?&#8221;):</strong></p>
+<ul>
+<li>Wyniki ekstrakcji AI są teraz <strong>automatycznie zapisywane</strong> do bazy</li>
+<li>Przy wejściu na kartę pacjenta mechanizmy ładują się z bazy (nie znikają po F5)</li>
+<li>Można też ręcznie edytować i zapisywać mechanizmy</li>
+</ul>
+<p><strong>Dane z wywiadu wstępnego:</strong></p>
+<ul>
+<li>Dodano możliwość <strong>ręcznego zapisu</strong> edytowanych danych demograficznych i rozwojowych</li>
+<li>AI ekstrakcja wywiadu — auto-zapis działał już wcześniej ✓</li>
+</ul>
+<h3>✅ Jak przetestować mechanizmy?</h3>
+<ol>
+<li>Wejdź na kartę pacjenta → „Informacje terapeutyczne&#8221;</li>
+<li>Przejdź do sekcji „Level 2 — Dlaczego?&#8221;</li>
+<li>Wybierz sesję z transkrypcją i kliknij „Analiza AI&#8221;</li>
+<li>Po wygenerowaniu → przycisk „Zapisz&#8221; <strong>NIE powinien się pojawić</strong> (dane zapisały się automatycznie)</li>
+<li><strong>Przeładuj stronę (F5)</strong> → dane mechanizmów powinny się załadować z bazy</li>
+<li>Ręcznie zmień coś w polu → powinien pojawić się przycisk „Zapisz mechanizmy&#8221;</li>
+<li>Kliknij „Zapisz mechanizmy&#8221; → przycisk znika</li>
+<li>Przeładuj stronę → ręczna zmiana jest zachowana</li>
+</ol>
+<h3>✅ Jak przetestować dane z wywiadu?</h3>
+<ol>
+<li>Sekcja „Wywiad wstępny&#8221; — zmień jakieś pole (np. „Stan cywilny&#8221;)</li>
+<li>Powinien pojawić się przycisk „Zapisz dane konsultacji&#8221;</li>
+<li>Kliknij — przycisk znika</li>
+<li>Przeładuj stronę → zmiana zachowana</li>
+<li>Uruchom AI ekstrakcję wywiadu → przycisk „Zapisz&#8221; <strong>NIE pojawia się</strong> (auto-save)</li>
+<li>Przeładuj → dane z AI się zachowały</li>
+</ol>
+<hr />
+<h2>3. 💾 Inteligentne przyciski zapisu</h2>
+<h3>Nowa zasada działania</h3>
+<p style="background:#eff6ff; border-left:4px solid #3b82f6; padding:12px 16px; border-radius:4px;">
+<strong>AI generuje wynik</strong> → dane zapisują się automatycznie (bez przycisku).<br />
+<strong>Użytkownik edytuje ręcznie</strong> → pojawia się przycisk „Zapisz&#8221;.
+</p>
+<p>Dotyczy wszystkich sekcji AI:</p>
+<table style="width:100%; border-collapse: collapse; margin: 1em 0;">
+<thead>
+<tr style="background:#f1f5f9;">
+<th style="border:1px solid #e2e8f0; padding:8px 12px; text-align:left;">Sekcja</th>
+<th style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">AI → auto-save</th>
+<th style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">Ręczna edycja → przycisk zapisu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Konceptualizacja CBT</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">✅</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">✅ „Zapisz konceptualizację&#8221;</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Problemy</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">✅</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">✅ „Zapisz problemy&#8221;</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Dane z wywiadu</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">✅</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">✅ „Zapisz dane konsultacji&#8221;</td>
+</tr>
+<tr style="background:#f0fdf4;">
+<td style="border:1px solid #e2e8f0; padding:8px 12px;"><strong>Mechanizmy (NOWE)</strong></td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">✅</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">✅ „Zapisz mechanizmy&#8221;</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Ocena sesji SJS-CBT</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">✅</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">— (tylko odczyt)</td>
+</tr>
+</tbody>
+</table>
+<h3>✅ Jak przetestować konceptualizację (ABC)?</h3>
+<ol>
+<li>Wybierz sesję z transkrypcją w sekcji „Level 1&#8243;</li>
+<li>Kliknij „Analiza AI&#8221; → po wygenerowaniu przycisk „Zapisz&#8221; <strong>NIE powinien migać ani się pojawiać</strong></li>
+<li>Ręcznie zmień jakieś pole (np. „Wyzwalacz&#8221;) → pojawia się „Zapisz konceptualizację&#8221;</li>
+<li>Kliknij Zapisz → przycisk znika</li>
+<li>Wybierz tę samą sesję ponownie → dane załadowane z bazy</li>
+</ol>
+<h3>✅ Jak przetestować problemy?</h3>
+<ol>
+<li>Uruchom AI ekstrakcję problemów → przycisk „Zapisz problemy&#8221; <strong>NIE pojawia się</strong></li>
+<li>Ręcznie zmień coś w problemie → pojawia się „Zapisz problemy&#8221;</li>
+<li>Kliknij Zapisz → przycisk znika</li>
+</ol>
+<hr />
+<h2>4. 📄 Dokumenty prawne — naprawa błędu 429</h2>
+<h3>Co się działo?</h3>
+<p>Przy ładowaniu dokumentów prawnych (regulamin, polityka prywatności, DPA, oświadczenie) pojawiał się błąd: <strong>„Nie udało się załadować dokumentu (429)&#8221;</strong>.</p>
+<h3>Co naprawiliśmy?</h3>
+<p>Wyłączyliśmy limit zapytań dla dokumentów prawnych — są publiczne i nie powinny być blokowane.</p>
+<h3>✅ Jak przetestować?</h3>
+<ol>
+<li>Wyloguj się z aplikacji</li>
+<li>Zaloguj się ponownie</li>
+<li>Jeśli wymagana jest akceptacja dokumentów → modal powinien załadować wszystkie dokumenty <strong>bez błędu</strong></li>
+<li>Kliknij „Czytaj więcej&#8221; na każdym dokumencie → powinny się otworzyć prawidłowo</li>
+</ol>
+<hr />
+<h2>5. ⏰ Auto-kompletowanie sesji</h2>
+<h3>Nowa funkcja</h3>
+<p>System automatycznie zmienia status przeszłych sesji z „Zaplanowana&#8221; / „Potwierdzona&#8221; na „Zakończona&#8221;:</p>
+<ul>
+<li>Sprawdzanie odbywa się co 1 godzinę</li>
+<li>Przy starcie aplikacji — jednorazowe naprawienie istniejących sesji z przeszłości</li>
+</ul>
+<h3>✅ Jak przetestować?</h3>
+<ol>
+<li>Sprawdź sesje z przeszłości — powinny mieć status „Zakończona&#8221;</li>
+<li>Utwórz sesję w przeszłości → po pewnym czasie powinna automatycznie zmienić status na „Zakończona&#8221;</li>
+</ol>
+<hr />
+<h2>6. 📬 Preferencje powiadomień (SMS/Email)</h2>
+<h3>Co zmieniliśmy?</h3>
+<ul>
+<li>System teraz <strong>sprawdza preferencje terapeuty</strong> przed wysyłką każdego emaila i SMS-a</li>
+<li>Terapeuta może wyłączyć powiadomienia email lub SMS w swoich ustawieniach</li>
+<li>Wiadomości do pacjentów obsługują teraz oba kanały (email + SMS)</li>
+</ul>
+<h3>✅ Jak przetestować?</h3>
+<ol>
+<li>Wejdź w ustawienia terapeuty → sekcja powiadomienia</li>
+<li>Wyłącz powiadomienia email</li>
+<li>Utwórz sesję → terapeuta <strong>NIE</strong> powinien dostać emaila</li>
+<li>Włącz powiadomienia z powrotem → utwórz sesję → email przychodzi</li>
+<li>Sprawdź też SMS: wyłącz SMS → wyślij wiadomość do pacjenta → SMS nie wychodzi</li>
+</ol>
+<hr />
+<h2>7. 🔧 Pozostałe poprawki</h2>
+<ul>
+<li><strong>Formatowanie transkrypcji</strong> — poprawiony wygląd transkrypcji sesji</li>
+<li><strong>Nagrywanie sesji</strong> — poprawki w module nagrywania</li>
+<li><strong>SMS feature gating</strong> — ikona kłódki i wyłączone kontrolki SMS dla planów bez SMS</li>
+<li><strong>Zapis promptów AI (admin)</strong> — naprawiony zapis zmian z panelu admina</li>
+<li><strong>Ochrona edycji admina</strong> — restart aplikacji nie nadpisuje już promptów AI edytowanych przez admina</li>
+<li><strong>Naprawa duplikatów kluczy tłumaczeń</strong> — usunięto konflikty powodujące błąd 500 przy starcie</li>
+<li><strong>Legal UI</strong> — „Zaznacz wszystkie&#8221; przeniesiony na dół, obok przycisku potwierdzenia</li>
+<li><strong>Poprawki kompilacji</strong> — naprawione drobne błędy w serwisie dostępności</li>
+</ul>
+<hr />
+<h2>📋 Checklist QA</h2>
+<table style="width:100%; border-collapse: collapse; margin: 1em 0;">
+<thead>
+<tr style="background:#f1f5f9;">
+<th style="border:1px solid #e2e8f0; padding:8px 12px; text-align:left;">Co sprawdzić</th>
+<th style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">OK?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Google Calendar: sesja o 15:00 → w kalendarzu 15:00 (nie 16:00)</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">⬜</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Mechanizmy AI: wygeneruj → przeładuj stronę → dane zachowane</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">⬜</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Dane wywiadu: edytuj ręcznie → zapisz → przeładuj → zachowane</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">⬜</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Konceptualizacja: AI generuje → brak migającego przycisku „Zapisz&#8221;</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">⬜</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Problemy: AI generuje → brak przycisku; ręczna edycja → przycisk</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">⬜</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Dokumenty prawne: brak błędu 429 przy ładowaniu</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">⬜</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Auto-kompletowanie: przeszłe sesje mają status „Zakończona&#8221;</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">⬜</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Powiadomienia: wyłączenie email/SMS → brak wysyłki</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">⬜</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">SMS gating: plan bez SMS → ikona kłódki, kontrolki nieaktywne</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">⬜</td>
+</tr>
+<tr>
+<td style="border:1px solid #e2e8f0; padding:8px 12px;">Prompty AI (admin): edycja prompta → restart → edycja zachowana</td>
+<td style="border:1px solid #e2e8f0; padding:8px 12px; text-align:center;">⬜</td>
+</tr>
+</tbody>
+</table>
+<p style="margin-top:2em; color:#64748b; font-style:italic;">W razie pytań lub wątpliwości — piszcie śmiało. Powodzenia w testowaniu! 🚀</p>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-6aec700 e-flex e-con-boxed e-con e-parent" data-id="6aec700" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-dfab7ee elementor-widget elementor-widget-heading" data-id="dfab7ee" data-element_type="widget" data-widget_type="heading.default">
+					<h3 class="elementor-heading-title elementor-size-default">Może Cię zainteresować</h3>				</div>
+				<div class="elementor-element elementor-element-cbb931b elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="cbb931b" data-element_type="widget" data-settings="{&quot;template_id&quot;:704,&quot;_skin&quot;:&quot;post&quot;,&quot;columns&quot;:&quot;3&quot;,&quot;columns_tablet&quot;:&quot;2&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.post">
+				<div class="elementor-widget-container">
+							<div class="elementor-loop-container elementor-grid" role="list">
+		<style id="loop-704">.elementor-704 .elementor-element.elementor-element-fd4df14{--display:flex;--gap:0px 0px;--row-gap:0px;--column-gap:0px;border-style:solid;--border-style:solid;border-width:1px 1px 1px 1px;--border-top-width:1px;--border-right-width:1px;--border-bottom-width:1px;--border-left-width:1px;border-color:#00000014;--border-color:#00000014;--border-radius:16px 16px 16px 16px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-704 .elementor-element.elementor-element-fd4df14:not(.elementor-motion-effects-element-type-background), .elementor-704 .elementor-element.elementor-element-fd4df14 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:#FFFFFF;}.elementor-704 .elementor-element.elementor-element-ada079e img{border-radius:16px 16px 0px 0px;}.elementor-704 .elementor-element.elementor-element-ffe3b67{--display:flex;--padding-top:032px;--padding-bottom:32px;--padding-left:32px;--padding-right:32px;}.elementor-704 .elementor-element.elementor-element-174b8c1{font-size:15px;line-height:1.6em;}.elementor-704 .elementor-element.elementor-element-5ad03c8 .elementor-heading-title{font-size:14px;font-weight:600;color:var( --e-global-color-primary );}/* Start custom CSS for container, class: .elementor-element-fd4df14 */.elementor-704 .elementor-element.elementor-element-fd4df14 {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.04), 0 12px 24px -6px rgba(0, 0, 0, 0.06);
+}/* End custom CSS */</style>		<div data-elementor-type="loop-item" data-elementor-id="704" class="elementor elementor-704 e-loop-item e-loop-item-1152 post-1152 post type-post status-publish format-standard hentry category-inne" data-elementor-post-type="elementor_library" data-custom-edit-handle="1">
+			<div class="elementor-element elementor-element-fd4df14 e-con-full e-flex e-con e-parent" data-id="fd4df14" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-ffe3b67 e-flex e-con-boxed e-con e-child" data-id="ffe3b67" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-955a83f elementor-widget elementor-widget-heading" data-id="955a83f" data-element_type="widget" data-widget_type="heading.default">
+					<span class="elementor-heading-title elementor-size-default"><a href="https://aitherapy.support/category/inne/" rel="tag">Inne</a></span>				</div>
+				<div class="elementor-element elementor-element-713f97e elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="713f97e" data-element_type="widget" data-widget_type="theme-post-title.default">
+					<h3 class="elementor-heading-title elementor-size-default"><a href="https://aitherapy.support/release-notes-12-lutego-2026/">Release Notes — 12 lutego 2026</a></h3>				</div>
+				<div class="elementor-element elementor-element-174b8c1 elementor-widget elementor-widget-theme-post-excerpt" data-id="174b8c1" data-element_type="widget" data-widget_type="theme-post-excerpt.default">
+					<p>Dzisiejszy release zawiera krytyczne poprawki stabilności i nowe funkcje. Poniżej znajdziecie opis zmian oraz instrukcje testowania dla każdej z nich. 💚 Dziękujemy Jagodzie i Marcie za dzisiejsze uwagi i zgłoszenia — dzięki Wam mogliśmy szybko zidentyfikować i naprawić kilka ważnych problemów! 1. 🕐 Naprawa godzin w Google Calendar (KRYTYCZNE) Co się działo? Sesje dodawane w [&hellip;]</p>				</div>
+				<div class="elementor-element elementor-element-5ad03c8 elementor-widget elementor-widget-heading" data-id="5ad03c8" data-element_type="widget" data-widget_type="heading.default">
+					<span class="elementor-heading-title elementor-size-default">Czytaj dalej →</span>				</div>
+					</div>
+				</div>
+				</div>
+				</div>
+				<div data-elementor-type="loop-item" data-elementor-id="704" class="elementor elementor-704 e-loop-item e-loop-item-1148 post-1148 post type-post status-publish format-standard hentry category-inne" data-elementor-post-type="elementor_library" data-custom-edit-handle="1">
+			<div class="elementor-element elementor-element-fd4df14 e-con-full e-flex e-con e-parent" data-id="fd4df14" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-ffe3b67 e-flex e-con-boxed e-con e-child" data-id="ffe3b67" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-955a83f elementor-widget elementor-widget-heading" data-id="955a83f" data-element_type="widget" data-widget_type="heading.default">
+					<span class="elementor-heading-title elementor-size-default"><a href="https://aitherapy.support/category/inne/" rel="tag">Inne</a></span>				</div>
+				<div class="elementor-element elementor-element-713f97e elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="713f97e" data-element_type="widget" data-widget_type="theme-post-title.default">
+					<h3 class="elementor-heading-title elementor-size-default"><a href="https://aitherapy.support/beta-testy-dzien-2/">Beta testy – podsumowanie po 2 dniach</a></h3>				</div>
+				<div class="elementor-element elementor-element-174b8c1 elementor-widget elementor-widget-theme-post-excerpt" data-id="174b8c1" data-element_type="widget" data-widget_type="theme-post-excerpt.default">
+					<p>Drugi dzień beta testów za nami! Nasza testerka przetestowała aplikację od A do Z i zgłosiła serię problemów UX oraz bugów. Wszystkie zostały naprawione w ciągu jednej sesji. Oto podsumowanie zmian z obu dni beta testów. Dzień 1 – fundamenty i nowe funkcje (feedback od Basi) (10 lutego) 1. System finansowy Przeprowadziliśmy refaktoryzację systemu finansowego [&hellip;]</p>				</div>
+				<div class="elementor-element elementor-element-5ad03c8 elementor-widget elementor-widget-heading" data-id="5ad03c8" data-element_type="widget" data-widget_type="heading.default">
+					<span class="elementor-heading-title elementor-size-default">Czytaj dalej →</span>				</div>
+					</div>
+				</div>
+				</div>
+				</div>
+				<div data-elementor-type="loop-item" data-elementor-id="704" class="elementor elementor-704 e-loop-item e-loop-item-1120 post-1120 post type-post status-publish format-standard hentry category-inne" data-elementor-post-type="elementor_library" data-custom-edit-handle="1">
+			<div class="elementor-element elementor-element-fd4df14 e-con-full e-flex e-con e-parent" data-id="fd4df14" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-ffe3b67 e-flex e-con-boxed e-con e-child" data-id="ffe3b67" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-955a83f elementor-widget elementor-widget-heading" data-id="955a83f" data-element_type="widget" data-widget_type="heading.default">
+					<span class="elementor-heading-title elementor-size-default"><a href="https://aitherapy.support/category/inne/" rel="tag">Inne</a></span>				</div>
+				<div class="elementor-element elementor-element-713f97e elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="713f97e" data-element_type="widget" data-widget_type="theme-post-title.default">
+					<h3 class="elementor-heading-title elementor-size-default"><a href="https://aitherapy.support/update-funkcjonalnosci-aitherapysupport-co-nowego-po-spotkaniu-z-ekspertem-cbt/">Update funkcjonalności AITherapySupport – co nowego po spotkaniu z ekspertem CBT</a></h3>				</div>
+				<div class="elementor-element elementor-element-174b8c1 elementor-widget elementor-widget-theme-post-excerpt" data-id="174b8c1" data-element_type="widget" data-widget_type="theme-post-excerpt.default">
+					<p>Jeszcze raz bardzo dziękujemy za ostatnie spotkanie z naszą ekspertką CBT. Powołujemy się na nie w wielu naszych wewnętrznych rozmowach 😊 Tak jak obiecaliśmy, przesyłamy update funkcjonalności, o których rozmawialiśmy. 1. Zakładka Podsumowanie → podstawowa analiza AI (ekstrakcja) Na zakładce Podsumowanie dostępna jest teraz podstawowa analiza AI, która automatycznie ekstrahuje kluczowe elementy sesji: Kotwice mentalne [&hellip;]</p>				</div>
+				<div class="elementor-element elementor-element-5ad03c8 elementor-widget elementor-widget-heading" data-id="5ad03c8" data-element_type="widget" data-widget_type="heading.default">
+					<span class="elementor-heading-title elementor-size-default">Czytaj dalej →</span>				</div>
+					</div>
+				</div>
+				</div>
+				</div>
+				</div>
+		
+						</div>
+				</div>
+					</div>
+				</div>
+				</div>
+				<footer data-elementor-type="footer" data-elementor-id="609" class="elementor elementor-609 elementor-location-footer" data-elementor-post-type="elementor_library">
+			<div class="elementor-element elementor-element-abc1fc7 e-flex e-con-boxed e-con e-parent" data-id="abc1fc7" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-02ff490 elementor-widget elementor-widget-theme-site-logo elementor-widget-image" data-id="02ff490" data-element_type="widget" data-widget_type="theme-site-logo.default">
+											<a href="https://aitherapy.support">
+			<img src="https://aitherapy.support/wp-content/uploads/elementor/thumbs/therapysupport-rcuy3g5580n07rruywulpzkffwzanq4mpb3mhwghn6.png" title="therapysupport" alt="therapysupport" loading="lazy" />				</a>
+											</div>
+				<div class="elementor-element elementor-element-67d3ff9 elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="67d3ff9" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;e-font-icon-svg e-fas-caret-down\&quot; viewBox=\&quot;0 0 320 512\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot;&gt;&lt;path d=\&quot;M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\&quot;&gt;&lt;\/path&gt;&lt;\/svg&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+								<nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
+				<ul id="menu-1-67d3ff9" class="elementor-nav-menu"><li class="home-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1038"><a href="https://aitherapy.support/" class="elementor-item">⌂</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-1059"><a href="https://aitherapy.support/" class="elementor-item">Aplikacja</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-490"><a href="https://aitherapy.support/bezpieczenstwo/" class="elementor-sub-item">Bezpieczeństwo</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-489"><a href="https://aitherapy.support/funkcjonalnosci/" class="elementor-sub-item">Funkcjonalności</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1040"><a href="https://app.aitherapy.support/pricing" class="elementor-item">Cennik</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-492"><a href="https://aitherapy.support/o-firmie/" class="elementor-item">O firmie</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1090"><a href="https://aitherapy.support/o-firmie/" class="elementor-sub-item">Zespół</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1009"><a href="https://aitherapy.support/czego-nie-robimy/" class="elementor-sub-item">Nasze 5 NIE</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1060"><a href="https://aitherapy.support/zapisy-na-sesje-feedbackowe/" class="elementor-item">Współpraca</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1054"><a href="https://aitherapy.support/zapisy-na-sesje-feedbackowe/" class="elementor-sub-item">Sesje Feedbackowe</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1010"><a href="https://aitherapy.support/zostan-testerem/" class="elementor-sub-item">Zostań Testerem</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-493"><a href="https://aitherapy.support/kontakt/" class="elementor-item">Kontakt</a></li>
+</ul>			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<svg aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open e-font-icon-svg e-eicon-menu-bar" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z"></path></svg><svg aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close e-font-icon-svg e-eicon-close" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z"></path></svg>		</div>
+					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+				<ul id="menu-2-67d3ff9" class="elementor-nav-menu"><li class="home-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1038"><a href="https://aitherapy.support/" class="elementor-item" tabindex="-1">⌂</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-1059"><a href="https://aitherapy.support/" class="elementor-item" tabindex="-1">Aplikacja</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-490"><a href="https://aitherapy.support/bezpieczenstwo/" class="elementor-sub-item" tabindex="-1">Bezpieczeństwo</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-489"><a href="https://aitherapy.support/funkcjonalnosci/" class="elementor-sub-item" tabindex="-1">Funkcjonalności</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1040"><a href="https://app.aitherapy.support/pricing" class="elementor-item" tabindex="-1">Cennik</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-492"><a href="https://aitherapy.support/o-firmie/" class="elementor-item" tabindex="-1">O firmie</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1090"><a href="https://aitherapy.support/o-firmie/" class="elementor-sub-item" tabindex="-1">Zespół</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1009"><a href="https://aitherapy.support/czego-nie-robimy/" class="elementor-sub-item" tabindex="-1">Nasze 5 NIE</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1060"><a href="https://aitherapy.support/zapisy-na-sesje-feedbackowe/" class="elementor-item" tabindex="-1">Współpraca</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1054"><a href="https://aitherapy.support/zapisy-na-sesje-feedbackowe/" class="elementor-sub-item" tabindex="-1">Sesje Feedbackowe</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1010"><a href="https://aitherapy.support/zostan-testerem/" class="elementor-sub-item" tabindex="-1">Zostań Testerem</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-493"><a href="https://aitherapy.support/kontakt/" class="elementor-item" tabindex="-1">Kontakt</a></li>
+</ul>			</nav>
+						</div>
+				<div class="elementor-element elementor-element-copyright_simple elementor-widget elementor-widget-heading" data-id="copyright_simple" data-element_type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default">© 2026 AI Therapy Support</p>				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-legal_row_new e-flex e-con-boxed e-con e-parent" data-id="legal_row_new" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-legal_text elementor-widget elementor-widget-text-editor" data-id="legal_text" data-element_type="widget" data-widget_type="text-editor.default">
+									<p style="text-align: center;"><a href="/regulamin" style="color: #64748B; text-decoration: none; font-size: 12px;">Regulamin</a>  ·  <a href="/polityka-prywatnosci" style="color: #64748B; text-decoration: none; font-size: 12px;">Polityka prywatności</a>  ·  <a href="/cookies" style="color: #64748B; text-decoration: none; font-size: 12px;">Cookies</a></p>								</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-2f1b35d e-flex e-con-boxed e-con e-parent" data-id="2f1b35d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-896f34a elementor-widget elementor-widget-image" data-id="896f34a" data-element_type="widget" data-widget_type="image.default">
+															<img src="https://aitherapy.support/wp-content/uploads/elementor/thumbs/FEPW_RP_UE_RGB-1-scaled-rcv4g59klz4uf8amp894emadz7uvywn2ppczo9nvvc.png" title="FEPW_RP_UE_RGB-1" alt="FEPW_RP_UE_RGB-1" loading="lazy" />															</div>
+				<div class="elementor-element elementor-element-eca405c elementor-widget elementor-widget-text-editor" data-id="eca405c" data-element_type="widget" data-widget_type="text-editor.default">
+									<p>Projekt „Platforma Startowa Unicorn Hub – Edycja II” współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Polski Wschodniej 2021-2027, Priorytet FEPW.01 Przedsiębiorczość i Innowacje, Działanie FEPW.01.01 Platformy startowe dla nowych pomysłów, Komponent I Inkubacja – rozwój nowego pomysłu biznesowego.</p>								</div>
+					</div>
+				</div>
+				</footer>
+		
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/hello-elementor\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<script src="https://aitherapy.support/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script src="https://aitherapy.support/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script src="https://aitherapy.support/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.2" id="swv-js"></script>
+<script id="contact-form-7-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "contact-form-7", {"translation-revision-date":"2025-10-01 13:24:59+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);","lang":"pl"},"This contact form is placed in the wrong place.":["Ten formularz kontaktowy zosta\u0142 umieszczony w niew\u0142a\u015bciwym miejscu."],"Error:":["B\u0142\u0105d:"]}},"comment":{"reference":"includes\/js\/index.js"}} );
+</script>
+<script id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/aitherapy.support\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+</script>
+<script src="https://aitherapy.support/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.2" id="contact-form-7-js"></script>
+<script src="https://aitherapy.support/wp-content/themes/hello-elementor/assets/js/hello-frontend.js?ver=3.4.5" id="hello-theme-frontend-js"></script>
+<script src="https://aitherapy.support/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.32.4" id="elementor-webpack-runtime-js"></script>
+<script src="https://aitherapy.support/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.32.4" id="elementor-frontend-modules-js"></script>
+<script src="https://aitherapy.support/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Udost\u0119pnij na Facebooku","shareOnTwitter":"Udost\u0119pnij na X","pinIt":"Przypnij","download":"Pobierz","downloadImage":"Pobierz obrazek","fullscreen":"Tryb pe\u0142noekranowy","zoom":"Powi\u0119ksz","share":"Udost\u0119pnij","playVideo":"Odtw\u00f3rz wideo","previous":"Poprzednie","next":"Nast\u0119pne","close":"Zamknij","a11yCarouselPrevSlideMessage":"Poprzedni slajd","a11yCarouselNextSlideMessage":"Nast\u0119pny slajd","a11yCarouselFirstSlideMessage":"To jest pierwszy slajd","a11yCarouselLastSlideMessage":"To jest ostatni slajd","a11yCarouselPaginationBulletMessage":"Id\u017a do slajdu"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobilny pionowy","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobilny poziomy","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Pionowy tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Poziomy tablet","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Szeroki ekran","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.32.4","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_optimized_markup":true,"theme_builder_v2":true,"hello-theme-header-footer":true,"e_pro_free_trial_popup":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true,"mega-menu":true,"e_pro_variables":true},"urls":{"assets":"https:\/\/aitherapy.support\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/aitherapy.support\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/aitherapy.support\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"5d54e05fac"},"swiperClass":"swiper","settings":{"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"logo","hello_header_menu_layout":"horizontal","hello_footer_logo_type":"logo"},"post":{"id":0,"title":"Page Not Found - Therapy Support","excerpt":""}};
+</script>
+<script src="https://aitherapy.support/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.32.4" id="elementor-frontend-js"></script>
+<script src="https://aitherapy.support/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1" id="smartmenus-js"></script>
+<script src="https://aitherapy.support/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.32.2" id="e-sticky-js"></script>
+<script src="https://aitherapy.support/wp-includes/js/imagesloaded.min.js?ver=5.0.0" id="imagesloaded-js"></script>
+<script src="https://aitherapy.support/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.32.2" id="elementor-pro-webpack-runtime-js"></script>
+<script id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/aitherapy.support\/wp-admin\/admin-ajax.php","nonce":"2730378ed8","urls":{"assets":"https:\/\/aitherapy.support\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/aitherapy.support\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":false},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"pl_PL","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/aitherapy.support\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script src="https://aitherapy.support/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.32.2" id="elementor-pro-frontend-js"></script>
+<script src="https://aitherapy.support/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.32.2" id="pro-elements-handlers-js"></script>
+
+</body>
+</html>
