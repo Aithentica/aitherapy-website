@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  /* Custom Colors */
-  --color-sage-50: #f0fdf4;
-  --color-sage-500: #22c55e;
-  --color-sage-600: #16a34a;
-  --color-sage-700: #15803d;
+  /* Custom Colors - WordPress Teal Brand */
+  --color-sage-50: #e6faf4;
+  --color-sage-400: #00e693;
+  --color-sage-500: #00d084;
+  --color-sage-600: #00b872;
+  --color-sage-700: #00a065;
 
   /* Custom Fonts */
   --font-family-sans: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
