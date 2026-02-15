@@ -7,6 +7,10 @@ export interface NavItem {
 
 export const mainNavigation: NavItem[] = [
   {
+    label: 'Home',
+    href: '/',
+  },
+  {
     label: 'Aplikacja',
     href: '#',
     children: [

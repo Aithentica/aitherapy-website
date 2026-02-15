@@ -1,0 +1,88 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Regulamin | AI Therapy Support"
+  description="Regulamin korzystania z platformy TherapySupport"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <!-- Header -->
+    <div class="mb-12">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Regulamin
+      </h1>
+      <div class="flex items-center gap-4 text-sm text-gray-600">
+        <span>Wersja 1.0</span>
+        <span>•</span>
+        <span>Obowiązuje od: 15 stycznia 2026</span>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="prose prose-lg max-w-none">
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Postanowienia Ogólne</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Platforma TherapySupport jest narzędziem do automatyzacji dokumentacji przeznaczonym dla profesjonalistów w dziedzinie zdrowia psychicznego.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          Platforma wyraźnie precyzuje, że nie jest urządzeniem medycznym.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Usługodawca</h2>
+        <div class="bg-gray-50 rounded-lg p-6">
+          <p class="font-semibold text-gray-900 mb-3">AITHENTICA PROSTA SPÓŁKA AKCYJNA</p>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>Adres:</strong> ul. Tadeusza Wyrzykowskiego 3/7, 06-400 Ciechanów, Polska</li>
+            <li><strong>KRS:</strong> 0001189930</li>
+            <li><strong>NIP:</strong> 5662041012</li>
+            <li><strong>Kontakt:</strong> <a href="mailto:biuro@aithentica.pl" class="text-sage-600 hover:text-sage-700">biuro@aithentica.pl</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Zakres Usług</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Platforma oferuje następujące funkcjonalności:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+          <li>Automatyczna transkrypcja nagrań audio za pośrednictwem Azure Speech Services</li>
+          <li>Inteligentna ekstrakcja informacji z transkrypcji</li>
+          <li>Generowanie propozycji notatek klinicznych</li>
+          <li>Zarządzanie kalendarzem i pacjentami</li>
+          <li>Przetwarzanie płatności poprzez Stripe Connect</li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Przetwarzanie Danych</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Użytkownicy (terapeuci) funkcjonują jako administratorzy danych osobowych swoich pacjentów. Aithentica działa jako podmiot przetwarzający dane.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          Szczegółowe informacje dostępne są w <a href="/polityka-prywatnosci/" class="text-sage-600 hover:text-sage-700 underline">Polityce Prywatności</a>.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Informacje Kontaktowe</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          W przypadku pytań dotyczących Regulaminu, prosimy o kontakt:
+        </p>
+        <p class="text-gray-700">
+          <strong>Email:</strong> <a href="mailto:biuro@aithentica.pl" class="text-sage-600 hover:text-sage-700">biuro@aithentica.pl</a>
+        </p>
+      </section>
+
+      <div class="border-t border-gray-200 pt-8 mt-12">
+        <p class="text-sm text-gray-600">
+          <strong>Uwaga:</strong> Pełna wersja Regulaminu dostępna na życzenie.
+        </p>
+      </div>
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,138 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Polityka Cookies | AI Therapy Support"
+  description="Polityka wykorzystywania plików cookies na platformie TherapySupport"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <!-- Header -->
+    <div class="mb-12">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Polityka Cookies
+      </h1>
+      <div class="flex items-center gap-4 text-sm text-gray-600">
+        <span>Wersja 1.0</span>
+        <span>•</span>
+        <span>Obowiązuje od: 15 stycznia 2026</span>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="prose prose-lg max-w-none">
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Czym są pliki cookies?</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Pliki cookies to <strong>małe pliki tekstowe zapisywane na Twoim urządzeniu</strong> za pośrednictwem przeglądarki internetowej podczas odwiedzania strony internetowej.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Rodzaje wykorzystywanych plików cookies</h2>
+
+        <div class="space-y-6">
+          <!-- Essential Cookies -->
+          <div class="bg-green-50 border-l-4 border-green-600 rounded-r-lg p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Pliki cookies niezbędne <span class="text-sm font-normal text-gray-600">(nie wymagają zgody)</span>
+            </h3>
+            <div class="space-y-3">
+              <div>
+                <p class="font-mono text-sm text-gray-900 font-semibold">auth_token</p>
+                <p class="text-gray-700 text-sm">Uwierzytelnianie użytkownika</p>
+              </div>
+              <div>
+                <p class="font-mono text-sm text-gray-900 font-semibold">session_id</p>
+                <p class="text-gray-700 text-sm">Identyfikacja sesji</p>
+              </div>
+              <div>
+                <p class="font-mono text-sm text-gray-900 font-semibold">csrf_token</p>
+                <p class="text-gray-700 text-sm">Ochrona przed atakami CSRF</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Functional Cookies -->
+          <div class="bg-blue-50 border-l-4 border-blue-600 rounded-r-lg p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Pliki cookies funkcjonalne <span class="text-sm font-normal text-gray-600">(wymagają zgody)</span>
+            </h3>
+            <div class="space-y-3">
+              <div>
+                <p class="font-mono text-sm text-gray-900 font-semibold">user_lang</p>
+                <p class="text-gray-700 text-sm">Ustawienia języka</p>
+              </div>
+              <div>
+                <p class="font-mono text-sm text-gray-900 font-semibold">theme_preference</p>
+                <p class="text-gray-700 text-sm">Wybór motywu interfejsu</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analytics Cookies -->
+          <div class="bg-orange-50 border-l-4 border-orange-600 rounded-r-lg p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Pliki cookies analityczne <span class="text-sm font-normal text-gray-600">(wymagają zgody)</span>
+            </h3>
+            <div class="space-y-3">
+              <div>
+                <p class="font-mono text-sm text-gray-900 font-semibold">_ga, _gid</p>
+                <p class="text-gray-700 text-sm">Śledzenie Google Analytics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Pliki cookies stron trzecich</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Platforma integruje pliki cookies następujących dostawców:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+          <li><strong>Stripe</strong> – przetwarzanie płatności</li>
+          <li><strong>Usługi Google</strong> (Calendar, Meet) – gdy są aktywowane przez użytkownika</li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Zarządzanie plikami cookies</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Użytkownicy mogą zarządzać plikami cookies poprzez:
+        </p>
+        <div class="bg-gray-50 rounded-lg p-6">
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-sage-600 font-bold mt-1">→</span>
+              <span><strong>Ustawienia przeglądarki</strong> – możliwość blokowania lub usuwania cookies</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-sage-600 font-bold mt-1">→</span>
+              <span><strong>Banner zgody</strong> – wyświetlany przy pierwszej wizycie na stronie</span>
+            </li>
+          </ul>
+        </div>
+        <p class="text-sm text-gray-600 mt-4">
+          <strong>Uwaga:</strong> Zablokowanie plików cookies niezbędnych może wpłynąć na funkcjonalność platformy.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Informacje kontaktowe</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          W przypadku pytań dotyczących polityki cookies:
+        </p>
+        <p class="text-gray-900">
+          <strong>Email:</strong> <a href="mailto:biuro@aithentica.pl" class="text-sage-600 hover:text-sage-700">biuro@aithentica.pl</a>
+        </p>
+      </section>
+
+      <div class="border-t border-gray-200 pt-8 mt-12">
+        <p class="text-sm text-gray-600">
+          Polityka może być aktualizowana w celu zapewnienia zgodności z obowiązującymi przepisami oraz zmianami w funkcjonowaniu platformy.
+        </p>
+      </div>
+    </div>
+  </div>
+</PageLayout>

@@ -34,4 +34,10 @@ export const features: Feature[] = [
     title: 'Szybkość',
     description: 'Oszczędzaj do 15h miesięcznie na administracji.',
   },
+  {
+    emoji: '\uD83D\uDCC5',
+    title: 'Integracja',
+    description:
+      'Synchronizuj kalendarz Google, automatycznie zarządzaj terminami sesji i przypomnieniami dla pacjentów.',
+  },
 ];
