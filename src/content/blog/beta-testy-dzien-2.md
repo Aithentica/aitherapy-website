@@ -2,7 +2,7 @@
 title: "Beta testy – podsumowanie po 2 dniach"
 description: "Drugi dzień beta testów za nami! Nasza testerka przetestowała aplikację od A do Z i zgłosiła serię problemów UX oraz bugów. Wszystkie zostały naprawione w ciągu jednej sesji. Oto podsumowanie zmian z "
 pubDate: 2026-02-11
-heroImage: "/images/blog/probny-demo-day.png"
+heroImage: "/images/blog/beta-testy-dzien-2.png"
 author: "Bartlomiej Glowacki"
 category: "Inne"
 tags: []

@@ -4,7 +4,7 @@ description: "Dzisiejszy release zawiera krytyczne poprawki stabilności i nowe 
 
 💚 Dziękujemy Jagodzie i Marcie za dzisiejsze uw"
 pubDate: 2026-02-12
-heroImage: "/images/blog/update-funkcjonalnosci.jpg"
+heroImage: "/images/blog/release-notes-12-lutego-2026.png"
 author: "Bartlomiej Glowacki"
 category: "Inne"
 tags: []
