@@ -1,0 +1,81 @@
+---
+import Navigation from './Navigation.astro';
+import MobileMenu from './MobileMenu.astro';
+---
+
+<header
+  class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-shadow"
+  id="site-header"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0">
+        <img
+          src="/images/logos/ai-therapy-logo-light.png"
+          alt="AI Therapy Support"
+          class="h-8 lg:h-10 w-auto"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-8">
+        <Navigation />
+        <a
+          href="https://app.aitherapy.support"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-5 py-2.5 rounded-full bg-sage-600 text-white font-semibold text-sm hover:bg-sage-700 transition-colors"
+        >
+          Logowanie
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        type="button"
+        class="lg:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+        id="mobile-menu-toggle"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <svg class="w-6 h-6 hidden" id="menu-icon-close" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <MobileMenu />
+</header>
+
+<script is:inline>
+  // Header shadow on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header.classList.add('shadow-sm');
+    } else {
+      header.classList.remove('shadow-sm');
+    }
+  });
+
+  // Mobile menu toggle
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
+  });
+</script>

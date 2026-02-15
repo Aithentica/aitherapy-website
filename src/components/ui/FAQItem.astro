@@ -1,0 +1,47 @@
+---
+interface Props {
+  question: string;
+  answer: string;
+}
+
+const { question, answer } = Astro.props;
+const id = question.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+---
+
+<div class="border border-gray-200 rounded-xl overflow-hidden faq-item">
+  <button
+    type="button"
+    class="flex items-center justify-between w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors"
+    aria-expanded="false"
+    data-faq-toggle={id}
+  >
+    <span class="font-semibold text-gray-900 pr-4">{question}</span>
+    <svg
+      class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform faq-arrow"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </svg>
+  </button>
+  <div class="hidden px-6 pb-4" id={`faq-${id}`}>
+    <p class="text-gray-600 leading-relaxed">{answer}</p>
+  </div>
+</div>
+
+<script is:inline>
+  document.querySelectorAll('[data-faq-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = 'faq-' + btn.getAttribute('data-faq-toggle');
+      const content = document.getElementById(targetId);
+      const arrow = btn.querySelector('.faq-arrow');
+      const isOpen = !content.classList.contains('hidden');
+
+      content.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-180');
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    });
+  });
+</script>
