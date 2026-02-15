@@ -4,6 +4,7 @@ description: "Dzisiejszy release zawiera krytyczne poprawki stabilności i nowe 
 
 💚 Dziękujemy Jagodzie i Marcie za dzisiejsze uw"
 pubDate: 2026-02-12
+heroImage: "/images/blog/update-funkcjonalnosci.jpg"
 author: "Bartlomiej Glowacki"
 category: "Inne"
 tags: []
@@ -82,7 +83,7 @@ Wyniki generowane przez AI (mechanizmy, konceptualizacja, ocena sesji) **znikał
 
 ### Nowa zasada działania
 
-**AI generuje wynik** → dane zapisują się automatycznie (bez przycisku).  
+**AI generuje wynik** → dane zapisują się automatycznie (bez przycisku).
 **Użytkownik edytuje ręcznie** → pojawia się przycisk „Zapisz".
 
 Dotyczy wszystkich sekcji AI:

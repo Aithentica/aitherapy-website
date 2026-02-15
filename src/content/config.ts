@@ -6,6 +6,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
+    heroImage: z.string().optional(),
     author: z.string(),
     category: z.enum(['Inne', 'Artykuły Naukowe', 'Wydarzenia']),
     tags: z.array(z.string()).default([]),
