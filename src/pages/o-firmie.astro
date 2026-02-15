@@ -1,83 +1,58 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import Button from '../components/ui/Button.astro';
 ---
 
 <PageLayout
-  title="O firmie"
-  description="Poznaj zespol AI Therapy Support — misja, wizja i ludzie tworzacy platforme dla terapeutow CBT."
+  title="O nas | AI Therapy Support"
+  description="Poznaj zespół AI Therapy Support — misja, wizja i ludzie tworzący platformę dla terapeutów CBT."
 >
   <!-- Hero -->
   <section class="relative bg-gray-950 text-white overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-sage-600/20 to-transparent"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-      <div class="max-w-3xl">
-        <span class="inline-block px-4 py-1.5 bg-sage-600/20 text-sage-500 rounded-full text-sm font-medium mb-6">
-          O firmie
-        </span>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-          Zespol
+      <div class="max-w-4xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8">
+          Zdrowie psychiczne to jedno z największych wyzwań współczesnego świata.
         </h1>
-        <p class="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl">
-          Tworzymy technologie, ktora wspiera terapeutow w ich codziennej pracy — bo wierzymy, ze lepsze narzedzia oznaczaja lepsza terapie.
+        <p class="text-xl sm:text-2xl text-gray-300 leading-relaxed">
+          Coraz więcej osób potrzebuje pomocy – ale terapeutów jest za mało, a ci którzy pracują, są przeciążeni.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Mission -->
+  <!-- Problem & Solution -->
   <section class="py-16 lg:py-24 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="prose prose-lg max-w-none">
-        <div class="mb-12">
-          <span class="inline-block px-4 py-1.5 bg-sage-50 text-sage-600 rounded-full text-sm font-medium mb-4">
-            Nasza Misja
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Technologia w sluzbie zdrowia psychicznego
-          </h2>
-          <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            AI Therapy Support powstalo z przekonania, ze terapeuci zasługują na narzedzia, ktore pozwola im skupic sie na tym, co najwazniejsze — na pacjencie. Zbyt czesto administracja, dokumentacja i biurokracja zabieraja cenny czas, ktory moglby byc poswiecony terapii.
-          </p>
-          <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            Nasza platforma laczy zaawansowana sztuczna inteligencje z gleboka znajomoscia procesow terapeutycznych CBT. Kazda funkcja zostala zaprojektowana we wspolpracy z praktykujacymi terapeutami, aby odpowiadac na realne potrzeby codziennej pracy klinicznej.
-          </p>
-          <p class="text-lg text-gray-600 leading-relaxed">
-            Wierzymy, ze przyszlosc psychoterapii to polaczenie ludzkiej empatii z moca technologii. AI nie zastapi terapeuty — ale moze uwolnic go od godzin spedzonych na pracy administracyjnej.
+        <p class="text-xl text-gray-700 leading-relaxed mb-8">
+          <strong>Terapia poznawczo-behawioralna to jedna z najlepiej udokumentowanych metod leczenia.</strong> Jej siła tkwi w strukturze: właściwej konceptualizacji przypadku, systematycznym monitorowaniu postępów, interwencjach opartych na dowodach.
+        </p>
+
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          Problem jest głębszy niż się wydaje. Kiedy terapeuta spędza godziny na dokumentacji zamiast na pracy z pacjentem, gubi się coś fundamentalnego. CBT bez dobrej konceptualizacji przypadku to tylko rozmowa. Sesja bez monitorowania postępów traci kierunek.
+        </p>
+
+        <div class="bg-sage-50 border-l-4 border-sage-600 p-8 my-12">
+          <p class="text-2xl font-bold text-gray-900 mb-0">
+            Nasza misja: przywracamy terapeutom to, co najważniejsze – czas na relację z pacjentem.
           </p>
         </div>
 
-        <div class="mb-12">
-          <span class="inline-block px-4 py-1.5 bg-sage-50 text-sage-600 rounded-full text-sm font-medium mb-4">
-            Nasza Wizja
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Nowy standard w psychoterapii
-          </h2>
-          <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            Dazymy do stworzenia ekosystemu, w ktorym kazdy terapeuta CBT ma dostep do inteligentnych narzedzi wspierajacych jego prace — niezaleznie od wielkosci praktyki czy lokalizacji.
-          </p>
-          <p class="text-lg text-gray-600 leading-relaxed">
-            Chcemy, aby dokumentacja kliniczna, konceptualizacja przypadkow i przygotowanie do superwizji byly tak proste, jak klikniecie przycisku — przy zachowaniu najwyzszych standardow bezpieczenstwa i etyki.
-          </p>
-        </div>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          <strong>Nie budujemy technologii, która zastępuje terapeutów.</strong> Budujemy technologię, która ich wspiera – aby mogli robić to, co robią najlepiej: prowadzić terapię.
+        </p>
 
-        <div>
-          <span class="inline-block px-4 py-1.5 bg-sage-50 text-sage-600 rounded-full text-sm font-medium mb-4">
-            Wspolpraca
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Wspolpracujemy z profesjonalistami
-          </h2>
-          <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            Nasz projekt jest rozwijany we wspolpracy z
-            <a href="https://pttpb.pl" target="_blank" rel="noopener noreferrer" class="text-sage-600 hover:text-sage-700 underline">
-              Polskim Towarzystwem Terapii Poznawczej i Behawioralnej (PTTPB)
-            </a>
-            oraz praktykujacymi terapeutami z calej Polski.
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Myślimy w perspektywie dekad, nie kwartałów. Rozwijamy AI odpowiedzialnie, we współpracy z klinicystami. Dbamy o zgodność z RODO i wspieramy polskie towarzystwa terapeutyczne.
+        </p>
+
+        <div class="bg-gray-50 rounded-xl p-8 my-12">
+          <p class="text-xl text-gray-800 leading-relaxed mb-4">
+            <strong>Nasza wizja?</strong> Świat, w którym każdy terapeuta może praktykować terapię najwyższej jakości, gdzie biurokracja nie przeszkadza w uzdrawianiu, a relacja terapeutyczna dostaje przestrzeń, na którą zasługuje.
           </p>
           <p class="text-lg text-gray-600 leading-relaxed">
-            Kazda nowa funkcjonalnosc przechodzi przez etap konsultacji z ekspertami klinicznymi, aby upewnic sie, ze spelnia najwyzsze standardy merytoryczne i etyczne.
+            Bo na końcu nie chodzi o technologię. Chodzi o ludzi, którzy potrzebują pomocy – i o terapeutów, którzy chcą im tej pomocy udzielić.
           </p>
         </div>
       </div>
@@ -85,112 +60,83 @@ import Button from '../components/ui/Button.astro';
   </section>
 
   <!-- Team -->
-  <section class="py-16 lg:py-24 bg-white">
+  <section class="py-16 lg:py-24 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <span class="inline-block px-4 py-1.5 bg-sage-50 text-sage-600 rounded-full text-sm font-medium mb-4">
-          Nasz Zespół
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
-          Poznaj ludzi za TherapySupport
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Zespół
         </h2>
+        <p class="text-xl text-gray-600">
+          Poznaj ludzi za TherapySupport
+        </p>
       </div>
 
       <div class="space-y-16">
         <!-- Joanna Głowacka -->
-        <div class="flex flex-col md:flex-row gap-8 items-start">
+        <div class="flex flex-col md:flex-row gap-8 items-start bg-white rounded-2xl p-8 shadow-sm">
           <div class="flex-shrink-0">
             <img
               src="/images/team/joanna-glowacka.jpeg"
               alt="Joanna Głowacka"
-              class="w-48 h-48 rounded-2xl object-cover shadow-lg"
+              class="w-48 h-48 rounded-2xl object-cover"
             />
           </div>
           <div class="flex-1">
             <h3 class="text-2xl font-bold text-gray-900 mb-2">
               Joanna Głowacka
             </h3>
-            <p class="text-sage-600 font-medium mb-4">
-              Clinical Director & Co-founder
+            <p class="text-sage-600 font-semibold mb-4">
+              Dyrektor Kliniczny & Współzałożycielka
             </p>
-            <p class="text-gray-600 leading-relaxed mb-3">
-              Psychoterapeutka CBT i DBT z ponad 10-letnim doświadczeniem klinicznym. Superwizor-dydaktyk w trakcie szkolenia w PTTPB.
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Z pierwszej ręki rozumie wyzwania, przed którymi stoją terapeuci w codziennej praktyce.
+            <p class="text-gray-700 leading-relaxed">
+              Psychoterapeutka poznawczo-behawioralna (CBT) i dialektyczno-behawioralna (DBT) z ponad 10-letnim doświadczeniem klinicznym. Superwizor-dydaktyk w trakcie szkolenia w PTTPB. Z pierwszej ręki rozumie wyzwania, przed którymi stoją terapeuci w codziennej praktyce.
             </p>
           </div>
         </div>
 
         <!-- Bohdan Głowacki -->
-        <div class="flex flex-col md:flex-row gap-8 items-start">
+        <div class="flex flex-col md:flex-row gap-8 items-start bg-white rounded-2xl p-8 shadow-sm">
           <div class="flex-shrink-0">
             <img
               src="/images/team/bohdan-glowacki.png"
               alt="Bohdan Głowacki"
-              class="w-48 h-48 rounded-2xl object-cover shadow-lg"
+              class="w-48 h-48 rounded-2xl object-cover"
             />
           </div>
           <div class="flex-1">
             <h3 class="text-2xl font-bold text-gray-900 mb-2">
               Bohdan Głowacki
             </h3>
-            <p class="text-sage-600 font-medium mb-4">
-              Technical Director & Co-founder
+            <p class="text-sage-600 font-semibold mb-4">
+              Dyrektor Techniczny & Współzałożyciel
             </p>
-            <p class="text-gray-600 leading-relaxed mb-3">
-              Inżynier oprogramowania z 15-letnim doświadczeniem w AI i aplikacjach medycznych.
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Odpowiada za architekturę techniczną i bezpieczeństwo danych platformy.
+            <p class="text-gray-700 leading-relaxed">
+              Inżynier oprogramowania z 15-letnim doświadczeniem w systemach AI i oprogramowaniu medycznym. Nadzoruje architekturę platformy i bezpieczeństwo danych.
             </p>
           </div>
         </div>
 
         <!-- Bartłomiej Głowacki -->
-        <div class="flex flex-col md:flex-row gap-8 items-start">
+        <div class="flex flex-col md:flex-row gap-8 items-start bg-white rounded-2xl p-8 shadow-sm">
           <div class="flex-shrink-0">
             <img
               src="/images/team/bartlomiej-glowacki.png"
               alt="Bartłomiej Głowacki"
-              class="w-48 h-48 rounded-2xl object-cover shadow-lg"
+              class="w-48 h-48 rounded-2xl object-cover"
             />
           </div>
           <div class="flex-1">
             <h3 class="text-2xl font-bold text-gray-900 mb-2">
               Bartłomiej Głowacki
             </h3>
-            <p class="text-sage-600 font-medium mb-4">
+            <p class="text-sage-600 font-semibold mb-4">
               CAIO, AI & R&D Lead
             </p>
-            <p class="text-gray-600 leading-relaxed mb-3">
-              Specjalista machine learning. Zdobył 13M PLN w grantach badawczych.
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Doświadczony w komercjalizacji projektów R&D i wdrażaniu rozwiązań AI.
+            <p class="text-gray-700 leading-relaxed">
+              Specjalista AI i uczenia maszynowego. Zdobył 13 mln PLN w grantach badawczych. Doświadczony w komercjalizacji R&D i ekosystemach innowacji.
             </p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-16 lg:py-24 bg-gray-50">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-        Chcesz dowiedziec sie wiecej?
-      </h2>
-      <p class="text-lg text-gray-600 mb-8">
-        Skontaktuj sie z nami lub umow sie na sesje demonstracyjna.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button variant="primary" href="/kontakt/" size="lg">
-          Kontakt
-        </Button>
-        <Button variant="secondary" href="/zapisy-na-sesje-feedbackowe/" size="lg">
-          Sesja demo
-        </Button>
       </div>
     </div>
   </section>
