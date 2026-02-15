@@ -1,0 +1,35 @@
+---
+import { testimonials } from '../../data/testimonials';
+import TestimonialCard from '../ui/TestimonialCard.astro';
+---
+
+<section class="py-20 lg:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+      <!-- Tag -->
+      <span class="inline-flex items-center px-3 py-1 rounded-full bg-sage-50 text-sage-600 text-sm font-medium mb-4">
+        Opinie
+      </span>
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+        Czego potrzebują terapeuci?
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+        Wysłuchaliśmy potrzeb profesjonalistów zdrowia psychicznego i stworzyliśmy
+        rozwiązanie, które odpowiada na realne wyzwania codziennej praktyki klinicznej.
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      {testimonials.map((t) => (
+        <TestimonialCard
+          name={t.name}
+          role={t.role}
+          quote={t.quote}
+          rating={t.rating}
+        />
+      ))}
+    </div>
+  </div>
+</section>

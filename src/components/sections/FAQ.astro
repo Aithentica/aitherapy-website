@@ -1,0 +1,32 @@
+---
+import { faqItems } from '../../data/faq';
+import FAQItem from '../ui/FAQItem.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section class="py-20 lg:py-28 bg-gray-50">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+        Pytania? Mamy odpowiedzi.
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+        Nie znalazłeś odpowiedzi? Napisz do nas.
+      </p>
+    </div>
+
+    <!-- FAQ Items -->
+    <div class="space-y-4">
+      {faqItems.map((item) => (
+        <FAQItem question={item.question} answer={item.answer} />
+      ))}
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="mt-10 text-center">
+      <Button variant="outline" href="/kontakt/">
+        Napisz wiadomość
+      </Button>
+    </div>
+  </div>
+</section>

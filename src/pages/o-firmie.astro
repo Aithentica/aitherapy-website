@@ -1,0 +1,106 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<PageLayout
+  title="O firmie"
+  description="Poznaj zespol AI Therapy Support — misja, wizja i ludzie tworzacy platforme dla terapeutow CBT."
+>
+  <!-- Hero -->
+  <section class="relative bg-gray-950 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-sage-600/20 to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div class="max-w-3xl">
+        <span class="inline-block px-4 py-1.5 bg-sage-600/20 text-sage-500 rounded-full text-sm font-medium mb-6">
+          O firmie
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+          Zespol
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl">
+          Tworzymy technologie, ktora wspiera terapeutow w ich codziennej pracy — bo wierzymy, ze lepsze narzedzia oznaczaja lepsza terapie.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        <div class="mb-12">
+          <span class="inline-block px-4 py-1.5 bg-sage-50 text-sage-600 rounded-full text-sm font-medium mb-4">
+            Nasza Misja
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            Technologia w sluzbie zdrowia psychicznego
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            AI Therapy Support powstalo z przekonania, ze terapeuci zasługują na narzedzia, ktore pozwola im skupic sie na tym, co najwazniejsze — na pacjencie. Zbyt czesto administracja, dokumentacja i biurokracja zabieraja cenny czas, ktory moglby byc poswiecony terapii.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Nasza platforma laczy zaawansowana sztuczna inteligencje z gleboka znajomoscia procesow terapeutycznych CBT. Kazda funkcja zostala zaprojektowana we wspolpracy z praktykujacymi terapeutami, aby odpowiadac na realne potrzeby codziennej pracy klinicznej.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Wierzymy, ze przyszlosc psychoterapii to polaczenie ludzkiej empatii z moca technologii. AI nie zastapi terapeuty — ale moze uwolnic go od godzin spedzonych na pracy administracyjnej.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <span class="inline-block px-4 py-1.5 bg-sage-50 text-sage-600 rounded-full text-sm font-medium mb-4">
+            Nasza Wizja
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            Nowy standard w psychoterapii
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Dazymy do stworzenia ekosystemu, w ktorym kazdy terapeuta CBT ma dostep do inteligentnych narzedzi wspierajacych jego prace — niezaleznie od wielkosci praktyki czy lokalizacji.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Chcemy, aby dokumentacja kliniczna, konceptualizacja przypadkow i przygotowanie do superwizji byly tak proste, jak klikniecie przycisku — przy zachowaniu najwyzszych standardow bezpieczenstwa i etyki.
+          </p>
+        </div>
+
+        <div>
+          <span class="inline-block px-4 py-1.5 bg-sage-50 text-sage-600 rounded-full text-sm font-medium mb-4">
+            Wspolpraca
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            Wspolpracujemy z profesjonalistami
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Nasz projekt jest rozwijany we wspolpracy z
+            <a href="https://pttpb.pl" target="_blank" rel="noopener noreferrer" class="text-sage-600 hover:text-sage-700 underline">
+              Polskim Towarzystwem Terapii Poznawczej i Behawioralnej (PTTPB)
+            </a>
+            oraz praktykujacymi terapeutami z calej Polski.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Kazda nowa funkcjonalnosc przechodzi przez etap konsultacji z ekspertami klinicznymi, aby upewnic sie, ze spelnia najwyzsze standardy merytoryczne i etyczne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+        Chcesz dowiedziec sie wiecej?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Skontaktuj sie z nami lub umow sie na sesje demonstracyjna.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="primary" href="/kontakt/" size="lg">
+          Kontakt
+        </Button>
+        <Button variant="secondary" href="/zapisy-na-sesje-feedbackowe/" size="lg">
+          Sesja demo
+        </Button>
+      </div>
+    </div>
+  </section>
+</PageLayout>

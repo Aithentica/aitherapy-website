@@ -1,0 +1,102 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Button from '../components/ui/Button.astro';
+
+const sections = [
+  {
+    number: '01',
+    title: 'Nie diagnozujemy',
+    description: 'AI Therapy Support nie stawia diagnozy. Nasza platforma to narzedzie wspomagajace dokumentacje i organizacje pracy — nie system diagnostyczny. Diagnoza to zawsze domena wykwalifikowanego specjalisty.',
+    details: 'Zadna funkcja naszego systemu nie sugeruje, nie proponuje ani nie generuje diagnozy klinicznej. Transkrypcje i notatki sa pomocnicze — koncowa ocena nalezy wylacznie do terapeuty.',
+  },
+  {
+    number: '02',
+    title: 'Nie decydujemy o leczeniu',
+    description: 'Decyzje kliniczne sa i zawsze beda domeną terapeuty. Nasza AI nie sugeruje interwencji, nie rekomenduje technik terapeutycznych i nie wplywa na przebieg leczenia.',
+    details: 'Nasze AI dokumentuje i strukturyzuje — nie doradza. Plan terapii, wybor interwencji i ocena postepu to wylaczna odpowiedzialnosc prowadzacego terapeuty.',
+  },
+  {
+    number: '03',
+    title: 'Nie zastepujemy terapeuty',
+    description: 'Technologia nie zastapi relacji terapeutycznej. Naszym celem jest uwolnienie terapeuty od pracy administracyjnej, aby mogl poswiecic wiecej czasu i energii pacjentowi.',
+    details: 'Wierzymy, ze empatia, intuicja kliniczna i relacja terapeutyczna sa niezastapione. AI moze wspomagac, ale nigdy nie zastapi czlowieka w procesie terapeutycznym.',
+  },
+  {
+    number: '04',
+    title: 'Nie monetyzujemy danych',
+    description: 'Dane kliniczne Twoich pacjentow nie sa towarem. Nie sprzedajemy, nie udostepniamy i nie wykorzystujemy ich do celow komercyjnych ani do trenowania modeli AI.',
+    details: 'Nasz model biznesowy opiera sie na subskrypcji za usluge, nie na danych. Twoje dane naleza do Ciebie — masz pelna kontrole nad ich eksportem i usunieciem.',
+  },
+  {
+    number: '05',
+    title: 'Nie manipulujemy zaangazowaniem',
+    description: 'Nie stosujemy dark patterns, gamifikacji ani mechanizmow uzalezniajacych. Nasza platforma to profesjonalne narzedzie pracy, nie aplikacja do scrollowania.',
+    details: 'Brak powiadomien push, brak streak counter, brak sztucznej pilnosci. Uzywasz platformy wtedy, kiedy tego potrzebujesz — na swoich warunkach.',
+  },
+];
+---
+
+<PageLayout
+  title="Czego nie robimy"
+  description="5 zasad, ktorych sie trzymamy — nasze zobowiazania wobec terapeutow i ich pacjentow. Poznaj nasze 5 NIE."
+>
+  <!-- Hero -->
+  <section class="relative bg-gray-950 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-sage-600/20 to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div class="max-w-3xl">
+        <span class="inline-block px-4 py-1.5 bg-sage-600/20 text-sage-500 rounded-full text-sm font-medium mb-6">
+          Nasze Zasady
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+          Nasze 5 NIE
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl">
+          Wierzymy, ze to czego NIE robimy, definiuje nas rownie mocno jak to, co robimy. Oto nasze zobowiazania wobec Ciebie i Twoich pacjentow.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 NO Sections -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16 lg:space-y-24">
+        {sections.map((section, index) => (
+          <div class:list={['flex flex-col md:flex-row gap-8 items-start', index % 2 === 1 && 'md:flex-row-reverse']}>
+            <div class="flex-shrink-0">
+              <div class="w-20 h-20 rounded-2xl bg-red-50 flex items-center justify-center">
+                <span class="text-3xl font-extrabold text-red-500">{section.number}</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{section.title}</h2>
+              <p class="text-lg text-gray-600 leading-relaxed mb-4">{section.description}</p>
+              <p class="text-gray-500 leading-relaxed">{section.details}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+        Wartosci, ktore nas definiuja
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Chcesz dowiedziec sie wiecej o naszym podejsciu do bezpieczenstwa i etyki?
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="primary" href="/bezpieczenstwo/" size="lg">
+          Bezpieczenstwo
+        </Button>
+        <Button variant="secondary" href="/o-firmie/" size="lg">
+          O firmie
+        </Button>
+      </div>
+    </div>
+  </section>
+</PageLayout>

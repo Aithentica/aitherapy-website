@@ -1,10 +1,53 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Problem from '../components/sections/Problem.astro';
+import Features from '../components/sections/Features.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import BlogPreview from '../components/sections/BlogPreview.astro';
+import TrustLogos from '../components/sections/TrustLogos.astro';
+import CTA from '../components/sections/CTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'AI Therapy Support',
+  applicationCategory: 'HealthApplication',
+  operatingSystem: 'Web',
+  description: 'Zintegrowana Platforma dla Terapeutów CBT. Nowy standard w psychoterapii.',
+  url: 'https://new.aitherapy.support',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'PLN',
+    description: 'Bezpłatny okres próbny',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    ratingCount: '3',
+    bestRating: '5',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'AI Therapy Support',
+    url: 'https://new.aitherapy.support',
+  },
+};
 ---
 
-<PageLayout title="AI Therapy Support" description="Zintegrowana Platforma dla Terapeutów CBT. Nowy standard w psychoterapii.">
-  <section class="py-20 text-center">
-    <h1 class="text-4xl font-bold">Zintegrowana Platforma dla Terapeutów CBT</h1>
-    <p class="mt-4 text-gray-600">Strona w budowie - sekcje wkrótce</p>
-  </section>
+<PageLayout
+  title="AI Therapy Support"
+  description="Zintegrowana Platforma dla Terapeutów CBT. Nowy standard w psychoterapii. Cała praca kliniczna w jednym, bezpiecznym miejscu."
+  schema={schema}
+>
+  <Hero />
+  <Problem />
+  <Features />
+  <Testimonials />
+  <FAQ />
+  <BlogPreview />
+  <TrustLogos />
+  <CTA />
 </PageLayout>

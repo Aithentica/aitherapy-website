@@ -1,0 +1,32 @@
+---
+import { features } from '../../data/features';
+---
+
+<section class="py-20 lg:py-28 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+        Kompletny system operacyjny dla Twojej praktyki
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+        Zaprojektowany tak, by usunąć bariery administracyjne.
+      </p>
+    </div>
+
+    <!-- 2+3 Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+      {features.map((feature, i) => (
+        <div
+          class:list={[
+            'bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow',
+            i < 2 ? 'lg:col-span-3' : 'lg:col-span-2',
+          ]}
+        >
+          <span class="text-4xl mb-4 block">{feature.emoji}</span>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+          <p class="text-gray-600 leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

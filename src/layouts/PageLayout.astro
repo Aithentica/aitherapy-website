@@ -9,9 +9,10 @@ interface Props {
   ogImage?: string;
   canonicalURL?: string;
   schema?: Record<string, unknown>;
+  noindex?: boolean;
 }
 
-const { title, description, ogImage, canonicalURL, schema } = Astro.props;
+const { title, description, ogImage, canonicalURL, schema, noindex } = Astro.props;
 ---
 
 <BaseLayout
@@ -20,6 +21,7 @@ const { title, description, ogImage, canonicalURL, schema } = Astro.props;
   ogImage={ogImage}
   canonicalURL={canonicalURL}
   schema={schema}
+  noindex={noindex}
 >
   <Header />
   <main>
