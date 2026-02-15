@@ -1,114 +1,104 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Button from '../components/ui/Button.astro';
-import Card from '../components/ui/Card.astro';
-
-const benefits = [
-  {
-    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>`,
-    title: 'Wczesny dostep',
-    description: 'Korzystaj z nowych funkcji zanim beda dostepne dla wszystkich. Badz w czolowce innowacji w psychoterapii.',
-  },
-  {
-    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>`,
-    title: 'Wplyw na produkt',
-    description: 'Twoj feedback bezposrednio wplywa na rozwoj platformy. Pomagasz tworzyc narzedzie dokladnie takie, jakiego potrzebujesz.',
-  },
-  {
-    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" /></svg>`,
-    title: 'Specjalne warunki',
-    description: 'Beta testerzy otrzymuja specjalne warunki cenowe i priorytetowe wsparcie techniczne po premierze.',
-  },
-  {
-    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>`,
-    title: 'Spolecznosc',
-    description: 'Dolacz do spolecznosci terapeutow, ktorzy wspoltworza przyszlosc narzedzi klinicznych.',
-  },
-];
-
-const targetAudience = [
-  'Psychoterapeuci CBT z aktywna praktyka kliniczna',
-  'Psycholodzy kliniczni pracujacy w nurcie poznawczo-behawioralnym',
-  'Terapeuci prowadzacy prywatna praktyke lub pracujacy w osrodkach',
-  'Specjalisci otwarci na nowe technologie w terapii',
-];
 ---
 
 <PageLayout
-  title="Zostan Testerem"
-  description="Dolacz do programu beta testow AI Therapy Support. Wczesny dostep, wplyw na produkt i specjalne warunki dla testerow."
+  title="Beta Testy Therapy Support"
+  description="Dołącz do programu Beta Testów. Po zakończeniu beta testów otrzymujesz zniżkę -30%, ważną tak długo jak korzystasz z aplikacji."
 >
   <!-- Hero -->
-  <section class="relative bg-gray-950 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-sage-600/20 to-transparent"></div>
+  <section class="relative bg-[#E3DDF8] overflow-hidden">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-      <div class="max-w-3xl">
-        <span class="inline-block px-4 py-1.5 bg-sage-600/20 text-sage-500 rounded-full text-sm font-medium mb-6">
-          Beta Program
-        </span>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-          Zostan Testerem
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-[#181818]">
+          Beta Testy Therapy Support
         </h1>
-        <p class="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl">
-          Dolacz do grona terapeutow, ktorzy wspoltworzą przyszlosc narzedzi klinicznych. Twoj feedback ma realne znaczenie.
+        <p class="mt-6 text-lg sm:text-xl text-[#475569] leading-relaxed">
+          Dołącz do programu Beta Testów
+        </p>
+        <p class="mt-4 text-base text-[#475569] leading-relaxed">
+          Po zakończeniu beta testów otrzymujesz zniżkę -30%, ważną tak długo jak korzystasz z aplikacji.
+        </p>
+        <p class="mt-2 text-sm font-semibold text-[#134A45]">
+          Beta Testerzy mają zawsze zagwarantowane lepsze warunki niż oferta dla nowych użytkowników
         </p>
         <div class="mt-8">
-          <Button variant="primary" href="https://app.aitherapy.support/pricing" external size="lg">
-            Rozpocznij okres probny
+          <Button variant="primary" href="https://app.aitherapy.support/betatester" external size="lg">
+            Zgłoś się do beta testów
           </Button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- For Whom -->
+  <!-- Co zyskujesz jako beta tester -->
   <section class="py-16 lg:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div>
-          <span class="inline-block px-4 py-1.5 bg-sage-50 text-sage-600 rounded-full text-sm font-medium mb-4">
-            Dla kogo?
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Szukamy terapeutow CBT
-          </h2>
-          <p class="text-lg text-gray-600 leading-relaxed mb-8">
-            Nasz program beta testow jest skierowany do praktykujacych terapeutow poznawczo-behawioralnych, ktorzy chca miec wplyw na ksztalt narzedzi, z ktorych beda korzystac.
-          </p>
-          <ul class="space-y-4">
-            {targetAudience.map((item) => (
-              <li class="flex items-start gap-3">
-                <svg class="w-6 h-6 text-sage-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-                <span class="text-gray-700">{item}</span>
-              </li>
-            ))}
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold text-[#181818] mb-8 text-center">
+          Co zyskujesz jako beta tester?
+        </h2>
+
+        <div class="prose prose-lg max-w-none">
+          <h3 class="text-2xl font-bold text-[#181818] mb-4">W ramach testów sprawdzisz</h3>
+          <ul class="space-y-3 text-[#475569]">
+            <li>Jak analiza procesu i syntetyczne podsumowania po sesjach porządkują materiał kliniczny i wspierają planowanie dalszej pracy</li>
+            <li>W jaki sposób stała obecność celów terapii wpływa na spójność interwencji i poczucie kierunku procesu</li>
+            <li>Jak rozwiązania organizacyjne (przedpłaty, kalendarz, notatki z sesji) ograniczają obciążenie zadaniami organizacyjnymi</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="bg-gray-50 rounded-3xl p-8 lg:p-10">
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Jak to dziala?</h3>
-          <div class="space-y-6">
+  <!-- Co oferujemy -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold text-[#181818] mb-8 text-center">
+          Co oferujemy w ramach beta testów
+        </h2>
+
+        <div class="space-y-6">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-sage-600 text-white flex items-center justify-center text-sm font-bold">1</div>
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-[#E3DDF8] text-[#134A45] flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </div>
               <div>
-                <p class="font-semibold text-gray-900">Zarejestruj sie</p>
-                <p class="text-sm text-gray-600">Utworz konto na platformie i aktywuj okres probny.</p>
+                <h3 class="font-bold text-[#181818] mb-2">5 tygodni bezpłatnego korzystania z aplikacji</h3>
+                <p class="text-[#475569] leading-relaxed">Bez ograniczeń liczby pacjentów</p>
               </div>
             </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-sage-600 text-white flex items-center justify-center text-sm font-bold">2</div>
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-[#E3DDF8] text-[#134A45] flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                </svg>
+              </div>
               <div>
-                <p class="font-semibold text-gray-900">Testuj platfome</p>
-                <p class="text-sm text-gray-600">Korzystaj z funkcji w codziennej praktyce i eksploruj mozliwosci.</p>
+                <h3 class="font-bold text-[#181818] mb-2">Wsparcie przy przenoszeniu materiałów</h3>
+                <p class="text-[#475569] leading-relaxed">Wsparcie naszego zespołu przy przenoszeniu dotychczasowych materiałów i notatek do aplikacji</p>
               </div>
             </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-sage-600 text-white flex items-center justify-center text-sm font-bold">3</div>
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-[#E3DDF8] text-[#134A45] flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                </svg>
+              </div>
               <div>
-                <p class="font-semibold text-gray-900">Podziel sie opinia</p>
-                <p class="text-sm text-gray-600">Twoj feedback pomaga nam tworzyc lepsze narzedzie dla wszystkich terapeutow.</p>
+                <h3 class="font-bold text-[#181818] mb-2">Bieżąca pomoc w trakcie testów</h3>
+                <p class="text-[#475569] leading-relaxed">Tak aby wejście w nowy sposób pracy nie wymagało dodatkowego wysiłku</p>
               </div>
             </div>
           </div>
@@ -117,51 +107,60 @@ const targetAudience = [
     </div>
   </section>
 
-  <!-- Benefits -->
+  <!-- Twoja rola -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold text-[#181818] mb-8 text-center">
+          Twoja rola
+        </h2>
+
+        <div class="prose prose-lg max-w-none">
+          <ul class="space-y-3 text-[#475569]">
+            <li>Dzielenie się obserwacjami z codziennej pracy z aplikacją</li>
+            <li>Sygnalizowanie obszarów, które warto ulepszyć lub zmienić</li>
+            <li>Wskazywanie rozwiązań, które realnie dobrze sprawdzają się w Twojej praktyce terapeutycznej</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dlaczego warto -->
   <section class="py-16 lg:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-        <span class="inline-block px-4 py-1.5 bg-sage-50 text-sage-600 rounded-full text-sm font-medium mb-4">
-          Korzysci
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
-          Dlaczego warto?
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold text-[#181818] mb-8 text-center">
+          Dlaczego warto
         </h2>
-      </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-        {benefits.map((benefit) => (
-          <Card class="p-6">
-            <div class="flex gap-4">
-              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-sage-50 text-sage-600 flex items-center justify-center">
-                <Fragment set:html={benefit.icon} />
-              </div>
-              <div>
-                <h3 class="font-bold text-gray-900 mb-1">{benefit.title}</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
-              </div>
-            </div>
-          </Card>
-        ))}
+        <div class="prose prose-lg max-w-none text-[#475569] leading-relaxed">
+          <p>
+            Beta testy tworzą przestrzeń do rozwoju warsztatu terapeutycznego w realnej praktyce klinicznej. Praca z aplikacją wspiera myślenie procesowe: pomaga utrzymywać cele terapii w polu uwagi, porządkować materiał kliniczny oraz na bieżąco weryfikować robocze założenia, tak aby decyzje terapeutyczne były bardziej trafne i spójne w czasie.
+          </p>
+          <p>
+            To też możliwość praktycznego zgłębienia pracy z AI w kontekście terapii i wypracowania własnego, świadomego sposobu korzystania z tego typu narzędzi w praktyce klinicznej.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 lg:py-24 bg-gray-950 text-white">
+  <section class="py-16 lg:py-24 bg-[#E3DDF8]">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6">
-        Dolacz do beta testow
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#181818] mb-6">
+        Dołącz do beta testów
       </h2>
-      <p class="text-lg text-gray-300 mb-8">
-        Dolacz do grona terapeutow, ktorzy odzyskali czas dla siebie i swoich pacjentow.
+      <p class="text-lg text-[#475569] mb-8">
+        Dołącz do grona terapeutów, którzy odzyskali czas dla siebie i swoich pacjentów.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button variant="primary" href="https://app.aitherapy.support/pricing" external size="lg">
-          Rozpocznij okres probny
+        <Button variant="primary" href="https://app.aitherapy.support/betatester" external size="lg">
+          Zgłoś się do beta testów
         </Button>
         <Button variant="secondary" href="/zapisy-na-sesje-feedbackowe/" size="lg">
-          Umow sesje demo
+          Umów sesję feedbackową
         </Button>
       </div>
     </div>

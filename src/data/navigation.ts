@@ -18,12 +18,7 @@ export const mainNavigation: NavItem[] = [
     href: '/bezpieczenstwo/',
   },
   {
-    label: 'Subskrypcja',
-    href: 'https://app.aitherapy.support/betatester',
-    external: true,
-  },
-  {
-    label: 'Współpraca',
+    label: 'Zostań beta testerem',
     href: '/zostan-testerem/',
   },
   {
