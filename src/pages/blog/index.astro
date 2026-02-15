@@ -33,6 +33,15 @@ const categoryColors: Record<string, string> = {
           href={`/blog/${post.slug}/`}
           class="group block bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
         >
+          {post.data.heroImage && (
+            <div class="aspect-[16/9] overflow-hidden bg-gray-100">
+              <img
+                src={post.data.heroImage}
+                alt={post.data.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          )}
           <div class="p-6">
             <div class="flex items-center gap-3 mb-3">
               <span class={`text-xs font-medium px-2.5 py-1 rounded-full ${categoryColors[post.data.category] || 'bg-gray-100 text-gray-700'}`}>
