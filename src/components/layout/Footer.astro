@@ -20,26 +20,39 @@ import { mainNavigation } from '../../data/navigation';
       </div>
 
       <!-- Navigation Links -->
-      {mainNavigation
-        .filter((item) => item.children)
-        .map((item) => (
-          <div>
-            <h3 class="text-white font-semibold text-sm mb-4">{item.label}</h3>
-            <ul class="space-y-2.5">
-              {item.children!.map((child) => (
-                <li>
-                  <a
-                    href={child.href}
-                    class="text-sm text-gray-400 hover:text-white transition-colors"
-                    {...(child.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  >
-                    {child.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4">Nawigacja</h3>
+        <ul class="space-y-2.5">
+          {mainNavigation.slice(0, 4).map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-gray-400 hover:text-white transition-colors"
+                {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4">Informacje</h3>
+        <ul class="space-y-2.5">
+          {mainNavigation.slice(4).map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-gray-400 hover:text-white transition-colors"
+                {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
 
     <!-- EU Notice -->
