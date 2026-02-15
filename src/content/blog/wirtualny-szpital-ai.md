@@ -6,6 +6,7 @@ author: "Joanna Glowacka"
 category: "Artykuły Naukowe"
 tags: ["AI", "Badania", "EtykaAI", "Technologia"]
 draft: false
+heroImage: "/images/blog/wirtualny-szpital-ai.png"
 ---
 
 **Eksperyment myślowy, który wydarzył się naprawdę**

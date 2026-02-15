@@ -6,6 +6,7 @@ author: "Bartlomiej Glowacki"
 category: "Inne"
 tags: []
 draft: false
+heroImage: "/images/blog/pozytywna-rekomendacja.jpg"
 ---
 
 ![Zespół prezentuje projekt na Demo Day Unicorn Hub](https://edycja2.unicornhub.pl/wp-content/uploads/2026/01/2026-01-08-konferencja-070-scaled.jpg)

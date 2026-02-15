@@ -6,6 +6,7 @@ author: "Bartlomiej Glowacki"
 category: "Inne"
 tags: []
 draft: false
+heroImage: "/images/blog/update-funkcjonalnosci.jpg"
 ---
 
 Jeszcze raz bardzo dziękujemy za ostatnie spotkanie z naszą ekspertką CBT. Powołujemy się na nie w wielu naszych wewnętrznych rozmowach 😊 Tak jak obiecaliśmy, przesyłamy update funkcjonalności, o których rozmawialiśmy.

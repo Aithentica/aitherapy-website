@@ -6,6 +6,7 @@ author: "Joanna Glowacka"
 category: "Wydarzenia"
 tags: ["EtykaAI", "Technologia"]
 draft: false
+heroImage: "/images/blog/webinar-therapy-support.png"
 ---
 
 Zobacz, jak uporządkować notatki, konceptualizację, plan terapii i monitoring, pozostawiając decyzje kliniczne w rękach terapeuty.

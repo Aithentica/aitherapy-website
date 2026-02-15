@@ -6,6 +6,7 @@ author: "Joanna Glowacka"
 category: "Wydarzenia"
 tags: ["CBT", "EtykaAI", "Technologia"]
 draft: false
+heroImage: "/images/blog/probny-demo-day.png"
 ---
 
 2 grudnia 2025 bierzemy udział w **Próbnym Demo Day w Unicorn HUB**.  

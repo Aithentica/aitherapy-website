@@ -6,6 +6,7 @@ author: "Bartlomiej Glowacki"
 category: "Inne"
 tags: []
 draft: false
+heroImage: "/images/blog/jak-sztuczna-inteligencja-wspiera.png"
 ---
 
 **📌 Nota o artykule:** Poniższy tekst jest analizą badania naukowego opublikowanego w Journal of Medical Internet Research. Nie stanowi on rekomendacji dotyczącej produktu Therapy Support. Artykuł ma na celu omawianie implikacji badań naukowych dla praktyków. Wszelkie decyzje dotyczące wdrażania narzędzi powinny być podejmowane na podstawie profesjonalnego osądu terapeuty.

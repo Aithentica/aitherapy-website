@@ -6,6 +6,7 @@ author: "Bartlomiej Glowacki"
 category: "Artykuły Naukowe"
 tags: []
 draft: false
+heroImage: "/images/blog/czy-ai-moze-naprawde-rozumiec.jpeg"
 ---
 
 # Czy AI może naprawdę rozumieć pacjenta? Nowe badanie o "zwodniczej empatii" modeli językowych

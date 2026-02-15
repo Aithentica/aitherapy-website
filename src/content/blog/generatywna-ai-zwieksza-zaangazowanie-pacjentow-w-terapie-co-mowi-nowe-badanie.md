@@ -6,6 +6,7 @@ author: "Bartlomiej Glowacki"
 category: "Inne"
 tags: []
 draft: false
+heroImage: "/images/blog/generatywna-ai-zwieksza.png"
 ---
 
 Jednym z największych wyzwań w cyfrowych narzędziach wspomagających psychoterapię jest to, co wydaje się proste: czy pacjent w ogóle ich będzie używał?

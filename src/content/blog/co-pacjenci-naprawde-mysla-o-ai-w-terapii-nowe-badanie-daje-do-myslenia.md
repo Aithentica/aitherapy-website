@@ -6,6 +6,7 @@ author: "Bartlomiej Glowacki"
 category: "Artykuły Naukowe"
 tags: ["AI", "Badania", "CBT", "EtykaAI"]
 draft: false
+heroImage: "/images/blog/co-pacjenci-naprawde-mysla.jpg"
 ---
 
 Kiedy budujemy AI Therapy Support™, często myślimy z perspektywy terapeuty. Bo to terapeuta jest w centrum naszego systemu — to on podejmuje decyzje kliniczne, to on buduje relację, to on odpowiada za proces.

@@ -6,6 +6,7 @@ author: "Bartlomiej Glowacki"
 category: "Artykuły Naukowe"
 tags: []
 draft: false
+heroImage: "/images/blog/uczenie-maszynowe-i-vr.jpeg"
 ---
 
 Kiedy pracujemy nad AI Therapy Support, regularnie przeglądamy literaturę naukową — nie po to, by gonić za nowinkami, ale żeby rozumieć, dokąd zmierza nasza dziedzina. I właśnie natrafiliśmy na przegląd, który warto omówić.
