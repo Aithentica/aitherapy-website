@@ -16,8 +16,8 @@ const currentPath = Astro.url.pathname;
         class:list={[
           'px-3 py-2 text-sm font-medium rounded-lg transition-colors',
           isActive
-            ? 'text-sage-600 border-b-2 border-sage-600'
-            : 'text-gray-700 hover:text-sage-600',
+            ? 'text-[#134A45] border-b-2 border-[#3BD5AE]'
+            : 'text-[#181818] hover:text-[#134A45]',
         ]}
         {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       >

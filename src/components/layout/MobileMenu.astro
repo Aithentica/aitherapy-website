@@ -17,8 +17,8 @@ const currentPath = Astro.url.pathname;
           class:list={[
             'block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors',
             isActive
-              ? 'text-sage-600 bg-sage-50'
-              : 'text-gray-700 hover:text-sage-600',
+              ? 'text-[#134A45] bg-[#3BD5AE]/10'
+              : 'text-[#181818] hover:text-[#134A45]',
           ]}
           {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         >
@@ -32,7 +32,7 @@ const currentPath = Astro.url.pathname;
         href="https://app.aitherapy.support"
         target="_blank"
         rel="noopener noreferrer"
-        class="block w-full text-center px-5 py-2.5 rounded-full bg-sage-600 text-white font-semibold text-sm hover:bg-sage-700 transition-colors"
+        class="block w-full text-center px-5 py-2.5 rounded-full bg-[#3BD5AE] text-[#134A45] font-semibold text-sm hover:bg-white transition-colors"
       >
         Logowanie
       </a>
