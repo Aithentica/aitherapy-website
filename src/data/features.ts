@@ -7,37 +7,32 @@ export interface Feature {
 export const features: Feature[] = [
   {
     emoji: '\uD83C\uDFA4',
-    title: 'Inteligentna Notatka',
+    title: 'Inteligentna notatka',
     description:
-      'Nasze AI nie tylko transkrybuje. Rozróżnia mówców, wyłapuje interwencje terapeutyczne i tworzy ustrukturyzowaną notatkę kliniczną (SOAP/BIRP) w mniej niż 30 sekund.',
+      'Wi\u0119cej ni\u017c transkrypcja. AI rozr\u00f3\u017cnia m\u00f3wc\u00f3w, wychwytuje interwencje i tworzy ustrukturowan\u0105 notatk\u0119 kliniczn\u0105 (SOAP/BIRP) w mniej ni\u017c 30 sekund.',
   },
   {
     emoji: '\uD83D\uDD12',
-    title: 'Bezpieczeństwo Totalne',
+    title: 'Bezpiecze\u0144stwo na ka\u017cdym etapie',
     description:
-      'Szyfrowanie End-to-End. Dane są anonimizowane lokalnie. Pełna zgodność z RODO i AI Act.',
+      'Szyfrowanie end-to-end, lokalna anonimizacja danych, pe\u0142na zgodno\u015b\u0107 z RODO i AI Act.',
+  },
+  {
+    emoji: '\uD83E\uDDE0',
+    title: 'Konceptualizacja',
+    description:
+      'Generowanie diagram\u00f3w kognitywnych i modeli b\u0142\u0119dnego ko\u0142a \u2013 jednym klikni\u0119ciem.',
   },
   {
     emoji: '\uD83D\uDCCA',
-    title: 'Konceptualizacja',
-    description:
-      'Generuj diagramy kognitywne i modele błędnego koła jednym kliknięciem.',
-  },
-  {
-    emoji: '\uD83D\uDCCB',
     title: 'Zestawienia',
     description:
-      'Porównuj notatki z kolejnych sesji i przeglądaj wyniki kwestionariuszy wypełnianych przez pacjentów.',
+      'Por\u00f3wnanie notatek mi\u0119dzy sesjami i \u015bledzenie wynik\u00f3w kwestionariuszy \u2013 ca\u0142y przebieg terapii na jednym ekranie.',
   },
   {
-    emoji: '\u26A1',
-    title: 'Szybkość',
-    description: 'Oszczędzaj do 15h miesięcznie na administracji.',
-  },
-  {
-    emoji: '\uD83D\uDCC5',
-    title: 'Integracja',
+    emoji: '\uD83E\uDD1D',
+    title: 'Wsp\u00f3\u0142praca z superwizorem',
     description:
-      'Synchronizuj kalendarz Google, automatycznie zarządzaj terminami sesji i przypomnieniami dla pacjentów.',
+      'Notatki, konceptualizacje, przebieg terapii \u2013 szybko gotowe do superwizji.',
   },
 ];
