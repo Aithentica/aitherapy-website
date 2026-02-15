@@ -1,39 +1,40 @@
 ---
 title: "Witamy Ewę Cylwik w zespole Therapy Support!"
-description: "Z radością witamy Ewę Cylwik, która dołącza do zespołu Therapy Support jako osoba odpowiedzialna za architekturę komunikacji i GTM. Ewa będzie głosem naszej platformy."
+description: "Od lutego Ewa dba o to, żeby Therapy Support mówiło Waszym językiem. Jasne komunikaty, przejrzyste instrukcje i wsparcie, które naprawdę pomaga."
 pubDate: 2026-02-16
 author: "Bartlomiej Glowacki"
 category: "Inne"
-tags: ["zespół", "komunikacja", "GTM"]
+tags: ["zespół", "komunikacja"]
 draft: false
 heroImage: "/images/blog/witamy-ewe-w-zespole.png"
 ---
 
 Ciepło witamy w zespole **Ewę Cylwik**!
 
-Od lutego 2026 Ewa dołącza do Therapy Support, obejmując kluczową rolę w obszarze **architektury komunikacji i Go-to-Market**. To Ewa będzie odpowiedzialna za to, jak brzmi nasza platforma — zarówno na stronie, w produktie, jak i w każdym kontakcie z terapeutami.
+Od lutego 2026 Ewa dba o to, żeby Therapy Support mówiło Waszym językiem — językiem terapeutów, którzy pracują z ludźmi, a nie z technologią.
 
-## Rola Ewy w Therapy Support
+## Czym zajmuje się Ewa?
 
-Ewa przejmuje odpowiedzialność za:
+Ewa pilnuje, żeby każda wiadomość, instrukcja czy opis funkcji były:
 
-- **Architekturę komunikacji** — framework języka marki, ton, styl i spójny głos cross-kanałowo
-- **Strategię Go-to-Market** — materiały sprzedażowe, proces onboardingu, webinary
-- **UX komunikacji** — przewodnik komunikacyjny dla AI agentów, procesy contentowe
-- **Strategię cenową** — analiza konkurencji, struktura planów, framework kuponów
+- **Zrozumiałe** — bez zbędnego żargonu technicznego
+- **Pomocne** — pokazują, jak rzeczy działają w codziennej praktyce
+- **Spójne** — niezależnie czy czytacie maila, stronę czy komunikat w aplikacji
 
-Ewa pracuje wspólnie z Bartkiem nad budowaniem procesów sprzedażowych i komunikacyjnych, które skalują się wraz z rozwojem platformy. Jej zadaniem jest nie tylko tworzyć komunikację, ale zaprojektować ją tak, aby mogła być automatyzowana przez AI agenty — zachowując przy tym spójność i jakość.
+Jej zadanie? Sprawić, żeby praca z platformą była intuicyjna. Żebyście wiedzieli, co robić, bez zgadywania.
 
-## Cele Q1 2026
+## Co się zmienia?
 
-W pierwszym kwartale współpracy skupiamy się na:
+W najbliższych miesiącach Ewa pracuje nad:
 
-- **Kompletnej architekturze komunikacji** — spójnej, udokumentowanej, gotowej do automatyzacji agentami AI
-- **Wdrożeniu pierwszego lejka sprzedażowego**
-- **Przygotowaniu głośnego launchu na Q2** 🚀
+- **Jaśniejszymi komunikatami w aplikacji** — bez domysłów, co dane przyciski robią
+- **Lepszym wdrożeniem** — od rejestracji po pierwszą sesję, krok po kroku
+- **Pomocą, która działa** — odpowiedzi na pytania, zanim je zadacie
+
+Wszystko po to, żebyście mogli skupić się na tym, co ważne — na pracy z pacjentami.
 
 ## Dlaczego Ewa?
 
-Potrzebowaliśmy kogoś, kto rozumie, że komunikacja to nie tylko słowa — to architektura, strategia i procesy. Kto potrafi myśleć zarówno o głosie marki, jak i o tym, jak ten głos skalować przez technologię.
+Potrzebowaliśmy kogoś, kto wie, że dobra komunikacja to nie ozdobniki. To fundamentalna część narzędzia, z którego korzystacie codziennie. Kto rozumie, że jasny przekaz to nie "fajnie by było", tylko warunek, żeby platforma naprawdę Was wspierała.
 
 Ewa to właśnie ta osoba. Witamy na pokładzie!
