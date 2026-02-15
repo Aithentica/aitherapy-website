@@ -20,17 +20,17 @@ const stats: StatCard[] = [
       </span>
 
       <!-- H2 -->
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#181818]">
         Niewidzialna Praca
       </h2>
 
       <!-- Description -->
-      <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+      <p class="mt-4 text-lg text-[#475569] leading-relaxed">
         Dokumentacja, archiwizacja, planowanie sesji, przygotowanie do superwizji,
         konceptualizacja, fakturowanie, SMS-y do pacjentów - to wszystko zabiera czas.
         <br /><br />My go oddajemy. Na terapię, rozwój i to, co napędza.
       </p>
-      <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+      <p class="mt-4 text-lg text-[#475569] leading-relaxed">
         Zapytaliśmy. Codzienne rozmowy z terapeutami o ich pracy kształtują to, co budujemy.
       </p>
     </div>
@@ -38,9 +38,9 @@ const stats: StatCard[] = [
     <!-- Statistics Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
       {stats.map((stat) => (
-        <div class="text-center p-8 rounded-2xl bg-gray-50 border border-gray-100">
-          <p class="text-5xl lg:text-6xl font-extrabold text-sage-600">{stat.value}</p>
-          <p class="mt-2 text-gray-600 font-medium">{stat.label}</p>
+        <div class="text-center p-8 rounded-2xl bg-[#F8FAFC] border border-gray-100">
+          <p class="text-5xl lg:text-6xl font-extrabold text-[#134A45]">{stat.value}</p>
+          <p class="mt-2 text-[#475569] font-medium">{stat.label}</p>
         </div>
       ))}
     </div>

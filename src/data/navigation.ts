@@ -19,7 +19,7 @@ export const mainNavigation: NavItem[] = [
   },
   {
     label: 'Subskrypcja',
-    href: 'https://app.aitherapy.support/pricing',
+    href: 'https://app.aitherapy.support/betatester',
     external: true,
   },
   {
