@@ -30,7 +30,6 @@ W pierwszym kwartale współpracy skupiamy się na:
 
 - **Kompletnej architekturze komunikacji** — spójnej, udokumentowanej, gotowej do automatyzacji agentami AI
 - **Wdrożeniu pierwszego lejka sprzedażowego**
-- **50 płacących klientów do końca kwietnia**
 - **Przygotowaniu głośnego launchu na Q2** 🚀
 
 ## Dlaczego Ewa?
@@ -38,7 +37,3 @@ W pierwszym kwartale współpracy skupiamy się na:
 Potrzebowaliśmy kogoś, kto rozumie, że komunikacja to nie tylko słowa — to architektura, strategia i procesy. Kto potrafi myśleć zarówno o głosie marki, jak i o tym, jak ten głos skalować przez technologię.
 
 Ewa to właśnie ta osoba. Witamy na pokładzie!
-
----
-
-Więcej o Ewie: [Pinterest](https://www.pinterest.com/ecylwik/)
