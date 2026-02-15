@@ -144,3 +144,4 @@ Proprietary - AI Therapy Support
 ## 🤝 Contributing
 
 This is a private project. For questions, contact the team.
+# Force rebuild
