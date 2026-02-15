@@ -3,7 +3,7 @@ title: "Witamy Ewę Cylwik w zespole Therapy Support!"
 description: "Z radością witamy Ewę Cylwik, która dołącza do zespołu Therapy Support jako osoba odpowiedzialna za architekturę komunikacji i GTM. Ewa będzie głosem naszej platformy."
 pubDate: 2026-02-16
 author: "Bartlomiej Glowacki"
-category: "Zespół"
+category: "Inne"
 tags: ["zespół", "komunikacja", "GTM"]
 draft: false
 heroImage: "/images/blog/witamy-ewe-w-zespole.png"
