@@ -1,6 +1,6 @@
 ---
 title: "Pozytywna rekomendacja Panelu Ekspertów Unicorn Hub – potwierdza nasz potencjał"
-description: "Otrzymaliśmy pozytywną rekomendację Panelu Ekspertów Unicorn Hub! Potwierdzenie potencjału AI Therapy Support to dopiero początek naszej drogi do tworzenia inteligentnego, odpowiedzialnego zaplecza dla terapii."
+description: "Otrzymaliśmy pozytywną rekomendację Panelu Ekspertów Unicorn Hub! Potwierdzenie potencjału Therapy Support to dopiero początek naszej drogi do tworzenia inteligentnego, odpowiedzialnego zaplecza dla terapii."
 pubDate: 2026-01-23
 author: "Bartlomiej Glowacki"
 category: "Inne"
@@ -11,7 +11,7 @@ heroImage: "/images/blog/pozytywna-rekomendacja.jpg"
 
 ![Zespół prezentuje projekt na Demo Day Unicorn Hub](https://edycja2.unicornhub.pl/wp-content/uploads/2026/01/2026-01-08-konferencja-070-scaled.jpg)
 
-Ogromnie się cieszymy! Właśnie otrzymaliśmy wiadomość, która potwierdza to, w co wierzymy od samego początku: **AI Therapy Support ma potencjał, aby stać się inteligentnym, odpowiedzialnym zapleczem dla nowoczesnej terapii.**
+Ogromnie się cieszymy! Właśnie otrzymaliśmy wiadomość, która potwierdza to, w co wierzymy od samego początku: **Therapy Support ma potencjał, aby stać się inteligentnym, odpowiedzialnym zapleczem dla nowoczesnej terapii.**
 
 ## Pozytywna rekomendacja — co to oznacza?
 
@@ -47,7 +47,7 @@ Na kolejne miesiące przed nami:
 -   **Rozszerzanie sieci terapeutów**, którzy testują naszą platformę
 -   **Pogłębianie integracji** z narzędziami, które terapeuci już używają
 -   **Ciągłe doskonalenie** naszego wsparcia i dokumentacji
--   **Budowanie wspólnoty** wokół AI Therapy Support — bo to nie tylko o narzędziu, to o ludziach
+-   **Budowanie wspólnoty** wokół Therapy Support — bo to nie tylko o narzędziu, to o ludziach
 
 ## Podziękowania
 
@@ -62,7 +62,7 @@ Jeśli jesteś terapeutą — **zapraszamy do kontaktu.** Szukamy partnerów, kt
 
 * * *
 
-**AI Therapy Support** to zobowiązanie wobec każdego, kto chce pomagać innym. Zobowiązanie, że wspieramy ich nie za pomocą obietnic, ale rzeczywistych narzędzi.
+**Therapy Support** to zobowiązanie wobec każdego, kto chce pomagać innym. Zobowiązanie, że wspieramy ich nie za pomocą obietnic, ale rzeczywistych narzędzi.
 
 Dziękujemy Unicorn Hub. Dziękujemy ekspertom. I dziękujemy Wam — naszym Beta Testom, wspierającym nas i wierzącym w to, co robimy. 🙏
 

@@ -9,7 +9,7 @@ draft: false
 heroImage: "/images/blog/uczenie-maszynowe-i-vr.jpeg"
 ---
 
-Kiedy pracujemy nad AI Therapy Support, regularnie przeglądamy literaturę naukową — nie po to, by gonić za nowinkami, ale żeby rozumieć, dokąd zmierza nasza dziedzina. I właśnie natrafiliśmy na przegląd, który warto omówić.
+Kiedy pracujemy nad Therapy Support, regularnie przeglądamy literaturę naukową — nie po to, by gonić za nowinkami, ale żeby rozumieć, dokąd zmierza nasza dziedzina. I właśnie natrafiliśmy na przegląd, który warto omówić.
 
 W marcu 2025 roku w czasopiśmie _Electronics_ ukazał się jeden z największych przeglądów systematycznych dotyczących wykorzystania uczenia maszynowego (ML) w terapiach poznawczych opartych na rzeczywistości wirtualnej i rozszerzonej. Autorzy — Halkiopoulos i Gkintoni z Uniwersytetu w Patras — przeanalizowali **141 badań** według wytycznych PRISMA.
 

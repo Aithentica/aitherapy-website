@@ -34,7 +34,7 @@ To występ pod presją czasu, oceny i porównań z innymi zespołami.
 Wiesz, że ktoś słucha nie po to, żeby było miło, tylko po to, żeby **wyłapać słabe punkty**. I bardzo dobrze – właśnie po to tam jesteśmy.
 
 Dlaczego to wydarzenie jest dla nas naprawdę ważne?  
-Bo **AI Therapy Support** to projekt, który dotyka wrażliwego obszaru – pracy klinicznej, odpowiedzialności, zaufania. Musimy umieć o nim mówić jasno, spokojnie i przekonująco.  
+Bo **Therapy Support** to projekt, który dotyka wrażliwego obszaru – pracy klinicznej, odpowiedzialności, zaufania. Musimy umieć o nim mówić jasno, spokojnie i przekonująco.  
 Próbny Demo Day to krok bliżej do momentu, w którym pokażemy naszą wizję szerzej: inwestorom, partnerom, instytucjom.
 
 2 grudnia ćwiczymy.  

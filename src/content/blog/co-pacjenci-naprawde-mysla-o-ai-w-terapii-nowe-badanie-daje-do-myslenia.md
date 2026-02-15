@@ -9,7 +9,7 @@ draft: false
 heroImage: "/images/blog/co-pacjenci-naprawde-mysla.jpg"
 ---
 
-Kiedy budujemy AI Therapy Support™, często myślimy z perspektywy terapeuty. Bo to terapeuta jest w centrum naszego systemu — to on podejmuje decyzje kliniczne, to on buduje relację, to on odpowiada za proces.
+Kiedy budujemy Therapy Support™, często myślimy z perspektywy terapeuty. Bo to terapeuta jest w centrum naszego systemu — to on podejmuje decyzje kliniczne, to on buduje relację, to on odpowiada za proces.
 
 Ale jest jeszcze druga strona tej relacji. Pacjent.
 
@@ -41,7 +41,7 @@ Autorzy zidentyfikowali sześć głównych obszarów tematycznych:
 
 ## Co to oznacza dla nas — i dla Was?
 
-Jako zespół AI Therapy Support™ czytamy to badanie z dużą uwagą. Nie dlatego, że dostarcza nam gotowych odpowiedzi — ale dlatego, że zadaje właściwe pytania.
+Jako zespół Therapy Support™ czytamy to badanie z dużą uwagą. Nie dlatego, że dostarcza nam gotowych odpowiedzi — ale dlatego, że zadaje właściwe pytania.
 
 Kilka refleksji, które się nasuwają:
 

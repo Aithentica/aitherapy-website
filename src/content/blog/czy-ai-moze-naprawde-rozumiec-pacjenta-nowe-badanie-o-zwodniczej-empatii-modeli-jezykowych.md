@@ -47,7 +47,7 @@ Modele AI mają też tendencję do narzucania rozwiązań "jeden rozmiar dla wsz
 
 Autorzy badania nie demonizują AI. Wręcz przeciwnie — postulują **hybrydowe modele współpracy człowiek-AI**. Ich główny wniosek brzmi: "LLMs can scaffold evidence-based techniques, while peers provide relational support" — modele mogą wspierać strukturę i techniki oparte na dowodach, podczas gdy ludzie zapewniają relacyjne wsparcie.
 
-To podejście jest nam bliskie. W AI Therapy Support™ od początku przyjmujemy założenie, że AI nie zastępuje terapeuty — wspiera go. Decyzje kliniczne pozostają w rękach profesjonalisty. AI pomaga uporządkować materiał, zaproponować strukturę do weryfikacji, przypomnieć o istotnych elementach — ale relacja terapeutyczna i wszystkie decyzje kliniczne pozostają domeną człowieka.
+To podejście jest nam bliskie. W Therapy Support™ od początku przyjmujemy założenie, że AI nie zastępuje terapeuty — wspiera go. Decyzje kliniczne pozostają w rękach profesjonalisty. AI pomaga uporządkować materiał, zaproponować strukturę do weryfikacji, przypomnieć o istotnych elementach — ale relacja terapeutyczna i wszystkie decyzje kliniczne pozostają domeną człowieka.
 
 ## Kilka refleksji na koniec
 
