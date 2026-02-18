@@ -15,7 +15,7 @@ const stats: StatCard[] = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
       <!-- Tag -->
-      <span class="inline-flex items-center px-3 py-1 rounded-full bg-red-50 text-red-600 text-sm font-medium mb-4">
+      <span class="inline-flex items-center px-3 py-1 rounded-lg border border-red-200 bg-red-50/50 text-red-600 text-xs font-semibold uppercase tracking-wider mb-4">
         Problem Terapeuty
       </span>
 
@@ -39,7 +39,7 @@ const stats: StatCard[] = [
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
       {stats.map((stat) => (
         <div class="text-center p-8 rounded-2xl bg-[#F8FAFC] border border-gray-100">
-          <p class="text-5xl lg:text-6xl font-extrabold text-[#134A45]">{stat.value}</p>
+          <p class="text-5xl lg:text-6xl font-extrabold text-sage-900">{stat.value}</p>
           <p class="mt-2 text-[#475569] font-medium">{stat.label}</p>
         </div>
       ))}

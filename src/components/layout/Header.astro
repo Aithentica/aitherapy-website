@@ -1,14 +1,26 @@
 ---
 import Navigation from './Navigation.astro';
 import MobileMenu from './MobileMenu.astro';
+
+interface Props {
+  transparent?: boolean;
+}
+
+const { transparent = false } = Astro.props;
 ---
 
 <header
-  class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-shadow"
+  class:list={[
+    'sticky top-0 z-50 transition-all duration-300',
+    transparent
+      ? 'bg-transparent border-b border-transparent'
+      : 'bg-white/80 backdrop-blur-md border-b border-gray-100',
+  ]}
   id="site-header"
+  data-transparent={transparent ? 'true' : 'false'}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 lg:h-20">
+    <div class="flex items-center justify-between h-16 lg:h-20 transition-all duration-300" id="header-inner">
       <!-- Logo -->
       <a href="/" class="flex-shrink-0">
         <img
@@ -25,7 +37,7 @@ import MobileMenu from './MobileMenu.astro';
           href="https://app.aitherapy.support"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center px-6 py-2.5 rounded-full bg-[#3BD5AE] text-[#134A45] font-bold text-sm hover:bg-white shadow-md hover:shadow-lg transition-all"
+          class="inline-flex items-center px-6 py-2.5 rounded-full bg-primary text-sage-900 font-bold text-sm hover:bg-white shadow-md hover:shadow-lg transition-all"
         >
           Logowanie
         </a>
@@ -53,16 +65,36 @@ import MobileMenu from './MobileMenu.astro';
   <MobileMenu />
 </header>
 
+<!-- Hidden element to ensure Tailwind includes dynamic classes -->
+<span class="hidden bg-white/80 backdrop-blur-md border-gray-100 bg-transparent border-transparent lg:h-16"></span>
+
 <script is:inline>
-  // Header shadow on scroll
   const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header.classList.add('shadow-sm');
+  const headerInner = document.getElementById('header-inner');
+  const isTransparent = header.dataset.transparent === 'true';
+
+  function updateHeader() {
+    const scrolled = window.scrollY > 80;
+
+    if (scrolled) {
+      header.classList.add('bg-white/80', 'backdrop-blur-md', 'border-gray-100', 'shadow-sm');
+      header.classList.remove('bg-transparent', 'border-transparent');
+      headerInner.classList.remove('lg:h-20');
+      headerInner.classList.add('lg:h-16');
     } else {
+      headerInner.classList.add('lg:h-20');
+      headerInner.classList.remove('lg:h-16');
       header.classList.remove('shadow-sm');
+
+      if (isTransparent) {
+        header.classList.add('bg-transparent', 'border-transparent');
+        header.classList.remove('bg-white/80', 'backdrop-blur-md', 'border-gray-100');
+      }
     }
-  });
+  }
+
+  window.addEventListener('scroll', updateHeader);
+  updateHeader();
 
   // Mobile menu toggle
   const toggle = document.getElementById('mobile-menu-toggle');
@@ -77,5 +109,14 @@ import MobileMenu from './MobileMenu.astro';
     iconClose.classList.toggle('hidden');
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     toggle.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
+
+    // Force opaque header when mobile menu is open
+    if (isOpen && isTransparent) {
+      header.classList.add('bg-white/80', 'backdrop-blur-md', 'border-gray-100');
+      header.classList.remove('bg-transparent', 'border-transparent');
+    } else if (!isOpen && isTransparent && window.scrollY <= 80) {
+      header.classList.add('bg-transparent', 'border-transparent');
+      header.classList.remove('bg-white/80', 'backdrop-blur-md', 'border-gray-100');
+    }
   });
 </script>

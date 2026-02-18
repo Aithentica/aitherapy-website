@@ -1,12 +1,11 @@
 ---
-import { mainNavigation } from '../../data/navigation';
 ---
 
 <footer class="bg-gray-950 text-gray-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
       <!-- Logo & Description -->
-      <div class="lg:col-span-1">
+      <div>
         <a href="/" class="inline-block mb-4">
           <img
             src="/images/logos/therapysupport-new.png"
@@ -19,38 +18,32 @@ import { mainNavigation } from '../../data/navigation';
         </p>
       </div>
 
-      <!-- Navigation Links -->
+      <!-- Nawigacja -->
       <div>
         <h3 class="text-white font-semibold text-sm mb-4">Nawigacja</h3>
         <ul class="space-y-2.5">
-          {mainNavigation.slice(0, 4).map((item) => (
-            <li>
-              <a
-                href={item.href}
-                class="text-sm text-gray-400 hover:text-white transition-colors"
-                {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+          <li><a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a></li>
+          <li><a href="/funkcjonalnosci/" class="text-sm text-gray-400 hover:text-white transition-colors">Aplikacja</a></li>
+          <li><a href="/bezpieczenstwo/" class="text-sm text-gray-400 hover:text-white transition-colors">Bezpieczeństwo</a></li>
+          <li><a href="/blog/" class="text-sm text-gray-400 hover:text-white transition-colors">Blog</a></li>
         </ul>
       </div>
 
+      <!-- Firma -->
       <div>
-        <h3 class="text-white font-semibold text-sm mb-4">Informacje</h3>
+        <h3 class="text-white font-semibold text-sm mb-4">Firma</h3>
         <ul class="space-y-2.5">
-          {mainNavigation.slice(4).map((item) => (
-            <li>
-              <a
-                href={item.href}
-                class="text-sm text-gray-400 hover:text-white transition-colors"
-                {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+          <li><a href="/o-firmie/" class="text-sm text-gray-400 hover:text-white transition-colors">Zespół</a></li>
+          <li><a href="/kontakt/" class="text-sm text-gray-400 hover:text-white transition-colors">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <!-- Dołącz -->
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4">Dołącz</h3>
+        <ul class="space-y-2.5">
+          <li><a href="https://app.aitherapy.support/betatester" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-400 hover:text-white transition-colors">Zostań beta testerem</a></li>
+          <li><a href="/zapisy-na-sesje-feedbackowe/" class="text-sm text-gray-400 hover:text-white transition-colors">Sesja feedbackowa</a></li>
         </ul>
       </div>
     </div>
@@ -66,7 +59,7 @@ import { mainNavigation } from '../../data/navigation';
     <!-- Copyright -->
     <div class="mt-6 pt-6 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
       <p class="text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} AI Therapy Support. Wszelkie prawa zastrzeżone.
+        &copy; {new Date().getFullYear()} Therapy Support. Wszelkie prawa zastrzeżone.
       </p>
       <div class="flex flex-wrap items-center justify-center gap-4">
         <a href="/regulamin/" class="text-xs text-gray-500 hover:text-white transition-colors">
