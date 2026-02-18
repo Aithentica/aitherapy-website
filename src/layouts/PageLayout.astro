@@ -10,9 +10,10 @@ interface Props {
   canonicalURL?: string;
   schema?: Record<string, unknown>;
   noindex?: boolean;
+  transparentHeader?: boolean;
 }
 
-const { title, description, ogImage, canonicalURL, schema, noindex } = Astro.props;
+const { title, description, ogImage, canonicalURL, schema, noindex, transparentHeader = false } = Astro.props;
 ---
 
 <BaseLayout
@@ -23,7 +24,7 @@ const { title, description, ogImage, canonicalURL, schema, noindex } = Astro.pro
   schema={schema}
   noindex={noindex}
 >
-  <Header />
+  <Header transparent={transparentHeader} />
   <main>
     <slot />
   </main>

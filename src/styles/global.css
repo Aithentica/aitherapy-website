@@ -2,12 +2,17 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Custom Colors - WordPress Teal Brand */
+  /* Custom Colors - Brand Greens */
   --color-sage-50: #e6faf4;
+  --color-sage-100: #ccf5e9;
   --color-sage-400: #00e693;
   --color-sage-500: #00d084;
   --color-sage-600: #00b872;
   --color-sage-700: #00a065;
+  --color-sage-900: #134A45;
+
+  /* Primary interactive color */
+  --color-primary: #3BD5AE;
 
   /* Custom Fonts */
   --font-family-sans: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;

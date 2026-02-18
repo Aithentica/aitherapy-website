@@ -12,7 +12,7 @@ import CTA from '../components/sections/CTA.astro';
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'AI Therapy Support',
+  name: 'Therapy Support',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Web',
   description: 'Zintegrowana Platforma dla Terapeutów CBT. Nowy standard w psychoterapii.',
@@ -31,16 +31,17 @@ const schema = {
   },
   author: {
     '@type': 'Organization',
-    name: 'AI Therapy Support',
+    name: 'Therapy Support',
     url: 'https://new.aitherapy.support',
   },
 };
 ---
 
 <PageLayout
-  title="AI Therapy Support"
+  title="Therapy Support"
   description="Zintegrowana Platforma dla Terapeutów CBT. Nowy standard w psychoterapii. Cała praca kliniczna w jednym, bezpiecznym miejscu."
   schema={schema}
+  transparentHeader
 >
   <Hero />
   <Problem />
