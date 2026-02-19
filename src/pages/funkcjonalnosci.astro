@@ -1,68 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Button from '../components/ui/Button.astro';
-import Card from '../components/ui/Card.astro';
-
-const cabinetCards = [
-  {
-    icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>`,
-    title: 'Kalendarz',
-    description: 'Zarzadzaj wizytami pacjentow w intuicyjnym kalendarzu. Automatyczne przypomnienia i synchronizacja z Twoim harmonogramem.',
-  },
-  {
-    icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" /></svg>`,
-    title: 'Rozliczenia',
-    description: 'Automatyczne generowanie faktur i sledzenie platnosci. Integracja z popularnymi systemami platniczymi.',
-  },
-  {
-    icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>`,
-    title: 'SMS',
-    description: 'Automatyczne powiadomienia SMS do pacjentow o nadchodzacych wizytach i zmianach w harmonogramie.',
-  },
-  {
-    icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>`,
-    title: 'Dokumentacja',
-    description: 'Pelna dokumentacja kliniczna w jednym miejscu. Bezpieczne przechowywanie notatek, planow terapii i raportow.',
-  },
-];
-
-const aiFeatures = [
-  {
-    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" /></svg>`,
-    title: 'Transkrypcje',
-    description: 'Automatyczna transkrypcja sesji z rozroznianiem mowcow. AI identyfikuje interwencje terapeutyczne i kluczowe momenty.',
-  },
-  {
-    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" /></svg>`,
-    title: 'Konceptualizacja',
-    description: 'Generowanie diagramow kognitywnych i modeli blednego kola. Wizualizacja przypadku klinicznego jednym kliknieciem.',
-  },
-  {
-    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" /></svg>`,
-    title: 'Strukturyzacja Notatek',
-    description: 'Automatyczne tworzenie ustrukturyzowanych notatek klinicznych w formatach SOAP i BIRP w mniej niz 30 sekund.',
-  },
-  {
-    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>`,
-    title: 'Superwizja',
-    description: 'Przygotowywanie zestawien i raportow do superwizji. Porownywarki notatek z kolejnych sesji i sledzenie postepu pacjenta.',
-  },
-];
-
-const securityCards = [
-  {
-    title: 'Sejf Danych',
-    description: 'Szyfrowanie End-to-End i anonimizacja lokalna. Twoje dane sa bezpieczne na kazdym etapie.',
-  },
-  {
-    title: 'RODO + AI Act',
-    description: 'Pelna zgodnosc z europejskimi regulacjami. Infrastruktura w 100% na terenie UE.',
-  },
-  {
-    title: 'Terapeuta w Centrum',
-    description: 'AI wspiera, ale nigdy nie podejmuje decyzji. Pelna kontrola zawsze w Twoich rekach.',
-  },
-];
 ---
 
 <PageLayout
@@ -82,7 +20,7 @@ const securityCards = [
         Od pierwszej konsultacji i konceptualizacji, po notatki, rozliczenia i przygotowanie do superwizji - bez przeskakiwania między różnymi narzędziami.
       </p>
       <p class="mt-4 text-lg text-gray-600 leading-relaxed">
-        Aplikacja porządkuje pracę kliniczną i odciąża z obowiązków administracyjnych, dzięki czemu więcej uwagi można poświęcić terapii.
+        Aplikacja porządkuje pracę kliniczną i odciąża z obowiązków administracyjnych, więcej uwagi można poświęcić terapii.
       </p>
     </div>
   </section>
@@ -176,88 +114,17 @@ const securityCards = [
     </div>
   </section>
 
-  <!-- Cabinet Cards -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-        {cabinetCards.map((card) => (
-          <Card class="p-8">
-            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-sage-50 text-sage-600 mb-5">
-              <Fragment set:html={card.icon} />
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">{card.title}</h3>
-            <p class="text-gray-600 leading-relaxed">{card.description}</p>
-          </Card>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Documentation -->
-  <section class="py-16 lg:py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-        <span class="inline-block px-3 py-1 rounded-lg border border-sage-200 bg-sage-50/50 text-sage-700 text-xs font-semibold uppercase tracking-wider mb-4">
-          AI Dokumentacyjne
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
-          Sztuczna inteligencja w sluzbie dokumentacji
-        </h2>
-        <p class="mt-4 text-lg text-gray-600">
-          AI, ktore rozumie kontekst kliniczny i wspiera Twoja prace dokumentacyjna.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-        {aiFeatures.map((feature) => (
-          <div class="flex gap-4 bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-sage-50 text-sage-600 flex items-center justify-center">
-              <Fragment set:html={feature.icon} />
-            </div>
-            <div>
-              <h3 class="font-bold text-gray-900 mb-1">{feature.title}</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Security Section -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
-          Bezpieczenstwo na kazdym poziomie
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {securityCards.map((card) => (
-          <Card class="p-8 text-center">
-            <h3 class="text-xl font-bold text-sage-600 mb-3">{card.title}</h3>
-            <p class="text-gray-600 leading-relaxed">{card.description}</p>
-          </Card>
-        ))}
-      </div>
-
-      <div class="mt-12 text-center">
-        <Button variant="outline" href="/bezpieczenstwo/">
-          Dowiedz sie wiecej o bezpieczenstwie
-        </Button>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="py-16 lg:py-24 bg-gray-950 text-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl sm:text-4xl font-bold mb-6">
-        Dołącz do beta testów
+        Zgłoś się do beta testów
       </h2>
+      <p class="text-lg text-gray-300 mb-4">
+        Jesteś terapeutą / terapeutką CBT?
+      </p>
       <p class="text-lg text-gray-300 mb-8">
-        Przekonaj się, jak Therapy Support może usprawnić Twoją praktykę.
+        Sprawdź, jak platforma wspiera Twoją codzienną pracę
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button variant="primary" href="https://app.aitherapy.support/betatester" external size="lg">
