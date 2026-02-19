@@ -1,6 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import CTA from '../components/sections/CTA.astro';
+import Button from '../components/ui/Button.astro';
 ---
 
 <PageLayout
@@ -114,5 +114,29 @@ import CTA from '../components/sections/CTA.astro';
     </div>
   </section>
 
-  <CTA />
+  <section class="py-20 lg:py-28 bg-[#E3DDF8] relative overflow-hidden">
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#181818]">
+        Zgłoś się do beta testów
+      </h2>
+      <p class="mt-6 text-2xl sm:text-3xl font-bold text-[#181818]">
+        Jesteś terapeutą / terapeutką CBT?
+      </p>
+      <p class="mt-6 text-lg text-[#475569] leading-relaxed">
+        Sprawdź, jak platforma wspiera Twoją codzienną pracę
+        <br /><br />
+        Odzyskaj czas dla siebie i swoich pacjentów
+      </p>
+      <div class="mt-10 flex items-center justify-center">
+        <Button
+          variant="primary"
+          size="lg"
+          href="https://app.aitherapy.support/betatester"
+          external
+        >
+          Zgłoś się do beta testów
+        </Button>
+      </div>
+    </div>
+  </section>
 </PageLayout>
