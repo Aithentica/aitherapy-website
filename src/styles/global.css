@@ -2,8 +2,8 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Custom Colors - Brand Greens */
-  --color-sage-50: #e6faf4;
+  /* Legacy sage tokens — used by existing components */
+  --color-sage-50:  #e6faf4;
   --color-sage-100: #ccf5e9;
   --color-sage-400: #00e693;
   --color-sage-500: #00d084;
@@ -11,21 +11,39 @@
   --color-sage-700: #00a065;
   --color-sage-900: #134A45;
 
-  /* Primary interactive color */
+  /* Brand Colors — TherapySupport design system */
+  --color-brand-50:    #e6f4f2;
+  --color-brand-100:   #cce9e4;
+  --color-brand-500:   #134A45;
+  --color-brand-600:   #0f3b37;
+  --color-brand-700:   #0b2d2a;
+
+  --color-accent-300:  #7de8cf;
+  --color-accent-400:  #3BD5AE;
+  --color-accent-500:  #29b894;
+
+  --color-sky-300:     #93c8ff;
+  --color-sky-400:     #62ADFF;
+
+  --color-navy-600:    #2a3aae;
+  --color-navy-700:    #222F90;
+  --color-navy-800:    #1a2472;
+
+  --color-surface:     #E3DDF8;
+
+  /* Primary interactive alias */
   --color-primary: #3BD5AE;
 
-  /* Custom Fonts */
-  --font-family-sans: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  /* Typography */
+  --font-family-display: 'Playfair Display', Georgia, serif;
+  --font-family-sans:    'DM Sans', system-ui, sans-serif;
+  --font-family-mono:    'DM Mono', monospace;
 
-  /* Custom Animations */
+  /* Animations */
   --animate-float: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
 }
