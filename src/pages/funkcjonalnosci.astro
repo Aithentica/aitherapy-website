@@ -30,7 +30,7 @@ import Button from '../components/ui/Button.astro';
     <div class="max-w-7xl lg:max-w-[calc(50vw+40rem)] mx-auto px-4 sm:px-6 lg:px-0 space-y-16 lg:space-y-24">
 
       <!-- 1-2. Inteligentna notatka + Konceptualizacja -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:pr-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
         <div class="bg-[#E3DDF8] rounded-2xl lg:rounded-l-none aspect-[4/3] flex items-center justify-center">
           <div class="text-center text-purple-400">
             <svg class="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21Z" /></svg>
@@ -38,7 +38,7 @@ import Button from '../components/ui/Button.astro';
           </div>
         </div>
         <div class="space-y-6">
-          <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow text-center">
             <h3 class="text-xl font-bold text-gray-900 mb-3">Inteligentna notatka</h3>
             <p class="text-gray-600 leading-relaxed mb-3">
               To więcej niż transkrypcja. System rozróżnia mówców, wyłapuje interwencje i oddziela treści kluczowe od tła. W mniej niż 30 sekund powstaje ustrukturyzowana notatka w formacie SOAP lub BIRP, gotowa do dalszej pracy.
@@ -47,7 +47,7 @@ import Button from '../components/ui/Button.astro';
               Po sesji dostępne jest syntetyczne podsumowanie, które można edytować. Dokumentacja powstaje szybciej i pozostaje spójna w całym procesie.
             </p>
           </div>
-          <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow text-center">
             <h3 class="text-xl font-bold text-gray-900 mb-3">Konceptualizacja</h3>
             <p class="text-gray-600 leading-relaxed mb-3">
               Na podstawie materiału z sesji można jednym kliknięciem wygenerować: diagram poznawczy, model błędnego koła, analizę ABC, mapę problemów.
@@ -63,9 +63,9 @@ import Button from '../components/ui/Button.astro';
       </div>
 
       <!-- 3-4. Zestawienia + Współpraca z superwizorem (screenshot RIGHT) -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:pl-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
         <div class="space-y-6 lg:order-1">
-          <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow text-center">
             <h3 class="text-xl font-bold text-gray-900 mb-3">Zestawienia</h3>
             <p class="text-gray-600 leading-relaxed mb-3">
               Cały przebieg terapii dostępny jest w jednym widoku. Możliwe jest porównywanie notatek między sesjami, śledzenie wyników kwestionariuszy oraz obserwowanie dynamiki procesu w czasie.
@@ -74,7 +74,7 @@ import Button from '../components/ui/Button.astro';
               Obraz terapii pozostaje czytelny bez konieczności przeszukiwania archiwum.
             </p>
           </div>
-          <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow text-center">
             <h3 class="text-xl font-bold text-gray-900 mb-3">Współpraca z superwizorem</h3>
             <p class="text-gray-600 leading-relaxed mb-3">
               Przygotowanie do superwizji nie wymaga dodatkowych godzin pracy. Notatki, konceptualizacje i przebieg terapii generowane są w uporządkowanej formie, gotowej do omówienia.
@@ -93,14 +93,14 @@ import Button from '../components/ui/Button.astro';
       </div>
 
       <!-- 5. Zarządzanie gabinetem -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:pr-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
         <div class="bg-[#E3DDF8] rounded-2xl lg:rounded-l-none aspect-[4/3] flex items-center justify-center">
           <div class="text-center text-purple-400">
             <svg class="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21Z" /></svg>
             <span class="text-sm font-medium">Screenshot</span>
           </div>
         </div>
-        <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow text-center">
           <h3 class="text-xl font-bold text-gray-900 mb-3">Zarządzanie gabinetem</h3>
           <p class="text-gray-600 leading-relaxed mb-3">
             Kalendarz wizyt, przedpłaty, faktury i automatyczne przypomnienia SMS dostępne są w jednym miejscu. System umożliwia śledzenie płatności oraz integrację z innymi narzędziami wykorzystywanymi w codziennej pracy.
