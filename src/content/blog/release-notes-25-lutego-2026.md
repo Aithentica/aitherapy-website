@@ -1,220 +1,263 @@
 ---
 title: "Release Notes — 25 lutego 2026 🚀"
-description: "Największy release ostatnich tygodni! Nowe dokumenty dla pacjentów, 7 języków, dynamiczny kalendarz z urlopami, przeprojektowany ekran powiadomień i cała masa poprawek zgłoszonych przez nasz zespół testerów. Dziękujemy Joannie, Barbarze, Bogdanowi i Marcie!"
+description: "Największy release od miesięcy! Przebudowany interfejs, dynamiczny kalendarz z urlopami i sesjami 15-minutowymi, nowe pola kliniczne, wykres problemów pacjenta, dzienniczek terapeuty, wiele dokumentów, 7 języków i desiatki poprawek zgłoszonych przez nasz zespół. Dziękujemy Joannie, Barbarze, Bogdanowi i Marcie!"
 pubDate: 2026-02-25
-heroImage: "/images/blog/release-notes-12-lutego-2026.png"
+heroImage: "/images/blog/release-notes-25-lutego-2026.png"
 author: "Bartlomiej Glowacki"
 category: "Inne"
 tags: []
 draft: false
 ---
 
-Ten release to **prawdziwy przełom** — kilka tygodni intensywnej pracy i ponad 50 commitów zebranych w jeden duży update. Nowe funkcje, poprawki UX, stabilność i coś, na co czekaliśmy od dawna: **aplikacja mówi teraz w 7 językach** 🌍
+To był **intensywny sprint** — ponad 50 commitów, przebudowa kluczowych ekranów i kilka funkcji, na które czekaliście od dawna. Zaczęliśmy od czegoś, co odczujecie od razu po wejściu do aplikacji: **interfejs wygląda i działa inaczej**.
 
-💚 **Ogromne podziękowania** dla naszych niezmęczonych testerów: **Joanny**, **Barbary**, **Bogdana** i **Marty** — bez Waszych zgłoszeń ten release byłby o połowę mniejszy!
-
-* * *
-
-## 1\. 🚫 Portal Pacjenta — blokada gdy brak kontaktu
-
-### Co nowego?
-
-Pacjenci bez podanego adresu email **lub** numeru telefonu nie mogą teraz korzystać z portalu pacjenta. To ważna zmiana — bez kontaktu nie możemy wysyłać powiadomień o sesjach, przypomnień ani linków do zaproszenia.
-
-Na liście pacjentów pojawia się teraz **badge informujący** terapeutę, że dany pacjent ma niekompletne dane kontaktowe — żeby łatwo to wychwycić.
-
-### ✅ Jak przetestować?
-
-1. Utwórz pacjenta **bez** adresu email i numeru telefonu
-2. Sprawdź listę pacjentów → pacjent powinien mieć widoczny **badge z ostrzeżeniem**
-3. Spróbuj wysłać zaproszenie do portalu → system powinien zablokować akcję z komunikatem
-4. Dodaj email lub telefon → badge znika, portal dostępny
+💚 **Wielkie podziękowania** dla naszych testerów: **Joanny**, **Barbary**, **Bogdana** i **Marty** — wasze zgłoszenia były napędem tego releasu!
 
 * * *
 
-## 2\. 📄 Wiele dokumentów dla pacjentów (zgłosiła Barbara)
+## 1\. 🎨 Interfejs — co się zmieniło i dlaczego
 
-### Co nowego?
+To nie był kosmetyczny lifting. Przeszliśmy przez każdy ekran i usunęliśmy wszystko, co było zbędne, mylące albo rozpraszało od pracy klinicznej.
 
-Terapeuta może teraz przypisać pacjentowi **wiele dokumentów naraz**: umowę o świadczenie usług, klauzulę RODO i aneks do umowy — wszystko w jednym miejscu.
+### Profil pacjenta — nowy układ
 
-Wcześniej był tylko jeden slot na dokument — to było dużym ograniczeniem dla gabinetów, które wymagają podpisania kilku dokumentów przed pierwszą sesją.
+Górna sekcja profilu pacjenta była przeładowana. Teraz:
 
-### ✅ Jak przetestować?
+- **Stały termin** widoczny od razu w prawej kolumnie nagłówka (dni tygodnia, częstotliwość) — bez szukania po zakładkach
+- **Kompaktowy widget finansów**: zaległości, suma i liczba opóźnień w jednej linii, z ikonkami email/SMS do szybkiego kontaktu
+- Przyciski akcji (status, dezaktywacja, stały termin) przeniesione poniżej numeru telefonu — logiczniejsza kolejność
+- **Usunięty przycisk "Wstecz"** — nawigacja przez przeglądarkę wystarczy, a dodatkowy przycisk mylił
+- **Usunięty kolorowy pasek statusu** z kart sesji na dashboardzie — mniej wizualnego szumu, czytelniejsza lista
 
-1. Wejdź w profil pacjenta → sekcja „Dokumenty"
-2. Dodaj kilka dokumentów różnych typów (umowa + RODO + aneks)
-3. Sprawdź czy wszystkie są widoczne i można je pobrać
-4. Prześlij dokument pacjentowi → sprawdź czy widzi wszystkie dokumenty w portalu
+### Dashboard — czystszy, szybszy
 
-* * *
+- Usunięty widget QR code — był rzadko używany, zajmował prime real estate
+- Sekcja "Ten tydzień" przeniesiona do lewej kolumny — pierwsze co widzisz po zalogowaniu
+- Karty sesji na dashboardzie mają teraz badge (zaplanowana/oczekuje potwierdzenia/anulowana) — status widoczny bez otwierania szczegółów
 
-## 3\. 📅 Nowy Kalendarz — urlopy, sesje ½h i dynamiczna siatka
+### Emoji i drobnostki (zgłosiła Marta)
 
-### To był największy pakiet zmian w tej iteracji! 🎉
+Na prośbę Marty (SCRUM-530) usunęliśmy emoji z przycisków nastroju w dzienniczku — interfejs jest teraz czystszy i bardziej profesjonalny, zgodny z klimatem gabinetu terapeutycznego.
 
-#### Urlopy i dni wolne
+### Dostępność i lokalizacje
 
-Terapeuta może teraz oznaczać w kalendarzu **urlopy i dni wolne** — z automatyczną blokadą rezerwacji przez pacjentów na te dni. Przy próbie wyjścia poza godziny przyjęć pojawia się **modal potwierdzenia** z pytaniem czy na pewno chcemy zapisać sesję poza standardowymi godzinami.
-
-#### Sesje półgodzinne i wydarzenia pozasesyjne
-
-Kalendarz obsługuje teraz **sesje 30-minutowe** (wcześniej tylko godzinne). Można też dodawać **wydarzenia pozasesyjne** — spotkania, szkolenia, superwizje — które blokują czas bez tworzenia sesji z pacjentem.
-
-#### Dynamiczna siatka tygodniowa
-
-Widok tygodniowy kalendarza jest teraz **w pełni dynamiczny** — siatka dopasowuje się do zawartości. Gdy kilka sesji/wydarzeń koliduje w tym samym przedziale czasu, pojawia się **modal konfliktu** z pytaniem jak chcemy rozwiązać nakładanie.
-
-### ✅ Jak przetestować kalendarz?
-
-1. Wejdź w Kalendarz → utwórz urlop na kilka dni
-2. Sprawdź czy pacjent nie może zarezerwować sesji w dni urlopu
-3. Utwórz sesję 30-minutową → powinna się prawidłowo wyświetlać w siatce
-4. Dodaj wydarzenie pozasesyjne (np. „Superwizja") → powinno być widoczne w kalendarzu
-5. Utwórz dwa события nakładające się → sprawdź modal konfliktu
+Ekran dostępności terapeuty przeszedł reorganizację — zamiast abstrakcyjnych "gabinetów" mamy teraz listę **"Lokalizacji sesji"** z możliwością edycji inline. Każda lokalizacja ma adres, miasto i flagę "widoczne w profilu publicznym". Lokalizacje propagują się teraz automatycznie do generowanych sesji ze stałych terminów — koniec z brakiem lokalizacji w automatycznie tworzonych sesjach.
 
 * * *
 
-## 4\. 🔔 Przeprojektowane powiadomienia SMS/Email (zgłosił Bogdan)
+## 2\. 📅 Nowy Kalendarz — urlopy, 15-minutówki i dynamiczna siatka
 
-### Co nowego?
+Kalendarz to serce codziennej pracy. W tym releasie dostał największy pakiet zmian w historii aplikacji.
 
-Ekran powiadomień przeszedł **gruntowny redesign**. Teraz masz dwa globalne przełączniki — jeden dla SMS, jeden dla Email — i możesz jednym kliknięciem wyłączyć cały kanał komunikacji.
+### Urlopy i dni wolne (SCRUM-532, zgłosiła Joanna)
 
-Poniżej globalnych toggles znajdziesz szczegółowe ustawienia dla każdego typu powiadomienia — nowe sesje, przypomnienia, odwołania itd. Ekran jest teraz czytelniejszy i szybszy w obsłudze.
+Terapeuta może teraz oznaczać w kalendarzu **urlopy i dni wolne** — z automatyczną blokadą dostępności na te dni.
 
-### ✅ Jak przetestować?
+Gdy dodajesz urlop obejmujący istniejące sesje — pojawia się dwuetapowy modal: najpierw wybierasz zakres dat i tytuł (np. "Wakacje letnie"), potem system pokazuje listę sesji kolidujących i pyta jak je obsłużyć: pozostaw bez zmian, anuluj bez powiadomień, lub anuluj i wyślij wiadomość do pacjentów. Przy anulowaniu z powiadomieniem — szablon wiadomości jest wypełniony z góry, możesz go edytować przed wysłaniem.
 
-1. Wejdź w Ustawienia → Powiadomienia
-2. Wyłącz globalny toggle SMS → sprawdź czy żaden SMS nie wychodzi po zapisaniu sesji
-3. Włącz z powrotem → utwórz sesję → SMS przychodzi
-4. Wyłącz konkretny typ powiadomień (np. „Przypomnienie 24h") → sprawdź czy działa niezależnie
-5. Sprawdź czy pacjent też może zarządzać swoimi preferencjami w portalu
+### Ostrzeżenie przy sesjach poza godzinami
 
-* * *
+Gdy ustawiasz sesję poza standardowymi godzinami przyjęć — pojawia się alert: **"Ten termin jest poza Twoimi standardowymi godzinami przyjęć. Sesja zostanie utworzona jednorazowo."** Koniec z przypadkowym tworzeniem sesji w środku nocy.
 
-## 5\. 📓 Dzienniczek — widok terapeuty i ograniczenie edycji (zgłosiła Marta)
+### Sesje 15, 30 i 45-minutowe
 
-### Co nowego?
+Nowy toggle w profilu terapeuty: **"Zezwalaj na krótsze sesje"**. Po włączeniu — formularz tworzenia sesji pokazuje presety: 15 min, 30 min, 45 min, 60 min. Świetne dla konsultacji, check-inów i sesji grupowych.
 
-Terapeuta ma teraz **własny widok dzienniczka** — może przeglądać wpisy swoich pacjentów bez wchodzenia w ich profil.
+### Dynamiczna siatka tygodniowa
 
-Dodaliśmy też **ograniczenie 24 godzin na edycję wpisów** — pacjent może poprawić wpis tylko przez dobę od jego utworzenia. To ważne dla zachowania integralności dokumentacji.
+Zamiast statycznej siatki 6:00-22:00, kalendarz tygodniowy **dopasowuje zakres godzin do faktycznej dostępności**. Jeśli masz tylko sesje między 9:00 a 17:00 — siatka wyświetla tylko te godziny. Mniej przewijania, więcej widocznych sesji naraz.
 
-Na prośbę Marty usunęliśmy też **emoji z przycisków nastroju** w dzienniku — interfejs jest teraz czystszy i bardziej profesjonalny.
+Dodaliśmy też **czerwoną linię aktualnej godziny** — zawsze wiesz gdzie jesteś w swoim dniu.
 
-### ✅ Jak przetestować?
+### Modal konfliktu przy nakładaniu wydarzeń
 
-1. Jako pacjent — utwórz wpis w dzienniczku
-2. Sprawdź czy terapeuta widzi ten wpis w swoim widoku dzienniczka
-3. Edytuj wpis jako pacjent → powinno działać w ciągu 24h
-4. Spróbuj edytować wpis starszy niż 24h → powinna być blokada
-5. Sprawdź przyciski nastroju → brak emoji, tylko tekst
+Gdy dwa wydarzenia nakładają się w tym samym czasie — pojawia się modal z pytaniem: pozostaw oba, anuluj jedno z powiadomieniem, lub przenieś na inny termin. Koniec z cichym nadpisywaniem.
+
+### Stały termin otwiera właściwą zakładkę
+
+Małe, ale denerwujące: kliknięcie "Dodaj stały termin" w profilu pacjenta otwierało modal sesji z zakładką jednorazowej. Teraz automatycznie otwiera zakładkę **"Terminy stałe"**.
 
 * * *
 
-## 6\. 🤖 AI — klasyfikacja typów sesji i naprawa wywiadu (zgłosiła Joanna)
+## 3\. 🧠 Nowe pola kliniczne — Cel terapeuty i Wykres problemów
 
-### Klasyfikacja typów sesji przez AI
+### Cel pacjenta vs. Cel terapeuty
 
-Nowy mechanizm AI **automatycznie klasyfikuje typ sesji** na podstawie transkrypcji — rozpoznaje czy to sesja CBT, psychodynamiczna, interwencyjna itd. Lokalizacja sesji jest teraz też przekazywana przy sesjach cyklicznych.
+Do tej pory było jedno pole "Cel terapeutyczny". Teraz mamy dwa:
 
-### Naprawa błędu 504 i zaległości 7 dni
+- **Cel pacjenta** (zielona obwódka) — głos pacjenta, widoczny w portalu pacjenta, to on mówi czego chce
+- **Cel terapeuty** (indygo obwódka) — perspektywa kliniczna, prywatne pole terapeuty, opisuje cel z perspektywy konceptualizacji
 
-Joanna zgłosiła krytyczny błąd — wywiad wstępny wyrzucał błąd **504 (timeout)** przy długich dokumentach. Naprawiliśmy też logikę zaległości, która teraz poprawnie liczy **7-dniowe okno** dla niezapłaconych sesji.
+To rozróżnienie ma duże znaczenie dla CBT: cel sformułowany przez pacjenta rzadko jest tożsamy z celem klinicznym.
 
-Dodaliśmy również **spinner ładowania** przy ekstrakcji transkrypcji AI — wcześniej interfejs wyglądał jak zamrożony podczas przetwarzania.
+### Wykres nasilenia problemów
 
-### Systemowe typy sesji
+Nowy wykres w profilu pacjenta pokazuje **jak zmieniało się nasilenie każdego problemu terapeutycznego w czasie** (ostatnie 90 dni). Każdy problem ma własną kolorową linię, oś X to daty (format dd.MM), oś Y to skala 0-10.
 
-Dodaliśmy seeder który automatycznie tworzy **predefiniowane typy sesji** przy pierwszym uruchomieniu — nowe instalacje nie startują już z pustą listą.
+Zamiast przeglądać notatki sesja po sesji — jeden rzut oka pokazuje trend. Które problemy ustępują, które rosną, które stoją w miejscu.
 
-### ✅ Jak przetestować AI?
+### Pola ABC — dwa nowe elementy
 
-1. Przejdź do sesji z transkrypcją → uruchom analizę AI
-2. Sprawdź czy pojawia się **spinner** podczas przetwarzania
-3. Sprawdź sekcję „Wywiad wstępny" → nie powinno być błędu 504
-4. Sprawdź zakładkę Finanse → zaległości powinny wyświetlać tylko sesje z ostatnich 7 dni
-5. Utwórz nową sesję → sprawdź czy lista typów sesji jest wypełniona (nie pusta)
+W konceptualizacji ABC (myśl-uczucie-zachowanie) dodaliśmy dwa nowe pola:
+- **Znaczenie myśli** — co ta myśl oznacza dla pacjenta
+- **Strategia behawioralna** — jakie zachowanie wybrał pacjent w odpowiedzi
 
-* * *
-
-## 7\. 🗂️ Stały termin — poprawa UX i tłumaczenia (zgłosiła Joanna)
-
-### Co naprawiliśmy?
-
-Sekcja **Stały termin sesji** przeszła przeprojektowanie UX — formularze są teraz bardziej intuicyjne i czytelne.
-
-Joanna zgłosiła brakujące tłumaczenia w **opcjach miesięcznych formularza** — np. „Co miesiąc w 3. środę" były po polsku niezależnie od ustawień języka. Naprawione ✅
-
-Pacjent widzi teraz swój stały termin w portalu z pełnymi informacjami.
+Oba pola są wyciągane przez AI z transkrypcji i widoczne w edytorze.
 
 * * *
 
-## 8\. 🌍 Aplikacja mówi teraz w 7 językach!
+## 4\. 📓 Dzienniczek — terapeuta pisze, terapeuta czyta
 
-### To historyczny moment dla naszego produktu 🎊
+### Widok terapeuty w dzienniku (zgłosiła Marta)
+
+Dzienniczek był dotąd narzędziem tylko dla pacjenta. Teraz terapeuta ma **pełny dostęp** bezpośrednio z profilu pacjenta:
+
+- Może przeglądać wszystkie wpisy pacjenta chronologicznie
+- Może tworzyć własne wpisy (notatki obserwacyjne między sesjami, ćwiczenia do wykonania)
+- Wpisy terapeuty są oznaczone niebieskim badge'em "Terapeuta" — pacjent wie, kto pisał
+- Terapeuta może edytować i usuwać dowolne wpisy bez limitu czasowego
+
+Pacjent nadal może edytować tylko swoje wpisy, i tylko przez 24 godziny od utworzenia.
+
+### Wykres nastroju z prawidłowymi datami
+
+Wykres nastroju w portalu pacjenta używa teraz właściwej osi czasu (chartjs TimeScale z biblioteką date-fns). Tooltip pokazuje pełną datę (dd.MM.yyyy), a nie tylko numer dnia. Drobna zmiana, ale czytelność rośnie znacząco.
+
+* * *
+
+## 5\. 📄 Dokumenty i Formularze
+
+### Wiele dokumentów dla pacjentów (SCRUM-536, zgłosiła Barbara)
+
+Koniec z jednym slotem na dokument. Terapeuta może teraz przypisać pacjentowi **wiele plików PDF** w podziale na typy:
+
+- Umowa główna (jak dotychczas)
+- Klauzula RODO
+- Aneks do umowy
+- Dokumenty dodatkowe
+
+Pacjent widzi wszystkie dokumenty w swoim portalu z przyciskami pobierania. W ustawieniach terapeuty — nowa sekcja "Dodatkowe dokumenty" z uploadem i zarządzaniem.
+
+### Terapeuta wypełnia formularz za pacjenta
+
+Terapeuta może teraz **samodzielnie wypełnić formularz diagnostyczny** za pacjenta (np. gdy pacjent ma trudności z obsługą portalu lub gdy wypełniacie razem na sesji). Formularz zapisuje się z oznaczeniem "wypełnione przez terapeutę".
+
+### Podgląd szablonu formularza
+
+Przed przypisaniem formularza do pacjenta możesz teraz **podejrzeć jego pytania** — klikasz przycisk "Formularz" i widzisz cały kwestionariusz zanim wyślesz pacjentowi.
+
+### Sortowanie pacjentów alfabetycznie (SCRUM-561, zgłosił Bogdan)
+
+W formularzach tworzenia sesji pacjenci są teraz posortowani alfabetycznie według nazwiska i imienia. Oczywiste, ale wcześniej tego brakowało — przy dużej bazie pacjentów szukanie było frustrujące.
+
+* * *
+
+## 6\. 🚪 Portal Pacjenta — blokada i badge
+
+Pacjent bez podanego adresu email **lub** numeru telefonu nie może korzystać z portalu. Bez kontaktu nie możemy wysyłać powiadomień i przypomnień.
+
+Na liście pacjentów pojawia się **badge "Brak konta"** — żeby od razu wiedzieć, którzy pacjenci mają niekompletne dane kontaktowe. W profilu pacjenta bez emaila baner przypomina: "Dodaj email, aby aktywować portal".
+
+Email nie jest już polem obowiązkowym przy tworzeniu pacjenta — bo nie każdy pacjent ma lub chce podawać email. Aplikacja po prostu ogranicza funkcje, które wymagają kontaktu.
+
+* * *
+
+## 7\. 🔔 Przeprojektowane Powiadomienia (SCRUM-563, zgłosił Bogdan)
+
+Ekran powiadomień przeszedł **gruntowny redesign**. Na górze — dwa globalne przełączniki:
+
+- **Wyłącz wszystkie powiadomienia Email** — jeden przełącznik wyłącza cały kanał
+- **Wyłącz wszystkie powiadomienia SMS** — analogicznie
+
+Gdy kanał jest wyłączony, indywidualne ustawienia wyszarzają — wiadomo dlaczego powiadomienie nie wychodzi. Poniżej globalnych toggles — szczegółowe ustawienia dla każdego typu powiadomienia (nowe sesje, przypomnienia, odwołania, wiadomości od pacjentów).
+
+* * *
+
+## 8\. 🤖 AI — typy sesji i naprawa transkrypcji (Joanna)
+
+### Automatyczna klasyfikacja typów sesji (SCRUM-599)
+
+Po wgraniu transkrypcji AI automatycznie **klasyfikuje typ sesji**: Standardowa sesja CBT, Sesja konsultacyjna, Sesja kryzysowa, lub Wywiad. Każdy typ ma inne zachowania — np. sekcja Oceny Sesji SJS-CBT jest ukryta gdy typ nie obsługuje ratingu.
+
+Typ można też zmienić ręcznie z dropdownu w szczegółach sesji. Ikona informuje czy typ był ustawiony przez AI czy ręcznie.
+
+Cztery systemowe typy sesji są teraz **seedowane automatycznie przy starcie** — nowe konta nie startują z pustą listą.
+
+### Naprawa błędu 504 na wywiadzie (SCRUM-636, zgłosiła Joanna)
+
+Przy dużych transkrypcjach (3+ sesje, każda po kilka tysięcy słów) wywiad wstępny rzucał błąd 504 (timeout Azure AI). Naprawione — transkrypcje są teraz przycinane do 8000 znaków przed wysłaniem, co mieści się w limicie API.
+
+### Zaległości — prawidłowy zakres dat (SCRUM-636)
+
+Filtr "z zaległościami" na liście sesji był ograniczony do 7 dni — przez co terapeuta widział tylko część faktycznych zaległości. Teraz automatycznie rozszerza zakres do bieżącego roku.
+
+### Spinner transkrypcji
+
+Powiadomienia "transkrypcja w toku" starsze niż 4 godziny teraz wyświetlają ikonę błędu zamiast wiecznego spinnera. Wiadomo że coś poszło nie tak, zamiast czekać w nieskończoność.
+
+* * *
+
+## 9\. 💰 Finanse — poprawki i nowe statystyki
+
+- **Wyrównanie logiki zaległości**: `/finanse` i `/pacjenci` pokazywały inne kwoty zaległości. Teraz obydwa widoki używają tej samej definicji "niezapłaconego" — sesja w przeszłości, neanulowana, bez zakończonej płatności.
+- **Nowa statystyka**: "Zrealizowane sesje w tym miesiącu" — widoczne w panelu finansów. Szybki wgląd w produktywność bieżącego miesiąca.
+- **Faktura 0 zł**: System nie generuje już faktur z kwotą zerową — log warning i pominięcie.
+- **Zmiana metody płatności**: Dropdown metody płatności reaguje teraz natychmiastowo (optimistic UI) — koniec z czekaniem na odświeżenie API.
+
+* * *
+
+## 10\. 🌍 Aplikacja w 7 językach
 
 Dodaliśmy obsługę **5 nowych języków**:
-- 🇸🇰 **Słowacki**
-- 🇪🇸 **Kataloński**
-- 🇷🇺 **Rosyjski**
-- 🇺🇦 **Ukraiński**
-- 🇱🇹 **Litewski**
 
-Razem z polskim i angielskim — mamy teraz **7 języków** w aplikacji. Wszystkie formularze, komunikaty, powiadomienia i interfejs są w pełni przetłumaczone.
+🇸🇰 Słowacki · 🇷🇺 Rosyjski · 🇺🇦 Ukraiński · 🇪🇸 Kataloński · 🇱🇹 Litewski
 
-Przeprowadziliśmy też **dużą refaktoryzację systemu i18n** — tłumaczenia teraz żyją wyłącznie w plikach JSON (nie w bazie danych), co sprawia że zmiany językowe wchodzą po ~3 minutach od deployu bez potrzeby restartu serwera.
+Razem z polskim i angielskim — mamy teraz **7 języków**. Wszystkie formularze diagnostyczne (PHQ-9, GAD-7, DASS-21, PCL-5, ATQ-30, DAS-24, Wywiad) są w pełni przetłumaczone. Interfejs, komunikaty, powiadomienia, emaile — wszystko.
 
-### ✅ Jak przetestować?
-
-1. Wejdź w Ustawienia → zmień język na Ukraiński
-2. Sprawdź czy cały interfejs się zmienił
-3. Przełącz na Słowacki → sprawdź formularze i powiadomienia
-4. Wróć na Polski → upewnij się że nic się nie rozjechało
+Przeprowadziliśmy też **migrację systemu tłumaczeń** — pliki JSON zastąpiły bazę danych jako jedyne źródło prawdy. Zmiana tłumaczenia = commit + deploy (~3 minuty), bez migracji i bez restartu serwera.
 
 * * *
 
-## 9\. ⚡ Stabilność — SignalR, auto-logout i inne poprawki
+## 11\. ⚡ Stabilność — SignalR i auto-logout
 
-### SignalR — naprawa połączeń real-time
+### SignalR — koniec z traconymi połączeniami
 
-Naprawiliśmy krytyczny problem z **SignalR** (komunikacja real-time — powiadomienia, statusy sesji). Aplikacja była deployowana na wiele instancji bez sticky sessions, przez co WebSocket trafiał na losowy serwer i tracił połączenie.
-
-Rozwiązanie: przeszliśmy na `skipNegotiation + WebSockets` — czystsze, szybsze i odporne na środowiska bez sticky sessions. Przy okazji naprawiliśmy pętlę reconnect, która powodowała crash Chrome na długich sesjach.
+Aplikacja działa na wielu serwerach bez sticky sessions. Połączenia WebSocket trafiały na losowy serwer i traciły kontekst. Naprawiliśmy to przez `skipNegotiation + WebSockets` — czystsze, szybsze i odporne na takie środowiska. Przy okazji naprawiliśmy pętlę reconnect, która powodowała crash Chrome po kilku godzinach pracy.
 
 ### Auto-logout — 5 minut grace period
 
-Dodaliśmy **5-minutowy bufor** przy zmianie zakładki — wcześniej przełączenie na inną kartę przeglądarki powodowało szybki auto-logout. Teraz masz 5 minut zanim sesja wygaśnie.
-
-### Powiadomienia email dla pacjentów — domyślnie wyłączone
-
-Nowi pacjenci nie dostają teraz emaili z powiadomieniami domyślnie — terapeuta świadomie włącza tę funkcję. Ogranicza to niechciane emaile przy onboardingu.
+Przełączenie zakładki w przeglądarce uruchamiało timer auto-logout. Teraz masz **5 minut** zanim sesja wygaśnie — czas żeby wrócić do aplikacji bez ponownego logowania.
 
 * * *
 
-## 10\. 📋 Checklist QA
+## 12\. 📋 Checklist QA
 
 | Co sprawdzić | OK? |
 |---|---|
-| Badge na liście pacjentów bez email/telefonu | ⬜ |
-| Blokada portalu dla pacjenta bez kontaktu | ⬜ |
-| Wiele dokumentów w profilu pacjenta | ⬜ |
-| Urlopy w kalendarzu — blokada rezerwacji | ⬜ |
-| Sesja 30-minutowa w widoku tygodniowym | ⬜ |
-| Globalne toggles SMS/Email w powiadomieniach | ⬜ |
-| Dzienniczek — widok terapeuty | ⬜ |
-| Blokada edycji wpisu po 24h | ⬜ |
-| Spinner przy ekstrakcji AI transkrypcji | ⬜ |
+| Profil pacjenta: stały termin widoczny w nagłówku | ⬜ |
+| Dashboard: brak kolorowego paska statusu na kartach sesji | ⬜ |
+| Urlop w kalendarzu → blokada dostępności na te dni | ⬜ |
+| Sesja poza godzinami → alert z potwierdzeniem | ⬜ |
+| Sesja 15 i 30 minut — presety w formularzu | ⬜ |
+| Siatka kalendarza dopasowana do godzin pracy | ⬜ |
+| Profil pacjenta: pola "Cel pacjenta" i "Cel terapeuty" | ⬜ |
+| Wykres problemów pacjenta w profilu | ⬜ |
+| Dzienniczek: terapeuta tworzy i czyta wpisy | ⬜ |
+| Pacjent nie edytuje wpisu starszego niż 24h | ⬜ |
+| Wiele dokumentów: RODO + Aneks + Umowa w profilu | ⬜ |
+| Formularz: terapeuta wypełnia za pacjenta | ⬜ |
+| Podgląd szablonu formularza przed przypisaniem | ⬜ |
+| Pacjent bez emaila: badge na liście, blokada portalu | ⬜ |
+| Powiadomienia: globalny toggle SMS wyłącza wszystkie SMS | ⬜ |
+| Typy sesji: AI klasyfikuje typ po wgraniu transkrypcji | ⬜ |
+| Zaległości: filtr pokazuje cały rok, nie tylko 7 dni | ⬜ |
 | Brak błędu 504 przy wywiadzie wstępnym | ⬜ |
-| Zaległości — poprawne 7-dniowe okno | ⬜ |
-| Stały termin — tłumaczenia opcji miesięcznych | ⬜ |
-| Zmiana języka na ukraiński — cały UI przetłumaczony | ⬜ |
-| SignalR — powiadomienia real-time działają | ⬜ |
+| Logika zaległości: /finanse i /pacjenci zgodne kwotowo | ⬜ |
+| Zmiana języka na ukraiński: cały UI przetłumaczony | ⬜ |
 | Auto-logout: 5 minut po zmianie zakładki | ⬜ |
 
 * * *
 
-To był **wyjątkowo bogaty sprint** — dziękujemy całemu zespołowi za zgłoszenia, testy i cierpliwość. Kolejny release już w drodze! 🚀
+To był **wyjątkowo bogaty sprint** 🎉 Dziękujemy całemu zespołowi za zgłoszenia i testy. Kolejny release już w drodze!
 
 _Artykuł przygotowany przez zespół AI Therapy Support_
