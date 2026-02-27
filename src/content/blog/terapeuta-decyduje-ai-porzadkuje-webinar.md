@@ -2,7 +2,7 @@
 title: "Terapeuta decyduje, AI porządkuje — bezpłatny webinar"
 description: "Bezpłatny webinar dla terapeutów CBT. 60 minut praktyki — pokażemy, jak AI może wspierać codzienną pracę kliniczną bez przejmowania odpowiedzialności za decyzje."
 pubDate: 2026-02-27
-heroImage: "/images/blog/terapeuta-decyduje-ai-porzadkuje-webinar.png"
+heroImage: "/images/blog/terapeuta-decyduje-ai-porzadkuje-webinar.svg"
 author: "Therapy Support"
 category: "Wydarzenia"
 tags: ["webinar", "CBT", "AI"]
