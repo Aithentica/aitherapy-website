@@ -101,7 +101,7 @@ Dzięki temu możesz lepiej zadbać o własne zasoby i **unikać wypalenia.**
 
 ### Etyka i bezpieczeństwo danych
 
-Portal porządkuje i pomaga analizować — **nie zastępuje osądu klinicznego.**  
+Portal porządkuje i pomaga analizować - **nie zastępuje osądu klinicznego.**  
 **AI nie decyduje za terapeutę** – proponuje opcje i hipotezy, wskazuje luki; decyzje kliniczne i odpowiedzialność pozostają po stronie terapeuty.  
 **Pełna przejrzystość:** każda sugestia ma wskazanie źródła w notatkach („cytat-dowód”) lub w danych z monitoringu.  
 **Minimalna wystarczalność danych**: tylko to, co potrzebne do pracy klinicznej; ustawienia prywatności pod kontrolą terapeuty.  
