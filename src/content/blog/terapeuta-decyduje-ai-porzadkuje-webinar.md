@@ -21,7 +21,7 @@ A jednocześnie to właśnie wtedy potrzebna jest największa precyzja - w konce
 
 **Decyduje terapeuta, AI porządkuje - jak to wygląda w praktyce CBT**
 
-To zamknięte, interaktywne spotkanie online dla praktyków terapii poznawczo-behawioralnej. Pokażemy, jak aplikacja może wspierać codzienną pracę kliniczną bez przejmowania odpowiedzialności za decyzje.
+To zamknięte, interaktywne spotkanie online dla praktyków terapii poznawczo-behawioralnej. Pokażemy, jak aplikacja wspiera codzienną pracę kliniczną bez przejmowania odpowiedzialności za decyzje.
 
 #### Dla kogo?
 
@@ -30,7 +30,7 @@ Dla osób, które pracują procesowo i świadomie zarządzają kierunkiem terapi
 - psychoterapeutów poznawczo-behawioralnych,
 - superwizorów,
 - właścicieli gabinetów i ośrodków terapeutycznych,
-- terapeutów, którzy chcą odzyskać czas kliniczny bez upraszczania pracy.
+- terapeutów, którzy chcą odzyskać czas bez upraszczania pracy.
 
 #### Dlaczego warto?
 
@@ -73,13 +73,15 @@ W ciągu 60 minut pokażemy konkretną pracę na przykładzie jednego procesu te
 
 - ile czasu można odzyskać między sesjami,
 - gdzie technologia realnie odciąża,
-- gdzie jej rola się kończy.
+- jak bezpiecznie z niej korzystać.
 
 Nie będziemy omawiać funkcji w oderwaniu od praktyki. Skupimy się na jakości decyzji podejmowanych w czasie i na stabilności procesu terapeutycznego.
 
-📅 **Wtorek, 03 marca 2026, 19:00**
-⏱ **Czas trwania: 60 minut**
-💻 **Online**
+📅 Wtorek, 03 marca 2026, 19:00
+
+⏱ Czas trwania: 60 minut
+
+💻 Online
 
 🔗 **[Zapisy: aitherapy.support/webinar2/](https://aitherapy.support/webinar2/)**
 
