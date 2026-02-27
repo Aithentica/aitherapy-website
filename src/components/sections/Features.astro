@@ -17,11 +17,11 @@ import Button from '../ui/Button.astro';
     <!-- 3+3 Symmetric Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {features.map((feature) => (
-        <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow text-center">
-          <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-sage-50 text-sage-600 mb-4">
+        <div class="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow text-center flex flex-col">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-sage-50 text-sage-600 mb-4 mx-auto">
             <Fragment set:html={feature.icon} />
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+          <h3 class="text-xl font-bold text-gray-900 min-h-[3.5rem] flex items-start justify-center">{feature.title}</h3>
           <p class="text-gray-600 leading-relaxed">{feature.description}</p>
         </div>
       ))}
