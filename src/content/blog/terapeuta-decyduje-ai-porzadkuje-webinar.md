@@ -1,6 +1,6 @@
 ---
-title: "Terapeuta decyduje, AI porządkuje — bezpłatny webinar"
-description: "Bezpłatny webinar dla terapeutów CBT. 60 minut praktyki — pokażemy, jak AI może wspierać codzienną pracę kliniczną bez przejmowania odpowiedzialności za decyzje."
+title: "Terapeuta decyduje, AI porządkuje - bezpłatny webinar"
+description: "Bezpłatny webinar dla terapeutów CBT. 60 minut praktyki - pokażemy, jak AI może wspierać codzienną pracę kliniczną bez przejmowania odpowiedzialności za decyzje."
 pubDate: 2026-02-27
 heroImage: "/images/blog/terapeuta-decyduje-ai-porzadkuje-webinar.svg"
 author: "Therapy Support"
@@ -17,15 +17,13 @@ Kilka równoległych procesów. Wiele wątków. Hipotezy robocze, które trzeba 
 
 A jednocześnie to właśnie wtedy potrzebna jest największa precyzja – w konceptualizacji i w decyzjach klinicznych.
 
-## Zapraszamy na bezpłatny webinar:
+#### Zapraszamy na bezpłatny webinar:
 
-### Decyduje terapeuta, AI porządkuje – jak to wygląda w praktyce CBT
+**Decyduje terapeuta, AI porządkuje – jak to wygląda w praktyce CBT**
 
 To zamknięte, interaktywne spotkanie online dla praktyków terapii poznawczo-behawioralnej. Pokażemy, jak aplikacja może wspierać codzienną pracę kliniczną bez przejmowania odpowiedzialności za decyzje.
 
----
-
-## Dla kogo?
+#### Dla kogo?
 
 Dla osób, które pracują procesowo i świadomie zarządzają kierunkiem terapii:
 
@@ -34,9 +32,7 @@ Dla osób, które pracują procesowo i świadomie zarządzają kierunkiem terapi
 - właścicieli gabinetów i ośrodków terapeutycznych,
 - terapeutów, którzy chcą odzyskać czas kliniczny bez upraszczania pracy.
 
----
-
-## Dlaczego warto?
+#### Dlaczego warto?
 
 **Największe obciążenie nie wynika z samej sesji.**
 **Wynika z pracy między sesjami.**
@@ -48,13 +44,11 @@ To wtedy trzeba:
 - zachować ciągłość decyzji klinicznych,
 - przygotować się do kolejnych interwencji i superwizji.
 
----
-
-## AI w terapii: nie „czy", ale „jak"
+#### AI w terapii: nie „czy", ale „jak"
 
 Coraz więcej terapeutów korzysta dziś z narzędzi AI. To już nie jest pytanie o zasadność samej technologii.
 
-Kluczowe staje się inne pytanie: **jak korzystać z niej świadomie, bezpiecznie i w sposób, który wzmacnia — a nie rozmywa — odpowiedzialność kliniczną?**
+Kluczowe staje się inne pytanie: **jak korzystać z niej świadomie, bezpiecznie i w sposób, który wzmacnia - a nie rozmywa - odpowiedzialność kliniczną?**
 
 Porozmawiamy o:
 
@@ -63,11 +57,9 @@ Porozmawiamy o:
 - pracy z AI jako wsparciem refleksji klinicznej, nie jej substytutem,
 - ochronie danych i utrzymaniu kontroli nad procesem.
 
----
+#### Co wydarzy się podczas spotkania?
 
-## Co wydarzy się podczas spotkania?
-
-W ciągu 60 minut pokażemy konkretną pracę na przykładzie jednego procesu terapeutycznego — od sesji do kolejnych decyzji klinicznych.
+W ciągu 60 minut pokażemy konkretną pracę na przykładzie jednego procesu terapeutycznego - od sesji do kolejnych decyzji klinicznych.
 
 **Zobaczysz:**
 
@@ -84,8 +76,6 @@ W ciągu 60 minut pokażemy konkretną pracę na przykładzie jednego procesu te
 - gdzie jej rola się kończy.
 
 Nie będziemy omawiać funkcji w oderwaniu od praktyki. Skupimy się na jakości decyzji podejmowanych w czasie i na stabilności procesu terapeutycznego.
-
----
 
 📅 **Wtorek, 03 marca 2026, 19:00**
 ⏱ **Czas trwania: 60 minut**
