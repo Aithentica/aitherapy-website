@@ -15,11 +15,11 @@ W codziennej pracy terapeutycznej łatwo o przeciążenie.
 
 Kilka równoległych procesów. Wiele wątków. Hipotezy robocze, które trzeba utrzymać w pamięci. Dokumentacja. Przygotowanie do superwizji.
 
-A jednocześnie to właśnie wtedy potrzebna jest największa precyzja – w konceptualizacji i w decyzjach klinicznych.
+A jednocześnie to właśnie wtedy potrzebna jest największa precyzja - w konceptualizacji i w decyzjach klinicznych.
 
 #### Zapraszamy na bezpłatny webinar:
 
-**Decyduje terapeuta, AI porządkuje – jak to wygląda w praktyce CBT**
+**Decyduje terapeuta, AI porządkuje - jak to wygląda w praktyce CBT**
 
 To zamknięte, interaktywne spotkanie online dla praktyków terapii poznawczo-behawioralnej. Pokażemy, jak aplikacja może wspierać codzienną pracę kliniczną bez przejmowania odpowiedzialności za decyzje.
 
