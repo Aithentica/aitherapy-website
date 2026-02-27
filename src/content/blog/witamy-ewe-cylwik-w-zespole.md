@@ -11,15 +11,15 @@ heroImage: "/images/blog/witamy-ewe-w-zespole.png"
 
 Ciepło witamy w zespole **Ewę Cylwik**!
 
-Od lutego 2026 Ewa dba o to, żeby Therapy Support mówiło Waszym językiem — językiem terapeutów, którzy pracują z ludźmi, a nie z technologią.
+Od lutego 2026 Ewa dba o to, żeby Therapy Support mówiło Waszym językiem - językiem terapeutów, którzy pracują z ludźmi, a nie z technologią.
 
 ## Czym zajmuje się Ewa?
 
 Ewa pilnuje, żeby każda wiadomość, instrukcja czy opis funkcji były:
 
-- **Zrozumiałe** — bez zbędnego żargonu technicznego
-- **Pomocne** — pokazują, jak rzeczy działają w codziennej praktyce
-- **Spójne** — niezależnie czy czytacie maila, stronę czy komunikat w aplikacji
+- **Zrozumiałe** - bez zbędnego żargonu technicznego
+- **Pomocne** - pokazują, jak rzeczy działają w codziennej praktyce
+- **Spójne** - niezależnie czy czytacie maila, stronę czy komunikat w aplikacji
 
 Jej zadanie? Sprawić, żeby praca z platformą była intuicyjna. Żebyście wiedzieli, co robić, bez zgadywania.
 
@@ -27,11 +27,11 @@ Jej zadanie? Sprawić, żeby praca z platformą była intuicyjna. Żebyście wie
 
 W najbliższych miesiącach Ewa pracuje nad:
 
-- **Jaśniejszymi komunikatami w aplikacji** — bez domysłów, co dane przyciski robią
-- **Lepszym wdrożeniem** — od rejestracji po pierwszą sesję, krok po kroku
-- **Pomocą, która działa** — odpowiedzi na pytania, zanim je zadacie
+- **Jaśniejszymi komunikatami w aplikacji** - bez domysłów, co dane przyciski robią
+- **Lepszym wdrożeniem** - od rejestracji po pierwszą sesję, krok po kroku
+- **Pomocą, która działa** - odpowiedzi na pytania, zanim je zadacie
 
-Wszystko po to, żebyście mogli skupić się na tym, co ważne — na pracy z pacjentami.
+Wszystko po to, żebyście mogli skupić się na tym, co ważne - na pracy z pacjentami.
 
 ## Dlaczego Ewa?
 
