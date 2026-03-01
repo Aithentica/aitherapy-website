@@ -5,10 +5,10 @@ const IMG = '/images/webinar';
 const sections = [
   { icon: '🤝', title: 'Szybszy start z pacjentem', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_shaking__a0476eb0-1894-4034-8651-4edd1d6563a8_0-300x300.png`, text: 'AI porządkuje dane z konsultacji wstępnych – dane demograficzne, wywiad, historię choroby i leczenia, oraz problemy do terapii. Dzięki temu łatwiej wejść w proces i mieć pełny obraz już od pierwszych spotkań.' },
   { icon: '🎯', title: 'Precyzyjna diagnoza i konceptualizacja', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_analyzin_db4b68db-7bb8-418e-9c6d-a9365cf9a8d6_3-300x300.png`, text: 'Zamiast tonąć w notatkach, dostajesz uporządkowany obraz problemu oraz propozycje konceptualizacji: sytuacja, myśli, emocje, zachowania, reakcje ciała, przekonania kluczowe i warunkowe. To baza do planu interwencji i pracy domowej.' },
-  { icon: '⏰', title: 'Więcej czasu na terapię, mniej na administrację', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_and_pati_683ce20d-e8f1-4039-a83f-4aea7f6a9274_2-300x300.png`, text: 'Kontrakt terapeutyczny, konceptualizacja, plan terapii, notatki z sesji, prace własne pacjentów – wszystko w jednym miejscu, zsynchronizowane w czasie rzeczywistym.' },
-  { icon: '📱', title: 'Aktywne wsparcie pacjenta między sesjami', img: `${IMG}/u3721613634_flat_minimalistic_illustration_patient_at_home_us_7dc093c1-89c5-4f3f-b725-a900e86f971a_1-300x300.png`, text: 'Przypomnienia o zadaniach domowych, monitorowanie nastroju – pacjent uzupełnia dzienniczki, a terapeuta widzi jego aktywność w czasie rzeczywistym.' },
-  { icon: '✅', title: 'Bezpieczne zakończenie procesu', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_and_pati_c9735df8-fd72-48fa-b816-b333f104598a_0-300x300.png`, text: 'AI pomaga utrwalić osiągnięcia pacjenta, przygotować plan zapobiegania nawrotom i domknąć terapię w uporządkowany sposób.' },
-  { icon: '🧘', title: 'Dbanie o dobrostan terapeuty', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_meditati_60d8fa81-8c81-4ac8-8530-89b3954adbd0_3-300x300.png`, text: 'AI pomoże uporządkować dzień pracy i przypomni o przerwach. Gdy czujesz bezradność, system porządkuje materiał i proponuje kolejny krok lub materiał do superwizji.' },
+  { icon: '⏰', title: 'Więcej czasu na terapię, mniej na administrację', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_and_pati_683ce20d-e8f1-4039-a83f-4aea7f6a9274_2-300x300.png`, text: 'Kontrakt terapeutyczny, konceptualizacja, plan terapii, notatki z sesji, prace własne pacjentów – wszystko w jednym miejscu, zsynchronizowane w czasie rzeczywistym. Notatki układają się w spójny wzór sesji: agenda, omówienie doświadczeń, praca nad celem, plan na kolejny tydzień, podsumowanie, dzięki czemu terapeuta może skupić się na pracy klinicznej.' },
+  { icon: '📱', title: 'Aktywne wsparcie pacjenta między sesjami', img: `${IMG}/u3721613634_flat_minimalistic_illustration_patient_at_home_us_7dc093c1-89c5-4f3f-b725-a900e86f971a_1-300x300.png`, text: 'Przypomnienia o zadaniach domowych, monitorowanie nastroju – pacjent uzupełnia dzienniczki, a terapeuta widzi jego aktywność. Przypomnienia, krótkie ćwiczenia i eksperymenty behawioralne pomagają pacjentowi utrwalać umiejętności – a ty widzisz jego aktywność w czasie rzeczywistym – dzięki czemu kolejna sesja zaczyna się od konkretów.' },
+  { icon: '✅', title: 'Bezpieczne zakończenie procesu', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_and_pati_c9735df8-fd72-48fa-b816-b333f104598a_0-300x300.png`, text: 'AI pomaga utrwalić osiągnięcia pacjenta, przygotować z tobą plan zapobiegania nawrotom i domknąć terapię w uporządkowany sposób. Opcjonalnie system wysyła przypomnienia o wizytach kontrolnych po zakończeniu terapii.' },
+  { icon: '🧘', title: 'Dbanie o dobrostan terapeuty - mniej zmęczenia poczucia "utknięcia" i bezradności', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_meditati_60d8fa81-8c81-4ac8-8530-89b3954adbd0_3-300x300.png`, text: "AI pomoże również Tobie uporządkować dzień pracy i przypomni o przerwach. Gdy czujesz bezradność lub 'utknięcie', system porządkuje materiał w układzie: sytuacje-myśli-emocje-zachowania-reakcje ciała – z odnośnikami do notatek. Widzisz luki i dostajesz propozycję kolejnego małego kroku lub gotowy materiał do SUPERWIZJI zewnętrznej. Dzięki temu możesz lepiej zadbać o własne zasoby i unikać wypalenia." },
 ];
 
 const programItems = [
@@ -58,6 +58,59 @@ const programItems = [
     <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-700 to-transparent"></div>
   </section>
 
+  <!-- Joanna Głowacka -->
+  <section class="bg-brand-700 py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-8 bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 md:p-12">
+        <img src="/images/webinar/joanna-glowacka.jpeg" alt="Joanna Głowacka" class="w-40 h-40 rounded-full object-cover shadow-xl shadow-black/30 flex-shrink-0" />
+        <div>
+          <h3 class="font-display text-2xl font-bold text-white mb-3">Joanna Głowacka</h3>
+          <p class="text-white/70 text-lg leading-relaxed">
+            Psycholog Psychoterapeuta CBT, DBT i Terapii Schematów z ponad 10 letnim doświadczeniem. Współtwórczyni aplikacji AI therapysupport™.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formularz rejestracji — górny -->
+  <section id="rejestracja" class="bg-brand-600 py-24">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="inline-block mb-4 px-4 py-2 rounded-full bg-accent-400/10 border border-accent-400/30 text-accent-300 text-sm font-medium uppercase tracking-wide">
+          Bezpłatny Webinar
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Zarezerwuj swoje miejsce!</h2>
+        <p class="text-white/60">PS. Mamy tylko <strong class="text-white">50 miejsc</strong> w pokoju webinarowym. Nie zwlekaj.</p>
+      </div>
+
+      <form action="https://aitherapy.support/wp-admin/admin-ajax.php" method="POST" class="space-y-5 bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 md:p-12">
+        <input type="hidden" name="action" value="elementor_pro_forms_send_form" />
+        <input type="hidden" name="post_id" value="1174" />
+        <input type="hidden" name="form_id" value="2184c07" />
+        <input type="hidden" name="referer_title" value="webinar2 - Therapy Support" />
+        <input type="hidden" name="queried_id" value="1174" />
+        <div>
+          <label for="name-top" class="block text-white/80 text-sm font-medium mb-2">Imię i nazwisko</label>
+          <input type="text" id="name-top" name="form_fields[name]" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition" placeholder="Imię i nazwisko" />
+        </div>
+        <div>
+          <label for="email-top" class="block text-white/80 text-sm font-medium mb-2">Adres e-mail</label>
+          <input type="email" id="email-top" name="form_fields[email]" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition" placeholder="Adres e-mail" />
+        </div>
+        <div>
+          <label for="phone-top" class="block text-white/80 text-sm font-medium mb-2">Numer telefonu</label>
+          <input type="tel" id="phone-top" name="form_fields[phone]" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition" placeholder="Numer telefonu" />
+        </div>
+        <div class="flex items-start gap-3">
+          <input type="checkbox" id="zgoda-top" name="form_fields[zgoda]" required class="mt-1 w-4 h-4 rounded border-white/30 bg-white/10 text-accent-400 focus:ring-accent-400" />
+          <label for="zgoda-top" class="text-white/60 text-sm leading-relaxed">Wyrażam zgodę na przetwarzanie moich danych zgodnie z <a href="/polityka-prywatnosci/" class="text-accent-400 underline hover:text-accent-300">polityką prywatności</a>.</label>
+        </div>
+        <button type="submit" class="w-full py-4 bg-gradient-to-r from-accent-400 to-accent-500 text-brand-700 font-bold text-lg rounded-xl shadow-lg shadow-accent-400/25 hover:shadow-accent-400/40 hover:scale-[1.02] transition-all duration-300 cursor-pointer">Zarezerwuj miejsce →</button>
+      </form>
+    </div>
+  </section>
+
   <!-- Demo & O aplikacji -->
   <section class="bg-brand-700 py-24">
     <div class="max-w-6xl mx-auto px-6">
@@ -78,12 +131,8 @@ const programItems = [
   <section class="bg-brand-600 py-24">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-8">Dla kogo?</h2>
-      <p class="text-lg text-white/80 leading-relaxed">
-        Psychoterapeutów poznawczo-behawioralnych, superwizorów, właścicieli gabinetów i ośrodków terapeutycznych.
-      </p>
-      <p class="text-lg text-white/70 mt-4 leading-relaxed">
-        Osób, które chcą odzyskać czas kliniczny i w etyczny sposób uporządkować pracę bez tracenia jakości.
-      </p>
+      <p class="text-lg text-white/80 leading-relaxed">Psychoterapeutów poznawczo – behawioralnych, superwizorów, właścicieli gabinetów i ośrodków terapeutycznych.</p>
+      <p class="text-lg text-white/70 mt-4 leading-relaxed">Osób, które chcą odzyskać czas kliniczny i w etyczny sposób uporządkować pracę bez tracenia jakości.</p>
     </div>
   </section>
 
@@ -91,17 +140,16 @@ const programItems = [
   <section class="bg-brand-700 py-24">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-8">Dlaczego warto?</h2>
-      <p class="text-lg text-white/80 leading-relaxed max-w-3xl mx-auto">
-        Sztuczna inteligencja w AI therapysupport™ porządkuje dokumentację, pomaga w konceptualizacji przypadku, przypomina pacjentowi o sesjach i pracach własnych, monitoruje postępy, szykuje raporty do superwizji – tak, aby terapeuta mógł skupić się na relacji i procesie zmiany.
-      </p>
+      <p class="text-lg text-white/80 leading-relaxed max-w-3xl mx-auto">Sztuczna inteligencja w AI therapysupport™ porządkuje dokumentację, pomaga w konceptualizacji przypadku, przypomina pacjentowi o sesjach i pracach własnych, monitoruje postępy, szykuje raporty do superwizji – tak, aby terapeuta mógł skupić się na relacji i procesie zmiany.</p>
     </div>
   </section>
 
   <!-- Szczegółowy program -->
   <section class="bg-brand-600 py-24">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4 text-center">Szczegółowy program</h2>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4 text-center">Decyduje terapeuta, AI porządkuje – <span class="text-accent-400">jak to wygląda w praktyce CBT</span></h2>
       <p class="text-white/70 text-center mb-12 text-lg">To zamknięte, interaktywne spotkanie online dla praktyków CBT, podczas którego pokażemy, jak AI może realnie wspierać codzienną pracę terapeuty.</p>
+      <p class="text-white/60 text-center mb-8">Podczas spotkania porozmawiamy o tym:</p>
 
       <div class="space-y-6">
         {programItems.map((item, i) => (
@@ -112,26 +160,23 @@ const programItems = [
         ))}
       </div>
 
-      <p class="text-white/60 mt-8 text-center">
-        To nie będzie rozmowa o automatyzowaniu terapii, ale o tym, jak chronić precyzję myślenia klinicznego mimo rosnącej złożoności pracy.
-      </p>
+      <div class="mt-8 space-y-4 text-white/60 text-center">
+        <p>To nie będzie rozmowa o automatyzowaniu terapii, ale o tym, jak chronić precyzję myślenia klinicznego mimo rosnącej złożoności pracy.</p>
+        <p>Pokażemy konkretne przykłady z pracy z notatkami, konceptualizacją i przygotowaniem do superwizji – w oparciu o realną praktykę.</p>
+      </div>
     </div>
   </section>
 
   <!-- Jak AI wspiera terapeutę -->
   <section class="bg-brand-700 py-24">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-16 text-center">
-        Jak <span class="text-accent-400">AI therapysupport™</span> wspiera terapeutę?
-      </h2>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-16 text-center">Jak <span class="text-accent-400">AI therapysupport™</span> wspiera terapeutę w&nbsp;codziennej pracy?</h2>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {sections.map((s) => (
           <div class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-accent-400/30 hover:bg-white/[0.07] transition-all duration-300">
             <img src={s.img} alt={s.title} class="w-20 h-20 rounded-xl mb-6 object-cover" />
-            <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
-              <span class="text-2xl">{s.icon}</span> {s.title}
-            </h3>
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2"><span class="text-2xl">{s.icon}</span> {s.title}</h3>
             <p class="text-white/70 leading-relaxed text-sm">{s.text}</p>
           </div>
         ))}
@@ -164,34 +209,38 @@ const programItems = [
     </div>
   </section>
 
-  <!-- Formularz rejestracji -->
-  <section id="rejestracja" class="bg-brand-700 py-24">
+  <!-- Formularz rejestracji — dolny CTA -->
+  <section class="bg-brand-700 py-24">
     <div class="max-w-2xl mx-auto px-6">
       <div class="text-center mb-12">
-        <div class="inline-block mb-4 px-4 py-2 rounded-full bg-accent-400/10 border border-accent-400/30 text-accent-300 text-sm font-medium uppercase tracking-wide">
-          Bezpłatny Webinar
-        </div>
+        <div class="inline-block mb-4 px-4 py-2 rounded-full bg-accent-400/10 border border-accent-400/30 text-accent-300 text-sm font-medium uppercase tracking-wide">Bezpłatny Webinar</div>
         <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Zarezerwuj swoje miejsce!</h2>
         <p class="text-white/60">Wtorek, 03 marca 2026, 19:00</p>
       </div>
 
-      <form action="#" method="POST" class="space-y-6 bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 md:p-12">
+      <form action="https://aitherapy.support/wp-admin/admin-ajax.php" method="POST" class="space-y-5 bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 md:p-12">
+        <input type="hidden" name="action" value="elementor_pro_forms_send_form" />
+        <input type="hidden" name="post_id" value="1174" />
+        <input type="hidden" name="form_id" value="312e0e8" />
+        <input type="hidden" name="referer_title" value="webinar2 - Therapy Support" />
+        <input type="hidden" name="queried_id" value="1174" />
         <div>
-          <label for="name" class="block text-white/80 text-sm font-medium mb-2">Imię</label>
-          <input type="text" id="name" name="name" required
-            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition"
-            placeholder="Twoje imię" />
+          <label for="name-btm" class="block text-white/80 text-sm font-medium mb-2">Imię i nazwisko</label>
+          <input type="text" id="name-btm" name="form_fields[name]" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition" placeholder="Imię i nazwisko" />
         </div>
         <div>
-          <label for="email" class="block text-white/80 text-sm font-medium mb-2">Email</label>
-          <input type="email" id="email" name="email" required
-            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition"
-            placeholder="twoj@email.pl" />
+          <label for="email-btm" class="block text-white/80 text-sm font-medium mb-2">Adres e-mail</label>
+          <input type="email" id="email-btm" name="form_fields[email]" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition" placeholder="Adres e-mail" />
         </div>
-        <button type="submit"
-          class="w-full py-4 bg-gradient-to-r from-accent-400 to-accent-500 text-brand-700 font-bold text-lg rounded-xl shadow-lg shadow-accent-400/25 hover:shadow-accent-400/40 hover:scale-[1.02] transition-all duration-300 cursor-pointer">
-          Zarezerwuj miejsce →
-        </button>
+        <div>
+          <label for="phone-btm" class="block text-white/80 text-sm font-medium mb-2">Numer telefonu</label>
+          <input type="tel" id="phone-btm" name="form_fields[phone]" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition" placeholder="Numer telefonu" />
+        </div>
+        <div class="flex items-start gap-3">
+          <input type="checkbox" id="zgoda-btm" name="form_fields[zgoda]" required class="mt-1 w-4 h-4 rounded border-white/30 bg-white/10 text-accent-400 focus:ring-accent-400" />
+          <label for="zgoda-btm" class="text-white/60 text-sm leading-relaxed">Wyrażam zgodę na przetwarzanie moich danych zgodnie z <a href="/polityka-prywatnosci/" class="text-accent-400 underline hover:text-accent-300">polityką prywatności</a>.</label>
+        </div>
+        <button type="submit" class="w-full py-4 bg-gradient-to-r from-accent-400 to-accent-500 text-brand-700 font-bold text-lg rounded-xl shadow-lg shadow-accent-400/25 hover:shadow-accent-400/40 hover:scale-[1.02] transition-all duration-300 cursor-pointer">Zarezerwuj miejsce →</button>
         <p class="text-white/40 text-xs text-center">Mamy tylko 50 miejsc. Nie zwlekaj.</p>
       </form>
     </div>
@@ -201,14 +250,7 @@ const programItems = [
   <section class="bg-brand-700 py-12">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <img src="/images/webinar/FEPW_RP_UE_RGB-1-1024x146.png" alt="Fundusze Europejskie" class="mx-auto mb-6 max-w-md w-full opacity-80" />
-      <p class="text-white/40 text-xs leading-relaxed max-w-3xl mx-auto">
-        Projekt „Platforma Startowa Unicorn Hub – Edycja II" współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Polski Wschodniej 2021-2027, Priorytet FEPW.01 Przedsiębiorczość i Innowacje, Działanie FEPW.01.01 Platformy startowe dla nowych pomysłów, Komponent I Inkubacja – rozwój nowego pomysłu biznesowego.
-      </p>
-      <div class="mt-8 flex items-center justify-center gap-4 text-white/30 text-sm">
-        <a href="https://aitherapy.support" class="hover:text-accent-400 transition">aitherapy.support</a>
-        <span>•</span>
-        <span>Wszystkie prawa zastrzeżone aitherapysupport™</span>
-      </div>
+      <p class="text-white/40 text-xs leading-relaxed max-w-3xl mx-auto">Projekt „Platforma Startowa Unicorn Hub – Edycja II" współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Polski Wschodniej 2021-2027, Priorytet FEPW.01 Przedsiębiorczość i Innowacje, Działanie FEPW.01.01 Platformy startowe dla nowych pomysłów, Komponent I Inkubacja – rozwój nowego pomysłu biznesowego.</p>
     </div>
   </section>
 
