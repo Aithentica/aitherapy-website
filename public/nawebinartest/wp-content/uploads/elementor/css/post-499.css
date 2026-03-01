@@ -1,0 +1,164 @@
+.elementor-kit-499{--e-global-color-primary:#134A45;--e-global-color-secondary:#E3DDF8;--e-global-color-text:#181818;--e-global-color-accent:#3BD5AE;--e-global-color-c25ee36:#134A45;--e-global-color-7b89cf3:#E3DDF8;--e-global-color-b88a640:#62ADFF;--e-global-color-de84483:#222F90;--e-global-color-4004824:#3BD5AE;--e-global-color-custom_color_1:#F8FAFC;--e-global-color-custom_color_2:#94a3b8;--e-global-color-custom_color_3:#222F90;--e-global-color-custom_color_4:#62ADFF;--e-global-typography-primary-font-family:"Plus Jakarta Sans";--e-global-typography-primary-font-weight:800;--e-global-typography-secondary-font-family:"Inter";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Inter";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Inter";--e-global-typography-accent-font-weight:500;--e-global-typography-custom_typography_1-font-family:"Plus Jakarta Sans";--e-global-typography-custom_typography_1-font-size:72px;--e-global-typography-custom_typography_1-font-weight:800;--e-global-typography-custom_typography_1-line-height:1.1em;--e-global-typography-custom_typography_2-font-family:"Plus Jakarta Sans";--e-global-typography-custom_typography_2-font-size:42px;--e-global-typography-custom_typography_2-font-weight:700;--e-global-typography-custom_typography_2-line-height:1.2em;--e-global-typography-custom_typography_3-font-family:"Plus Jakarta Sans";--e-global-typography-custom_typography_3-font-size:24px;--e-global-typography-custom_typography_3-font-weight:700;--e-global-typography-custom_typography_3-line-height:1.3em;color:#475569;font-family:"Inter", Sans-serif;font-size:16px;font-weight:400;line-height:1.5em;}.elementor-kit-499 p{margin-block-end:0px;}.elementor-kit-499 a{color:#181818;}.elementor-kit-499 h1{color:#181818;font-family:"Plus Jakarta Sans", Sans-serif;font-size:56px;font-weight:600;line-height:1.2em;}.elementor-kit-499 h2{color:#181818;font-family:"Plus Jakarta Sans", Sans-serif;font-size:38px;font-weight:600;line-height:1.3em;letter-spacing:-0.02em;}.elementor-kit-499 h3{color:#181818;font-family:"Plus Jakarta Sans", Sans-serif;font-weight:500;letter-spacing:-0.02em;}.elementor-kit-499 button,.elementor-kit-499 input[type="button"],.elementor-kit-499 input[type="submit"],.elementor-kit-499 .elementor-button{font-size:16px;font-weight:600;line-height:25px;color:var( --e-global-color-primary );background-color:var( --e-global-color-accent );border-radius:50px 50px 50px 50px;padding:10px 24px 10px 24px;}.elementor-kit-499 button:hover,.elementor-kit-499 button:focus,.elementor-kit-499 input[type="button"]:hover,.elementor-kit-499 input[type="button"]:focus,.elementor-kit-499 input[type="submit"]:hover,.elementor-kit-499 input[type="submit"]:focus,.elementor-kit-499 .elementor-button:hover,.elementor-kit-499 .elementor-button:focus{background-color:#FFFFFF;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1240px;}.e-con{--container-max-width:1240px;}.elementor-widget:not(:last-child){--kit-widget-spacing:20px;}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}{}h1.entry-title{display:var(--page-title-display);}.elementor-kit-499 e-page-transition{background-color:#FFBC7D;}.site-header .site-branding{flex-direction:column;align-items:stretch;}.site-header{padding-inline-end:0px;padding-inline-start:0px;}.site-footer .site-branding{flex-direction:column;align-items:stretch;}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}/* Start custom CSS *//* 
+   ELEMENTOR HELPER CSS
+   Paste this into: Elementor > Site Settings > Custom CSS
+   Or: Appearance > Customize > Additional CSS
+*/
+
+:root {
+    /* Core Variables needed for effects */
+    --primary-helper: #134A45;
+    --accent-helper: #3BD5AE;
+    --secondary-helper: #E3DDF8;
+    --surface-200-helper: #F8FAFC;
+    --text-body-helper: #475569;
+}
+
+/* =========================================
+   1. Global Noise Texture
+   Adds the premium texture overlay
+   (Disabled in Editor to prevent UI issues)
+   ========================================= */
+body:not(.elementor-editor-active)::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+}
+
+/* =========================================
+   2. Animations
+   Add class 'fade-up' to any widget (Advanced > CSS Classes)
+   ========================================= */
+.fade-up {
+    animation: fadeUpAnim 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px);
+}
+
+@keyframes fadeUpAnim {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+
+/* =========================================
+   3. 3D Dashboard Mockup
+   Add class 'dashboard-card' to the Container holding the image
+   ========================================= */
+.dashboard-card {
+    perspective: 2000px;
+    transform-style: preserve-3d;
+}
+
+/* Apply to the inner image or container */
+.dashboard-card > .e-con, 
+.dashboard-card .elementor-widget-image {
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 
+        0 0 0 1px rgba(0,0,0,0.03), 
+        0 30px 80px -20px rgba(19, 74, 69, 0.15),
+        0 0 0 6px rgba(255,255,255,0.4);
+    transform: rotateX(2deg);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.dashboard-card:hover > .e-con, 
+.dashboard-card:hover .elementor-widget-image {
+    transform: rotateX(0deg) translateY(-10px) scale(1.01);
+    box-shadow: 
+        0 0 0 1px rgba(0,0,0,0.03), 
+        0 50px 120px -20px rgba(19, 74, 69, 0.25),
+        0 0 0 6px rgba(255,255,255,0.4);
+}
+
+/* =========================================
+   4. Glassmorphism Badge
+   Add class 'badge-premium' to a Container or Text Widget
+   ========================================= */
+.badge-premium {
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    padding: 6px 16px; /* Adjust padding if needed */
+    display: inline-block;
+}
+
+/* =========================================
+   5. Bento Grid Cards
+   Add class 'bento-card' to the internal Containers of the Grid
+   ========================================= */
+.bento-card {
+    background: var(--surface-200-helper);
+    border-radius: 24px;
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+    border-color: rgba(58, 213, 174, 0.3); /* Accent color transparent */
+    background: #ffffff;
+}
+
+/* Icon rotation inside Bento Card */
+.bento-card:hover .elementor-icon,
+.bento-card:hover .bento-icon-target {
+    transform: scale(1.1) rotate(3deg);
+    background: var(--primary-helper);
+    color: white !important; /* Force white icon */
+    transition: all 0.3s ease;
+}
+
+/* Optional: Icon container styling if using Icon Box widget */
+.bento-card .elementor-icon-box-icon {
+    width: 56px; height: 56px;
+    background: white;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+}
+.bento-card .elementor-icon-box-icon .elementor-icon {
+    font-size: 24px;
+    color: var(--primary-helper);
+    transition: all 0.3s ease;
+}
+
+/* =========================================
+   6. Creator/Team Cards (Dark Mode)
+   Add class 'creator-card' to Container
+   ========================================= */
+.creator-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border-radius: 24px;
+}
+
+.creator-card:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+
+p:last-child {
+    margin-bottom: 0
+}/* End custom CSS */
