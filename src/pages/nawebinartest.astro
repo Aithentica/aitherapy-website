@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const IMG = '/images/webinar';
+const sections = [
+  { icon: '🤝', title: 'Szybszy start z pacjentem', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_shaking__a0476eb0-1894-4034-8651-4edd1d6563a8_0-300x300.png`, text: 'AI porządkuje dane z konsultacji wstępnych – dane demograficzne, wywiad, historię choroby i leczenia, oraz problemy do terapii. Dzięki temu łatwiej wejść w proces i mieć pełny obraz już od pierwszych spotkań.' },
+  { icon: '🎯', title: 'Precyzyjna diagnoza i konceptualizacja', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_analyzin_db4b68db-7bb8-418e-9c6d-a9365cf9a8d6_3-300x300.png`, text: 'Zamiast tonąć w notatkach, dostajesz uporządkowany obraz problemu oraz propozycje konceptualizacji: sytuacja, myśli, emocje, zachowania, reakcje ciała, przekonania kluczowe i warunkowe. To baza do planu interwencji i pracy domowej.' },
+  { icon: '⏰', title: 'Więcej czasu na terapię, mniej na administrację', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_and_pati_683ce20d-e8f1-4039-a83f-4aea7f6a9274_2-300x300.png`, text: 'Kontrakt terapeutyczny, konceptualizacja, plan terapii, notatki z sesji, prace własne pacjentów – wszystko w jednym miejscu, zsynchronizowane w czasie rzeczywistym.' },
+  { icon: '📱', title: 'Aktywne wsparcie pacjenta między sesjami', img: `${IMG}/u3721613634_flat_minimalistic_illustration_patient_at_home_us_7dc093c1-89c5-4f3f-b725-a900e86f971a_1-300x300.png`, text: 'Przypomnienia o zadaniach domowych, monitorowanie nastroju – pacjent uzupełnia dzienniczki, a terapeuta widzi jego aktywność w czasie rzeczywistym.' },
+  { icon: '✅', title: 'Bezpieczne zakończenie procesu', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_and_pati_c9735df8-fd72-48fa-b816-b333f104598a_0-300x300.png`, text: 'AI pomaga utrwalić osiągnięcia pacjenta, przygotować plan zapobiegania nawrotom i domknąć terapię w uporządkowany sposób.' },
+  { icon: '🧘', title: 'Dbanie o dobrostan terapeuty', img: `${IMG}/u3721613634_flat_minimalistic_illustration_therapist_meditati_60d8fa81-8c81-4ac8-8530-89b3954adbd0_3-300x300.png`, text: 'AI pomoże uporządkować dzień pracy i przypomni o przerwach. Gdy czujesz bezradność, system porządkuje materiał i proponuje kolejny krok lub materiał do superwizji.' },
+];
+
+const programItems = [
+  'Gdzie w praktyce tracimy klarowność decyzji, gdy materiału z sesji jest za dużo',
+  'Jak AI pomaga utrzymywać w centrum procesu kluczowe hipotezy i cele terapii',
+  'Jak odzyskać czas, energię i przestrzeń poznawczą – nawet do 20 godzin miesięcznie mniej na „niewidzialną pracę"',
+  'Jak pracować z AI jako wsparciem analitycznym, nie oddając odpowiedzialności klinicznej',
+];
+---
+
+<BaseLayout title="Bezpłatny Webinar – AI w praktyce CBT" description="Decyduje terapeuta, AI porządkuje – jak to wygląda w praktyce CBT. Bezpłatny webinar dla terapeutów CBT.">
+
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-700 via-brand-500 to-navy-800"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,213,174,0.15),transparent_50%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(98,173,255,0.1),transparent_50%)]"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
+      <div class="inline-block mb-6 px-4 py-2 rounded-full bg-accent-400/10 border border-accent-400/30 text-accent-300 text-sm font-medium tracking-wide uppercase">
+        Bezpłatny Webinar
+      </div>
+
+      <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
+        Decyduje terapeuta, AI porządkuje –
+        <span class="bg-gradient-to-r from-accent-400 to-sky-400 bg-clip-text text-transparent">jak to wygląda w praktyce CBT</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-6">
+        W pracy terapeutycznej łatwo o przeciążenie: wiele wątków, odpowiedzialność za kierunek procesu, dokumentacja, superwizja. A jednocześnie to właśnie wtedy potrzebna jest największa precyzja – w konceptualizacji i decyzjach klinicznych.
+      </p>
+
+      <div class="flex flex-col items-center gap-4 mb-10">
+        <div class="flex items-center gap-3 text-accent-300 text-xl font-semibold">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Wtorek, 03 marca 2026, 19:00
+        </div>
+        <p class="text-white/50 text-sm">PS. Mamy tylko <strong class="text-white">50 miejsc</strong> w pokoju webinarowym. Nie zwlekaj.</p>
+      </div>
+
+      <a href="#rejestracja" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent-400 to-accent-500 text-brand-700 font-bold text-lg rounded-xl shadow-lg shadow-accent-400/25 hover:shadow-accent-400/40 hover:scale-105 transition-all duration-300">
+        Zarezerwuj swoje miejsce!
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-700 to-transparent"></div>
+  </section>
+
+  <!-- Demo & O aplikacji -->
+  <section class="bg-brand-700 py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-accent-400 font-semibold text-sm uppercase tracking-wider">Demo aplikacji</span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-3 mb-6">O aplikacji</h2>
+          <img src="/images/webinar/1759514321711-300x300.jpeg" alt="AI Therapy Support demo" class="rounded-2xl shadow-2xl shadow-black/30 w-full" />
+        </div>
+        <div>
+          <img src="/images/webinar/u3721613634_flat_minimalistic_illustration_therapist_sitting__515504dd-3808-4794-8aee-967ed1ed20f3_0-683x1024.png" alt="Terapeuta" class="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-md mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dla kogo -->
+  <section class="bg-brand-600 py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-8">Dla kogo?</h2>
+      <p class="text-lg text-white/80 leading-relaxed">
+        Psychoterapeutów poznawczo-behawioralnych, superwizorów, właścicieli gabinetów i ośrodków terapeutycznych.
+      </p>
+      <p class="text-lg text-white/70 mt-4 leading-relaxed">
+        Osób, które chcą odzyskać czas kliniczny i w etyczny sposób uporządkować pracę bez tracenia jakości.
+      </p>
+    </div>
+  </section>
+
+  <!-- Dlaczego warto -->
+  <section class="bg-brand-700 py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-8">Dlaczego warto?</h2>
+      <p class="text-lg text-white/80 leading-relaxed max-w-3xl mx-auto">
+        Sztuczna inteligencja w AI therapysupport™ porządkuje dokumentację, pomaga w konceptualizacji przypadku, przypomina pacjentowi o sesjach i pracach własnych, monitoruje postępy, szykuje raporty do superwizji – tak, aby terapeuta mógł skupić się na relacji i procesie zmiany.
+      </p>
+    </div>
+  </section>
+
+  <!-- Szczegółowy program -->
+  <section class="bg-brand-600 py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4 text-center">Szczegółowy program</h2>
+      <p class="text-white/70 text-center mb-12 text-lg">To zamknięte, interaktywne spotkanie online dla praktyków CBT, podczas którego pokażemy, jak AI może realnie wspierać codzienną pracę terapeuty.</p>
+
+      <div class="space-y-6">
+        {programItems.map((item, i) => (
+          <div class="flex gap-4 items-start bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-400/20 text-accent-300 flex items-center justify-center font-bold text-sm">{i + 1}</span>
+            <p class="text-white/80 text-lg">{item}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-white/60 mt-8 text-center">
+        To nie będzie rozmowa o automatyzowaniu terapii, ale o tym, jak chronić precyzję myślenia klinicznego mimo rosnącej złożoności pracy.
+      </p>
+    </div>
+  </section>
+
+  <!-- Jak AI wspiera terapeutę -->
+  <section class="bg-brand-700 py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-16 text-center">
+        Jak <span class="text-accent-400">AI therapysupport™</span> wspiera terapeutę?
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sections.map((s) => (
+          <div class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-accent-400/30 hover:bg-white/[0.07] transition-all duration-300">
+            <img src={s.img} alt={s.title} class="w-20 h-20 rounded-xl mb-6 object-cover" />
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <span class="text-2xl">{s.icon}</span> {s.title}
+            </h3>
+            <p class="text-white/70 leading-relaxed text-sm">{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Etyka i bezpieczeństwo -->
+  <section class="bg-brand-600 py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-8 text-center">Etyka i bezpieczeństwo danych</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="flex gap-4 bg-white/5 border border-white/10 rounded-xl p-6">
+          <span class="text-2xl flex-shrink-0">🛡️</span>
+          <p class="text-white/80">Portal porządkuje i pomaga analizować — nie zastępuje osądu klinicznego.</p>
+        </div>
+        <div class="flex gap-4 bg-white/5 border border-white/10 rounded-xl p-6">
+          <span class="text-2xl flex-shrink-0">⚖️</span>
+          <p class="text-white/80">AI nie decyduje za terapeutę – proponuje opcje i hipotezy, wskazuje luki; decyzje kliniczne pozostają po stronie terapeuty.</p>
+        </div>
+        <div class="flex gap-4 bg-white/5 border border-white/10 rounded-xl p-6">
+          <span class="text-2xl flex-shrink-0">🔍</span>
+          <p class="text-white/80">Pełna przejrzystość: każda sugestia ma wskazanie źródła w notatkach („cytat-dowód") lub w danych z monitoringu.</p>
+        </div>
+        <div class="flex gap-4 bg-white/5 border border-white/10 rounded-xl p-6">
+          <span class="text-2xl flex-shrink-0">🔒</span>
+          <p class="text-white/80">Minimalna wystarczalność danych: tylko to, co potrzebne do pracy klinicznej. Zgodność z RODO/AI ACT/EBM/EBP.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formularz rejestracji -->
+  <section id="rejestracja" class="bg-brand-700 py-24">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="inline-block mb-4 px-4 py-2 rounded-full bg-accent-400/10 border border-accent-400/30 text-accent-300 text-sm font-medium uppercase tracking-wide">
+          Bezpłatny Webinar
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Zarezerwuj swoje miejsce!</h2>
+        <p class="text-white/60">Wtorek, 03 marca 2026, 19:00</p>
+      </div>
+
+      <form action="#" method="POST" class="space-y-6 bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 md:p-12">
+        <div>
+          <label for="name" class="block text-white/80 text-sm font-medium mb-2">Imię</label>
+          <input type="text" id="name" name="name" required
+            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition"
+            placeholder="Twoje imię" />
+        </div>
+        <div>
+          <label for="email" class="block text-white/80 text-sm font-medium mb-2">Email</label>
+          <input type="email" id="email" name="email" required
+            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition"
+            placeholder="twoj@email.pl" />
+        </div>
+        <button type="submit"
+          class="w-full py-4 bg-gradient-to-r from-accent-400 to-accent-500 text-brand-700 font-bold text-lg rounded-xl shadow-lg shadow-accent-400/25 hover:shadow-accent-400/40 hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+          Zarezerwuj miejsce →
+        </button>
+        <p class="text-white/40 text-xs text-center">Mamy tylko 50 miejsc. Nie zwlekaj.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- EU funding -->
+  <section class="bg-brand-700 py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <img src="/images/webinar/FEPW_RP_UE_RGB-1-1024x146.png" alt="Fundusze Europejskie" class="mx-auto mb-6 max-w-md w-full opacity-80" />
+      <p class="text-white/40 text-xs leading-relaxed max-w-3xl mx-auto">
+        Projekt „Platforma Startowa Unicorn Hub – Edycja II" współfinansowany ze środków Unii Europejskiej w ramach programu Fundusze Europejskie dla Polski Wschodniej 2021-2027, Priorytet FEPW.01 Przedsiębiorczość i Innowacje, Działanie FEPW.01.01 Platformy startowe dla nowych pomysłów, Komponent I Inkubacja – rozwój nowego pomysłu biznesowego.
+      </p>
+      <div class="mt-8 flex items-center justify-center gap-4 text-white/30 text-sm">
+        <a href="https://aitherapy.support" class="hover:text-accent-400 transition">aitherapy.support</a>
+        <span>•</span>
+        <span>Wszystkie prawa zastrzeżone aitherapysupport™</span>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
