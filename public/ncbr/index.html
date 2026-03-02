@@ -357,9 +357,14 @@ section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
   font-size: 1rem;
 }
 .inn-item-titles { flex: 1; }
-.inn-item-title { font-size: 0.83rem; font-weight: 700; margin-bottom: 0.2rem; line-height: 1.3; }
+.inn-item-title { font-size: 0.83rem; font-weight: 700; line-height: 1.3; }
+.inn-title-row { margin-bottom: 0.2rem; }
 .inn-item-desc { font-size: 0.73rem; color: var(--gray); line-height: 1.5; }
-.inn-item .inn-tag { margin-top: 0.5rem; }
+.inn-title-row { display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap; }
+.inn-item .inn-tag { font-size: 0.58rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 3px; border: 1px solid; flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.05em; }
+.inn-tag-aithentica { color: var(--teal); background: rgba(0,188,212,0.1); border-color: rgba(0,188,212,0.3); }
+.inn-tag-ipan { color: var(--green); background: rgba(0,230,118,0.1); border-color: rgba(0,230,118,0.3); }
+.inn-tag-combined { color: var(--teal); background: rgba(0,188,212,0.1); border-color: rgba(0,188,212,0.3); }
 .inn-detail { flex: 1; min-width: 0; }
 .inn-panel { display: none; }
 .inn-panel.active { display: block; animation: fadeIn 0.2s ease; }
@@ -1020,6 +1025,9 @@ nav {
 .inn-item-icon { background: rgba(59,213,174,0.08); border-color: rgba(59,213,174,0.2); }
 .inn-item-title { color: #181818; }
 .inn-item-desc { color: #475569; }
+.inn-tag-aithentica { color: #0097a7; background: rgba(0,188,212,0.08); border-color: rgba(0,188,212,0.25); }
+.inn-tag-ipan { color: #059669; background: rgba(5,150,105,0.08); border-color: rgba(5,150,105,0.25); }
+.inn-tag-combined { color: #0097a7; background: rgba(0,188,212,0.08); border-color: rgba(0,188,212,0.25); }
 .inn-panel-icon { background: rgba(59,213,174,0.08); border-color: rgba(59,213,174,0.2); }
 .inn-panel-title { color: #181818; }
 .inn-panel-desc { color: #475569; }
@@ -1694,11 +1702,13 @@ function checkPw(){
           <span class="inn-item-num">1</span>
           <span class="inn-item-icon">🗄️</span>
           <div class="inn-item-titles">
-            <div class="inn-item-title">Korpus Danych Klinicznych CBT-AI</div>
+            <div class="inn-title-row">
+              <div class="inn-item-title">Korpus Danych Klinicznych CBT-AI</div>
+              <span class="inn-tag inn-tag-combined">IP PAN + AIThentica</span>
+            </div>
             <div class="inn-item-desc">Ustrukturyzowana baza <strong>1075+ sesji terapeutycznych</strong> z anotacjami ekspertów CBT.</div>
           </div>
         </div>
-        <span class="inn-tag">IP PAN + AIThentica</span>
       </button>
 
       <button class="inn-item" data-inn="2">
@@ -1706,11 +1716,13 @@ function checkPw(){
           <span class="inn-item-num">2</span>
           <span class="inn-item-icon">⚙️</span>
           <div class="inn-item-titles">
-            <div class="inn-item-title">Platforma Ekstrakcji i Analizy Danych (LLM)</div>
+            <div class="inn-title-row">
+              <div class="inn-item-title">Platforma Ekstrakcji i Analizy Danych (LLM)</div>
+              <span class="inn-tag inn-tag-aithentica">AIThentica</span>
+            </div>
             <div class="inn-item-desc">Pipeline open-source LLM do ekstrakcji konstrukcji CBT. Zgodność z ekspertami: <strong>≥85%</strong>.</div>
           </div>
         </div>
-        <span class="inn-tag">AIThentica</span>
       </button>
 
       <button class="inn-item" data-inn="3">
@@ -1718,11 +1730,13 @@ function checkPw(){
           <span class="inn-item-num">3</span>
           <span class="inn-item-icon">🤖</span>
           <div class="inn-item-titles">
-            <div class="inn-item-title">Moduł Wsparcia Terapeuty (20 agentów AI)</div>
+            <div class="inn-title-row">
+              <div class="inn-item-title">Moduł Wsparcia Terapeuty (20 agentów AI)</div>
+              <span class="inn-tag inn-tag-aithentica">AIThentica</span>
+            </div>
             <div class="inn-item-desc">System 20 agentów AI. Redukcja dokumentacji z <strong>60 do 5 minut</strong>.</div>
           </div>
         </div>
-        <span class="inn-tag">AIThentica</span>
       </button>
 
       <button class="inn-item" data-inn="4">
@@ -1730,11 +1744,13 @@ function checkPw(){
           <span class="inn-item-num">4</span>
           <span class="inn-item-icon">🔬</span>
           <div class="inn-item-titles">
-            <div class="inn-item-title">Zestaw Narzędzi Badawczych CBT-AI</div>
+            <div class="inn-title-row">
+              <div class="inn-item-title">Zestaw Narzędzi Badawczych CBT-AI</div>
+              <span class="inn-tag inn-tag-ipan">IP PAN</span>
+            </div>
             <div class="inn-item-desc">Pakiet walidowanych narzędzi do oceny jakości AI w terapii CBT zgodny z MDR i GCP.</div>
           </div>
         </div>
-        <span class="inn-tag">IP PAN</span>
       </button>
 
       <button class="inn-item" data-inn="5">
@@ -1742,11 +1758,13 @@ function checkPw(){
           <span class="inn-item-num">5</span>
           <span class="inn-item-icon">🏥</span>
           <div class="inn-item-titles">
-            <div class="inn-item-title">Program Certyfikacji MDR Klasy IIa</div>
+            <div class="inn-title-row">
+              <div class="inn-item-title">Program Certyfikacji MDR Klasy IIa</div>
+              <span class="inn-tag inn-tag-aithentica">AIThentica</span>
+            </div>
             <div class="inn-item-desc">Kompletna dokumentacja techniczna i kliniczna do certyfikacji jako wyrób medyczny klasy IIa.</div>
           </div>
         </div>
-        <span class="inn-tag">AIThentica</span>
       </button>
 
     </div>
