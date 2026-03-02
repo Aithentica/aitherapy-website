@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import TrustLogos from '../components/sections/TrustLogos.astro';
+
+const APP_CHECKOUT_URL = 'https://app.aitherapy.support/betatester';
+
+const benefits = [
+  {
+    icon: '🔍',
+    title: 'W ramach testów sprawdzisz',
+    items: [
+      'Jak analiza procesu i syntetyczne podsumowania po sesjach porządkują materiał kliniczny i wspierają planowanie dalszej pracy',
+      'W jaki sposób stała obecność celów terapii wpływa na spójność interwencji i poczucie kierunku procesu',
+      'Jak rozwiązania organizacyjne (przedpłaty, kalendarz, notatki z sesji) ograniczają obciążenie zadaniami organizacyjnymi',
+    ],
+  },
+  {
+    icon: '🎁',
+    title: 'Co oferujemy w ramach beta testów',
+    items: [
+      '5 tygodni bezpłatnego korzystania z aplikacji, bez ograniczeń liczby pacjentów',
+      'Wsparcie naszego zespołu przy przenoszeniu dotychczasowych materiałów i notatek do aplikacji',
+      'Bieżąca pomoc w trakcie testów, tak aby wejście w nowy sposób pracy nie wymagało dodatkowego wysiłku',
+    ],
+  },
+  {
+    icon: '🤝',
+    title: 'Twoja rola',
+    items: [
+      'Dzielenie się obserwacjami z codziennej pracy z aplikacją',
+      'Sygnalizowanie obszarów, które warto ulepszyć lub zmienić',
+      'Wskazywanie rozwiązań, które realnie dobrze sprawdzają się w Twojej praktyce terapeutycznej',
+    ],
+  },
+];
+
+const features = [
+  'Portal pacjentów',
+  'Podstawowy panel terapeuty',
+  'Kalendarz sesji',
+  'Notatki z sesji',
+  'Automatyzacja płatności i rozliczeń',
+  'Powiadomienia e-mail do pacjentów',
+  'SMSy z powiadomieniami',
+  'Niestandardowe typy sesji',
+  'Transkrypcje audio/video',
+  'Zaawansowana analiza AI',
+  'Zaawansowana analityka',
+  'Priorytetowe wsparcie',
+  'Setup aplikacji przez zespół Therapy Support',
+];
+---
+
+<BaseLayout
+  title="Dołącz do Beta Testów — Therapy Support"
+  description="Testuj Therapy Support bezpłatnie przez 5 tygodni. Platforma CBT dla terapeutów: podsumowania sesji AI, konceptualizacje, zarządzanie praktyką. Potem stała zniżka -30%."
+>
+  <Header />
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="relative bg-brand-500 text-white overflow-hidden">
+      <!-- Tło dekoracyjne -->
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent-400/10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-white/5 blur-3xl"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <div class="max-w-3xl mx-auto text-center">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-400/30 bg-accent-400/10 text-accent-400 text-xs font-bold uppercase tracking-widest mb-8">
+            🎁 Beta Testy Therapy Support
+          </span>
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Dołącz do programu<br />
+            <em class="not-italic text-accent-400">Beta Testów</em>
+          </h1>
+          <p class="text-lg sm:text-xl text-white/75 leading-relaxed mb-10 max-w-2xl mx-auto">
+            Testuj Therapy Support bezpłatnie przez 5 tygodni. Po okresie próbnym
+            korzystaj dalej ze stałą zniżką <strong class="text-white font-bold">−30%</strong> —
+            ważną tak długo, jak utrzymujesz subskrypcję.
+          </p>
+
+          <!-- Info boxes -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+            <div class="flex items-center gap-3 bg-white/10 border border-white/20 rounded-2xl px-6 py-4 min-w-[180px]">
+              <span class="text-2xl">🎁</span>
+              <div class="text-left">
+                <div class="text-xs text-white/60 font-medium">Pierwsze 5 tygodni</div>
+                <div class="text-xl font-bold text-white">Bezpłatnie</div>
+              </div>
+            </div>
+            <div class="text-white/40 text-2xl hidden sm:block">→</div>
+            <div class="flex items-center gap-3 bg-accent-400/20 border border-accent-400/30 rounded-2xl px-6 py-4 min-w-[180px]">
+              <span class="text-2xl">✨</span>
+              <div class="text-left">
+                <div class="text-xs text-accent-300 font-medium">Potem na zawsze</div>
+                <div class="text-xl font-bold text-accent-400">Ze zniżką −30%</div>
+              </div>
+            </div>
+          </div>
+
+          <a
+            href={APP_CHECKOUT_URL}
+            class="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-accent-400 text-brand-500 font-bold text-lg hover:bg-accent-300 transition-colors shadow-xl shadow-accent-400/20"
+          >
+            Zgłoś się na beta testy
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <p class="text-white/40 text-sm mt-4">Bez karty kredytowej na start. Anuluj w dowolnym momencie.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRUST LOGOS ===== -->
+    <TrustLogos />
+
+    <!-- ===== BENEFITS ===== -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+          <span class="text-accent-400 text-xs font-bold tracking-[4px] uppercase">Program beta testów</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-3">
+            Co zyskujesz jako beta tester?
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map((b) => (
+            <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <div class="text-3xl mb-3">{b.icon}</div>
+              <h3 class="font-bold text-gray-900 text-lg mb-4">{b.title}</h3>
+              <ul class="space-y-3">
+                {b.items.map((item) => (
+                  <li class="flex gap-3 text-sm text-gray-600 leading-relaxed">
+                    <svg class="w-5 h-5 text-accent-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <!-- Karta 4 - Dlaczego warto (pełna szerokość na lg) -->
+          <div class="bg-brand-500 text-white rounded-2xl p-6 md:col-span-2 lg:col-span-1">
+            <div class="text-3xl mb-3">💡</div>
+            <h3 class="font-bold text-accent-400 text-lg mb-4">Dlaczego warto</h3>
+            <p class="text-sm text-white/80 leading-relaxed mb-4">
+              Beta testy tworzą przestrzeń do rozwoju warsztatu terapeutycznego w realnej praktyce klinicznej.
+              Praca z aplikacją wspiera myślenie procesowe: pomaga utrzymywać cele terapii w polu uwagi,
+              porządkować materiał kliniczny oraz na bieżąco weryfikować robocze założenia.
+            </p>
+            <p class="text-sm text-white/80 leading-relaxed">
+              To też możliwość praktycznego zgłębienia pracy z AI w kontekście terapii i wypracowania
+              własnego, świadomego sposobu korzystania z tego typu narzędzi w praktyce klinicznej.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <span class="text-accent-400 text-xs font-bold tracking-[4px] uppercase">Cennik beta testerów</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-3">
+            Pakiet Professional ze stałą zniżką −30%
+          </h2>
+          <p class="text-gray-500 mt-3">Zniżka obowiązuje dożywotnio — tak długo jak korzystasz z subskrypcji</p>
+        </div>
+
+        <!-- Toggle -->
+        <div class="flex items-center justify-center gap-3 mb-10">
+          <button
+            id="toggle-monthly"
+            class="px-5 py-2 rounded-full text-sm font-semibold transition-colors bg-brand-500 text-white"
+          >
+            Miesięcznie
+          </button>
+          <button
+            id="toggle-yearly"
+            class="px-5 py-2 rounded-full text-sm font-semibold transition-colors bg-white text-gray-500 border border-gray-200 flex items-center gap-2"
+          >
+            Rocznie
+            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-0.5 rounded-full">−17%</span>
+          </button>
+        </div>
+
+        <!-- Karta -->
+        <div class="max-w-lg mx-auto">
+          <div class="relative bg-white rounded-3xl border-2 border-brand-500 p-8 shadow-xl shadow-brand-500/10">
+            <!-- Badge -->
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-brand-500 text-accent-400 text-xs font-bold rounded-full whitespace-nowrap">
+                🎁 Oferta Beta Tester −30%
+              </span>
+            </div>
+
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Professional</h3>
+              <div class="bg-accent-400/10 border border-accent-400/20 rounded-xl p-3 mb-6">
+                <p class="text-brand-500 font-bold text-sm">Pierwsze 5 tygodni bezpłatnie</p>
+                <p class="text-gray-500 text-xs mt-0.5">Potem ze stałą zniżką −30% — tak długo jak korzystasz z subskrypcji</p>
+              </div>
+              <p class="text-xs text-gray-400 uppercase tracking-wider mb-2">Cena po okresie próbnym</p>
+              <div class="flex items-center justify-center gap-3 mb-1">
+                <span class="text-gray-400 line-through text-lg">399 zł</span>
+                <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full">−30%</span>
+              </div>
+              <div id="price-monthly" class="text-5xl font-bold text-gray-900">
+                279 <span class="text-2xl font-normal text-gray-500">zł/mies.</span>
+              </div>
+              <div id="price-yearly" class="text-5xl font-bold text-gray-900 hidden">
+                232 <span class="text-2xl font-normal text-gray-500">zł/mies.</span>
+              </div>
+              <p class="text-xs text-green-600 font-medium mt-1" id="yearly-note" style="display:none">rozliczane rocznie (2784 zł/rok)</p>
+              <p class="text-xs text-accent-400 font-medium mt-2">Zniżka obowiązuje dożywotnio</p>
+            </div>
+
+            <!-- Bez limitu -->
+            <div class="flex items-center justify-center gap-2 bg-gray-50 rounded-xl py-3 mb-6">
+              <svg class="w-5 h-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+              </svg>
+              <span class="text-sm font-semibold text-gray-700">Bez limitu pacjentów</span>
+            </div>
+
+            <!-- Features -->
+            <ul class="grid grid-cols-2 gap-x-4 gap-y-2.5 mb-8">
+              {features.map((f) => (
+                <li class="flex items-start gap-2 text-xs text-gray-600">
+                  <svg class="w-4 h-4 text-accent-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={APP_CHECKOUT_URL}
+              class="block w-full text-center py-4 px-6 bg-brand-500 hover:bg-brand-600 text-white rounded-xl font-bold text-lg transition-colors"
+            >
+              Zgłoś się na beta testy
+            </a>
+            <p class="text-center text-gray-400 text-xs mt-3">5 tygodni bezpłatnie. Potem ze stałą zniżką −30%.</p>
+          </div>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-gray-500">
+          <span class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+            </svg>
+            Zabezpieczone przez Stripe
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+            Anuluj w dowolnym momencie
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+            </svg>
+            Zniżka −30% na zawsze
+          </span>
+        </div>
+
+        <!-- Kontakt -->
+        <p class="text-center text-gray-400 text-sm mt-10">
+          Masz pytania? Napisz do nas:
+          <a href="mailto:kontakt@aitherapy.support" class="text-brand-500 hover:underline font-medium">kontakt@aitherapy.support</a>
+          &nbsp;·&nbsp;
+          Ewa Cylwik, Zespół Therapy Support —
+          <a href="tel:+48662096201" class="text-brand-500 hover:underline font-medium">+48 662 096 201</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script is:inline>
+  const btnMonthly = document.getElementById('toggle-monthly');
+  const btnYearly = document.getElementById('toggle-yearly');
+  const priceMonthly = document.getElementById('price-monthly');
+  const priceYearly = document.getElementById('price-yearly');
+  const yearlyNote = document.getElementById('yearly-note');
+
+  function setMonthly() {
+    btnMonthly.classList.add('bg-brand-500', 'text-white');
+    btnMonthly.classList.remove('bg-white', 'text-gray-500', 'border', 'border-gray-200');
+    btnYearly.classList.remove('bg-brand-500', 'text-white');
+    btnYearly.classList.add('bg-white', 'text-gray-500', 'border', 'border-gray-200');
+    priceMonthly.classList.remove('hidden');
+    priceYearly.classList.add('hidden');
+    yearlyNote.style.display = 'none';
+  }
+
+  function setYearly() {
+    btnYearly.classList.add('bg-brand-500', 'text-white');
+    btnYearly.classList.remove('bg-white', 'text-gray-500', 'border', 'border-gray-200');
+    btnMonthly.classList.remove('bg-brand-500', 'text-white');
+    btnMonthly.classList.add('bg-white', 'text-gray-500', 'border', 'border-gray-200');
+    priceYearly.classList.remove('hidden');
+    priceMonthly.classList.add('hidden');
+    yearlyNote.style.display = 'block';
+  }
+
+  btnMonthly.addEventListener('click', setMonthly);
+  btnYearly.addEventListener('click', setYearly);
+</script>
