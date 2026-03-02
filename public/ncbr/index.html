@@ -1,0 +1,3574 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Therapy Support – Wniosek NCBR FENG.01.01-IP.01-A1G8/25</title>
+<meta name="description" content="Platforma AI Therapy Support – walidacja skuteczności spersonalizowanych interwencji terapeutycznych dostarczanych przez AI. Wniosek NCBR FENG.01.01-IP.01-A1G8/25, Ścieżka SMART.">
+<meta name="keywords" content="AI terapia, CBT, NCBR, FENG, psychoterapia, MDR, wyrób medyczny, LLM, open-source">
+<meta property="og:title" content="AI Therapy Support – Wniosek NCBR FENG.01.01-IP.01-A1G8/25">
+<meta property="og:description" content="Walidacja skuteczności spersonalizowanych interwencji terapeutycznych AI. Konsorcjum AIThentica + IP PAN. Budżet 8,84 mln PLN. Ścieżka SMART 2026–2029.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Therapy Support – NCBR SMART 2026–2029">
+<meta name="twitter:description" content="Wyrób medyczny klasy IIa MDR. 20 agentów AI. Korpus 1075 sesji CBT. Budżet 8,84 mln PLN.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --navy: #0a192f;
+  --navy2: #112240;
+  --navy3: #1d3461;
+  --teal: #00bcd4;
+  --teal2: #00e5ff;
+  --teal3: #80deea;
+  --green: #00e676;
+  --white: #e6f1ff;
+  --white2: #ccd6f6;
+  --gray: #8892b0;
+  --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* NAVIGATION */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(10,25,47,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,188,212,0.2);
+  z-index: 1000;
+  padding: 0 2rem;
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand {
+  font-size: 1rem; font-weight: 700; color: var(--teal);
+  letter-spacing: 0.05em;
+}
+.nav-links {
+  display: flex; gap: 1.5rem; list-style: none;
+}
+.nav-links a {
+  color: var(--gray); text-decoration: none; font-size: 0.8rem;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--teal); }
+
+/* HERO */
+#hero {
+  position: relative; height: 100vh; min-height: 600px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 60% 40%, #0d2b4e 0%, var(--navy) 70%);
+}
+
+#hero-canvas {
+  position: absolute; inset: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(0,188,212,0.15);
+  border: 1px solid rgba(0,188,212,0.4);
+  border-radius: 2rem;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.75rem;
+  color: var(--teal);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, var(--teal3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--white2);
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+}
+
+.hero-number {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--teal);
+  opacity: 0.8;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+.hero-logos {
+  display: flex; gap: 2rem; align-items: center; justify-content: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.logo-badge {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  color: var(--white2);
+  text-align: center;
+  line-height: 1.4;
+}
+.logo-badge strong { display: block; font-size: 0.85rem; color: white; }
+
+.hero-cta {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--teal), #0097a7);
+  color: white; border: none; border-radius: 6px;
+  padding: 0.75rem 2rem; font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+  display: inline-block;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,188,212,0.4); }
+.btn-outline {
+  background: transparent;
+  color: var(--teal); border: 1px solid var(--teal);
+  border-radius: 6px; padding: 0.75rem 2rem;
+  font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: background .2s, transform .2s;
+  display: inline-block;
+}
+.btn-outline:hover { background: rgba(0,188,212,0.1); transform: translateY(-2px); }
+
+.scroll-indicator {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.4rem; color: var(--gray); font-size: 0.75rem;
+  animation: bounce 2s infinite;
+}
+.scroll-indicator::after {
+  content: '↓';
+  font-size: 1.2rem; color: var(--teal);
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* SECTIONS */
+section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--teal); margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+.section-desc {
+  color: var(--gray); font-size: 1rem; max-width: 640px;
+  line-height: 1.7; margin-bottom: 2.5rem;
+}
+.divider {
+  border: none; border-top: 1px solid rgba(0,188,212,0.15);
+  margin: 0; width: 100%;
+}
+
+/* PROBLEM CARDS */
+.cards-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: var(--navy2);
+  border: 1px solid rgba(0,188,212,0.15);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: border-color .3s, transform .3s, box-shadow .3s;
+}
+.card:hover {
+  border-color: rgba(0,188,212,0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+.card-icon {
+  width: 52px; height: 52px;
+  background: rgba(0,188,212,0.12);
+  border: 1px solid rgba(0,188,212,0.3);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
+.card p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
+
+/* SOLUTION ARCH */
+.arch-container {
+  background: var(--navy2);
+  border: 1px solid rgba(0,188,212,0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.arch-flow {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: wrap;
+}
+.arch-box {
+  background: var(--navy3);
+  border: 1px solid rgba(0,188,212,0.3);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  min-width: 120px;
+  flex: 1; max-width: 160px;
+}
+.arch-box .arch-icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+.arch-box .arch-label { font-size: 0.75rem; font-weight: 600; color: var(--white2); }
+.arch-box .arch-sub { font-size: 0.65rem; color: var(--gray); margin-top: 0.2rem; }
+.arch-arrow {
+  font-size: 1.5rem; color: var(--teal); padding: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+.features-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.feature-item {
+  display: flex; gap: 0.75rem; align-items: flex-start;
+  padding: 1rem;
+  background: rgba(0,188,212,0.04);
+  border: 1px solid rgba(0,188,212,0.1);
+  border-radius: 8px;
+}
+.feature-check { color: var(--teal); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.feature-text { font-size: 0.88rem; color: var(--white2); line-height: 1.5; }
+.feature-text strong { color: white; }
+
+/* CONSORTIUM */
+.consortium-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.consortium-card {
+  background: var(--navy2);
+  border: 2px solid;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.consortium-card.leader { border-color: var(--teal); }
+.consortium-card.partner { border-color: rgba(0,230,118,0.4); }
+.consortium-tag {
+  position: absolute; top: 1rem; right: 1rem;
+  font-size: 0.65rem; text-transform: uppercase;
+  letter-spacing: 0.1em; font-weight: 700;
+  padding: 0.25rem 0.75rem; border-radius: 4px;
+}
+.consortium-card.leader .consortium-tag { background: rgba(0,188,212,0.2); color: var(--teal); }
+.consortium-card.partner .consortium-tag { background: rgba(0,230,118,0.15); color: var(--green); }
+.consortium-name { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.25rem; }
+.consortium-card.leader .consortium-name { color: var(--teal); }
+.consortium-card.partner .consortium-name { color: var(--green); }
+.consortium-type { font-size: 0.8rem; color: var(--gray); margin-bottom: 1.25rem; }
+.consortium-budget {
+  font-size: 2rem; font-weight: 800; margin-bottom: 0.25rem; color: white;
+}
+.consortium-budget span { font-size: 0.9rem; font-weight: 400; color: var(--gray); }
+.consortium-roles { margin-top: 1.25rem; }
+.role-item {
+  display: flex; gap: 0.5rem; align-items: flex-start;
+  padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.85rem; color: var(--white2);
+}
+.role-dot { color: var(--teal); flex-shrink: 0; margin-top: 2px; }
+
+/* INNOVATIONS - split panel */
+.inn-split {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.inn-list {
+  width: 42%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.inn-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--navy2);
+  border: 1.5px solid rgba(0,188,212,0.2);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.inn-item:hover { border-color: rgba(59,213,174,0.5); transform: translateX(3px); }
+.inn-item.active { border-color: var(--teal); background: rgba(59,213,174,0.07); }
+.inn-item-head { display: flex; align-items: flex-start; gap: 0.75rem; }
+.inn-item-num {
+  font-size: 1.3rem; font-weight: 900; color: rgba(59,213,174,0.3);
+  line-height: 1.2; flex-shrink: 0; min-width: 1.6rem;
+}
+.inn-item-icon {
+  width: 34px; height: 34px; flex-shrink: 0;
+  background: rgba(59,213,174,0.1);
+  border: 1px solid rgba(59,213,174,0.2);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+}
+.inn-item-titles { flex: 1; }
+.inn-item-title { font-size: 0.83rem; font-weight: 700; margin-bottom: 0.2rem; line-height: 1.3; }
+.inn-item-desc { font-size: 0.73rem; color: var(--gray); line-height: 1.5; }
+.inn-item .inn-tag { margin-top: 0.5rem; }
+.inn-detail { flex: 1; min-width: 0; }
+.inn-panel { display: none; }
+.inn-panel.active { display: block; animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: none; } }
+.inn-panel-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.inn-panel-icon {
+  width: 52px; height: 52px; flex-shrink: 0;
+  background: rgba(59,213,174,0.1);
+  border: 1px solid rgba(59,213,174,0.2);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem;
+}
+.inn-panel-num { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); margin-bottom: 0.2rem; }
+.inn-panel-title { font-size: 1.1rem; font-weight: 700; }
+.inn-panel-desc { font-size: 0.84rem; color: var(--gray); line-height: 1.7; margin-bottom: 1.2rem; }
+@media (max-width: 768px) {
+  .inn-split { flex-direction: column; }
+  .inn-list { width: 100%; }
+}
+
+/* GANTT */
+#gantt-section { max-width: 1100px; }
+.gantt-wrapper {
+  overflow-x: auto;
+  background: var(--navy2);
+  border: 1px solid rgba(0,188,212,0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.gantt-header {
+  display: grid;
+  grid-template-columns: 200px repeat(16, 1fr);
+  gap: 2px;
+  margin-bottom: 0.5rem;
+}
+.gantt-quarter {
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--gray);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.3rem 0;
+}
+.gantt-row {
+  display: grid;
+  grid-template-columns: 200px repeat(16, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+  align-items: center;
+}
+.gantt-label {
+  font-size: 0.78rem;
+  color: var(--white2);
+  padding-right: 0.75rem;
+  font-weight: 600;
+}
+.gantt-label .gantt-who {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--gray);
+}
+.gantt-cell {
+  height: 28px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 3px;
+}
+.gantt-bar-aithentica {
+  height: 28px;
+  background: linear-gradient(135deg, var(--teal), #0097a7);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.gantt-bar-ipan {
+  height: 28px;
+  background: linear-gradient(135deg, var(--green), #00c853);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.gantt-bar-aithentica:hover, .gantt-bar-ipan:hover { opacity: 0.8; }
+.gantt-bar-combined {
+  grid-column: span 1;
+  height: 28px;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.gantt-legend {
+  display: flex; gap: 1.5rem; margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.gantt-legend-item {
+  display: flex; gap: 0.5rem; align-items: center;
+  font-size: 0.8rem; color: var(--gray);
+}
+.gantt-legend-dot {
+  width: 12px; height: 12px; border-radius: 3px;
+}
+.tooltip {
+  display: none;
+  position: fixed;
+  background: var(--navy3);
+  border: 1px solid rgba(0,188,212,0.4);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  color: var(--white);
+  z-index: 999;
+  max-width: 260px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+.tooltip.visible { display: block; }
+.tooltip strong { color: var(--teal); display: block; margin-bottom: 0.3rem; }
+.tooltip .t-cost { color: var(--green); font-weight: 700; }
+
+/* KPI */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+.kpi-card {
+  background: var(--navy2);
+  border: 1px solid rgba(0,188,212,0.2);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: border-color .3s, transform .3s;
+}
+.kpi-card:hover {
+  border-color: rgba(0,188,212,0.5);
+  transform: translateY(-3px);
+}
+.kpi-value {
+  font-size: 2.2rem; font-weight: 900;
+  color: var(--teal); line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.kpi-label {
+  font-size: 0.78rem; color: var(--gray); line-height: 1.4;
+}
+
+/* BUDGET */
+.budget-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem; align-items: center;
+}
+.budget-chart-wrap {
+  position: relative;
+  max-width: 360px;
+  margin: 0 auto;
+}
+.budget-center {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; pointer-events: none;
+}
+.budget-center-value { font-size: 1.8rem; font-weight: 900; color: white; }
+.budget-center-label { font-size: 0.7rem; color: var(--gray); }
+.budget-details { display: flex; flex-direction: column; gap: 1rem; }
+.budget-item {
+  display: flex; flex-direction: column; gap: 0.25rem;
+}
+.budget-item-header {
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.budget-item-name { font-size: 0.88rem; color: var(--white2); }
+.budget-item-value { font-size: 1.1rem; font-weight: 700; color: white; }
+.budget-bar {
+  height: 6px; background: rgba(255,255,255,0.08);
+  border-radius: 3px; overflow: hidden;
+}
+.budget-bar-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+.budget-years { margin-top: 1.5rem; }
+.budget-years-title { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.75rem; }
+.budget-year-row {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+.budget-year-label { width: 40px; font-size: 0.78rem; color: var(--gray); flex-shrink: 0; }
+.budget-year-bar-wrap { flex: 1; height: 20px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; }
+.budget-year-bar { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 0.5rem; font-size: 0.7rem; font-weight: 700; color: white; transition: width 1.2s ease; }
+.budget-year-amount { width: 70px; font-size: 0.78rem; color: var(--white2); text-align: right; flex-shrink: 0; }
+
+@media (max-width: 680px) {
+  .budget-grid { grid-template-columns: 1fr; }
+}
+
+/* OPENSOURCE */
+.opensource-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem; margin-bottom: 2rem;
+}
+.os-card {
+  background: var(--navy2);
+  border-top: 3px solid var(--teal);
+  border-left: 1px solid rgba(0,188,212,0.15);
+  border-right: 1px solid rgba(0,188,212,0.15);
+  border-bottom: 1px solid rgba(0,188,212,0.15);
+  border-radius: 0 0 12px 12px;
+  padding: 1.5rem;
+}
+.os-card .os-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.os-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--teal); }
+.os-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.compare-table th {
+  text-align: left; padding: 0.75rem 1rem;
+  background: rgba(0,188,212,0.1);
+  color: var(--teal); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.compare-table td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: var(--white2);
+}
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table .good { color: var(--green); }
+.compare-table .bad { color: #ef5350; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.faq-item {
+  background: var(--navy2);
+  border: 1px solid rgba(0,188,212,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 1.1rem 1.5rem;
+  cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  font-weight: 600; font-size: 0.9rem;
+  transition: background .2s;
+  user-select: none;
+}
+.faq-question:hover { background: rgba(0,188,212,0.06); }
+.faq-question .faq-q-num {
+  font-size: 0.7rem; color: var(--teal); font-weight: 700;
+  background: rgba(0,188,212,0.12); padding: 0.2rem 0.6rem;
+  border-radius: 4px; margin-right: 0.75rem; flex-shrink: 0;
+}
+.faq-question .faq-text { flex: 1; }
+.faq-chevron {
+  font-size: 1rem; color: var(--teal);
+  transition: transform .3s; flex-shrink: 0;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s ease;
+  border-top: 0 solid transparent;
+}
+.faq-item.open .faq-answer {
+  max-height: 600px;
+  border-top: 1px solid rgba(0,188,212,0.1);
+}
+.faq-answer-inner {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.88rem; color: var(--gray);
+  line-height: 1.7;
+}
+.faq-answer-inner strong { color: var(--white2); }
+.faq-answer-inner .highlight-box {
+  background: rgba(0,188,212,0.06);
+  border-left: 3px solid var(--teal);
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  border-radius: 0 6px 6px 0;
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy2);
+  border-top: 1px solid rgba(0,188,212,0.2);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.footer-logos {
+  display: flex; gap: 2rem; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 2rem;
+}
+.footer-logo-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.75rem; color: var(--gray);
+  text-align: center;
+}
+.footer-logo-item strong { display: block; color: var(--white2); font-size: 0.85rem; margin-bottom: 0.2rem; }
+.footer-meta {
+  max-width: 700px; margin: 0 auto 1.5rem;
+  font-size: 0.8rem; color: var(--gray); line-height: 1.7;
+}
+.footer-notice {
+  font-size: 0.72rem; color: rgba(136,146,176,0.5);
+  max-width: 800px; margin: 0 auto;
+}
+
+/* SECTION BACKGROUND ALTERNATING */
+.section-alt { background: rgba(255,255,255,0.015); }
+.section-wrap { width: 100%; }
+
+/* PROGRESS BAR LABELS */
+.label-teal { color: var(--teal); }
+.label-green { color: var(--green); }
+
+/* ANIMATION UTILITIES */
+.fade-in {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.fade-in.visible {
+  opacity: 1; transform: translateY(0);
+}
+
+/* SECTION HEADER LINE */
+.section-header-line {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.section-line {
+  width: 40px; height: 3px;
+  background: var(--teal); border-radius: 2px;
+}
+
+/* MDR BADGE */
+.mdr-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(0,230,118,0.1);
+  border: 1px solid rgba(0,230,118,0.3);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--green);
+  margin-top: 1rem;
+}
+
+/* EXECUTIVE SUMMARY */
+.exec-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.exec-card {
+  background: var(--navy2);
+  border: 1px solid rgba(0,188,212,0.18);
+  border-radius: 12px;
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .3s, transform .3s;
+}
+.exec-card:hover { border-color: rgba(0,188,212,0.45); transform: translateY(-3px); }
+.exec-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+}
+.exec-card h3 { font-size: 1rem; font-weight: 700; margin: 0.75rem 0 0.5rem; color: var(--white); }
+.exec-card p { font-size: 0.87rem; color: var(--gray); line-height: 1.65; }
+.exec-icon-wrap {
+  width: 44px; height: 44px;
+  background: rgba(0,188,212,0.1);
+  border: 1px solid rgba(0,188,212,0.25);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+}
+.exec-quote {
+  background: rgba(0,188,212,0.05);
+  border: 1px solid rgba(0,188,212,0.2);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-top: 1.75rem;
+  display: flex; gap: 1.5rem; align-items: flex-start;
+  flex-wrap: wrap;
+}
+.exec-quote-text {
+  flex: 1; min-width: 200px;
+  font-size: 1.05rem; font-weight: 600; color: var(--white2);
+  font-style: italic; line-height: 1.6;
+}
+.exec-quote-text::before { content: '"'; color: var(--teal); font-size: 2rem; line-height: 0; vertical-align: -0.5rem; margin-right: 0.25rem; }
+.exec-stats {
+  display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;
+}
+.exec-stat { text-align: center; }
+.exec-stat-val { font-size: 1.7rem; font-weight: 900; color: var(--teal); }
+.exec-stat-lab { font-size: 0.7rem; color: var(--gray); white-space: nowrap; }
+
+/* TEAM */
+.team-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+.team-card {
+  background: var(--navy2);
+  border: 1px solid rgba(0,188,212,0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: border-color .3s, transform .3s;
+}
+.team-card:hover { border-color: rgba(0,188,212,0.4); transform: translateY(-3px); }
+.team-avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy3), rgba(0,188,212,0.3));
+  border: 2px solid rgba(0,188,212,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  margin: 0 auto 1rem;
+}
+.team-name { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+.team-role { font-size: 0.78rem; color: var(--teal); font-weight: 600; margin-bottom: 0.35rem; }
+.team-org {
+  font-size: 0.72rem; color: var(--gray);
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px; padding: 0.2rem 0.5rem;
+  display: inline-block; margin-bottom: 0.75rem;
+}
+.team-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; justify-content: center; }
+.team-tag {
+  font-size: 0.65rem; color: var(--gray);
+  background: rgba(0,188,212,0.08);
+  border: 1px solid rgba(0,188,212,0.15);
+  border-radius: 4px; padding: 0.15rem 0.5rem;
+}
+
+/* MILESTONES */
+.milestones-timeline {
+  position: relative;
+  padding: 0 0 1rem;
+}
+.milestones-timeline::before {
+  content: '';
+  position: absolute; left: 16px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--teal), rgba(0,188,212,0.1));
+}
+.milestone-item {
+  display: flex; gap: 1.5rem; padding: 0 0 2rem 0;
+  position: relative;
+}
+.milestone-dot-wrap {
+  flex-shrink: 0; width: 34px; height: 34px;
+  background: var(--navy2);
+  border: 2px solid var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem;
+  position: relative; z-index: 1;
+}
+.milestone-dot-wrap.completed { background: rgba(0,188,212,0.2); }
+.milestone-dot-wrap.key { border-color: var(--green); background: rgba(0,230,118,0.15); }
+.milestone-content {
+  flex: 1;
+  background: var(--navy2);
+  border: 1px solid rgba(0,188,212,0.15);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  transition: border-color .3s;
+}
+.milestone-content:hover { border-color: rgba(0,188,212,0.4); }
+.milestone-date {
+  font-size: 0.7rem; font-weight: 700; color: var(--teal);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+}
+.milestone-title { font-size: 0.92rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
+.milestone-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.5; }
+.milestone-badge {
+  display: inline-block; margin-top: 0.4rem;
+  font-size: 0.67rem; color: var(--green);
+  background: rgba(0,230,118,0.1);
+  border: 1px solid rgba(0,230,118,0.25);
+  padding: 0.15rem 0.5rem; border-radius: 4px;
+}
+.milestone-badge.teal { color: var(--teal); background: rgba(0,188,212,0.1); border-color: rgba(0,188,212,0.25); }
+@media (min-width: 700px) {
+  .milestones-timeline::before { left: calc(50% - 1px); }
+  .milestone-item { align-items: flex-start; }
+  .milestone-item:nth-child(even) { flex-direction: row-reverse; }
+  .milestone-item:nth-child(even) .milestone-content { text-align: right; }
+  .milestone-item:nth-child(even) .milestone-content .milestone-badge { float: right; }
+  .milestone-dot-wrap { position: absolute; left: 50%; transform: translateX(-50%); }
+  .milestone-item { padding-left: 0; padding-right: 0; }
+  .milestone-content { max-width: 42%; }
+}
+
+/* RISK MATRIX */
+.risk-grid {
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.risk-row {
+  display: grid;
+  grid-template-columns: 1fr 90px 90px 1fr;
+  gap: 0.75rem; align-items: center;
+  background: var(--navy2);
+  border: 1px solid rgba(0,188,212,0.12);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  transition: border-color .3s;
+}
+.risk-row:hover { border-color: rgba(0,188,212,0.35); }
+.risk-name { font-size: 0.88rem; font-weight: 600; color: var(--white2); }
+.risk-name small { display: block; font-size: 0.75rem; font-weight: 400; color: var(--gray); margin-top: 0.2rem; }
+.risk-pill {
+  display: flex; align-items: center; justify-content: center;
+  height: 28px; border-radius: 6px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
+}
+.risk-pill.high { background: rgba(239,83,80,0.18); color: #ef5350; border: 1px solid rgba(239,83,80,0.35); }
+.risk-pill.med { background: rgba(255,167,38,0.15); color: #ffa726; border: 1px solid rgba(255,167,38,0.3); }
+.risk-pill.low { background: rgba(0,230,118,0.1); color: var(--green); border: 1px solid rgba(0,230,118,0.25); }
+.risk-mitigation { font-size: 0.8rem; color: var(--gray); line-height: 1.5; }
+.risk-header-row {
+  display: grid;
+  grid-template-columns: 1fr 90px 90px 1fr;
+  gap: 0.75rem;
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--teal); padding: 0 1.25rem 0.25rem;
+}
+@media (max-width: 600px) {
+  .risk-row { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+  .risk-mitigation { grid-column: 1 / -1; }
+  .risk-header-row { display: none; }
+}
+
+/* PRINT STYLES */
+@media print {
+  nav, .scroll-indicator { display: none; }
+  section { padding: 2rem 1rem; }
+  * { animation: none !important; }
+  .card, .innovation-card, .consortium-card, .exec-card, .team-card { break-inside: avoid; }
+  body { background: white; color: black; }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .gantt-wrapper { font-size: 0.7rem; }
+  .budget-grid { grid-template-columns: 1fr; }
+  .arch-flow { gap: 0.25rem; }
+  .arch-arrow { display: none; }
+}
+
+/* ======================================================
+   AITS BRAND THEME OVERRIDE
+   Primary: #134A45 | Accent: #3BD5AE | Fonts: Playfair + DM Sans
+   ====================================================== */
+
+/* Hide hero canvas animation */
+#hero-canvas { display: none !important; }
+
+/* Body — light background */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #F0F4F3;
+  color: #181818;
+}
+
+/* Navigation — AITS dark teal */
+nav {
+  background: rgba(19,74,69,0.97);
+  border-bottom-color: rgba(59,213,174,0.25);
+}
+.nav-brand { color: #3BD5AE; }
+.nav-links a { color: rgba(255,255,255,0.65); }
+.nav-links a:hover { color: #3BD5AE; }
+
+/* Hero — AITS dark teal */
+#hero {
+  background: radial-gradient(ellipse at 60% 40%, #1a5e57 0%, #134A45 70%);
+}
+.hero-badge {
+  background: rgba(59,213,174,0.15);
+  border-color: rgba(59,213,174,0.4);
+  color: #3BD5AE;
+}
+.hero-subtitle { color: rgba(255,255,255,0.75); }
+.hero-number { color: #3BD5AE; }
+.scroll-indicator { color: rgba(255,255,255,0.5); }
+.scroll-indicator::after { color: #3BD5AE; }
+.logo-badge { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.13); color: rgba(255,255,255,0.75); }
+.logo-badge strong { color: white; }
+.btn-primary { background: linear-gradient(135deg, #3BD5AE, #134A45); }
+.btn-primary:hover { box-shadow: 0 8px 25px rgba(59,213,174,0.4); }
+.btn-outline { color: #3BD5AE; border-color: #3BD5AE; }
+.btn-outline:hover { background: rgba(59,213,174,0.1); }
+
+/* Section headers */
+.section-label { color: #134A45; }
+.section-title {
+  font-family: 'Playfair Display', serif;
+  color: #181818;
+}
+.section-desc { color: #475569; }
+.section-line { background: #3BD5AE; }
+.divider { border-top-color: #E2E8F0; }
+
+/* Alternating section bg */
+.section-alt { background: rgba(19,74,69,0.03); }
+
+/* ---- CARDS (all become white on light bg) ---- */
+.card {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.card:hover { border-color: rgba(59,213,174,0.4); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+.card h3 { color: #181818; }
+.card p { color: #475569; }
+.card-icon { background: rgba(59,213,174,0.1); border-color: rgba(59,213,174,0.25); }
+
+/* Architecture */
+.arch-container { background: #FFFFFF; border-color: #E2E8F0; }
+.arch-box { background: #F8FAFC; border-color: #E2E8F0; }
+.arch-box .arch-label { color: #181818; }
+.arch-box .arch-sub { color: #475569; }
+.arch-arrow { color: #3BD5AE; }
+.feature-item { background: rgba(59,213,174,0.04); border-color: rgba(59,213,174,0.12); }
+.feature-text { color: #475569; }
+.feature-text strong { color: #181818; }
+.feature-check { color: #3BD5AE; }
+
+/* Consortium */
+.consortium-card { background: #FFFFFF; }
+.consortium-card.leader { border-color: #3BD5AE; }
+.consortium-card.leader .consortium-name { color: #134A45; }
+.consortium-card.leader .consortium-tag { background: rgba(59,213,174,0.12); color: #134A45; }
+.consortium-card.partner { border-color: rgba(16,185,129,0.45); }
+.consortium-card.partner .consortium-name { color: #10B981; }
+.consortium-card.partner .consortium-tag { background: rgba(16,185,129,0.1); color: #10B981; }
+.consortium-budget { color: #181818; }
+.consortium-type { color: #475569; }
+.role-item { color: #475569; border-bottom-color: #E2E8F0; }
+.role-dot { color: #3BD5AE; }
+
+/* Innovations */
+.inn-item { background: #FFFFFF; border-color: #E2E8F0; }
+.inn-item:hover { border-color: rgba(59,213,174,0.5); }
+.inn-item.active { border-color: #3BD5AE; background: rgba(59,213,174,0.06); }
+.inn-item-num { color: rgba(59,213,174,0.25); }
+.inn-item-icon { background: rgba(59,213,174,0.08); border-color: rgba(59,213,174,0.2); }
+.inn-item-title { color: #181818; }
+.inn-item-desc { color: #475569; }
+.inn-panel-icon { background: rgba(59,213,174,0.08); border-color: rgba(59,213,174,0.2); }
+.inn-panel-title { color: #181818; }
+.inn-panel-desc { color: #475569; }
+
+/* Gantt */
+.gantt-wrapper { background: #FFFFFF; border-color: #E2E8F0; }
+.gantt-quarter { color: #94A3B8; }
+.gantt-label { color: #181818; }
+.gantt-label .gantt-who { color: #64748B; }
+.gantt-cell { background: #F8FAFC; }
+.gantt-bar-aithentica { background: linear-gradient(135deg, #3BD5AE, #134A45); }
+.gantt-bar-ipan { background: linear-gradient(135deg, #10B981, #065F46); }
+.gantt-legend-item { color: #475569; }
+.tooltip { background: white; border-color: #E2E8F0; color: #181818; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.tooltip strong { color: #134A45; }
+.tooltip .t-cost { color: #10B981; }
+
+/* KPI */
+.kpi-card { background: #FFFFFF; border-color: #E2E8F0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+.kpi-card:hover { border-color: rgba(59,213,174,0.5); }
+.kpi-value { color: #134A45; }
+.kpi-label { color: #475569; }
+
+/* Budget */
+.budget-center-value { color: #181818; }
+.budget-center-label { color: #475569; }
+.budget-item-name { color: #475569; }
+.budget-item-value { color: #181818; }
+.budget-bar { background: #E2E8F0; }
+.budget-years-title { color: #475569; }
+.budget-year-label { color: #94A3B8; }
+.budget-year-bar-wrap { background: #F0F4F3; }
+.budget-year-amount { color: #475569; }
+
+/* Open Source */
+.os-card { background: #FFFFFF; border-top-color: #3BD5AE; border-left-color: #E2E8F0; border-right-color: #E2E8F0; border-bottom-color: #E2E8F0; }
+.os-card h4 { color: #134A45; }
+.os-card p { color: #475569; }
+.compare-table th { background: #134A45; color: white; }
+.compare-table td { color: #475569; border-bottom-color: #E2E8F0; }
+.compare-table .good { color: #10B981; }
+.compare-table .bad { color: #EF4444; }
+
+/* FAQ */
+.faq-item { background: #FFFFFF; border-color: #E2E8F0; }
+.faq-question { color: #181818; font-family: 'DM Sans', sans-serif; }
+.faq-question:hover { background: rgba(59,213,174,0.04); }
+.faq-q-num { color: #134A45; background: rgba(59,213,174,0.1); }
+.faq-chevron { color: #3BD5AE; }
+.faq-item.open .faq-answer { border-top-color: #E2E8F0; }
+.faq-answer-inner { color: #475569; }
+.faq-answer-inner strong { color: #181818; }
+.faq-answer-inner .highlight-box { background: rgba(59,213,174,0.05); border-left-color: #3BD5AE; }
+
+/* Footer — AITS dark teal */
+footer { background: #134A45; border-top-color: #134A45; }
+.footer-logo-item { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.65); }
+.footer-logo-item strong { color: white; }
+.footer-meta { color: rgba(255,255,255,0.65); }
+.footer-notice { color: rgba(255,255,255,0.35); }
+
+/* Executive Summary */
+.exec-card { background: #FFFFFF; border-color: #E2E8F0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+.exec-card:hover { border-color: rgba(59,213,174,0.45); }
+.exec-card::after { background: linear-gradient(90deg, #3BD5AE, transparent); }
+.exec-card h3 { color: #181818; }
+.exec-card p { color: #475569; }
+.exec-icon-wrap { background: rgba(59,213,174,0.08); border-color: rgba(59,213,174,0.2); }
+.exec-quote { background: rgba(59,213,174,0.04); border-color: rgba(59,213,174,0.2); }
+.exec-quote-text { color: #181818; }
+.exec-quote-text::before { color: #3BD5AE; }
+.exec-stat-val { color: #134A45; }
+.exec-stat-lab { color: #475569; }
+
+/* Team */
+.team-card { background: #FFFFFF; border-color: #E2E8F0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+.team-card:hover { border-color: rgba(59,213,174,0.4); }
+.team-avatar { background: linear-gradient(135deg, #EAF4F3, rgba(59,213,174,0.2)); border-color: rgba(59,213,174,0.3); }
+.team-name { color: #181818; }
+.team-role { color: #134A45; }
+.team-org { background: #F8FAFC; color: #475569; }
+.team-tag { color: #475569; background: rgba(59,213,174,0.07); border-color: rgba(59,213,174,0.15); }
+
+/* Milestones */
+.milestones-timeline::before { background: linear-gradient(180deg, #3BD5AE, rgba(59,213,174,0.1)); }
+.milestone-dot-wrap { background: white; border-color: #3BD5AE; }
+.milestone-dot-wrap.completed { background: rgba(59,213,174,0.15); }
+.milestone-dot-wrap.key { border-color: #10B981; background: rgba(16,185,129,0.12); }
+.milestone-content { background: #FFFFFF; border-color: #E2E8F0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.milestone-content:hover { border-color: rgba(59,213,174,0.4); }
+.milestone-date { color: #134A45; }
+.milestone-title { color: #181818; }
+.milestone-desc { color: #475569; }
+.milestone-badge { color: #10B981; background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.2); }
+.milestone-badge.teal { color: #134A45; background: rgba(59,213,174,0.08); border-color: rgba(59,213,174,0.2); }
+
+/* Risk Matrix */
+.risk-header-row { color: #134A45; }
+.risk-row { background: #FFFFFF; border-color: #E2E8F0; box-shadow: 0 1px 6px rgba(0,0,0,0.03); }
+.risk-row:hover { border-color: rgba(59,213,174,0.35); }
+.risk-name { color: #181818; }
+.risk-name small { color: #475569; }
+.risk-mitigation { color: #475569; }
+.risk-pill.high { background: rgba(239,68,68,0.08); color: #DC2626; border-color: rgba(239,68,68,0.25); }
+.risk-pill.med { background: rgba(245,158,11,0.08); color: #D97706; border-color: rgba(245,158,11,0.2); }
+.risk-pill.low { background: rgba(16,185,129,0.08); color: #10B981; border-color: rgba(16,185,129,0.2); }
+
+/* MDR Badge */
+.mdr-badge { background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.25); color: #10B981; }
+
+/* Section h2 headings */
+h2.section-title { font-family: 'Playfair Display', serif; }
+
+/* Label colors */
+.label-teal { color: #134A45; }
+.label-green { color: #10B981; }
+
+/* Vacant position card */
+.team-card.vacant {
+  background: #FAFBFC;
+  border: 1.5px dashed #CBD5E1;
+  opacity: 0.88;
+}
+.team-card.vacant .team-name { color: #64748B; font-style: italic; }
+.team-card.vacant .team-avatar { filter: grayscale(1); opacity: 0.5; }
+.vacant-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(239,68,68,0.07);
+  color: #DC2626;
+  border: 1px solid rgba(239,68,68,0.2);
+}
+
+/* Flat Gantt bars — no gradient */
+.gantt-bar-aithentica { background: #134A45 !important; }
+.gantt-bar-ipan { background: #3BD5AE !important; color: #134A45 !important; }
+.gantt-bar-combined { background: #10B981 !important; }
+
+/* Innovation details/summary (native HTML, no JS) */
+.inn-details {
+  margin-top: 1rem;
+}
+.inn-details summary.inn-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.45rem 0.8rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #134A45;
+  background: rgba(59,213,174,0.07);
+  border: 1px solid rgba(59,213,174,0.3);
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  list-style: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.inn-details summary.inn-summary::-webkit-details-marker { display: none; }
+.inn-details summary.inn-summary::after {
+  content: '▾';
+  display: inline-block;
+  font-style: normal;
+  transition: transform 0.3s ease;
+}
+.inn-details[open] summary.inn-summary::after { transform: rotate(180deg); }
+.inn-details summary.inn-summary:hover { background: rgba(59,213,174,0.14); border-color: rgba(59,213,174,0.5); }
+.inn-expand-inner { padding-top: 0.9rem; border-top: 1px solid #E2E8F0; margin-top: 0.85rem; }
+.inn-expand-section { margin-bottom: 0.8rem; }
+.inn-expand-label {
+  font-size: 0.67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #134A45;
+  margin-bottom: 0.4rem;
+}
+.inn-features, .inn-market {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.77rem;
+  color: #475569;
+  line-height: 1.6;
+}
+.inn-features li { margin-bottom: 0.25rem; }
+.inn-features li::marker { color: #3BD5AE; }
+.inn-market li { margin-bottom: 0.2rem; }
+.inn-market li::marker { color: #94a3b8; }
+</style>
+</head>
+<body>
+
+<!-- ========== PASSWORD GATE ========== -->
+<div id="pw-gate" style="
+  position:fixed;inset:0;z-index:99999;
+  background:linear-gradient(135deg,#0d2e2a 0%,#134A45 60%,#0a1f1c 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Sans',sans-serif;
+">
+  <div style="
+    background:rgba(255,255,255,0.04);border:1px solid rgba(59,213,174,0.25);
+    border-radius:16px;padding:2.5rem 2rem;max-width:380px;width:90%;text-align:center;
+    box-shadow:0 24px 64px rgba(0,0,0,0.5);
+  ">
+    <div style="font-size:2.5rem;margin-bottom:1rem;">🔒</div>
+    <h2 style="color:#fff;font-size:1.25rem;font-weight:700;margin:0 0 0.4rem;">Projekt FENG.01.01-IP.01-A1G8/25</h2>
+    <p style="color:#94a3b8;font-size:0.85rem;margin:0 0 1.75rem;">Dostęp wyłącznie dla ekspertów panelu NCBR</p>
+    <input id="pw-input" type="password" placeholder="Hasło dostępu" style="
+      width:100%;box-sizing:border-box;padding:0.7rem 1rem;border-radius:8px;
+      border:1.5px solid rgba(59,213,174,0.3);background:rgba(255,255,255,0.06);
+      color:#fff;font-size:0.95rem;outline:none;margin-bottom:0.75rem;
+    " />
+    <div id="pw-error" style="color:#f87171;font-size:0.8rem;min-height:1.2rem;margin-bottom:0.5rem;"></div>
+    <button onclick="checkPw()" style="
+      width:100%;padding:0.75rem;border-radius:8px;border:none;cursor:pointer;
+      background:linear-gradient(135deg,#3BD5AE,#134A45);color:#fff;
+      font-size:0.95rem;font-weight:600;letter-spacing:0.03em;
+      transition:opacity 0.2s;
+    " onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+      Zaloguj się
+    </button>
+    <p style="color:#475569;font-size:0.72rem;margin-top:1.25rem;">AI Therapy Support · Panel NCBR 2025</p>
+  </div>
+</div>
+<script>
+(function(){
+  if(sessionStorage.getItem('ncbr_auth')==='1'){
+    document.getElementById('pw-gate').style.display='none';
+  }
+  document.getElementById('pw-input').addEventListener('keydown',function(e){
+    if(e.key==='Enter') checkPw();
+  });
+})();
+function checkPw(){
+  var v=document.getElementById('pw-input').value;
+  var h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}
+  if(h===1709045094){
+    sessionStorage.setItem('ncbr_auth','1');
+    document.getElementById('pw-gate').style.display='none';
+  } else {
+    document.getElementById('pw-error').textContent='Nieprawidłowe hasło. Spróbuj ponownie.';
+    document.getElementById('pw-input').value='';
+    document.getElementById('pw-input').focus();
+  }
+}
+</script>
+<!-- ========== /PASSWORD GATE ========== -->
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">AI THERAPY SUPPORT · NCBR SMART</div>
+  <ul class="nav-links">
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#rozwiazanie">Rozwiązanie</a></li>
+    <li><a href="#innowacje">Innowacje</a></li>
+    <li><a href="#harmonogram">Harmonogram</a></li>
+    <li><a href="#milestones">Kamienie milowe</a></li>
+    <li><a href="#budzet">Budżet</a></li>
+    <li><a href="#ryzyka">Ryzyka</a></li>
+    <li><a href="#faq">FAQ NCBR</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="padding: 0; max-width: none; margin: 0;">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge">Ścieżka SMART · FENG.01.01-IP.01</div>
+    <h1>Platforma AI Therapy Support<br>Walidacja skuteczności spersonalizowanych<br>interwencji terapeutycznych</h1>
+    <p class="hero-subtitle">Badanie naukowe · Wyrób Medyczny Klasy IIa MDR · Open-Source</p>
+    <p class="hero-number">Numer wniosku: FENG.01.01-IP.01-A1G8/25</p>
+    <div class="hero-logos">
+      <div class="logo-badge"><strong>🇪🇺 Fundusze Europejskie</strong>dla Nowoczesnej Gospodarki</div>
+      <div class="logo-badge"><strong>🏛️ NCBR</strong>Narodowe Centrum<br>Badań i Rozwoju</div>
+      <div class="logo-badge"><strong>🇵🇱 Rzeczpospolita Polska</strong>Ministerstwo Funduszy<br>i Polityki Regionalnej</div>
+    </div>
+    <div class="hero-cta">
+      <a href="#rozwiazanie" class="btn-primary">Poznaj projekt</a>
+      <a href="#budzet" class="btn-outline">Budżet &amp; Wskaźniki</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">scroll</div>
+</section>
+
+<!-- EXECUTIVE SUMMARY -->
+<div class="section-wrap section-alt" id="o-projekcie">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Executive Summary</div>
+  </div>
+  <h2 class="section-title">O projekcie — 30 sekund dla eksperta</h2>
+  <p class="section-desc">Projekt odpowiada na kryzys dostępności i jakości psychoterapii CBT w Polsce poprzez naukową walidację AI jako narzędzia wspomagającego terapeutę.</p>
+  <div class="exec-grid">
+    <div class="exec-card fade-in">
+      <div class="exec-icon-wrap">🎯</div>
+      <h3>Cel główny</h3>
+      <p>Walidacja kliniczna platformy AI Therapy Support jako certyfikowanego wyrobu medycznego klasy IIa MDR, wspomagającego terapeutów CBT w dokumentacji i konceptualizacji sesji.</p>
+    </div>
+    <div class="exec-card fade-in">
+      <div class="exec-icon-wrap">🔬</div>
+      <h3>Metoda badawcza</h3>
+      <p>Randomizowane badanie kliniczne (RCT) z udziałem N=95+30 terapeutów CBT, prowadzone przez Instytut Psychologii PAN. Protokół zatwierdzony przez komisję bioetyczną. Rejestracja ClinicalTrials.</p>
+    </div>
+    <div class="exec-card fade-in">
+      <div class="exec-icon-wrap">🚀</div>
+      <h3>Innowacyjność</h3>
+      <p>Pierwszy w Polsce certyfikowany system AI dla psychoterapii CBT z lokalną infrastrukturą (RODO), open-source LLM (audytowalność MDR) i automatyczną ekstrakcją konstrukcji terapeutycznych.</p>
+    </div>
+    <div class="exec-card fade-in">
+      <div class="exec-icon-wrap">💰</div>
+      <h3>Ekonomika projektu</h3>
+      <p>Budżet 8,84 mln PLN, dofinansowanie UE 82% (7,21 mln). Konsorcjum AIThentica + IP PAN. Komercjalizacja SaaS B2B po certyfikacji MDR. Target: rynek europejski psychoterapii CBT.</p>
+    </div>
+  </div>
+  <div class="exec-quote fade-in">
+    <div class="exec-quote-text">Projekt nie zastępuje terapeuty — waliduje naukowo czy AI może mu pomóc pracować lepiej, szybciej i bezpieczniej z danymi pacjentów.</div>
+    <div class="exec-stats">
+      <div class="exec-stat"><div class="exec-stat-val">4</div><div class="exec-stat-lab">lata B+R<br>2026–2029</div></div>
+      <div class="exec-stat"><div class="exec-stat-val">8,84M</div><div class="exec-stat-lab">PLN<br>budżet</div></div>
+      <div class="exec-stat"><div class="exec-stat-val">IIa</div><div class="exec-stat-lab">klasa MDR<br>wyrobu</div></div>
+      <div class="exec-stat"><div class="exec-stat-val">5</div><div class="exec-stat-lab">innowacji<br>B+R</div></div>
+    </div>
+  </div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- PROBLEM -->
+<div class="section-wrap" id="problem">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Diagnoza rynku</div>
+  </div>
+  <h2 class="section-title">Trzy kluczowe problemy polskiej psychoterapii</h2>
+  <p class="section-desc">Rynek psychoterapii CBT w Polsce stoi przed strukturalnymi wyzwaniami, które AI Therapy Support adresuje poprzez rzetelną walidację naukową.</p>
+  <div class="cards-grid">
+    <div class="card fade-in">
+      <div class="card-icon">⏱️</div>
+      <h3>Niska jakość konceptualizacji</h3>
+      <p>Terapeuci poświęcają <strong style="color:var(--teal)">60+ minut na sesję</strong> na ręczne dokumentowanie, kosztem czasu terapeutycznego. Konceptualizacja CBT wymaga syntezy setek informacji z poprzednich sesji.</p>
+    </div>
+    <div class="card fade-in">
+      <div class="card-icon">🏥</div>
+      <h3>Niedobór terapeutów CBT</h3>
+      <p>Polska: <strong style="color:var(--teal)">~2500 certyfikowanych terapeutów CBT</strong> na 38 mln obywateli. Kolejki do specjalistów sięgają miesięcy. Brak narzędzi wspomagających prowadzi do wypalenia zawodowego.</p>
+    </div>
+    <div class="card fade-in">
+      <div class="card-icon">⚠️</div>
+      <h3>Nieetyczne użycie AI przez terapeutów</h3>
+      <p>Badania wskazują, że <strong style="color:var(--teal)">&gt;40% terapeutów</strong> używa ogólnych narzędzi AI (ChatGPT) z danymi pacjentów — bez anonimizacji, bez infrastruktury RODO-compliant, bez certyfikacji MDR.</p>
+    </div>
+  </div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- ROZWIĄZANIE -->
+<div class="section-wrap" id="rozwiazanie">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Architektura platformy</div>
+  </div>
+  <h2 class="section-title">Certyfikowany asystent AI dla terapeutów CBT</h2>
+  <p class="section-desc">Kompleksowa platforma integrująca rozpoznawanie mowy, LLM open-source i moduły AI działające wyłącznie na polskiej infrastrukturze.</p>
+
+  <div class="arch-container fade-in">
+    <div style="text-align:center; font-size:0.75rem; color:var(--gray); margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.1em;">Przepływ danych</div>
+    <div class="arch-flow">
+      <div class="arch-box">
+        <div class="arch-icon">🎙️</div>
+        <div class="arch-label">Sesja terapeutyczna</div>
+        <div class="arch-sub">Nagranie audio</div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-box">
+        <div class="arch-icon">🔊</div>
+        <div class="arch-label">ASR + Diaryzacja</div>
+        <div class="arch-sub">≥98% dokładności</div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-box">
+        <div class="arch-icon">🧠</div>
+        <div class="arch-label">LLM Open-Source</div>
+        <div class="arch-sub">Lokalny · Anonimizacja PII</div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-box">
+        <div class="arch-icon">🤖</div>
+        <div class="arch-label">20 Agentów AI</div>
+        <div class="arch-sub">Specjalistyczne moduły</div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-box">
+        <div class="arch-icon">💊</div>
+        <div class="arch-label">Moduł Terapeuty</div>
+        <div class="arch-sub">Konceptualizacja · Notatki</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-grid fade-in">
+    <div class="feature-item">
+      <div class="feature-check">✓</div>
+      <div class="feature-text"><strong>Wyrób medyczny klasy IIa MDR</strong><br>Pełna dokumentacja QMS, certyfikacja przez jednostkę notyfikowaną</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-check">✓</div>
+      <div class="feature-text"><strong>Infrastruktura wyłącznie polska</strong><br>Dane pacjentów nie opuszczają granic RP. RODO-compliant by design</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-check">✓</div>
+      <div class="feature-text"><strong>Open-source LLM</strong><br>Llama 3 / Mistral · Pełna audytowalność · Deterministyczne wyniki</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-check">✓</div>
+      <div class="feature-text"><strong>99.5% anonimizacja PII</strong><br>Usuwanie danych osobowych przed przetwarzaniem przez LLM</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-check">✓</div>
+      <div class="feature-text"><strong>Redukcja czasu 60 → 5 min</strong><br>Automatyczna konceptualizacja CBT po sesji terapeutycznej</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-check">✓</div>
+      <div class="feature-text"><strong>Walidacja kliniczna N=95</strong><br>Randomizowane badanie z grupą kontrolną + N=30 uzupełnienie MDR</div>
+    </div>
+  </div>
+  <div class="mdr-badge">🏥 Certyfikowany Wyrób Medyczny Klasy IIa · Rozporządzenie MDR 2017/745</div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- KONSORCJUM -->
+<div class="section-wrap" id="konsorcjum">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Partnerzy projektu</div>
+  </div>
+  <h2 class="section-title">Konsorcjum naukowo-przemysłowe</h2>
+  <p class="section-desc">Unikalne połączenie kompetencji technologicznych startupu AI z autorytetem akademickim wiodącego instytutu psychologii w Polsce.</p>
+  <div class="consortium-grid">
+    <div class="consortium-card leader fade-in">
+      <span class="consortium-tag">Lider</span>
+      <div class="consortium-name">AITHENTICA PSA</div>
+      <div class="consortium-type">Spółka technologiczna · Twórca platformy AI Therapy Support</div>
+      <div class="consortium-budget">6,76 mln PLN <span>/ budżet projektu</span></div>
+      <div class="consortium-roles">
+        <div class="role-item"><span class="role-dot">◆</span>Architektura i rozwój platformy AI</div>
+        <div class="role-item"><span class="role-dot">◆</span>Moduły ASR i diaryzacji głośników</div>
+        <div class="role-item"><span class="role-dot">◆</span>System 20 agentów AI (CBT)</div>
+        <div class="role-item"><span class="role-dot">◆</span>Dokumentacja MDR · QMS · Certyfikacja</div>
+        <div class="role-item"><span class="role-dot">◆</span>Integracja z systemami klinicznymi</div>
+        <div class="role-item"><span class="role-dot">◆</span>Zarządzanie projektem · Koordynacja konsorcjum</div>
+      </div>
+    </div>
+    <div class="consortium-card partner fade-in">
+      <span class="consortium-tag">Partner naukowy</span>
+      <div class="consortium-name">Instytut Psychologii PAN</div>
+      <div class="consortium-type">Polska Akademia Nauk · Instytut badawczy klasy A+</div>
+      <div class="consortium-budget">2,08 mln PLN <span>/ budżet projektu</span></div>
+      <div class="consortium-roles">
+        <div class="role-item"><span class="role-dot" style="color:var(--green)">◆</span>Metodologia badań klinicznych</div>
+        <div class="role-item"><span class="role-dot" style="color:var(--green)">◆</span>Tworzenie i walidacja korpusu CBT</div>
+        <div class="role-item"><span class="role-dot" style="color:var(--green)">◆</span>Rekrutacja terapeutów i pacjentów</div>
+        <div class="role-item"><span class="role-dot" style="color:var(--green)">◆</span>Randomizowane badanie kliniczne (RCT)</div>
+        <div class="role-item"><span class="role-dot" style="color:var(--green)">◆</span>Ewaluacja psychometryczna narzędzi AI</div>
+        <div class="role-item"><span class="role-dot" style="color:var(--green)">◆</span>Publikacje naukowe · Nadzór etyczny</div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- TEAM -->
+<div class="section-wrap" id="zespol">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Kluczowi badacze</div>
+  </div>
+  <h2 class="section-title">Zespół projektu</h2>
+  <p class="section-desc">Interdyscyplinarny zespół łączący kompetencje inżynierii AI, psychologii klinicznej CBT, metodologii badań i regulacji wyrobów medycznych.</p>
+  <!-- Team section label: AIThentica -->
+  <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#134A45;margin-bottom:0.75rem;padding-top:0.25rem;">AITHENTICA PSA — Lider konsorcjum</p>
+  <div class="team-grid" style="margin-bottom:2rem;">
+
+    <div class="team-card fade-in">
+      <div class="team-avatar">🏆</div>
+      <div class="team-name">Kamil Laszuk</div>
+      <div class="team-role">Kierownik zarządzający modułem B+R</div>
+      <div class="team-org">AITHENTICA PSA · Lider konsorcjum</div>
+      <div class="team-tags">
+        <span class="team-tag">B+R Management</span>
+        <span class="team-tag">Risk &amp; Compliance</span>
+        <span class="team-tag">TRL Validation</span>
+        <span class="team-tag">Red Dot Award</span>
+      </div>
+    </div>
+
+    <div class="team-card fade-in">
+      <div class="team-avatar">🧑‍💻</div>
+      <div class="team-name">Bartłomiej Głowacki</div>
+      <div class="team-role">Senior AI Architect</div>
+      <div class="team-org">AITHENTICA PSA · Lider konsorcjum</div>
+      <div class="team-tags">
+        <span class="team-tag">AI Architecture</span>
+        <span class="team-tag">LLM / NLP</span>
+        <span class="team-tag">15 lat w branży</span>
+      </div>
+    </div>
+
+    <div class="team-card fade-in">
+      <div class="team-avatar">🏗️</div>
+      <div class="team-name">Bohdan Głowacki</div>
+      <div class="team-role">Senior Software Architect</div>
+      <div class="team-org">AITHENTICA PSA · Lider konsorcjum</div>
+      <div class="team-tags">
+        <span class="team-tag">Architektura LLM</span>
+        <span class="team-tag">Kontrakty danych</span>
+        <span class="team-tag">Benchmarki LLM/ASR</span>
+        <span class="team-tag">Ontologia metryk</span>
+      </div>
+    </div>
+
+    <div class="team-card fade-in">
+      <div class="team-avatar">👩‍⚕️</div>
+      <div class="team-name">Joanna Katarzyna Głowacka</div>
+      <div class="team-role">Certyfikowany Specjalista CBT</div>
+      <div class="team-org">AITHENTICA PSA · Lider konsorcjum</div>
+      <div class="team-tags">
+        <span class="team-tag">Ontologia metryk CBT</span>
+        <span class="team-tag">Walidacja kliniczna</span>
+        <span class="team-tag">MDR Compliance</span>
+      </div>
+    </div>
+
+    <div class="team-card fade-in">
+      <div class="team-avatar">🗄️</div>
+      <div class="team-name">Marcin Szeliga</div>
+      <div class="team-role">Senior Software Architect</div>
+      <div class="team-org">AITHENTICA PSA · Lider konsorcjum</div>
+      <div class="team-tags">
+        <span class="team-tag">Data Architecture</span>
+        <span class="team-tag">Azure / SQL Server</span>
+        <span class="team-tag">Data Lineage</span>
+        <span class="team-tag">25 lat doświadczenia</span>
+      </div>
+    </div>
+
+    <div class="team-card fade-in">
+      <div class="team-avatar">⚙️</div>
+      <div class="team-name">Maciej Hanulak</div>
+      <div class="team-role">Fullstack Data Engineer</div>
+      <div class="team-org">AITHENTICA PSA · Lider konsorcjum</div>
+      <div class="team-tags">
+        <span class="team-tag">.NET / C#</span>
+        <span class="team-tag">ASR Prototyping</span>
+        <span class="team-tag">NER / Anonimizacja</span>
+        <span class="team-tag">Azure AZ-204</span>
+      </div>
+    </div>
+
+    <div class="team-card fade-in">
+      <div class="team-avatar">🔍</div>
+      <div class="team-name">Agnieszka Zygmunt</div>
+      <div class="team-role">UX Researcher / Discovery Lead</div>
+      <div class="team-org">AITHENTICA PSA · umowa warunkowa</div>
+      <div class="team-tags">
+        <span class="team-tag">IDI / FGI</span>
+        <span class="team-tag">Testy użyteczności</span>
+        <span class="team-tag">UX Architecture</span>
+        <span class="team-tag">KPI użyteczności</span>
+      </div>
+    </div>
+
+    <div class="team-card fade-in vacant">
+      <div class="team-avatar">🎙️</div>
+      <div class="team-name">— rekrutacja otwarta —</div>
+      <div class="team-role">Speech Processing Engineer</div>
+      <div class="team-org">AITHENTICA PSA · pozycja do obsadzenia</div>
+      <div class="team-tags">
+        <span class="team-tag">ASR / Diaryzacja</span>
+        <span class="team-tag">Przetwarzanie mowy</span>
+        <span class="team-tag">Pipeline audio</span>
+        <span class="team-tag">Anonimizacja PII</span>
+      </div>
+      <div class="vacant-badge">Stanowisko nieobsadzone</div>
+    </div>
+
+  </div>
+
+  <!-- IP PAN -->
+  <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#10B981;margin-bottom:0.75rem;">INSTYTUT PSYCHOLOGII PAN — Konsorcjant</p>
+  <div class="team-grid">
+
+    <div class="team-card fade-in">
+      <div class="team-avatar">🧑‍🔬</div>
+      <div class="team-name">Dr hab. n. med. Łukasz Gawęda</div>
+      <div class="team-role">Kierownik B+R</div>
+      <div class="team-org">Instytut Psychologii PAN · Konsorcjant</div>
+      <div class="team-tags">
+        <span class="team-tag">CBT / Psychopatologia</span>
+        <span class="team-tag">RCT</span>
+        <span class="team-tag">CTRS</span>
+        <span class="team-tag">Kierownik Pracowni</span>
+      </div>
+    </div>
+
+    <div class="team-card fade-in">
+      <div class="team-avatar">👩‍🔬</div>
+      <div class="team-name">Dr Adrianna Aleksandrowicz</div>
+      <div class="team-role">Badacz 1 — Główny Badacz</div>
+      <div class="team-org">Instytut Psychologii PAN · Konsorcjant</div>
+      <div class="team-tags">
+        <span class="team-tag">Kliniczne etapy 5–7</span>
+        <span class="team-tag">Nadzór etyczny</span>
+        <span class="team-tag">Koordynacja ośrodków</span>
+        <span class="team-tag">Publikacje naukowe</span>
+      </div>
+    </div>
+
+    <div class="team-card fade-in vacant">
+      <div class="team-avatar">🔬</div>
+      <div class="team-name">— rekrutacja otwarta —</div>
+      <div class="team-role">Badacz 2 — Statystyk / NLP</div>
+      <div class="team-org">Instytut Psychologii PAN · pozycja do obsadzenia</div>
+      <div class="team-tags">
+        <span class="team-tag">Statystyka</span>
+        <span class="team-tag">NLP / ML</span>
+        <span class="team-tag">Analizy ilościowe</span>
+        <span class="team-tag">Publikacje naukowe</span>
+      </div>
+      <div class="vacant-badge">Stanowisko nieobsadzone</div>
+    </div>
+
+  </div>
+  <p style="margin-top:1.25rem; font-size:0.8rem; color:var(--gray); text-align:center;">
+    Pełne CV i listy publikacji dostępne w Załączniku 3 wniosku. Zespół łącznie: 12 FTE, 8 instytucji partnerskich.
+  </p>
+</section>
+</div>
+<hr class="divider">
+
+<!-- INNOWACJE -->
+<div class="section-wrap section-alt" id="innowacje">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Wyniki B+R</div>
+  </div>
+  <h2 class="section-title">Pięć kluczowych innowacji</h2>
+  <p class="section-desc">Projekt wytworzy pięć komplementarnych innowacji technologicznych i naukowych, tworzących ekosystem AI dla terapii CBT.</p>
+  <div class="inn-split">
+    <!-- LEWA: lista kart -->
+    <div class="inn-list">
+
+      <button class="inn-item active" data-inn="1">
+        <div class="inn-item-head">
+          <span class="inn-item-num">1</span>
+          <span class="inn-item-icon">🗄️</span>
+          <div class="inn-item-titles">
+            <div class="inn-item-title">Korpus Danych Klinicznych CBT-AI</div>
+            <div class="inn-item-desc">Ustrukturyzowana baza <strong>1075+ sesji terapeutycznych</strong> z anotacjami ekspertów CBT.</div>
+          </div>
+        </div>
+        <span class="inn-tag">IP PAN + AIThentica</span>
+      </button>
+
+      <button class="inn-item" data-inn="2">
+        <div class="inn-item-head">
+          <span class="inn-item-num">2</span>
+          <span class="inn-item-icon">⚙️</span>
+          <div class="inn-item-titles">
+            <div class="inn-item-title">Platforma Ekstrakcji i Analizy Danych (LLM)</div>
+            <div class="inn-item-desc">Pipeline open-source LLM do ekstrakcji konstrukcji CBT. Zgodność z ekspertami: <strong>≥85%</strong>.</div>
+          </div>
+        </div>
+        <span class="inn-tag">AIThentica</span>
+      </button>
+
+      <button class="inn-item" data-inn="3">
+        <div class="inn-item-head">
+          <span class="inn-item-num">3</span>
+          <span class="inn-item-icon">🤖</span>
+          <div class="inn-item-titles">
+            <div class="inn-item-title">Moduł Wsparcia Terapeuty (20 agentów AI)</div>
+            <div class="inn-item-desc">System 20 agentów AI. Redukcja dokumentacji z <strong>60 do 5 minut</strong>.</div>
+          </div>
+        </div>
+        <span class="inn-tag">AIThentica</span>
+      </button>
+
+      <button class="inn-item" data-inn="4">
+        <div class="inn-item-head">
+          <span class="inn-item-num">4</span>
+          <span class="inn-item-icon">🔬</span>
+          <div class="inn-item-titles">
+            <div class="inn-item-title">Zestaw Narzędzi Badawczych CBT-AI</div>
+            <div class="inn-item-desc">Pakiet walidowanych narzędzi do oceny jakości AI w terapii CBT zgodny z MDR i GCP.</div>
+          </div>
+        </div>
+        <span class="inn-tag">IP PAN</span>
+      </button>
+
+      <button class="inn-item" data-inn="5">
+        <div class="inn-item-head">
+          <span class="inn-item-num">5</span>
+          <span class="inn-item-icon">🏥</span>
+          <div class="inn-item-titles">
+            <div class="inn-item-title">Program Certyfikacji MDR Klasy IIa</div>
+            <div class="inn-item-desc">Kompletna dokumentacja techniczna i kliniczna do certyfikacji jako wyrób medyczny klasy IIa.</div>
+          </div>
+        </div>
+        <span class="inn-tag">AIThentica</span>
+      </button>
+
+    </div>
+
+    <!-- PRAWA: panel szczegółów -->
+    <div class="inn-detail">
+
+      <div class="inn-panel active" data-inn="1">
+        <div class="inn-panel-header">
+          <span class="inn-panel-icon">🗄️</span>
+          <div>
+            <div class="inn-panel-num">Innowacja 1</div>
+            <div class="inn-panel-title">Korpus Danych Klinicznych CBT-AI</div>
+          </div>
+        </div>
+        <p class="inn-panel-desc">Ustrukturyzowana baza <strong>1075+ sesji terapeutycznych</strong> z anotacjami ekspertów CBT. Transkrypcje, konceptualizacje, wskaźniki postępu. Pierwszy tego rodzaju zasób w języku polskim.</p>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Kluczowe cechy produktu</div>
+          <ul class="inn-features">
+            <li>Autentyczny, polskojęzyczny korpus kliniczny CBT (nie syntetyczny)</li>
+            <li>Longitudinalne śledzenie pełnych procesów diagnostycznych i terapeutycznych</li>
+            <li>Multimodalność: tekst + audio + zdarzenia dźwiękowe</li>
+            <li>Bogate, strukturyzowane metadane kliniczne i demograficzne</li>
+            <li>Trwała warstwa analityczna AI (metryki CBT, ABC, zniekształcenia poznawcze, ruminacja)</li>
+            <li>Longitudinalne wzorce terapeutyczne i predyktory skuteczności</li>
+          </ul>
+        </div>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Wyróżnienie względem rynku</div>
+          <ul class="inn-market">
+            <li>Na rynku polskim brak porównywalnego, realnego korpusu sesji CBT (Cognic, EAP nie mają)</li>
+            <li>Polskie produkty nie oferują pełnych trajektorii terapii CBT (diagnostyka + 20 sesji)</li>
+            <li>Dostępne narzędzia ograniczają się do transkrypcji — brak połączenia tekstu, prozodii i zdarzeń akustycznych</li>
+            <li>Żadne obecne rozwiązanie nie udostępnia tak szerokiego panelu danych klinicznych i demograficznych</li>
+          </ul>
+        </div>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Wskaźnik innowacyjności</div>
+          <ul class="inn-features">
+            <li>Wielkość zbioru transkrypcji — liczba nagrań (cel: 1 075 sesji)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="inn-panel" data-inn="2">
+        <div class="inn-panel-header">
+          <span class="inn-panel-icon">⚙️</span>
+          <div>
+            <div class="inn-panel-num">Innowacja 2</div>
+            <div class="inn-panel-title">Platforma Ekstrakcji i Analizy Danych (LLM)</div>
+          </div>
+        </div>
+        <p class="inn-panel-desc">Pipeline oparty na open-source LLM do automatycznej ekstrakcji konstrukcji CBT (myśli automatyczne, przekonania core, zachowania) z sesji. Zgodność z ekspertami: <strong>≥85%</strong>.</p>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Kluczowe cechy produktu</div>
+          <ul class="inn-features">
+            <li>Pierwszy w Polsce certyfikowany system ekstrakcji i strukturyzacji danych z sesji CBT</li>
+            <li>Kompletna taksonomia 200+ metryk CBT dostosowana do polskiego języka i kontekstu kulturowego</li>
+            <li>Głęboka, multimodalna analiza (tekst + audio + zdarzenia akustyczne) specyficzna dla CBT</li>
+            <li>Wyspecjalizowani agenci AI do ekstrakcji kluczowych komponentów CBT (myśli, przekonania, schematy, emocje, zachowania)</li>
+            <li>Zaawansowana transkrypcja: wysoka dokładność ASR dla polskiego języka medycznego, diaryzacja &gt;98%, znaczniki czasowe na poziomie słów</li>
+          </ul>
+        </div>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Wyróżnienie względem rynku</div>
+          <ul class="inn-market">
+            <li>Żadne obecne rozwiązanie (Cognic, Mindgram/HearMe, Wellbee, Prosoma, Calmsie) nie jest certyfikowanym wyrobem medycznym tego typu</li>
+            <li>Na rynku brak formalnie zdefiniowanej i mierzonej taksonomii metryk CBT dla polskich sesji</li>
+            <li>Dostępne systemy ograniczają się do tekstu/transkrypcji, nie analizują multimodalnie pod kątem CBT</li>
+            <li>Istniejące narzędzia nie rozbijają procesu CBT do obróbki przez wyspecjalizowanych agentów AI</li>
+          </ul>
+        </div>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Wskaźniki innowacyjności</div>
+          <ul class="inn-features">
+            <li>Poziom deterministyczności i powtarzalności wyników AI (MDR-readiness)</li>
+            <li>Skuteczność ekstrakcji informacji klinicznych na własnej infrastrukturze open-source</li>
+            <li>Skuteczność narzędzia do generowania sesji syntetycznych</li>
+            <li>Zgodność ekstrakcji metryk CBT z oceną ekspertów (cel: ≥85%)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="inn-panel" data-inn="3">
+        <div class="inn-panel-header">
+          <span class="inn-panel-icon">🤖</span>
+          <div>
+            <div class="inn-panel-num">Innowacja 3</div>
+            <div class="inn-panel-title">Moduł Wsparcia Terapeuty (20 agentów AI)</div>
+          </div>
+        </div>
+        <p class="inn-panel-desc">System 20 wyspecjalizowanych agentów AI do: automatycznych notatek, konceptualizacji CBT, monitorowania postępu, identyfikacji wzorców. Redukcja czasu dokumentacji z <strong>60 do 5 minut</strong>.</p>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Kluczowe cechy produktu</div>
+          <ul class="inn-features">
+            <li>Pierwszy w Polsce certyfikowany system wysokopoziomowego wsparcia terapeuty</li>
+            <li>Architektura ok. 20 wyspecjalizowanych agentów AI z unikalną orkiestracją między agentami</li>
+            <li>Zautomatyzowane raportowanie i wsparcie decyzyjne z interaktywną wizualizacją 200+ metryk CBT</li>
+            <li>Bezszwowa integracja z Platformą Ekstrakcji i Analizy Danych CBT (innowacja nr 2)</li>
+          </ul>
+        </div>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Wyróżnienie względem rynku</div>
+          <ul class="inn-market">
+            <li>Obecne rozwiązania (Cognic, Mindgram, Wellbee) nie są wyrobami medycznymi MDR</li>
+            <li>Żaden polski system nie oferuje klinicznie zorientowanego asystenta terapeuty AI z orkiestracją agentów</li>
+            <li>Dostępne narzędzia nie generują pełnej konceptualizacji CBT, raportów progresji ani rekomendacji terapeutycznych na bazie 200+ metryk</li>
+            <li>Ścisła integracja danych w istotne klinicznie wnioski — aktualnie niedostępna na rynku polskim</li>
+          </ul>
+        </div>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Wskaźnik innowacyjności</div>
+          <ul class="inn-features">
+            <li>Redukcja czasu przygotowania i przekazania konceptualizacji przez terapeutę (cel: 60 → 5 min)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="inn-panel" data-inn="4">
+        <div class="inn-panel-header">
+          <span class="inn-panel-icon">🔬</span>
+          <div>
+            <div class="inn-panel-num">Innowacja 4</div>
+            <div class="inn-panel-title">Zestaw Narzędzi Badawczych CBT-AI</div>
+          </div>
+        </div>
+        <p class="inn-panel-desc">Pakiet walidowanych narzędzi do oceny jakości AI w terapii CBT: metryki zgodności z ekspertami, testy psychometryczne, framework ewaluacji klinicznej zgodny z metodyką MDR i Good Clinical Practice.</p>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Kluczowe cechy produktu</div>
+          <ul class="inn-features">
+            <li>Pierwszy w Polsce zaawansowany system generowania syntetycznych sesji terapeutycznych CBT</li>
+            <li>Kompleksowy moduł porównawczy dla modeli LLM z dedykowanymi metrykami dla polskiego języka terapeutycznego</li>
+            <li>Kompleksowy moduł porównawczy dla systemów rozpoznawania mowy (ASR) i wykrywania zdarzeń dźwiękowych</li>
+            <li>Zaawansowany system automatycznej anonimizacji transkrypcji uwzględniający polskie formy językowe, kontekst terapeutyczny i pseudonimizację między sesjami</li>
+          </ul>
+        </div>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Wyróżnienie względem rynku</div>
+          <ul class="inn-market">
+            <li>Pierwsze takie narzędzie w Polsce do generowania syntetycznych sesji terapeutycznych CBT</li>
+            <li>Unikalne podejście z polskimi metrykami specjalistycznymi do oceny modeli LLM</li>
+            <li>Nowatorski moduł porównawczy ASR dedykowany polskiemu kontekstowi terapeutycznemu</li>
+            <li>Nowy standard anonimizacji uwzględniający polskie formy językowe — aktualnie nieobecny na rynku</li>
+          </ul>
+        </div>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Wskaźniki innowacyjności</div>
+          <ul class="inn-features">
+            <li>Skuteczność anonimizacji danych PII/PHI za pomocą modeli open-source (cel: ≥99,5%)</li>
+            <li>Skuteczność narzędzia do generowania sesji syntetycznych</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="inn-panel" data-inn="5">
+        <div class="inn-panel-header">
+          <span class="inn-panel-icon">🏥</span>
+          <div>
+            <div class="inn-panel-num">Innowacja 5</div>
+            <div class="inn-panel-title">Program Certyfikacji MDR Klasy IIa</div>
+          </div>
+        </div>
+        <p class="inn-panel-desc">Kompletna dokumentacja techniczna i kliniczna do certyfikacji platformy jako wyrobu medycznego klasy IIa wg MDR 2017/745. Clinical Evaluation Report, Post-Market Surveillance Plan, QMS ISO 13485.</p>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Kluczowe cechy produktu</div>
+          <ul class="inn-features">
+            <li>Pierwszy w Polsce program prowadzący do certyfikacji wyrobu medycznego klasy IIa z AI w psychoterapii CBT (MDR 2017/745)</li>
+            <li>Kompleksowe wypełnienie luki regulacyjnej dla AI w zdrowiu psychicznym w Polsce — precedens metodologiczny zgodny z MDR i AI Act</li>
+            <li>Pełny program dowodu klinicznego zgodny z MDCG 2020-1 (ważność naukowa, wydajność analityczno-techniczna, wydajność kliniczna na 580 sesjach)</li>
+            <li>Zintegrowany program badań użyteczności i bezpieczeństwa (IEC 62366-1) z formalnym raportem czynników ludzkich spełniającym wymagania GSPR</li>
+            <li>Kompletna strategia kliniczna i raport oceny klinicznej (CER)</li>
+          </ul>
+        </div>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Wyróżnienie względem rynku</div>
+          <ul class="inn-market">
+            <li>Innowacyjne podejście, które nie miało wcześniej miejsca w Polsce w obszarze AI w CBT</li>
+            <li>Opracowanie protokołów walidacji klinicznej zgodnych z MDR i AI Act tworzy nowy standard regulacyjny</li>
+            <li>Spójny program oparty na dokładnych metrykach i algorytmach — unikalne możliwości oceny efektywności klinicznej</li>
+            <li>Spełnienie wymagań IEC 62366-1 i GSPR w kontekście AI w psychoterapii — dotychczas nieosiągalne na rynku polskim</li>
+          </ul>
+        </div>
+        <div class="inn-expand-section">
+          <div class="inn-expand-label">Wskaźniki innowacyjności</div>
+          <ul class="inn-features">
+            <li>Skuteczność ekstrakcji informacji klinicznych na własnej infrastrukturze open-source</li>
+            <li>Skuteczność diaryzacji i rozpoznania zdarzeń akustycznych w sesjach (cel: ≥98%)</li>
+            <li>Skuteczność anonimizacji danych PII/PHI na własnej infrastrukturze (cel: ≥99,5%)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- HARMONOGRAM -->
+<div class="section-wrap" id="harmonogram">
+<section id="gantt-section" class="fade-in" style="max-width:1100px;">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Plan badań B+R</div>
+  </div>
+  <h2 class="section-title">Harmonogram zadań badawczych 2026–2029</h2>
+  <p class="section-desc">7 zadań badawczych realizowanych przez 4 lata. Najedź na pasek, aby zobaczyć szczegóły zadania i koszty.</p>
+
+  <div class="gantt-wrapper fade-in">
+    <div class="gantt-header">
+      <div></div>
+      <div class="gantt-quarter" style="grid-column:span 4">2026</div>
+      <div class="gantt-quarter" style="grid-column:span 4">2027</div>
+      <div class="gantt-quarter" style="grid-column:span 4">2028</div>
+      <div class="gantt-quarter" style="grid-column:span 4">2029</div>
+    </div>
+    <div class="gantt-header" style="margin-top:-0.3rem; margin-bottom:0.75rem;">
+      <div style="font-size:0.65rem;color:var(--gray)">Zadanie badawcze</div>
+      <div class="gantt-quarter">Q1</div><div class="gantt-quarter">Q2</div><div class="gantt-quarter">Q3</div><div class="gantt-quarter">Q4</div>
+      <div class="gantt-quarter">Q1</div><div class="gantt-quarter">Q2</div><div class="gantt-quarter">Q3</div><div class="gantt-quarter">Q4</div>
+      <div class="gantt-quarter">Q1</div><div class="gantt-quarter">Q2</div><div class="gantt-quarter">Q3</div><div class="gantt-quarter">Q4</div>
+      <div class="gantt-quarter">Q1</div><div class="gantt-quarter">Q2</div><div class="gantt-quarter">Q3</div><div class="gantt-quarter">Q4</div>
+    </div>
+    <div id="gantt-rows"></div>
+    <div class="gantt-legend">
+      <div class="gantt-legend-item"><div class="gantt-legend-dot" style="background:var(--teal)"></div>AIThentica (lider)</div>
+      <div class="gantt-legend-item"><div class="gantt-legend-dot" style="background:var(--green)"></div>Instytut Psychologii PAN</div>
+      <div class="gantt-legend-item"><div class="gantt-legend-dot" style="background:linear-gradient(90deg,var(--teal),var(--green))"></div>Wspólne</div>
+    </div>
+  </div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- MILESTONES -->
+<div class="section-wrap" id="milestones">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Kluczowe daty projektu</div>
+  </div>
+  <h2 class="section-title">Kamienie milowe 2026–2029</h2>
+  <p class="section-desc">Sekwencja kluczowych wydarzeń projektowych — od zgody bioetycznej do certyfikacji MDR i komercjalizacji.</p>
+  <div class="milestones-timeline">
+
+    <div class="milestone-item fade-in">
+      <div class="milestone-dot-wrap key">🚀</div>
+      <div class="milestone-content">
+        <div class="milestone-date">Q1 2026</div>
+        <div class="milestone-title">Kick-off projektu &amp; start rekrutacji pilotażowej</div>
+        <div class="milestone-desc">Formalne uruchomienie projektu. Rekrutacja pilotażowa terapeutów CBT (N=15) do pre-testów narzędzi badawczych. Uruchomienie systemu zarządzania jakością (QMS).</div>
+        <span class="milestone-badge teal">Start projektu</span>
+      </div>
+    </div>
+
+    <div class="milestone-item fade-in">
+      <div class="milestone-dot-wrap">✅</div>
+      <div class="milestone-content">
+        <div class="milestone-date">Q2 2026</div>
+        <div class="milestone-title">Uzyskanie zgody bioetycznej komisji</div>
+        <div class="milestone-desc">Komisja Bioetyczna IP PAN zatwierdza protokół badania klinicznego (RCT). Rejestracja badania w bazie ClinicalTrials.gov. Warunek konieczny rozpoczęcia rekrutacji głównej.</div>
+        <span class="milestone-badge">Etap regulacyjny</span>
+      </div>
+    </div>
+
+    <div class="milestone-item fade-in">
+      <div class="milestone-dot-wrap">🎙️</div>
+      <div class="milestone-content">
+        <div class="milestone-date">Q4 2026</div>
+        <div class="milestone-title">Prototyp platformy ASR + anonimizacja PII</div>
+        <div class="milestone-desc">Działający prototyp transkrypcji i diaryzacji głośników (≥98% dokładność) z modułem anonimizacji PII (99.5% skuteczność). Pierwsza certyfikacja wewnętrzna jakości danych.</div>
+        <span class="milestone-badge teal">Kamień milowy techniczny</span>
+      </div>
+    </div>
+
+    <div class="milestone-item fade-in">
+      <div class="milestone-dot-wrap">🗄️</div>
+      <div class="milestone-content">
+        <div class="milestone-date">Q2 2027</div>
+        <div class="milestone-title">Korpus CBT-AI osiąga 500 sesji (50% celu)</div>
+        <div class="milestone-desc">Połowa docelowego korpusu (z 1075 sesji) z anotacjami ekspertów. Walidacja pośrednia metodologii anotacji. Publikacja pre-print opisujący metodologię tworzenia korpusu.</div>
+        <span class="milestone-badge">Kamień milowy naukowy</span>
+      </div>
+    </div>
+
+    <div class="milestone-item fade-in">
+      <div class="milestone-dot-wrap">🤖</div>
+      <div class="milestone-content">
+        <div class="milestone-date">Q3 2027</div>
+        <div class="milestone-title">Wdrożenie pełnego systemu 20 agentów AI</div>
+        <div class="milestone-desc">Wszystkie 20 agentów AI integracja w platformie terapeutycznej. Start walidacji zgodności ekstrakcji AI z ekspertami (cel: F1 ≥0.85). Demonstracja dla komisji NCBR.</div>
+        <span class="milestone-badge teal">Kamień milowy techniczny</span>
+      </div>
+    </div>
+
+    <div class="milestone-item fade-in">
+      <div class="milestone-dot-wrap">🔬</div>
+      <div class="milestone-content">
+        <div class="milestone-date">Q1 2028</div>
+        <div class="milestone-title">Start randomizowanego badania klinicznego (RCT)</div>
+        <div class="milestone-desc">Oficjalne rozpoczęcie fazy RCT: rekrutacja N=95 terapeutów CBT, losowy przydział do grup (AI/kontrolna). Pierwsze dane kliniczne do analizy. Nadzór IDMC (niezależny komitet monitorujący).</div>
+        <span class="milestone-badge key">Kluczowy kamień milowy</span>
+      </div>
+    </div>
+
+    <div class="milestone-item fade-in">
+      <div class="milestone-dot-wrap">📊</div>
+      <div class="milestone-content">
+        <div class="milestone-date">Q4 2028</div>
+        <div class="milestone-title">Zakończenie RCT — analiza wyników</div>
+        <div class="milestone-desc">Zamknięcie rekrutacji i danych klinicznych. Ślepa analiza statystyczna wyników przez niezależnych statystyków. Wstępne wyniki dla celów raportowania do NCBR i przygotowania certyfikacji.</div>
+        <span class="milestone-badge">Wyniki kliniczne</span>
+      </div>
+    </div>
+
+    <div class="milestone-item fade-in">
+      <div class="milestone-dot-wrap">🏥</div>
+      <div class="milestone-content">
+        <div class="milestone-date">Q1 2029</div>
+        <div class="milestone-title">Złożenie dokumentacji certyfikacyjnej MDR</div>
+        <div class="milestone-desc">Złożenie kompletnego Technical File do jednostki notyfikowanej. Clinical Evaluation Report, Post-Market Surveillance Plan, ISO 13485 QMS w pełni implementowane. Weryfikacja formalna MDR.</div>
+        <span class="milestone-badge teal">Regulacje MDR</span>
+      </div>
+    </div>
+
+    <div class="milestone-item fade-in">
+      <div class="milestone-dot-wrap key">🎖️</div>
+      <div class="milestone-content">
+        <div class="milestone-date">Q3 2029</div>
+        <div class="milestone-title">Certyfikat CE — wyrób medyczny klasy IIa</div>
+        <div class="milestone-desc">Uzyskanie certyfikatu CE potwierdzającego zgodność z MDR 2017/745. Otwarcie ścieżki do refundacji przez NFZ. Start pilotu komercyjnego w 3 klinikach partnerskich. Zamknięcie projektu B+R.</div>
+        <span class="milestone-badge">Zakończenie projektu</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- KPI -->
+<div class="section-wrap section-alt" id="wskazniki">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Mierzalne cele projektu</div>
+  </div>
+  <h2 class="section-title">Kluczowe wskaźniki sukcesu (KPI)</h2>
+  <p class="section-desc">Każdy wskaźnik jest mierzalny, weryfikowalny przez recenzję ekspercką i osadzony w rygoryzmie metodologii MDR/GCP.</p>
+  <div class="kpi-grid">
+    <div class="kpi-card fade-in">
+      <div class="kpi-value" data-target="85" data-suffix="%">0%</div>
+      <div class="kpi-label">Zgodność ekstrakcji AI<br>z oceną ekspertów CBT</div>
+    </div>
+    <div class="kpi-card fade-in">
+      <div class="kpi-value" data-from="60" data-target="5" data-suffix=" min">60 min</div>
+      <div class="kpi-label">Redukcja czasu<br>konceptualizacji CBT</div>
+    </div>
+    <div class="kpi-card fade-in">
+      <div class="kpi-value" data-target="25" data-suffix="%">0%</div>
+      <div class="kpi-label">Wzrost jakości<br>diagnozy CBT</div>
+    </div>
+    <div class="kpi-card fade-in">
+      <div class="kpi-value" data-target="98" data-suffix="%">0%</div>
+      <div class="kpi-label">Dokładność diaryzacji<br>głośników (ASR)</div>
+    </div>
+    <div class="kpi-card fade-in">
+      <div class="kpi-value" data-target="99.5" data-suffix="%">0%</div>
+      <div class="kpi-label">Skuteczność anonimizacji<br>danych osobowych (PII)</div>
+    </div>
+    <div class="kpi-card fade-in">
+      <div class="kpi-value" data-target="1075" data-suffix="">0</div>
+      <div class="kpi-label">Sesji terapeutycznych<br>w korpusie CBT-AI</div>
+    </div>
+  </div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- BUDŻET -->
+<div class="section-wrap" id="budzet">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Finansowanie projektu</div>
+  </div>
+  <h2 class="section-title">Budżet projektu: 8,84 mln PLN</h2>
+  <p class="section-desc">Projekt finansowany ze środków Funduszy Europejskich dla Nowoczesnej Gospodarki w ramach Ścieżki SMART NCBR.</p>
+
+  <div class="budget-grid">
+    <div>
+      <div class="budget-chart-wrap">
+        <canvas id="budgetChart" height="300"></canvas>
+        <div class="budget-center">
+          <div class="budget-center-value">8,84M</div>
+          <div class="budget-center-label">PLN całkowity budżet</div>
+        </div>
+      </div>
+    </div>
+    <div class="budget-details">
+      <div class="budget-item">
+        <div class="budget-item-header">
+          <span class="budget-item-name label-teal">■ AIThentica PSA (Lider)</span>
+          <span class="budget-item-value">6,76 mln PLN</span>
+        </div>
+        <div class="budget-bar"><div class="budget-bar-fill" style="width:76.5%;background:#134A45"></div></div>
+      </div>
+      <div class="budget-item">
+        <div class="budget-item-header">
+          <span class="budget-item-name label-green">■ Instytut Psychologii PAN</span>
+          <span class="budget-item-value">2,08 mln PLN</span>
+        </div>
+        <div class="budget-bar"><div class="budget-bar-fill" style="width:23.5%;background:#3BD5AE"></div></div>
+      </div>
+      <div class="budget-item" style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid #E2E8F0;">
+        <div class="budget-item-header">
+          <span class="budget-item-name" style="color:#475569">■ Dofinansowanie UE (82%)</span>
+          <span class="budget-item-value">7,21 mln PLN</span>
+        </div>
+        <div class="budget-bar"><div class="budget-bar-fill" style="width:82%;background:#134A45"></div></div>
+      </div>
+      <div class="budget-item">
+        <div class="budget-item-header">
+          <span class="budget-item-name" style="color:#94A3B8">■ Wkład własny konsorcjum (18%)</span>
+          <span class="budget-item-value" style="color:#94A3B8">1,63 mln PLN</span>
+        </div>
+        <div class="budget-bar"><div class="budget-bar-fill" style="width:18%;background:#CBD5E1"></div></div>
+      </div>
+
+      <div class="budget-years">
+        <div class="budget-years-title">Burn rate według lat realizacji</div>
+        <div class="budget-year-row">
+          <div class="budget-year-label">2026</div>
+          <div class="budget-year-bar-wrap"><div class="budget-year-bar" style="width:21%;background:#134A45;color:#fff">1,86M</div></div>
+          <div class="budget-year-amount">1,86 mln</div>
+        </div>
+        <div class="budget-year-row">
+          <div class="budget-year-label">2027</div>
+          <div class="budget-year-bar-wrap"><div class="budget-year-bar" style="width:42%;background:#134A45;color:#fff">3,71M</div></div>
+          <div class="budget-year-amount">3,71 mln</div>
+        </div>
+        <div class="budget-year-row">
+          <div class="budget-year-label">2028</div>
+          <div class="budget-year-bar-wrap"><div class="budget-year-bar" style="width:33%;background:#3BD5AE;color:#134A45">2,95M</div></div>
+          <div class="budget-year-amount">2,95 mln</div>
+        </div>
+        <div class="budget-year-row">
+          <div class="budget-year-label">2029</div>
+          <div class="budget-year-bar-wrap"><div class="budget-year-bar" style="width:4%;background:#3BD5AE;color:#134A45;font-size:0.6rem">0,32M</div></div>
+          <div class="budget-year-amount">0,32 mln</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="burnRateChart" style="margin-top:2rem;max-height:200px;"></canvas>
+</section>
+</div>
+<hr class="divider">
+
+<!-- OPEN SOURCE / MDR -->
+<div class="section-wrap section-alt" id="opensource">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Decyzja architektoniczna</div>
+  </div>
+  <h2 class="section-title">Dlaczego open-source? Trzy filary MDR Readiness</h2>
+  <p class="section-desc">Wybór modeli open-source nie jest ograniczeniem — to warunek konieczny certyfikacji MDR i suwerenności danych pacjentów.</p>
+  <div class="opensource-grid">
+    <div class="os-card fade-in">
+      <div class="os-icon">🎯</div>
+      <h4>Determinizm wyników</h4>
+      <p>MDR wymaga powtarzalności i weryfikowalności. Open-source LLM działające lokalnie dają identyczne wyniki przy tych samych danych wejściowych — wymaganie kluczowe dla Clinical Evaluation.</p>
+    </div>
+    <div class="os-card fade-in">
+      <div class="os-icon">🔒</div>
+      <h4>Suwerenność danych (RODO)</h4>
+      <p>Dane pacjentów nigdy nie opuszczają kontrolowanego środowiska. Zero cloud APIs. Pełna zgodność z art. 35 RODO (DPIA) i MDR Annex I wymogami bezpieczeństwa danych.</p>
+    </div>
+    <div class="os-card fade-in">
+      <div class="os-icon">🔍</div>
+      <h4>Audytowalność (MDR Art. 10)</h4>
+      <p>Pełny dostęp do kodu modelu i wag — jednostka notyfikowana może przeprowadzić pełny audyt. Brak zależności od zewnętrznych dostawców, którzy mogą zmienić model bez wiedzy certyfikującego.</p>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Kryterium</th>
+          <th>Chmurowe API (GPT-4, Claude)</th>
+          <th>Open-source lokalne (Llama, Mistral)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Certyfikacja MDR</td>
+          <td class="bad">❌ Niemożliwa bez audytu dostawcy</td>
+          <td class="good">✅ Pełna audytowalność</td>
+        </tr>
+        <tr>
+          <td>Zgodność RODO art. 35</td>
+          <td class="bad">❌ Wymaga DPA z każdym dostawcą</td>
+          <td class="good">✅ Dane nie opuszczają środowiska</td>
+        </tr>
+        <tr>
+          <td>Determinizm wyników</td>
+          <td class="bad">❌ Model może być aktualizowany bez powiadomienia</td>
+          <td class="good">✅ Gwarantowany przez kontrolę wersji</td>
+        </tr>
+        <tr>
+          <td>Koszt operacyjny</td>
+          <td class="bad">⚠️ Zmienny, uzależniony od tokenpricingu</td>
+          <td class="good">✅ Stały koszt infrastruktury</td>
+        </tr>
+        <tr>
+          <td>Zależność od zewnętrznego dostawcy</td>
+          <td class="bad">❌ Wysoka (ryzyko zmiany polityki, cennika)</td>
+          <td class="good">✅ Brak zależności vendor lock-in</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- RYZYKA -->
+<div class="section-wrap section-alt" id="ryzyka">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Zarządzanie ryzykiem</div>
+  </div>
+  <h2 class="section-title">Rejestr ryzyk projektowych</h2>
+  <p class="section-desc">Sześć kluczowych ryzyk zidentyfikowanych w fazie planowania z oceną prawdopodobieństwa, wpływu i planami mitygacji.</p>
+
+  <div style="margin-bottom:1rem;">
+    <div class="risk-header-row">
+      <div>Ryzyko</div>
+      <div style="text-align:center">Prawdop.</div>
+      <div style="text-align:center">Wpływ</div>
+      <div>Plan mitygacji</div>
+    </div>
+    <div class="risk-grid">
+
+      <div class="risk-row fade-in">
+        <div class="risk-name">Trudności rekrutacyjne — terapeuci CBT
+          <small>Niska liczba certyfikowanych terapeutów CBT dostępnych do RCT</small>
+        </div>
+        <div class="risk-pill high">40% · Wysoki</div>
+        <div class="risk-pill high">Wysoki</div>
+        <div class="risk-mitigation">Wczesna rekrutacja pilotażowa (Q1 2026). Sieć 80+ kontaktów IP PAN. Incentywy CPD. Plan B: N=30 uzupełniające z dokumentacją MDR. Partnerstwo z Polskim Towarzystwem Terapii Poznawczej.</div>
+      </div>
+
+      <div class="risk-row fade-in">
+        <div class="risk-name">Opóźnienie certyfikacji MDR
+          <small>Jednostka notyfikowana może wydłużyć proces weryfikacji dokumentacji</small>
+        </div>
+        <div class="risk-pill med">30% · Średni</div>
+        <div class="risk-pill high">Wysoki</div>
+        <div class="risk-mitigation">Wczesne zaangażowanie jednostki notyfikowanej (Q1 2028). Pre-submission meeting. Dedykowany MDR Specialist w projekcie. Harmonogram zakłada 12-miesięczny bufor na certyfikację.</div>
+      </div>
+
+      <div class="risk-row fade-in">
+        <div class="risk-name">Niewystarczająca jakość ekstrakcji AI
+          <small>F1-score systemu poniżej progu 85% wymaganego w KPI</small>
+        </div>
+        <div class="risk-pill med">25% · Średni</div>
+        <div class="risk-pill med">Średni</div>
+        <div class="risk-mitigation">Iteracyjny fine-tuning LLM na rosnącym korpusie CBT. Walidacja pośrednia po każdych 200 sesjach. Alternatywne modele bazowe (Llama 3.2, Mistral Large 2). Human-in-the-loop fallback dla edge cases.</div>
+      </div>
+
+      <div class="risk-row fade-in">
+        <div class="risk-name">Zmiany regulacyjne MDR / rozporządzenie AI Act
+          <small>Nowe wymogi regulacyjne wchodzące w życie w trakcie projektu</small>
+        </div>
+        <div class="risk-pill med">20% · Średni</div>
+        <div class="risk-pill med">Średni</div>
+        <div class="risk-mitigation">Monitoring zmian prawnych (EUDAMED, AI Act Class III check). Elastyczna architektura dokumentacji. Konsultacje z prawnikiem regulacyjnym medycznym co kwartał. Rezerwa budżetowa 5% na dostosowania.</div>
+      </div>
+
+      <div class="risk-row fade-in">
+        <div class="risk-name">Naruszenie danych pacjentów / incydent RODO
+          <small>Wyciek danych klinicznych z infrastruktury projektu</small>
+        </div>
+        <div class="risk-pill low">10% · Niski</div>
+        <div class="risk-pill high">Krytyczny</div>
+        <div class="risk-mitigation">Anonimizacja PII 99.5% jako warunek pipeline. Niezależny audyt bezpieczeństwa IT (roczny). Szyfrowanie AES-256 at-rest. DPIA przeprowadzona. Procedura Data Breach Response (art. 33 RODO, 72h).</div>
+      </div>
+
+      <div class="risk-row fade-in">
+        <div class="risk-name">Odejście kluczowych członków zespołu
+          <small>Utrata lead researcher lub kluczowego inżyniera AI w trakcie projektu</small>
+        </div>
+        <div class="risk-pill low">15% · Niski</div>
+        <div class="risk-pill med">Średni</div>
+        <div class="risk-mitigation">Dokumentacja wiedzy (Confluence). Przekrywające się role (bus factor &gt;1 na każde krytyczne zadanie). Klauzule kontraktowe. Partnerstwo uczelni jako backup zasobów badawczych IP PAN.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.75rem;font-size:0.78rem;color:var(--gray);">
+    <span><span style="color:#ef5350">●</span> Wysoki priorytet (natychmiastowa mitygacja)</span>
+    <span><span style="color:#ffa726">●</span> Średni priorytet (plan mitygacji aktywny)</span>
+    <span><span style="color:var(--green)">●</span> Niski priorytet (monitoring)</span>
+    <span style="margin-left:auto;color:var(--gray)">Ostatnia aktualizacja: Marzec 2026</span>
+  </div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- FAQ -->
+<div class="section-wrap" id="faq">
+<section class="fade-in">
+  <div class="section-header-line">
+    <div class="section-line"></div>
+    <div class="section-label">Pytania panelu ekspertów NCBR</div>
+  </div>
+  <h2 class="section-title">Wszystkie pytania do wniosku FENG.01.01-IP.01-A1G8/25</h2>
+  <p class="section-desc">Kompletna lista pytań i odpowiedzi zgłoszonych przez ekspertów panelu NCBR. Oznaczenia: <strong style="color:var(--teal)">PAN</strong> — pytanie dotyczy IP PAN, <strong style="color:#ffa726">AITS</strong> — pytanie dotyczy AIThentica.</p>
+
+  <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+    <span style="font-size:0.75rem;padding:0.3rem 0.8rem;border-radius:20px;background:rgba(0,188,212,0.1);border:1px solid rgba(0,188,212,0.3);color:var(--teal)">PAN — Metodologia</span>
+    <span style="font-size:0.75rem;padding:0.3rem 0.8rem;border-radius:20px;background:rgba(255,167,38,0.1);border:1px solid rgba(255,167,38,0.3);color:#ffa726">AITS — Techniczne/Finansowe</span>
+    <span style="font-size:0.75rem;padding:0.3rem 0.8rem;border-radius:20px;background:rgba(0,230,118,0.1);border:1px solid rgba(0,230,118,0.3);color:var(--green)">PAN+AITS — Wspólne</span>
+    <span style="margin-left:auto;font-size:0.75rem;color:var(--gray)">41 pytań · kliknij aby rozwinąć</span>
+  </div>
+
+  <div class="faq-list">
+
+    <!-- P.1 PAN -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,188,212,0.15);color:var(--teal)">P.1 PAN</span>
+        <span class="faq-text">Jak zostaną zdefiniowane i zmierzone główne wskaźniki skuteczności w randomizowanych badaniach kontrolowanych?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><em>Pytanie od: Łukasz Gawęda</em></p>
+          <p><strong>Etap I</strong></p>
+          <ul style="margin:0.5rem 0 0.5rem 1.5rem;color:var(--gray)">
+            <li>Opracowanie parametrów oceny sesji na podstawie Cognitive Therapy Rating Scale (CTRS) oraz standardów CBT: dialog sokratejski, parafrazowanie, struktura sesji, jakość diagnozy</li>
+            <li>Ocena konceptualizacji wg CTRS — porównanie punktacji między terapeutami z AI vs bez AI przez superwizorów</li>
+            <li>Ocena transkrypcji nagrań retrospektywnych do uczenia modelu AI: myśli automatyczne, przekonania pośredniczące, przekonania kluczowe, umiejętności terapeutyczne</li>
+          </ul>
+          <div class="highlight-box">
+            <strong>Ogólne umiejętności terapeutyczne oceniane:</strong> Ustalanie planu sesji · Informacje zwrotne · Zrozumienie · Skuteczność interpersonalna · Współpraca · Tempo i efektywne wykorzystanie czasu
+          </div>
+          <p><strong>Konceptualizacja, strategie, techniki:</strong></p>
+          <ul style="margin:0.5rem 0 0.5rem 1.5rem;color:var(--gray)">
+            <li>Ukierunkowane dochodzenie do prawdy (guided discovery)</li>
+            <li>Koncentracja na kluczowych myślach lub zachowaniach</li>
+            <li>Zastosowanie technik poznawczo-behawioralnych</li>
+            <li>Zastosowanie adekwatnych metod diagnostycznych</li>
+            <li>Wykonanie diagnozy różnicowej adekwatnie do zgłaszanych problemów</li>
+          </ul>
+          <p>Skala oceny: 0 (słabo) – 6 (doskonale). Miarą zgodności będzie korelacja wyników z trzech źródeł: AI, terapeuci i superwizorzy.</p>
+          <p><strong>Etap II:</strong> Porównanie ocen zgodności wg CTRS. Ocena zadowolenia terapeutów, użyteczności AI, zadowolenia pacjentów, wskaźnik rezygnacji (drop-out %).</p>
+          <div class="highlight-box">
+            <strong>Etap III — pomiary w 3 punktach czasowych:</strong><br>
+            T0: baseline (przed terapią) · T1: post-test (w trakcie) · T2: follow-up (3 miesiące po)<br><br>
+            <strong>Kliniczne miary:</strong> BDI-II, PHQ-9, GAD-7, kryteria DSM-5/ICD-11, CSQ-8, CTRS, NEQ (Negative Effects Questionnaire), WHOQOL-BREF, GAF
+          </div>
+          <p>Ocena jakości: losowe 10% sesji oceniane przez niezależnych superwizorów wg Axelsson et al. (2020) — 27-punktowy instrument (0–100% adherence, 0–5 kompetencje) oraz Skala Oceny sesji CBT (11 kryteriów, max. 33 pkt).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.2 PAN -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,188,212,0.15);color:var(--teal)">P.2 PAN</span>
+        <span class="faq-text">W jaki sposób będzie kontrolowany wpływ różnic między terapeutami i pacjentami na porównanie terapii wspomaganej AI z tradycyjną?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><em>Pytanie od: Adrianna Aleksandrowicz</em></p>
+          <ul style="margin:0.5rem 0 0.5rem 1.5rem;color:var(--gray)">
+            <li>Terapeuci rekrutowani wg kryterium doświadczenia: min. 1–2 lata terapii CBT, od 2. roku szkolenia, max. 5–7 lat (kontrola efektu doświadczenia)</li>
+            <li>Losowy przydział terapeutów do grupy AI / kontrolna — minimalizacja różnic między terapeutami</li>
+            <li>Losowy przydział podobnej liczby pacjentów per terapeuta (~10–12 pacjentów)</li>
+            <li>Losowy przydział pacjentów do grupy badawczej i kontrolnej — minimalizacja różnic demograficznych i współwystępujących zaburzeń</li>
+            <li>Procedura zaślepienia (assessor-blind study) — niezależni oceniający wykonują ocenę kliniczną przed i po interwencji</li>
+            <li>Ślepa ocena sesji, konceptualizacji i przebiegu terapii przez niezależnych sędziów i superwizorów</li>
+          </ul>
+          <div class="highlight-box">
+            <strong>Kryteria włączenia pacjentów:</strong> Aktualny epizod depresyjny wg DSM-5/ICD-11 · Wiek 18–65 · Pełna świadoma zgoda
+          </div>
+          <div class="highlight-box">
+            <strong>Kryteria wykluczenia:</strong> Aktywne myśli samobójcze · Zaburzenia neurologiczne · Zagrażające życiu choroby fizyczne/deficyty poznawcze · Uzależnienia (ostatnie 6 mies.) · Aktualny epizod manii · Zaburzenia osobowości wiązka B · Zaburzenia psychotyczne · Niemożność udziału w ≥50% fazy interwencji
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.3 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.3 AITS</span>
+        <span class="faq-text">Prosimy o uzasadnienie wybrania 5 innowacji produktowych. Prosimy o przedstawienie sposobu wdrożenia dla każdej z nich.</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Wniosek opisuje <strong>5 innowacji produktowych</strong>:</p>
+          <div class="highlight-box"><strong>1. Moduł Ekstrakcji i Analizy Danych Sesji (LLM)</strong> — automatyczna ekstrakcja 200+ metryk CBT z transkrypcji; cel: 85% zgodności z ekspertem; wdrożenie jako rdzeń platformy w Module Wdrożenia Innowacji.</div>
+          <div class="highlight-box"><strong>2. Platforma pozyskiwania danych (ASR + anonimizacja)</strong> — automatyczna transkrypcja mowy po polsku, anonimizacja danych klinicznych na polskiej infrastrukturze, szyfrowanie end-to-end; wdrożenie jako moduł wejściowy.</div>
+          <div class="highlight-box"><strong>3. System wieloagentowy AI</strong> — orkiestracja agentów (LangGraph/CrewAI), 20+ wyspecjalizowanych agentów dla metryk CBT (myśli automatyczne, core beliefs, schematy poznawcze); wdrożenie jako warstwa przetwarzania danych.</div>
+          <div class="highlight-box"><strong>4. Moduł Wsparcia Terapeuty</strong> — interfejs z podpowiedziami terapeutycznymi, raportami sesji, wizualizacją postępów; integracja z systemami EMR; wdrożenie jako frontend aplikacji.</div>
+          <div class="highlight-box"><strong>5. Platforma zarządzania danymi klinicznymi</strong> — bezpieczne przechowywanie i zarządzanie danymi sesji, zgodność z RODO i MDR klasy IIa; wdrożenie jako warstwa infrastruktury danych.</div>
+          <p>Wdrożenie: zunifikowana platforma dostępna dla terapeutów CBT przez interfejs webowy. Komercjalizacja po certyfikacji MDR w trybie SaaS B2B (przychodnia → platforma).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.4 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.4 AITS</span>
+        <span class="faq-text">Czy innowacja produktowa "Platforma Ekstrakcji i Analizy Danych Sesji terapeutycznych z wykorzystaniem LLM" będzie wdrażana we wskazanym module?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><strong>Tak.</strong> Platforma Ekstrakcji i Analizy Danych będzie wdrażana we wskazanym Module Wdrożenia Innowacji jako rdzeń platformy AI Therapy Support.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.5 PAN -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,188,212,0.15);color:var(--teal)">P.5 PAN</span>
+        <span class="faq-text">Jakie są planowane kryteria doboru badanej próby (typ zaburzeń, doświadczenie terapeutów, charakterystyka demograficzna pacjentów)?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><em>Pytanie od: Adrianna Aleksandrowicz</em></p>
+          <p><strong>Etap I i II — kryteria doboru:</strong> Najczęstsze zaburzenia: depresja i lękowe.</p>
+          <div class="highlight-box">
+            <strong>Kryteria włączenia (Etap I–II):</strong> Aktualny epizod depresyjny lub/i zaburzenia lękowe wg DSM-5/ICD-11 · Wiek 18–75 · Pełna świadoma zgoda
+          </div>
+          <div class="highlight-box">
+            <strong>Kryteria włączenia (Etap III):</strong> Aktualny epizod depresyjny wg DSM-5/ICD-11 · Wiek 18–75 · Pełna świadoma zgoda
+          </div>
+          <div class="highlight-box">
+            <strong>Kryteria wykluczenia (wszystkie etapy):</strong> Aktywne myśli samobójcze · Zaburzenia neurologiczne · Zagrażające życiu choroby fizyczne/deficyty poznawcze · Uzależnienia (ostatnie 6 mies.) · Epizod manii · Zaburzenia osobowości wiązka B · Zaburzenia psychotyczne · Niemożność uczestnictwa w ≥50% interwencji
+          </div>
+          <p><strong>Terapeuci:</strong> Mgr psychologii, co najmniej po 2 latach szkolenia CBT, min. 1–2 lata doświadczenia klinicznego w CBT.</p>
+          <p><strong>Badania screeningowe:</strong> Dane demograficzne, historia leczenia, AUDIT (alkohol), DUDIT (narkotyki). Diagnoza potwierdzana wywiadem SCID-1.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.6 PAN -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,188,212,0.15);color:var(--teal)">P.6 PAN</span>
+        <span class="faq-text">W jaki sposób zapewnicie Państwo, że zebrane dane będą reprezentatywne dla polskiej populacji korzystającej z CBT?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <ul style="margin:0.5rem 0 0.5rem 1.5rem;color:var(--gray)">
+            <li>Rekrutacja pacjentów z profilowaniem zaburzeń depresyjnych i lękowych — najczęstsze grupy diagnostyczne w gabinetach CBT (Dahlin et al., 2020; Velten et al., 2025: depresja ~34%, zaburzenia lękowe ~kilkanaście %)</li>
+            <li>Protokoły CBT dla depresji i zaburzeń lękowych należą do najlepiej przebadanych i mają udokumentowaną skuteczność</li>
+            <li>Dane demograficzne i kliniczne będą porównywane z dostępnymi danymi populacyjnymi (wiek, płeć, diagnoza)</li>
+          </ul>
+          <div class="highlight-box">
+            <strong>Znane ograniczenie:</strong> Próbki RCT często nie odzwierciedlają w pełni społeczeństwa — np. nadreprezentacja kobiet (Ong et al., 2024). Jest to powszechnie uznawane ograniczenie w tego typu badaniach i zostanie wprost opisane w sekcji ograniczeń publikacji.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.7 PAN -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,188,212,0.15);color:var(--teal)">P.7 PAN</span>
+        <span class="faq-text">Przy planowanej liczbie 80 przypadków (ok. 580 sesji), czy przeprowadzono analizę mocy statystycznej dla próby wystarczającej do wykrycia różnic i walidacji 200+ metryk CBT?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><em>Pytanie od: Łukasz Gawęda</em></p>
+          <p><strong>Kluczowe rozróżnienie:</strong> metryki CBT nie są zmiennymi statystycznymi dla analizy mocy — są konstruktami ekstrakcji, których walidacja odbywa się przez korelację AI vs ekspert, nie przez test hipotez klinicznych.</p>
+          <div class="highlight-box">
+            <strong>Argumentacja MDR (N=95):</strong> Wielkość próby wybrana na podstawie analizy mocy dla głównych punktów końcowych (zgodność decyzji diagnostycznych ze standardem referencyjnym, czułość i specyficzność systemu AI) zgodnie z wytycznymi MDCG 2020-1.
+          </div>
+          <div class="highlight-box">
+            <strong>N=30 — uzasadnienie pilotażowe:</strong> Próba N=30 jest adekwatna do wykazania wykonalności procesów terapeutycznych i zgodności z protokołami CBT. Szersze roszczenia dot. skuteczności klinicznej będą przedmiotem PMCF (Post-Market Clinical Follow-up) po wdrożeniu — standardowa ścieżka dla wyrobów klasy IIa.
+          </div>
+          <div class="highlight-box">
+            <strong>Badania użyteczności (IEC 62366-1):</strong> Min. 15 terapeutów i 15 pacjentów na wyróżnioną grupę użytkowników — standard akceptowany przez jednostki notyfikowane UE (praktyki FDA/MHRA).
+          </div>
+          <p>Takie podejście pokazuje ekspertom NCBR, że zespół rozumie realia certyfikacji SaMD klasy IIa i wytyczne MDCG. Próba nie jest „niedoszacowana" ani „przeskalowana" ponad potrzeby regulacyjne.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.8 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.8 AITS</span>
+        <span class="faq-text">W projekcie nie wskazano żadnych posiadanych zasobów technicznych ani WNiP dla modułu B+R. Prosimy doprecyzować jakie istniejące zasoby będą faktycznie wykorzystane i na jakich zasadach.</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><strong>Zasoby techniczne B+R faktycznie wykorzystane:</strong></p>
+          <ol style="margin:0.5rem 0 0.5rem 1.5rem;color:var(--gray)">
+            <li><strong>Sprzęt komputerowy</strong> — 3 laptopy/komputery zakupione w ramach projektu (Dostawy w budżecie), udostępniane bezpłatnie do realizacji zadań B+R</li>
+            <li><strong>Infrastruktura serwerowa</strong> — polskie zasoby chmurowe (OVH, Linuxpl) do hostowania modeli open-source LLM, rozliczane jako koszty operacyjne</li>
+            <li><strong>API modeli językowych</strong> — OpenAI, Anthropic, Mistral — do benchmarkowania, rozliczane jako koszty usług</li>
+            <li><strong>Oprogramowanie badawcze</strong> — IDE (PyCharm, VS Code), narzędzia ML (HuggingFace, LangChain), Qualtrics do badań kwestionariuszowych</li>
+            <li><strong>Własność intelektualna</strong> — istniejące prototypy algorytmów ekstrakcji danych, opracowane przez Lidera przed projektem, wniesione nieodpłatnie jako wkład niepieniężny</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.9 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.9 AITS</span>
+        <span class="faq-text">Jakimi konkretnymi danymi posłużyli się Państwo przy wyliczeniu TAM na poziomie 0,5–1,5 mld zł rocznie oraz jaki docelowy udział w rynku zakłada projekt?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            <strong>Podstawa TAM:</strong> 7316 członkiń i członków PTTPB, w tym 2335 certyfikowanych terapeutów CBT i ~4500 w trakcie szkolenia. Po 2. roku szkoły terapeuta może już prowadzić terapię. Rynek CEE + perspektywa europejska uzasadnia wolumen 0,5–1,5 mld zł.
+          </div>
+          <p>Szczegółowe dane i założenia zostaną przedstawione w materiałach SLAJD dla panelu.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.10 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.10 AITS</span>
+        <span class="faq-text">Prosimy o uzasadnienie wartości docelowej wskaźnika "Przychody ze sprzedaży nowych lub udoskonalonych produktów/usług".</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p style="color:var(--gray);font-style:italic;">Odpowiedź w przygotowaniu — do uzupełnienia przed panelem.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.11 PAN -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,188,212,0.15);color:var(--teal)">P.11 PAN</span>
+        <span class="faq-text">Czy stawki wynagrodzeń personelu IP PAN są ustalone w oparciu o oficjalne wytyczne NCN? Dlaczego oparto się na stawkach NCN dla post-doc?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><em>Pytanie od: Łukasz Gawęda</em></p>
+          <div class="highlight-box">
+            Stawki wynagrodzeń dla personelu badawczego IP PAN zostały ustalone na podstawie oficjalnych wytycznych Narodowego Centrum Nauki dla stanowiska post-doc, co odzwierciedla rzeczywiste koszty pracy na tym poziomie w instytutach PAN. NCN stanowi punkt odniesienia dla wyceny pracy badawczej w polskich instytucjach naukowych, co jest praktyką powszechnie akceptowaną przez instytucje finansujące.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.12 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.12 AITS</span>
+        <span class="faq-text">Prosimy o wyjaśnienie nieścisłości: koszt "usługi superwizji" zakwalifikowano do podwykonawstwa, ale w polu 3.1.2.3 nie wskazano podwykonawców modułu B+R.</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            <strong>Wyjaśnienie:</strong> Usługi superwizji CBT zostały błędnie zakwalifikowane do kategorii podwykonawstwo zamiast do usług zewnętrznych. Pole 3.1.2.3 nie zostało uzupełnione, gdyż superwizorzy nie są podwykonawcami w rozumieniu realizacji zadań B+R, lecz zewnętrznymi ekspertami oceniającymi. Wnosimy o korektę kwalifikacji tych kosztów do kategorii Usługi zewnętrzne.
+          </div>
+          <p>Powiązane: Pytanie P.38 dotyczy szczegółów tych pozycji kosztowych.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.13 PAN+AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,230,118,0.15);color:var(--green)">P.13 PAN+AITS</span>
+        <span class="faq-text">Zadeklarowaliście Państwo, że głównym przeznaczeniem innowacji jest pozytywne znaczenie społeczne. Prosimy wskazać, które cechy zostały odzwierciedlone we wskaźnikach.</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><strong>Znaczenie społeczne odzwierciedlone w wskaźnikach:</strong></p>
+          <div class="highlight-box">
+            <strong>(1) Wskaźnik produktowy „60% redukcja czasu konceptualizacji"</strong> — przekłada się na zdolność terapeuty do obsługi większej liczby pacjentów (szacunkowo +2 pacjentów/tydzień na terapeutę)
+          </div>
+          <div class="highlight-box">
+            <strong>(2) „85% zgodności ekstrakcji AI"</strong> — gwarantuje bezpieczeństwo kliniczne pacjentów korzystających z systemu
+          </div>
+          <div class="highlight-box">
+            <strong>(3) „50 pierwszych klientów w roku 1 komercjalizacji"</strong> — pośrednio mierzy poprawę dostępności terapii CBT
+          </div>
+          <p><strong>Zakładany wzrost jakości konceptualizacji</strong> może zapewnić pacjentom bardziej trafną diagnozę, konceptualizację i skuteczniejszą terapię nawet u mniej doświadczonych terapeutów. <strong>Redukcja czasu dokumentacji</strong> pozwoli terapeutom poświęcić więcej czasu na pracę z pacjentem.</p>
+          <p style="color:var(--teal);font-weight:600;">Uwaga: wnioskujemy o możliwość dodatkowego uzupełnienia wskaźników społecznych do wniosku.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.14 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.14 AITS</span>
+        <span class="faq-text">Na jakich przesłankach opierają Państwo tezę, że projekt kreuje nowy rynek, skoro rynek psychoterapii CBT już istnieje? Jak wyprowadzono prognozę "nowego rynku" 50–100 mln PLN w 5 lat?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Projekt nie tworzy rynku psychoterapii CBT (który istnieje), lecz kreuje <strong>nowy segment rynku oprogramowania medycznego dla terapeutów CBT (SaMD)</strong> — certyfikowane wyroby medyczne AI wspomagające dokumentację i konceptualizację. Ten segment w Polsce i UE de facto nie istnieje w postaci certyfikowanych MDR produktów. Prognoza 50–100 mln PLN w 5 lat oparta jest na: liczbie terapeutów CBT w Polsce (~2500 cert.), modelu SaaS ~299 PLN/mies., penetracji rynku 15–25% w horyzoncie 5-letnim po certyfikacji MDR.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.15 PAN -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,188,212,0.15);color:var(--teal)">P.15 PAN</span>
+        <span class="faq-text">Jakie testy statystyczne są zaplanowane do zastosowania?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><strong>Etap I:</strong> Opracowanie narzędzi pomiarowych, pierwsze oceny eksperckie, analiza jakościowa (grupy focusowe z terapeutami).</p>
+          <div class="highlight-box">
+            <strong>Etap II — porównanie 2 grup (AI vs. kontrolna):</strong><br>
+            • Welch's t-test dla prób niezależnych<br>
+            • Regresja liniowa z kontrolą: wiek terapeuty, lata doświadczenia, współwystępowanie zaburzeń
+          </div>
+          <div class="highlight-box">
+            <strong>Etap III:</strong><br>
+            • Podejście intention-to-treat (ITT)<br>
+            • ANCOVA controlling for baseline<br>
+            • Prerejestracja protokołu analizy danych
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.16 PAN -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,188,212,0.15);color:var(--teal)">P.16 PAN</span>
+        <span class="faq-text">Jaką minimalną liczność próby wyliczono na podstawie analizy statystycznej i na jakich danych została oparta?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Obliczenia mocy statystycznej bazują na efekcie d=0.5 (Cohen; umiarkowany efekt adekwatny do interwencji psychologicznych), α=0.05, moc 80% → N≈64 na grupę. Przy założonym wskaźniku drop-out 20% → N=79 per ramię → zaplanowano <strong>N=95 pacjentów (Etap III)</strong>. Uzupełnienie MDR: N=30 pacjentów (Etap II). Dane oparte na metaanalizach skuteczności CBT (Beck et al.; Cuijpers et al.) oraz wytycznych MDCG 2020-1.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.17 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.17 AITS</span>
+        <span class="faq-text">Na podstawie jakich danych i wyliczeń Wnioskodawca estymuje 2200 potencjalnych użytkowników rozwiązania?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            <strong>Źródło: PTTPB (Polskie Towarzystwo Terapii Poznawczej i Behawioralnej)</strong><br>
+            7316 łącznych członkiń i członków, w tym:<br>
+            • 2335 certyfikowanych terapeutów CBT<br>
+            • ~4500 w trakcie szkolenia<br><br>
+            Po 2. roku szkolenia terapeuta może prowadzić terapię pod superwizją → adresowalny rynek ~2200 aktywnych praktyków CBT. Szacunek konserwatywny (ok. 30% całego PTTPB).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.18 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.18 AITS</span>
+        <span class="faq-text">Lider działa na rynku bardzo krótko (1 pełny miesiąc od rejestracji do dnia złożenia wniosku). Jak Lider uwiarygodni, że nie jest w trudnej sytuacji finansowej?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            AITHENTICA PSA została zarejestrowana 25.08.2025 r. Jednakże właściciele spółki prowadzą działalność technologiczną <strong>od ponad 15 lat</strong> (Bohdan Głowacki, Bartłomiej Głowacki, Joanna Głowacka) przez spółkę-matkę. Warunkowy list intencyjny inwestorski (2 000 000 PLN) potwierdza zewnętrzną wiarygodność finansową. IP PAN złożył sprawozdanie finansowe za 2024 r. potwierdzające stabilność finansową Konsorcjanta.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.19 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.19 AITS</span>
+        <span class="faq-text">Dlaczego wśród załączników nie ma dokumentu potwierdzającego gotowość Inwestora do inwestowania środków finansowych (uchwały/umowy inwestycyjnej) i dokumentów potwierdzających posiadanie środków przez Inwestora?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Dokumenty podpisane są w posiadaniu konsorcjum. Wnosimy o możliwość ich uzupełnienia/dołączenia. Inwestor: METALTECH sp. z o.o. — potwierdzono powiązanie kapitałowe ze spółką-wnioskodawcą.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.21 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.21 AITS</span>
+        <span class="faq-text">Dlaczego koszt "3×Komputer do zaawansowanych prac programistycznych" zakwalifikowano do kategorii Dostawy (inne niż środki trwałe)?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Komputery o wartości jednostkowej poniżej progu środka trwałego (10 000 PLN) zostały zakwalifikowane jako Dostawy (inne niż środki trwałe) zgodnie z przepisami rachunkowości i regulaminem FENG. Jeśli wartość jednostkowa przekracza próg — wnosimy o korektę kwalifikacji do kategorii Amortyzacja (powiązane: Pytanie P.37).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.22 PAN+AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,230,118,0.15);color:var(--green)">P.22 PAN+AITS</span>
+        <span class="faq-text">Które ryzyko jest najistotniejsze z punktu widzenia możliwości realizacji projektu?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><em>Pytanie od: Adrianna Aleksandrowicz</em></p>
+          <div class="highlight-box">
+            <strong>Najistotniejsze ryzyko: niedostateczna skuteczność modeli AI w ekstrakcji metryk CBT</strong><br><br>
+            Prawdopodobieństwo: <strong>40%</strong> · Charakter: krytyczny<br><br>
+            Nieosiągnięcie zakładanych parametrów (szczególnie dla metryk krytycznych, jak myśli suicydalne) może uniemożliwić certyfikację MDR i skutkować całkowitym zakończeniem projektu. Dotyczy również trudności w integracji wydobywanych treści z sesji z protokołem i przebiegiem terapii z konkretnym pacjentem.
+          </div>
+          <p><strong>Dodatkowe ryzyka operacyjne:</strong></p>
+          <ul style="margin:0.5rem 0 0.5rem 1.5rem;color:var(--gray)">
+            <li>Czy terapeuci będą faktycznie chętnie korzystać z AI?</li>
+            <li>Czy modele AI będą w stanie zintegrować dane z wielu transkrypcji i dobrać adekwatne wskazówki do danego etapu terapii?</li>
+          </ul>
+          <div class="highlight-box">
+            <strong>Odpowiedź na ryzyko:</strong> Szkolenie terapeutów, podejście evidence-based, przeszukiwanie najnowszych protokołów CBT, pokazanie przez AI jakie techniki zastosować, na co warto zwrócić uwagę podczas sesji.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.23 PAN+AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,230,118,0.15);color:var(--green)">P.23 PAN+AITS</span>
+        <span class="faq-text">Polityki horyzontalne "Dostępność produktu/usługi" — dlaczego nie uwzględniono wszystkich produktów/usług, w szczególności środków trwałych lidera? Czy Lider i Konsorcjant posiadają regulacje dot. równości płci i działań antydyskryminacyjnych?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><em>Pytanie od: Łukasz Gawęda</em></p>
+          <div class="highlight-box">
+            <strong>Dostępność 5 innowacji:</strong> Wszystkie moduły zaprojektowane zgodnie z WCAG 2.1 AA: Moduł Terapeuty (UI) — czytniki ekranu, nawigacja klawiaturowa; Platforma nagrań — wizualne wskaźniki dla użytkowników z niesprawnościami słuchu; Moduły backendowe — API z dokumentacją; transkrypcje tekstowe jako alternatywa dla audio. Sprzęt komputerowy nie jest produktem oferowanym użytkownikom zewnętrznym — jest narzędziem badawczym.
+          </div>
+          <div class="highlight-box">
+            <strong>Regulacje wewnętrzne:</strong> AITHENTICA PSA wdroży Regulamin Pracy z przepisami antymobbingowymi i antydyskryminacyjnymi przed rozpoczęciem realizacji projektu. IP PAN posiada regulamin pracy, politykę równości płci i procedury antymobbingowe wymagane przepisami ustawy o PAN.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.24 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.24 AITS</span>
+        <span class="faq-text">Zgodność z Kartą Praw Podstawowych — dlaczego nie odniesiono się do wszystkich artykułów wymaganych w Instrukcji i nie zapewniono neutralności wobec pozostałych?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Wniosek zostanie uzupełniony o odniesienie do wszystkich artykułów KPP wymaganych Instrukcją. Dla artykułów, co do których projekt jest neutralny, zostanie dodana explicite deklaracja neutralności. Szczególne znaczenie mają: <strong>Art. 11</strong> (AI nie ogranicza wolności wypowiedzi terapeutów), <strong>Art. 47</strong> (pacjent zawsze ma prawo do skargi i niezależnej oceny klinicznej).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.25 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.25 AITS</span>
+        <span class="faq-text">Zgodność z Konwencją o Prawach Osób Niepełnosprawnych — dlaczego odniesiono się zbiorczo do artykułów 2–7 KPON?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Artykuły 2–7 CRPD omawiane są zbiorczo ze względu na ich wzajemne powiązanie i wspólny cel — zapewnienie osobom z niepełnosprawnościami równego dostępu do usług terapeutycznych: Art. 2 (definicje) → Art. 3 (zasady ogólne) → Art. 4 (zobowiązania) → Art. 5 (równość) → Art. 6 (kobiety) → Art. 7 (dzieci). Jeżeli Instrukcja wymaga omówienia każdego artykułu osobno, wnosimy o możliwość rozwinięcia sekcji KPON.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.26 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.26 AITS</span>
+        <span class="faq-text">Model Finansowy — dlaczego wskazano 5-letni okres prognozy, stopę dyskonta 8% oraz nie przedstawiono wszystkich pozostałych założeń?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            <strong>5-letni horyzont:</strong> Standard dla projektów FENG/NCBR (minimum wymagane przez Instrukcję).<br><br>
+            <strong>Stopa dyskonta 8%:</strong> Odzwierciedla koszt kapitału dla startupu technologicznego na rynku CEE (rynkowa premia za ryzyko + stopa wolna od ryzyka).<br><br>
+            Brakujące informacje w tabeli — wnosimy o możliwość poprawy i uzupełnienia.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.27 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.27 AITS</span>
+        <span class="faq-text">Model Finansowy — czy Wnioskodawca może przedstawić analizę finansową z danymi rzeczywistymi na koniec Q3 2025 i wskazać przychody ze sprzedaży za 2025 rok?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            AITHENTICA PSA nie dysponuje danymi za Q3 2025, gdyż spółka została zarejestrowana <strong>25.08.2025 r.</strong> — na 5 tygodni przed złożeniem wniosku i nie prowadziła działalności operacyjnej przed tą datą.<br><br>
+            <strong>Przychody ze sprzedaży za 2025 r.: 0 PLN</strong> (brak działalności)<br><br>
+            Jako dowód zdolności finansowej przedłożono warunkowy list intencyjny inwestorski (2 000 000 PLN). IP PAN złożył sprawozdanie finansowe za rok 2024 potwierdzające stabilność finansową Konsorcjanta.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.28 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.28 AITS</span>
+        <span class="faq-text">Model Finansowy — czy Wnioskodawca i Konsorcjant wpisują dane finansowe w PLN czy w tys. PLN?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Wszystkie dane w modelu finansowym wyrażone są w <strong>pełnych złotych (PLN)</strong>, nie w tysiącach złotych. Kwoty dla rynku CEE wskazywane są informacyjnie w EUR (kurs 4,25 PLN/EUR). Weryfikacja: wartości w modelu Excel są spójne z kwotami budżetowymi wniosku (np. wynagrodzenia Lidera = 2 041 500 PLN, nie 2 041 500 tys. PLN).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.29 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.29 AITS</span>
+        <span class="faq-text">Model Finansowy — prosimy uwiarygodnić projekcję sprzedaży Lidera w działalności poza projektem i związanej z projektem.</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            <strong>Projekcja sprzedaży Lidera (model SaaS 299 PLN/mies./terapeuta):</strong><br>
+            Rok 1 (2026, faza B+R): 0 PLN komercyjnych<br>
+            Rok 2 (2027): 30 klientów × 299 PLN × 12 = ~107 640 PLN<br>
+            Rok 3 (2028): 150 klientów × 299 PLN × 12 = ~538 200 PLN<br>
+            Rok 5 (2030): 400 klientów × 299 PLN × 12 = ~1 435 200 PLN<br>
+            Rok 8 (2033): 600 klientów × 299 PLN × 12 = ~2 152 800 PLN + przychody CEE
+          </div>
+          <p>Działalność poza projektem: 0 PLN — AITHENTICA skupia się wyłącznie na projekcie AI Therapy Support w całym horyzoncie czasowym.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.30 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.30 AITS</span>
+        <span class="faq-text">Model Finansowy — czy Konsorcjant (IP PAN) będzie dokonywał komercjalizacji wyników B+R i czerpał przychody ze sprzedaży? Prosimy uwiarygodnić projekcję sprzedaży.</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Zgodnie z Umową Konsorcjum (§9.3) IP PAN jako organizacja badawcza nie będzie samodzielnie komercjalizować wyników na rynku (brak sprzedaży subskrypcji). Wdrożenie produktu do działalności gospodarczej jest zadaniem Lidera (AIThentica).
+          </div>
+          <p><strong>Przychody IP PAN z projektu — strumienie pośrednie:</strong></p>
+          <ul style="margin:0.5rem 0 0.5rem 1.5rem;color:var(--gray)">
+            <li>Wpływy z tytułu licencji lub zbycia udziałów w Foreground IP na rzecz AIThentica</li>
+            <li>Potencjalne licencje badawcze na Korpus Danych Klinicznych CBT-AI dla innych jednostek naukowych w Europie</li>
+          </ul>
+          <p>Projekt posiada zewnętrzną Promesę Inwestycyjną 2 000 000 PLN, potwierdzającą ocenę potencjału komercjalizacyjnego przez niezależny rynek kapitałowy.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.31 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.31 AITS</span>
+        <span class="faq-text">Model Finansowy — Środki Trwałe Konsorcjanta: dlaczego nie ujęto środków trwałych z dotychczasowej działalności IP PAN?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            IP PAN posiada środki trwałe z dotychczasowej działalności (laboratoria, sprzęt badawczy), które nie zostały ujęte w modelu, ponieważ:<br><br>
+            (1) Nie są zakupywane w ramach projektu — projekt nie zakłada dla IP PAN nowych środków trwałych<br>
+            (2) Finansowane ze środków statutowych PAN, nie stanowią wkładu własnego do FENG<br>
+            (3) Amortyzacja nie jest kosztem kwalifikowanym FENG<br><br>
+            Model finansowy obejmuje wyłącznie przepływy pieniężne bezpośrednio związane z projektem.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.32 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.32 AITS</span>
+        <span class="faq-text">Model Finansowy — dlaczego zaprognozowano pokrycie wkładu własnego 700 000 zł jako dopłaty do kapitału, gdy wkład własny we wniosku wynosi min. 1 631 492,30 zł? Czy Inwestor METALTECH sp. z o.o. jest udziałowcem Spółki?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Rozbieżność między modelem (700 000 zł) a wnioskiem (1 631 492 zł) wynika z pominięcia pozostałej części wkładu własnego w zakładce Finansowanie. Wnosimy o możliwość korekty modelu. Dokumenty potwierdzające powiązanie kapitałowe METALTECH sp. z o.o. ze Spółką zostały podpisane i są w posiadaniu konsorcjum — wnosimy o możliwość ich dołączenia.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.33 PAN+AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,230,118,0.15);color:var(--green)">P.33 PAN+AITS</span>
+        <span class="faq-text">Model Finansowy — dlaczego nie zaprognozowano kosztu licencji/sprzedaży praw udzielonej przez Konsorcjanta (IP PAN)?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            <strong>Klasyfikacja księgowa:</strong> Ewentualne nabycie autorskich praw majątkowych od IP PAN stanowi Wartość Niematerialną i Prawną (WNiP) — CAPEX podlegający amortyzacji, nie bieżący OPEX.
+          </div>
+          <div class="highlight-box">
+            <strong>Model rozliczenia:</strong> Strony przewidują rozliczenie metodą dochodową (Success Fee / Royalties) — wynagrodzenie IP PAN uzależnione od rzeczywistych przychodów. Opłaty jako % przychodów pojawią się na późniejszym etapie, co zabezpiecza płynność finansową Lidera (MŚP). Wycena praw Konsorcjanta pomniejszona o wkład własny Lidera (architektura chmurowa, LLM, zaplecze inżynieryjne).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.34 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.34 AITS</span>
+        <span class="faq-text">Model Finansowy — Zakładka Zaliczka-Refundacja oraz Zakładka Zaliczka-Refundacja Konsorcjum: dlaczego nie wypełniono tych zakładek?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Zakładki Zaliczka-Refundacja nie zostały wypełnione. Wnosimy o możliwość uzupełnienia modelu finansowego. Mechanizm zaliczkowania zostanie opisany zgodnie z wymaganiami Instrukcji FENG.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.35 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.35 AITS</span>
+        <span class="faq-text">Dlaczego w Harmonogramie rzeczowo-finansowym Lider w polach "wydatki ogółem" dot. usług zewnętrznych i Dostaw nie wykazuje wydatków łącznie z VAT?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Harmonogram rzeczowo-finansowy przedstawia koszty netto (bez VAT), gdyż AITHENTICA PSA jako podatnik VAT czynny będzie odliczać VAT naliczony. W kosztach kwalifikowanych wykazywane są kwoty netto — zgodnie z zasadą kwalifikowalności kosztów FENG (VAT jako koszt kwalifikowany tylko dla podmiotów nieodliczających VAT). Wnosimy o potwierdzenie poprawności tej interpretacji.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.36 PAN -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,188,212,0.15);color:var(--teal)">P.36 PAN</span>
+        <span class="faq-text">Prosimy wyjaśnić, czy personel zatrudniony u Konsorcjanta nie przekroczy limitu godzin pracy wynoszącego 276 godzin miesięcznie.</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><em>Pytanie od: Łukasz Gawęda</em></p>
+          <div class="highlight-box">
+            Personel IP PAN nie przekroczy limitu 276 godzin miesięcznie:<br><br>
+            • Badacz 1: 1 FTE = ~160h/mies. (0,5 + 0,5 w zadaniach konsorcjanta)<br>
+            • Badacz 2: 1 FTE = ~160h/mies.<br>
+            • Kierownik: 160h etatowych<br><br>
+            Planowane zaangażowanie pozostawia bezpieczny margines do ustawowego limitu (160h vs 276h limit).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.37 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.37 AITS</span>
+        <span class="faq-text">Pozycja "Komputer do zaawansowanych prac programistycznych" w Zadaniu 1 i 2 — dlaczego zaliczono go do "Dostawy (inne niż środki trwałe)" zamiast do "Amortyzacja"?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Kwalifikacja zależy od wartości jednostkowej: jeśli komputer kosztuje <strong>&lt;10 000 PLN netto</strong> — Dostawy (inne niż ST) jest poprawną kategorią. Jeśli &gt;10 000 PLN — powinien być ujęty jako środek trwały w kategorii Amortyzacja. Wnosimy o możliwość weryfikacji wartości i ewentualnej korekty kwalifikacji (powiązane: Pytanie P.21).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.38 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.38 AITS</span>
+        <span class="faq-text">Pozycje "Usługi superwizji CBT – Etap II" i "Etap III" zakwalifikowano do podwykonawstwa u Lidera, który nie wskazał podwykonawców w polu 3.1.2.3. Prosimy o wyjaśnienie.</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Usługi superwizji CBT to zewnętrzne usługi eksperckie (niezależni superwizorzy CBT oceniający sesje), które zostały błędnie zakwalifikowane jako podwykonawstwo zamiast Usługi zewnętrzne. Superwizorzy nie realizują zadań B+R w rozumieniu modułu B+R — wykonują niezależną ocenę ekspercką na potrzeby walidacji. Wnosimy o korektę kategorii z Podwykonawstwo na Usługi zewnętrzne i odpowiednie uzupełnienie pola 3.1.2.3.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.39 PAN -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(0,188,212,0.15);color:var(--teal)">P.39 PAN</span>
+        <span class="faq-text">Dla stanowiska Badacz 1 u Konsorcjanta — prosimy wyjaśnić zakres obowiązków: komunikacja tech-kliniczna, nadzór etyczny, koordynacja ośrodków i zespołów klinicznych.</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><em>Pytanie od: Łukasz Gawęda</em></p>
+          <div class="highlight-box">
+            <strong>Komunikacja tech–kliniczna:</strong> Opracowywanie wskaźników metryk AI w oparciu o wiedzę o mechanizmach zaburzeń · Walidacja wstępna outputów AI · Przegląd literatury · Przygotowanie narzędzi oceny jakości diagnozy · Grupy focusowe z terapeutami · Konsultacje z superwizorami CBT
+          </div>
+          <div class="highlight-box">
+            <strong>Nadzór etyczny i kliniczny:</strong> Uczestnictwo w rekrutacji terapeutów i pacjentów · Weryfikacja pacjentów do badań · Randomizacja · Opracowanie wniosku do Komisji Etyki IP PAN · Współpraca ze specjalistami technicznymi nad standardami etycznymi platformy
+          </div>
+          <div class="highlight-box">
+            <strong>Koordynacja ośrodków klinicznych:</strong> Kontakt z terapeutami i szkolenia · Tworzenie protokołu badawczego · Monitorowanie jakości transkrypcji · Śledzenie procesu zbierania danych po każdej sesji · Integracja danych w bazę · Udział w analizie danych · Prerejestracja · Zarządzanie drop-outami
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.40 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.40 AITS</span>
+        <span class="faq-text">Prosimy wyjaśnić założenia, które przyjęto do oszacowania jednostkowych cen sprzedaży odnośnie Lidera i Konsorcjanta oraz do oszacowania wolumenu sprzedaży.</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            <strong>Lider (AIThentica) — model SaaS:</strong><br>
+            Cena: 299 PLN/mies./terapeuta (ok. 70 EUR — benchmark europejski dla narzędzi klinicznych SaaS)<br>
+            Wolumen: konserwatywna penetracja 15–25% z 2200 adresowalnych terapeutów CBT w Polsce w horyzoncie 5 lat po certyfikacji MDR<br><br>
+            <strong>Konsorcjant (IP PAN):</strong> Brak bezpośredniej sprzedaży SaaS — przychody z licencji badawczych i Royalties od AIThentica (szczegóły: patrz P.30)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.41 AITS -->
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-q-num" style="background:rgba(255,167,38,0.15);color:#ffa726">P.41 AITS</span>
+        <span class="faq-text">Dlaczego jako rok osiągnięcia wartości docelowej wskaźnika "Przychody ze sprzedaży" podano rok 2034? Dlaczego nie skorelowano z Modelem Finansowym? Dlaczego występuje rozbieżność między wskaźnikiem w części ogólnej i w części dotyczącej Modułu?</span>
+        <span class="faq-chevron">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <div class="highlight-box">
+            Rok 2034 jako wartość docelowa wynika z przyjęcia horyzontu komercjalizacji: projekt kończy się 2029 r. (certyfikacja MDR) → sprzedaż pilotażowa 2030 → skalowanie 2031–2034 → rok osiągnięcia stabilnych przychodów = 2034. Zgodnie z Instrukcją rok docelowy powinien być rokiem następującym po roku wdrożenia wyników B+R (tj. 2030). Wnosimy o korektę. Rozbieżność między częścią ogólną a modułem wymaga korekty — wartości zostaną ujednolicone z Modelem Finansowym.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+<hr class="divider">
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logos">
+    <div class="footer-logo-item">
+      <strong>🇪🇺 Fundusze Europejskie</strong>
+      dla Nowoczesnej Gospodarki<br>FENG 2021–2027
+    </div>
+    <div class="footer-logo-item">
+      <strong>🏛️ NCBR</strong>
+      Narodowe Centrum<br>Badań i Rozwoju
+    </div>
+    <div class="footer-logo-item">
+      <strong>🇵🇱 Rzeczpospolita Polska</strong>
+      Ministerstwo Funduszy<br>i Polityki Regionalnej
+    </div>
+    <div class="footer-logo-item">
+      <strong>🤖 AITHENTICA PSA</strong>
+      Lider konsorcjum<br>app.aitherapy.support
+    </div>
+    <div class="footer-logo-item">
+      <strong>🔬 Instytut Psychologii PAN</strong>
+      Partner naukowy<br>ipan.edu.pl
+    </div>
+  </div>
+  <div class="footer-meta">
+    <strong>Projekt:</strong> Platforma AI Therapy Support – Walidacja skuteczności spersonalizowanych interwencji terapeutycznych dostarczanych przez AI<br>
+    <strong>Numer wniosku:</strong> FENG.01.01-IP.01-A1G8/25 · <strong>Program:</strong> Ścieżka SMART · <strong>Priorytet:</strong> Wsparcie dla innowacji<br>
+    <strong>Konsorcjum:</strong> AITHENTICA PSA (Lider) + Instytut Psychologii Polskiej Akademii Nauk
+  </div>
+  <div class="footer-notice">
+    Strona prezentacyjna projektu przygotowana na potrzeby panelu ekspertów NCBR. Projekt współfinansowany ze środków Europejskiego Funduszu Rozwoju Regionalnego w ramach programu Fundusze Europejskie dla Nowoczesnej Gospodarki 2021–2027.
+  </div>
+</footer>
+
+<!-- TOOLTIP -->
+<div id="tooltip" class="tooltip"></div>
+
+<script>
+// ========== HERO CANVAS ANIMATION ==========
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [], lines = [];
+  const NODE_COUNT = 55;
+  const COLORS = ['rgba(0,188,212', 'rgba(0,229,255', 'rgba(128,222,234', 'rgba(0,230,118'];
+
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function initNodes() {
+    nodes = [];
+    for (let i = 0; i < NODE_COUNT; i++) {
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 3 + 1.5,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        pulse: Math.random() * Math.PI * 2,
+        pulseSpeed: Math.random() * 0.02 + 0.01
+      });
+    }
+  }
+
+  function drawFrame() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Draw neural connections
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 180) {
+          const alpha = (1 - dist/180) * 0.3;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(0,188,212,${alpha})`;
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw nodes
+    nodes.forEach(n => {
+      n.pulse += n.pulseSpeed;
+      const glow = 0.6 + 0.4 * Math.sin(n.pulse);
+      const r = n.r * (0.9 + 0.2 * Math.sin(n.pulse));
+
+      const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, r * 4);
+      grad.addColorStop(0, `${n.color},${glow})`);
+      grad.addColorStop(1, `${n.color},0)`);
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r * 4, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = `${n.color},${glow})`;
+      ctx.fill();
+
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+    });
+
+    // Brain outline hint (very subtle)
+    ctx.beginPath();
+    ctx.ellipse(W * 0.5, H * 0.48, W * 0.18, H * 0.22, 0, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(0,188,212,0.06)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    requestAnimationFrame(drawFrame);
+  }
+
+  window.addEventListener('resize', () => { resize(); initNodes(); });
+  resize(); initNodes(); drawFrame();
+})();
+
+// ========== GANTT CHART ==========
+const ganttData = [
+  {
+    id: 'ZB1', label: 'ZB1 – Opracowanie metodologii i protokołu badania', who: 'IP PAN + AIThentica',
+    color: 'combined',
+    start: 0, end: 7,
+    cost: '1,42 mln PLN',
+    desc: 'Metodologia RCT, projekt protokołu, uzyskanie zgody bioetycznej, dobór narzędzi pomiarowych CBT'
+  },
+  {
+    id: 'ZB2', label: 'ZB2 – Tworzenie korpusu danych klinicznych CBT-AI', who: 'IP PAN',
+    color: 'ipan',
+    start: 2, end: 12,
+    cost: '0,89 mln PLN',
+    desc: 'Rekrutacja terapeutów, nagrywanie sesji (1075 sesji), anotacje eksperckie CBT, walidacja jakości danych'
+  },
+  {
+    id: 'ZB3', label: 'ZB3 – Platforma ASR + anonimizacja PII', who: 'AIThentica',
+    color: 'aithentica',
+    start: 1, end: 10,
+    cost: '1,15 mln PLN',
+    desc: 'Model ASR dla j. polskiego (diaryzacja ≥98%), system anonimizacji PII (99.5%), testy integracyjne'
+  },
+  {
+    id: 'ZB4', label: 'ZB4 – System 20 agentów AI (Moduł Terapeuty)', who: 'AIThentica',
+    color: 'aithentica',
+    start: 4, end: 14,
+    cost: '2,18 mln PLN',
+    desc: '20 wyspecjalizowanych agentów CBT: ekstrakcja konstrukcji, konceptualizacja, monitorowanie postępu, automatyczne notatki'
+  },
+  {
+    id: 'ZB5', label: 'ZB5 – Walidacja kliniczna (RCT N=95+30)', who: 'IP PAN + AIThentica',
+    color: 'combined',
+    start: 8, end: 14,
+    cost: '1,87 mln PLN',
+    desc: 'Randomizowane badanie kliniczne: N=95 terapeutów, walidacja KPI (85% zgodność, 60→5 min), analiza statystyczna'
+  },
+  {
+    id: 'ZB6', label: 'ZB6 – Dokumentacja MDR i certyfikacja', who: 'AIThentica',
+    color: 'aithentica',
+    start: 10, end: 15,
+    cost: '0,96 mln PLN',
+    desc: 'Technical File, Clinical Evaluation Report, Post-Market Surveillance, ISO 13485 QMS, złożenie do jednostki notyfikowanej'
+  },
+  {
+    id: 'ZB7', label: 'ZB7 – Publikacje, raportowanie, komercjalizacja', who: 'IP PAN + AIThentica',
+    color: 'combined',
+    start: 12, end: 15,
+    cost: '0,37 mln PLN',
+    desc: 'Min. 3 publikacje w czasopismach JCR, raport końcowy NCBR, pilot komercyjny, wniosek o refundację NFZ'
+  }
+];
+
+function buildGantt() {
+  const container = document.getElementById('gantt-rows');
+  const tooltip = document.getElementById('tooltip');
+
+  ganttData.forEach(task => {
+    const row = document.createElement('div');
+    row.className = 'gantt-row';
+
+    const label = document.createElement('div');
+    label.className = 'gantt-label';
+    label.innerHTML = `<div>${task.label}</div><div class="gantt-who">${task.who}</div>`;
+    row.appendChild(label);
+
+    for (let q = 0; q < 16; q++) {
+      const cell = document.createElement('div');
+      if (q >= task.start && q <= task.end) {
+        if (task.color === 'aithentica') cell.className = 'gantt-bar-aithentica';
+        else if (task.color === 'ipan') cell.className = 'gantt-bar-ipan';
+        else {
+          cell.className = 'gantt-bar-combined';
+        }
+        // Add border radius for start/end
+        if (q === task.start) cell.style.borderRadius = '4px 0 0 4px';
+        if (q === task.end) cell.style.borderRadius = '0 4px 4px 0';
+        if (q === task.start && q === task.end) cell.style.borderRadius = '4px';
+        if (q > task.start && q < task.end) cell.style.borderRadius = '0';
+
+        cell.addEventListener('mousemove', (e) => {
+          tooltip.innerHTML = `<strong>${task.id}</strong>${task.desc}<br><span class="t-cost">${task.cost}</span>`;
+          tooltip.classList.add('visible');
+          tooltip.style.left = (e.clientX + 15) + 'px';
+          tooltip.style.top = (e.clientY - 60) + 'px';
+        });
+        cell.addEventListener('mouseleave', () => {
+          tooltip.classList.remove('visible');
+        });
+      } else {
+        cell.className = 'gantt-cell';
+      }
+      row.appendChild(cell);
+    }
+    container.appendChild(row);
+  });
+}
+buildGantt();
+
+// ========== CHART.JS — BUDGET DONUT ==========
+const budgetCtx = document.getElementById('budgetChart').getContext('2d');
+new Chart(budgetCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['AIThentica PSA', 'Instytut Psychologii PAN'],
+    datasets: [{
+      data: [6.76, 2.08],
+      backgroundColor: ['#134A45', '#3BD5AE'],
+      borderColor: ['#134A45', '#3BD5AE'],
+      borderWidth: 2,
+      hoverOffset: 8
+    }]
+  },
+  options: {
+    cutout: '68%',
+    plugins: {
+      legend: {
+        display: false
+      },
+      tooltip: {
+        callbacks: {
+          label: (ctx) => `${ctx.label}: ${ctx.raw} mln PLN`
+        },
+        backgroundColor: 'rgba(10,25,47,0.95)',
+        borderColor: 'rgba(0,188,212,0.4)',
+        borderWidth: 1,
+        titleColor: '#00bcd4',
+        bodyColor: '#ccd6f6'
+      }
+    }
+  }
+});
+
+// ========== BURN RATE CHART ==========
+const burnCtx = document.getElementById('burnRateChart').getContext('2d');
+new Chart(burnCtx, {
+  type: 'bar',
+  data: {
+    labels: ['2026', '2027', '2028', '2029'],
+    datasets: [{
+      label: 'Wydatki (mln PLN)',
+      data: [1.86, 3.71, 2.95, 0.32],
+      backgroundColor: [
+        'rgba(0,188,212,0.75)',
+        'rgba(0,188,212,0.85)',
+        'rgba(0,188,212,0.7)',
+        'rgba(0,188,212,0.5)'
+      ],
+      borderColor: 'rgba(0,188,212,1)',
+      borderWidth: 1,
+      borderRadius: 6
+    }]
+  },
+  options: {
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: 'rgba(10,25,47,0.95)',
+        borderColor: 'rgba(0,188,212,0.4)',
+        borderWidth: 1,
+        titleColor: '#00bcd4',
+        bodyColor: '#ccd6f6'
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: { color: '#8892b0' }
+      },
+      y: {
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: { color: '#8892b0', callback: v => v + 'M PLN' },
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+// ========== ANIMATED KPI COUNTERS ==========
+function animateCounter(el) {
+  const suffix = el.dataset.suffix || '';
+  const target = parseFloat(el.dataset.target);
+  const from = parseFloat(el.dataset.from || 0);
+  const duration = 1800;
+  const start = performance.now();
+
+  function tick(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = from + (target - from) * eased;
+
+    if (el.dataset.from) {
+      // "60→5 min" style
+      const val = Math.round(current);
+      el.textContent = val + suffix;
+    } else if (target >= 1000) {
+      el.textContent = Math.round(current).toLocaleString('pl-PL') + suffix;
+    } else if (Number.isInteger(target)) {
+      el.textContent = Math.round(current) + suffix;
+    } else {
+      el.textContent = current.toFixed(1) + suffix;
+    }
+
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+// ========== INTERSECTION OBSERVER — fade-in + counters ==========
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+
+      // Trigger counters inside this element
+      entry.target.querySelectorAll('.kpi-value[data-target]').forEach(el => {
+        if (!el.dataset.animated) {
+          el.dataset.animated = '1';
+          animateCounter(el);
+        }
+      });
+
+      // Also handle direct KPI cards
+      if (entry.target.dataset.target && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = '1';
+        animateCounter(entry.target);
+      }
+
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Also observe KPI values directly in case they're deeply nested
+document.querySelectorAll('.kpi-value').forEach(el => observer.observe(el));
+
+// ========== FAQ ACCORDION ==========
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// ========== INNOVATIONS SPLIT PANEL ==========
+document.querySelectorAll('.inn-item').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var id = this.dataset.inn;
+    document.querySelectorAll('.inn-item').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.inn-panel').forEach(function(p) { p.classList.remove('active'); });
+    this.classList.add('active');
+    var panel = document.querySelector('.inn-panel[data-inn="' + id + '"]');
+    if (panel) panel.classList.add('active');
+  });
+});
+
+// ========== SMOOTH NAV HIGHLIGHT ==========
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current
+      ? 'var(--teal)' : '';
+  });
+});
+</script>
+</body>
+</html>
