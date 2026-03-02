@@ -1149,13 +1149,15 @@ h2.section-title { font-family: 'Playfair Display', serif; }
 .gantt-bar-ipan { background: #3BD5AE !important; color: #134A45 !important; }
 .gantt-bar-combined { background: #10B981 !important; }
 
-/* Innovation accordion */
-.inn-toggle {
+/* Innovation details/summary (native HTML, no JS) */
+.inn-details {
+  margin-top: 1rem;
+}
+.inn-details summary.inn-summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-top: 1rem;
   padding: 0.45rem 0.8rem;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.78rem;
@@ -1166,16 +1168,19 @@ h2.section-title { font-family: 'Playfair Display', serif; }
   border-radius: 7px;
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
+  list-style: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
-.inn-toggle:hover { background: rgba(59,213,174,0.14); border-color: rgba(59,213,174,0.5); }
-.inn-toggle-arrow { display: inline-block; transition: transform 0.3s ease; font-style: normal; }
-.inn-toggle.open .inn-toggle-arrow { transform: rotate(180deg); }
-.inn-expand {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.4s ease;
+.inn-details summary.inn-summary::-webkit-details-marker { display: none; }
+.inn-details summary.inn-summary::after {
+  content: '▾';
+  display: inline-block;
+  font-style: normal;
+  transition: transform 0.3s ease;
 }
-.inn-expand.open { max-height: 900px; }
+.inn-details[open] summary.inn-summary::after { transform: rotate(180deg); }
+.inn-details summary.inn-summary:hover { background: rgba(59,213,174,0.14); border-color: rgba(59,213,174,0.5); }
 .inn-expand-inner { padding-top: 0.9rem; border-top: 1px solid #E2E8F0; margin-top: 0.85rem; }
 .inn-expand-section { margin-bottom: 0.8rem; }
 .inn-expand-label {
@@ -1673,11 +1678,9 @@ function checkPw(){
       <div class="inn-title">Korpus Danych Klinicznych CBT-AI</div>
       <div class="inn-desc">Ustrukturyzowana baza <strong>1075+ sesji terapeutycznych</strong> z anotacjami ekspertów CBT. Transkrypcje, konceptualizacje, wskaźniki postępu. Pierwszy tego rodzaju zasób w języku polskim.</div>
       <span class="inn-tag">IP PAN + AIThentica</span>
-      <button class="inn-toggle" aria-expanded="false">
-        Szczegóły innowacji <span class="inn-toggle-arrow">▾</span>
-      </button>
-      <div class="inn-expand">
-        <div class="inn-expand-inner">
+      <details class="inn-details">
+        <summary class="inn-summary">Szczegóły innowacji</summary>
+<div class="inn-expand-inner">
           <div class="inn-expand-section">
             <div class="inn-expand-label">Kluczowe cechy produktu</div>
             <ul class="inn-features">
@@ -1704,8 +1707,8 @@ function checkPw(){
               <li>Wielkość zbioru transkrypcji — liczba nagrań (cel: 1 075 sesji)</li>
             </ul>
           </div>
-        </div>
-      </div>
+                </div>
+      </details>
     </div>
 
     <div class="innovation-card fade-in">
@@ -1714,11 +1717,9 @@ function checkPw(){
       <div class="inn-title">Platforma Ekstrakcji i Analizy Danych (LLM)</div>
       <div class="inn-desc">Pipeline oparty na open-source LLM do automatycznej ekstrakcji konstrukcji CBT (myśli automatyczne, przekonania core, zachowania) z sesji. Zgodność z ekspertami: <strong>≥85%</strong>.</div>
       <span class="inn-tag">AIThentica</span>
-      <button class="inn-toggle" aria-expanded="false">
-        Szczegóły innowacji <span class="inn-toggle-arrow">▾</span>
-      </button>
-      <div class="inn-expand">
-        <div class="inn-expand-inner">
+      <details class="inn-details">
+        <summary class="inn-summary">Szczegóły innowacji</summary>
+<div class="inn-expand-inner">
           <div class="inn-expand-section">
             <div class="inn-expand-label">Kluczowe cechy produktu</div>
             <ul class="inn-features">
@@ -1747,8 +1748,8 @@ function checkPw(){
               <li>Zgodność ekstrakcji metryk CBT z oceną ekspertów (cel: ≥85%)</li>
             </ul>
           </div>
-        </div>
-      </div>
+                </div>
+      </details>
     </div>
 
     <div class="innovation-card fade-in">
@@ -1757,11 +1758,9 @@ function checkPw(){
       <div class="inn-title">Moduł Wsparcia Terapeuty (20 agentów AI)</div>
       <div class="inn-desc">System 20 wyspecjalizowanych agentów AI do: automatycznych notatek, konceptualizacji CBT, monitorowania postępu, identyfikacji wzorców. Redukcja czasu dokumentacji z <strong>60 do 5 minut</strong>.</div>
       <span class="inn-tag">AIThentica</span>
-      <button class="inn-toggle" aria-expanded="false">
-        Szczegóły innowacji <span class="inn-toggle-arrow">▾</span>
-      </button>
-      <div class="inn-expand">
-        <div class="inn-expand-inner">
+      <details class="inn-details">
+        <summary class="inn-summary">Szczegóły innowacji</summary>
+<div class="inn-expand-inner">
           <div class="inn-expand-section">
             <div class="inn-expand-label">Kluczowe cechy produktu</div>
             <ul class="inn-features">
@@ -1786,8 +1785,8 @@ function checkPw(){
               <li>Redukcja czasu przygotowania i przekazania konceptualizacji przez terapeutę (cel: 60 → 5 min)</li>
             </ul>
           </div>
-        </div>
-      </div>
+                </div>
+      </details>
     </div>
 
     <div class="innovation-card fade-in">
@@ -1796,11 +1795,9 @@ function checkPw(){
       <div class="inn-title">Zestaw Narzędzi Badawczych CBT-AI</div>
       <div class="inn-desc">Pakiet walidowanych narzędzi do oceny jakości AI w terapii CBT: metryki zgodności z ekspertami, testy psychometryczne, framework ewaluacji klinicznej zgodny z metodyką MDR i Good Clinical Practice.</div>
       <span class="inn-tag">IP PAN</span>
-      <button class="inn-toggle" aria-expanded="false">
-        Szczegóły innowacji <span class="inn-toggle-arrow">▾</span>
-      </button>
-      <div class="inn-expand">
-        <div class="inn-expand-inner">
+      <details class="inn-details">
+        <summary class="inn-summary">Szczegóły innowacji</summary>
+<div class="inn-expand-inner">
           <div class="inn-expand-section">
             <div class="inn-expand-label">Kluczowe cechy produktu</div>
             <ul class="inn-features">
@@ -1826,8 +1823,8 @@ function checkPw(){
               <li>Skuteczność narzędzia do generowania sesji syntetycznych</li>
             </ul>
           </div>
-        </div>
-      </div>
+                </div>
+      </details>
     </div>
 
     <div class="innovation-card fade-in">
@@ -1836,11 +1833,9 @@ function checkPw(){
       <div class="inn-title">Program Certyfikacji MDR Klasy IIa</div>
       <div class="inn-desc">Kompletna dokumentacja techniczna i kliniczna do certyfikacji platformy jako wyrobu medycznego klasy IIa wg MDR 2017/745. Clinical Evaluation Report, Post-Market Surveillance Plan, QMS ISO 13485.</div>
       <span class="inn-tag">AIThentica</span>
-      <button class="inn-toggle" aria-expanded="false">
-        Szczegóły innowacji <span class="inn-toggle-arrow">▾</span>
-      </button>
-      <div class="inn-expand">
-        <div class="inn-expand-inner">
+      <details class="inn-details">
+        <summary class="inn-summary">Szczegóły innowacji</summary>
+<div class="inn-expand-inner">
           <div class="inn-expand-section">
             <div class="inn-expand-label">Kluczowe cechy produktu</div>
             <ul class="inn-features">
@@ -1868,8 +1863,8 @@ function checkPw(){
               <li>Skuteczność anonimizacji danych PII/PHI na własnej infrastrukturze (cel: ≥99,5%)</li>
             </ul>
           </div>
-        </div>
-      </div>
+                </div>
+      </details>
     </div>
 
   </div>
@@ -3473,19 +3468,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     const wasOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
-  });
-});
-
-// ========== INNOVATION ACCORDION ==========
-document.querySelectorAll('.inn-toggle').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var card = this.closest('.innovation-card');
-    var expand = card ? card.querySelector('.inn-expand') : null;
-    if (!expand) return;
-    var isOpen = expand.classList.contains('open');
-    expand.classList.toggle('open', !isOpen);
-    this.classList.toggle('open', !isOpen);
-    this.setAttribute('aria-expanded', String(!isOpen));
   });
 });
 
