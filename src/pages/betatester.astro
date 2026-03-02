@@ -70,8 +70,8 @@ const features = [
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
           </svg>
           <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/15">
-            <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center border border-white/30 flex-shrink-0">
-              <svg class="w-4 h-4 text-white/80" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(167,139,250,0.25);border:1px solid rgba(167,139,250,0.4)">
+              <svg class="w-4 h-4" style="color:#c4b5fd" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
               </svg>
             </div>
@@ -90,8 +90,8 @@ const features = [
         Zaufali nam terapeuci z całej Polski
       </p>
       <div class="relative overflow-hidden py-6 bg-white">
-        <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none"></div>
         <div class="flex animate-scroll gap-6 px-6">
           {[...clinicLogos, ...clinicLogos].map((clinic, i) => (
             <div class="flex-shrink-0 flex items-center justify-center w-40 h-20 bg-white rounded-xl p-4">
@@ -271,15 +271,16 @@ const features = [
           <!-- Price -->
           <div class="text-center mb-6">
             <p class="text-xs text-slate-500 mb-2 font-medium">Cena po okresie próbnym</p>
-            <div class="flex items-center justify-center gap-2 mb-1">
-              <span class="text-lg text-slate-400 line-through">399 zł</span>
-              <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded-full border border-emerald-100">-30%</span>
+            <div class="flex items-center justify-center gap-2 mb-1 flex-wrap">
+              <span id="original-price" class="text-lg text-slate-400 line-through">399 zł</span>
+              <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded-full border border-emerald-100">-30% beta</span>
+              <span id="badge-17" class="hidden bg-violet-50 text-violet-700 text-xs font-bold px-2 py-0.5 rounded-full border border-violet-100">-17% rocznie</span>
             </div>
             <div class="flex items-baseline justify-center gap-1">
               <span id="price-display" class="text-5xl font-bold text-slate-900">279 zł</span>
               <span id="price-period" class="text-slate-500 text-lg">/mies.</span>
             </div>
-            <p id="yearly-saving" class="text-sm text-emerald-600 font-medium mt-2 hidden">Oszczędzasz ~596 zł rocznie</p>
+            <p id="yearly-saving" class="text-sm text-emerald-600 font-medium mt-2 hidden">Oszczędzasz ~2004 zł rocznie vs regularna cena</p>
             <p class="text-xs text-brand-500 font-semibold mt-1">Zniżka obowiązuje dożywotnio</p>
           </div>
 
@@ -382,6 +383,8 @@ const features = [
   var periodEl = document.getElementById('price-period');
   var savingEl = document.getElementById('yearly-saving');
   var yearlyBadge = document.getElementById('yearly-badge');
+  var originalPrice = document.getElementById('original-price');
+  var badge17 = document.getElementById('badge-17');
 
   function setMonthly() {
     btnM.className = 'px-6 py-2.5 rounded-lg text-sm font-semibold transition-all bg-brand-500 text-white shadow-sm';
@@ -389,6 +392,8 @@ const features = [
     yearlyBadge.className = 'text-xs px-2 py-0.5 rounded-full font-bold bg-emerald-50 text-emerald-700 border border-emerald-100';
     priceEl.textContent = '279 zł';
     periodEl.textContent = '/mies.';
+    originalPrice.textContent = '399 zł';
+    badge17.classList.add('hidden');
     savingEl.classList.add('hidden');
   }
 
@@ -398,6 +403,8 @@ const features = [
     yearlyBadge.className = 'text-xs px-2 py-0.5 rounded-full font-bold bg-white/20 text-white';
     priceEl.textContent = '2 784 zł';
     periodEl.textContent = '/rok';
+    originalPrice.textContent = '4 788 zł';
+    badge17.classList.remove('hidden');
     savingEl.classList.remove('hidden');
   }
 
