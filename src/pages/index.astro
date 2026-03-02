@@ -6,6 +6,8 @@ import { testimonials } from '../data/testimonials';
 import { faqItems } from '../data/faq';
 import { getCollection } from 'astro:content';
 
+const currentYear = new Date().getFullYear();
+
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const latestPosts = allPosts
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
