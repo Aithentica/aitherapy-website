@@ -446,73 +446,7 @@ const features = [
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="bg-brand-700 text-brand-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-        <div class="lg:col-span-1">
-          <a href="/" class="inline-block mb-4">
-            <img src="/images/logos/therapysupport-new.png" alt="Therapy Support"
-              class="h-10 w-auto brightness-0 invert opacity-80" />
-          </a>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.5)">
-            Platforma dla Terapeutów CBT.<br />Nowy standard w psychoterapii.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-white font-semibold text-sm mb-4">Nawigacja</h3>
-          <ul class="space-y-2.5">
-            {mainNavigation.slice(0, 4).map((item) => (
-              <li>
-                <a href={item.href} style="color: rgba(255,255,255,0.5)"
-                  class="text-sm hover:text-white transition-colors"
-                  {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-white font-semibold text-sm mb-4">Informacje</h3>
-          <ul class="space-y-2.5">
-            {mainNavigation.slice(4).map((item) => (
-              <li>
-                <a href={item.href} style="color: rgba(255,255,255,0.5)"
-                  class="text-sm hover:text-white transition-colors"
-                  {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div class="mt-12 pt-8 border-t border-brand-600">
-        <p class="text-xs leading-relaxed max-w-4xl mx-auto text-center" style="color: rgba(255,255,255,0.35)">
-          Projekt &bdquo;Platforma Startowa Unicorn Hub &ndash; Edycja II&rdquo; współfinansowany ze środków Unii Europejskiej
-          w ramach działania 1.1 Platformy Startowe dla nowych pomysłów Programu Fundusze Europejskie dla Polski Wschodniej 2021-2027.
-        </p>
-      </div>
-      <div class="mt-6 pt-6 border-t border-brand-600 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-xs" style="color: rgba(255,255,255,0.35)">
-          &copy; {currentYear} Therapy Support. Wszelkie prawa zastrzeżone.
-        </p>
-        <div class="flex flex-wrap items-center justify-center gap-4">
-          {[
-            { href: '/regulamin/', label: 'Regulamin' },
-            { href: '/polityka-prywatnosci/', label: 'Polityka prywatności' },
-            { href: '/cookies/', label: 'Cookies' },
-            { href: '/kontakt/', label: 'Kontakt' },
-            { href: '/ncbr/', label: 'Projekt NCBR' },
-          ].map((link) => (
-            <a href={link.href} class="text-xs hover:text-white transition-colors"
-              style="color: rgba(255,255,255,0.35)">{link.label}</a>
-          ))}
-        </div>
-      </div>
-    </div>
-  </footer>
+  <Footer />
 
 </BaseLayout>
 
