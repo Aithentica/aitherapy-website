@@ -30,26 +30,31 @@ import PageLayout from '../layouts/PageLayout.astro';
       <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 text-center mb-6">
         Funkcjonalności oparte na procesie CBT
       </h2>
-      <p class="text-lg text-gray-600 leading-relaxed mb-4">
-        Aplikacja odzwierciedla realną strukturę pracy klinicznej. Dzieli terapię na logiczne, odrębne obszary odpowiadające etapom i elementom procesu, m.in.:
-      </p>
-      <ul class="text-lg text-gray-600 leading-relaxed list-disc list-inside space-y-1 mb-4">
-        <li>konsultację wstępną,</li>
-        <li>wywiad demograficzny i rozwojowy,</li>
-        <li>problemy i trudności,</li>
-        <li>cele terapii,</li>
-        <li>sytuacje kliniczne,</li>
-        <li>myśli automatyczne,</li>
-        <li>zniekształcenia poznawcze,</li>
-        <li>analizę ABC,</li>
-        <li>konceptualizację przypadku.</li>
-      </ul>
-      <p class="text-lg text-gray-600 leading-relaxed mb-4">
-        Dane z sesji nie trafiają do jednego, generatywnego „worka" — jak w ogólnodostępnych modelach językowych. Są porządkowane zgodnie z metodologią CBT.
-      </p>
-      <p class="text-lg text-gray-600 leading-relaxed font-semibold">
-        Funkcjonalności odzwierciedlają proces terapeutyczny.
-      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-sage-800 rounded-2xl p-6 lg:p-8 text-white">
+          <p class="leading-relaxed mb-4">
+            Aplikacja odzwierciedla realną strukturę pracy klinicznej. Dzieli terapię na logiczne, odrębne obszary odpowiadające etapom i elementom procesu, m.in.: konsultację wstępną, wywiad demograficzny i rozwojowy, problemy i trudności, cele terapii, sytuacje kliniczne, myśli automatyczne, zniekształcenia poznawcze, analizę ABC, konceptualizację przypadku.
+          </p>
+          <p class="leading-relaxed font-semibold">
+            Dane z sesji są porządkowane zgodnie z metodologią CBT, funkcjonalności aplikacji odzwierciedlają proces terapeutyczny.
+          </p>
+        </div>
+        <div class="bg-sage-800 rounded-2xl p-6 lg:p-8 text-white">
+          <p class="leading-relaxed mb-4">
+            Przewagą aplikacji wobec ogólnych narzędzi AI jest praca na danych z całej terapii, a nie z jednej sesji.
+          </p>
+          <p class="leading-relaxed mb-2">Platforma:</p>
+          <ul class="leading-relaxed list-disc list-inside space-y-1 mb-4">
+            <li>agreguje analizę ABC z wielu spotkań,</li>
+            <li>pozwala identyfikować powtarzalne wzorce poznawcze w czasie,</li>
+            <li>umożliwia mapowanie sesji do konkretnych problemów i celów,</li>
+            <li>zachowuje spójność między konceptualizacją a przebiegiem terapii.</li>
+          </ul>
+          <p class="leading-relaxed">
+            Powstaje kompletna mapa procesu terapeutycznego, która może być wielokrotnie reinterpretowana i aktualizowana przez terapeutę. AI porządkuje materiał. Kierunek nadaje terapeuta.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
