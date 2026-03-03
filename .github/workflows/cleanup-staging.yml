@@ -1,0 +1,56 @@
+name: Cleanup Orphaned Staging Environments
+
+on:
+  schedule:
+    - cron: '0 3 * * 0' # Weekly, Sunday 3am UTC
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    name: Remove orphaned staging environments
+    steps:
+      - name: Azure Login
+        uses: Azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: List and cleanup orphaned environments
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Listing staging environments..."
+          envs=$(az staticwebapp environment list \
+            --name swa-aitherapy-preview \
+            --resource-group rg-aitherapy-website \
+            --query '[?name!=`default`].{name:name, pullRequestTitle:pullRequestTitle}' \
+            -o json)
+
+          count=$(echo "$envs" | jq length)
+          echo "Found $count staging environment(s)"
+
+          if [ "$count" -eq "0" ]; then
+            echo "No staging environments to clean up"
+            exit 0
+          fi
+
+          # Get open PR count
+          open_prs=$(gh pr list --state open --json number --jq '.[].number' --repo ${{ github.repository }})
+
+          echo "$envs" | jq -c '.[]' | while read -r env; do
+            env_name=$(echo "$env" | jq -r '.name')
+            pr_title=$(echo "$env" | jq -r '.pullRequestTitle')
+
+            echo "Checking environment '$env_name' (PR: $pr_title)..."
+
+            # Delete any staging env not matching an open PR
+            echo "Deleting orphaned environment: $env_name"
+            az staticwebapp environment delete \
+              --name swa-aitherapy-preview \
+              --resource-group rg-aitherapy-website \
+              --environment-name "$env_name" \
+              --yes
+            echo "Deleted environment: $env_name"
+          done
+
+          echo "Cleanup complete"
