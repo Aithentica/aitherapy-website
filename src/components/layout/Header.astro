@@ -1,32 +1,20 @@
 ---
 import Navigation from './Navigation.astro';
 import MobileMenu from './MobileMenu.astro';
-
-interface Props {
-  transparent?: boolean;
-}
-
-const { transparent = false } = Astro.props;
 ---
 
 <header
-  class:list={[
-    'sticky top-0 z-50 transition-all duration-300',
-    transparent
-      ? 'bg-transparent border-b border-transparent'
-      : 'bg-white/80 backdrop-blur-md border-b border-gray-100',
-  ]}
+  class="sticky top-0 z-50 bg-brand-500"
   id="site-header"
-  data-transparent={transparent ? 'true' : 'false'}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 lg:h-20 transition-all duration-300" id="header-inner">
+    <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
       <a href="/" class="flex-shrink-0">
         <img
           src="/images/logos/therapysupport-new.png"
           alt="Therapy Support"
-          class="h-8 lg:h-10 w-auto"
+          class="h-8 lg:h-10 w-auto brightness-0 invert"
         />
       </a>
 
@@ -37,7 +25,7 @@ const { transparent = false } = Astro.props;
           href="https://app.aitherapy.support"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center px-6 py-2.5 rounded-full bg-primary text-sage-900 font-bold text-sm hover:bg-white shadow-md hover:shadow-lg transition-all"
+          class="inline-flex items-center px-5 py-2 rounded-full bg-accent-400 text-brand-500 font-bold text-sm hover:bg-accent-300 transition-colors"
         >
           Logowanie
         </a>
@@ -46,7 +34,7 @@ const { transparent = false } = Astro.props;
       <!-- Mobile Menu Button -->
       <button
         type="button"
-        class="lg:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+        class="lg:hidden p-2 text-white"
         id="mobile-menu-toggle"
         aria-label="Otwórz menu"
         aria-expanded="false"
@@ -65,37 +53,7 @@ const { transparent = false } = Astro.props;
   <MobileMenu />
 </header>
 
-<!-- Hidden element to ensure Tailwind includes dynamic classes -->
-<span class="hidden bg-white/80 backdrop-blur-md border-gray-100 bg-transparent border-transparent lg:h-16"></span>
-
 <script is:inline>
-  const header = document.getElementById('site-header');
-  const headerInner = document.getElementById('header-inner');
-  const isTransparent = header.dataset.transparent === 'true';
-
-  function updateHeader() {
-    const scrolled = window.scrollY > 80;
-
-    if (scrolled) {
-      header.classList.add('bg-white/80', 'backdrop-blur-md', 'border-gray-100', 'shadow-sm');
-      header.classList.remove('bg-transparent', 'border-transparent');
-      headerInner.classList.remove('lg:h-20');
-      headerInner.classList.add('lg:h-16');
-    } else {
-      headerInner.classList.add('lg:h-20');
-      headerInner.classList.remove('lg:h-16');
-      header.classList.remove('shadow-sm');
-
-      if (isTransparent) {
-        header.classList.add('bg-transparent', 'border-transparent');
-        header.classList.remove('bg-white/80', 'backdrop-blur-md', 'border-gray-100');
-      }
-    }
-  }
-
-  window.addEventListener('scroll', updateHeader);
-  updateHeader();
-
   // Mobile menu toggle
   const toggle = document.getElementById('mobile-menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -109,14 +67,5 @@ const { transparent = false } = Astro.props;
     iconClose.classList.toggle('hidden');
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     toggle.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
-
-    // Force opaque header when mobile menu is open
-    if (isOpen && isTransparent) {
-      header.classList.add('bg-white/80', 'backdrop-blur-md', 'border-gray-100');
-      header.classList.remove('bg-transparent', 'border-transparent');
-    } else if (!isOpen && isTransparent && window.scrollY <= 80) {
-      header.classList.add('bg-transparent', 'border-transparent');
-      header.classList.remove('bg-white/80', 'backdrop-blur-md', 'border-gray-100');
-    }
   });
 </script>

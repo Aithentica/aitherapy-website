@@ -4,22 +4,13 @@ import { mainNavigation } from '../../data/navigation';
 const currentPath = Astro.url.pathname;
 ---
 
-<div class="hidden lg:hidden border-t border-gray-100" id="mobile-menu">
-  <nav class="px-4 py-4 space-y-1" aria-label="Menu mobilne">
+<div class="hidden lg:hidden bg-brand-600 border-t border-brand-700" id="mobile-menu">
+  <nav class="px-4 py-3 space-y-1" aria-label="Menu mobilne">
     {mainNavigation.map((item) => {
-      const isActive = item.href === '/'
-        ? currentPath === '/'
-        : currentPath.startsWith(item.href);
-
       return (
         <a
           href={item.href}
-          class:list={[
-            'block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors',
-            isActive
-              ? 'text-sage-900 bg-primary/10'
-              : 'text-gray-900 hover:text-sage-900',
-          ]}
+          class="block px-3 py-2.5 text-sm font-medium text-brand-100 hover:text-white rounded-lg"
           {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         >
           {item.label}
@@ -27,12 +18,12 @@ const currentPath = Astro.url.pathname;
       );
     })}
 
-    <div class="pt-3 border-t border-gray-100">
+    <div class="pt-2 border-t border-brand-700">
       <a
         href="https://app.aitherapy.support"
         target="_blank"
         rel="noopener noreferrer"
-        class="block w-full text-center px-5 py-2.5 rounded-full bg-primary text-sage-900 font-semibold text-sm hover:bg-white transition-colors"
+        class="block w-full text-center px-5 py-2.5 mt-1 rounded-full bg-accent-400 text-brand-500 font-bold text-sm"
       >
         Logowanie
       </a>
