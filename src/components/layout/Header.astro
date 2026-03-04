@@ -18,9 +18,13 @@ import MobileMenu from './MobileMenu.astro';
         />
       </a>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center gap-6">
+      <!-- Desktop Navigation (centered) -->
+      <div class="hidden lg:flex flex-1 justify-center">
         <Navigation />
+      </div>
+
+      <!-- Login Button -->
+      <div class="hidden lg:flex flex-shrink-0">
         <a
           href="https://app.aitherapy.support"
           target="_blank"
