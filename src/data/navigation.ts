@@ -14,13 +14,13 @@ export const mainNavigation: NavItem[] = [
     href: '/funkcjonalnosci/',
   },
   {
-    label: 'Bezpieczeństwo',
-    href: '/bezpieczenstwo/',
-  },
-  {
     label: 'Dołącz do beta testów',
     href: 'https://app.aitherapy.support/betatester',
     external: true,
+  },
+  {
+    label: 'Bezpieczeństwo',
+    href: '/bezpieczenstwo/',
   },
   {
     label: 'Zespół',
