@@ -405,7 +405,7 @@ const features = [
   ];
 
   // Load plans from API
-  fetch(API_BASE + '/api/stripe/plans')
+  fetch(API_BASE + '/api/stripe/plans', { credentials: 'include' })
     .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
     .then(function(data) {
       plans = data;
@@ -528,6 +528,7 @@ const features = [
     fetch(API_BASE + '/api/stripe/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify(body)
     })
     .then(function(r) {
