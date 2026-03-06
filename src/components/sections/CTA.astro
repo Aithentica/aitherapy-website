@@ -1,5 +1,6 @@
 ---
 import Button from '../ui/Button.astro';
+import { BETA_PAGE_URL } from '../../data/links';
 ---
 
 <section class="py-20 lg:py-28 bg-[#E3DDF8] relative overflow-hidden">
@@ -17,7 +18,7 @@ import Button from '../ui/Button.astro';
       <Button
         variant="primary"
         size="lg"
-        href="/betatester/"
+        href={BETA_PAGE_URL}
       >
         Zgłoś się do beta testów
       </Button>

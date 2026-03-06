@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import { BETA_PAGE_URL } from '../data/links';
 
 interface Props {
   title: string;
@@ -140,7 +141,7 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString('pl-PL', {
         Podsumowania sesji, które porządkują materiał kliniczny. Administracja, która nie przeszkadza.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://app.aitherapy.support/betatester" target="_blank" rel="noopener noreferrer"
+        <a href={BETA_PAGE_URL}
           class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent-400 text-brand-500 font-bold text-base hover:bg-accent-300 transition-colors shadow-lg">
           Zgłoś się do beta testów
         </a>
