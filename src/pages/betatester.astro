@@ -398,16 +398,22 @@ const features = [
   var submitBtn = document.getElementById('beta-submit');
   var errorEl = document.getElementById('beta-error');
 
+  // Fallback plans in case API is unreachable (adblocker, CORS, timeout)
+  var FALLBACK_PLANS = [
+    { code: 'professional', billingPeriodId: 1, price: 399, stripePriceId: 'price_1SagKmALc8BRQ1zZ8syDMaJD' },
+    { code: 'professional', billingPeriodId: 2, price: 3990, stripePriceId: 'price_1SagKgALc8BRQ1zZH1bFwFEW' }
+  ];
+
   // Load plans from API
   fetch(API_BASE + '/api/stripe/plans')
-    .then(function(r) { return r.json(); })
+    .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
     .then(function(data) {
       plans = data;
       updatePriceDisplay();
     })
     .catch(function() {
-      // Fallback to hardcoded prices if API fails
-      plans = [];
+      plans = FALLBACK_PLANS;
+      updatePriceDisplay();
     });
 
   function getSelectedPlan() {
