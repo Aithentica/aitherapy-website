@@ -387,18 +387,8 @@ const features = [
             <span class="text-sm font-bold text-slate-900">Bez limitu pacjentów</span>
           </div>
 
-          <!-- Features grid -->
-          <div class="grid grid-cols-2 gap-3">
-            {features.map((f) => (
-              <div class="flex items-center gap-2 text-sm text-slate-700">
-                <div class={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm ${f.bg} border ${f.border}`}>
-                  <svg class={`w-3.5 h-3.5 ${f.color}`} fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" set:html={iconSvg[f.icon] ?? '<path d="m4.5 12.75 6 6 9-13.5"/>'}>
-                  </svg>
-                </div>
-                <span class="font-medium text-xs">{f.name}</span>
-              </div>
-            ))}
-          </div>
+        </div>
+      </div>
 
       <!-- ===== FEATURES GRID ===== -->
       <div class="mb-12">
