@@ -1,3 +1,5 @@
+import { BETA_PAGE_URL } from './links';
+
 export interface NavItem {
   label: string;
   href: string;
@@ -15,8 +17,7 @@ export const mainNavigation: NavItem[] = [
   },
   {
     label: 'Dołącz do beta testów',
-    href: 'https://app.aitherapy.support/betatester',
-    external: true,
+    href: BETA_PAGE_URL,
   },
   {
     label: 'Bezpieczeństwo',
