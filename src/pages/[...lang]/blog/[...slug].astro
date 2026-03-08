@@ -6,15 +6,22 @@ import { locales, defaultLocale } from '../../../i18n/config';
 import { getLocaleFromParams, loadTranslations } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const plPosts = await getCollection('blog', ({ data }) => !data.draft);
+  const enPosts = await getCollection('blog-en', ({ data }) => !data.draft);
   const paths: { params: { lang?: string; slug: string }; props: any }[] = [];
 
-  for (const post of posts) {
+  // Polish posts — only for 'pl' locale
+  for (const post of plPosts) {
+    paths.push({ params: { lang: 'pl', slug: post.slug }, props: { post, locale: 'pl' as Locale } });
+  }
+
+  // English posts — for default locale (en) and all non-pl locales
+  for (const post of enPosts) {
     // Default locale (no prefix)
     paths.push({ params: { lang: undefined, slug: post.slug }, props: { post, locale: defaultLocale } });
-    // Other locales
+    // Other non-pl locales
     for (const lang of locales) {
-      if (lang !== defaultLocale) {
+      if (lang !== defaultLocale && lang !== 'pl') {
         paths.push({ params: { lang, slug: post.slug }, props: { post, locale: lang } });
       }
     }

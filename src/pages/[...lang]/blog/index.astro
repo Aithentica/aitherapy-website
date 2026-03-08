@@ -15,16 +15,23 @@ const t = useTranslations(locale);
 const bp = t.blogPage;
 const bcp47 = localeBcp47[locale];
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const isPolish = locale === 'pl';
+const posts = isPolish
+  ? (await getCollection('blog', ({ data }) => !data.draft))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  : (await getCollection('blog-en', ({ data }) => !data.draft))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString(bcp47, { year: 'numeric', month: 'long', day: 'numeric' });
 
 const categoryColors: Record<string, string> = {
   'Inne': 'bg-gray-100 text-gray-700',
+  'Other': 'bg-gray-100 text-gray-700',
   'Artykuły Naukowe': 'bg-blue-50 text-blue-700',
+  'Scientific Articles': 'bg-blue-50 text-blue-700',
   'Wydarzenia': 'bg-sage-50 text-sage-700',
+  'Events': 'bg-sage-50 text-sage-700',
 };
 ---
 

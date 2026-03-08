@@ -30,6 +30,21 @@ CORS is configured on the backend to allow requests from `https://aitherapy.supp
 ### Navigation
 Defined in `src/data/navigation.ts`, imports `BETA_PAGE_URL` from links.ts.
 
+### i18n — 7 languages (MANDATORY)
+The site supports 7 languages: **en** (default), **pl**, **sk**, **ca**, **ru**, **uk**, **lt**.
+
+**EVERY text change MUST be applied to ALL 7 translation files:**
+- `src/i18n/translations/en.ts` (source of truth + TypeScript types)
+- `src/i18n/translations/{pl,sk,ca,ru,uk,lt}.ts`
+
+Rules:
+- When adding, editing, or removing any translation key — do it in ALL 7 files simultaneously
+- Never leave a key untranslated or with English placeholder in non-English files
+- TypeScript type `TranslationKeys` (from `en.ts`) enforces structure — build will fail on missing keys
+- Pages live under `src/pages/[...lang]/` — always use `useTranslations(locale)`, never hardcode text
+- `src/i18n/config.ts` — locale list, BCP47 codes, OG metadata
+- `src/i18n/utils.ts` — `loadTranslations`, `useTranslations`, `localizedUrl`, `getStaticLocalePaths`
+
 ## Commands
 - `npm run build` — build the site
 - `npm run dev` — local dev server
