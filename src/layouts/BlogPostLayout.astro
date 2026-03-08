@@ -1,8 +1,10 @@
 ---
+import type { Locale } from '../i18n/config';
+import { defaultLocale, localeBcp47 } from '../i18n/config';
+import { useTranslations, localizedUrl } from '../i18n/utils';
 import BaseLayout from './BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
-import { BETA_PAGE_URL } from '../data/links';
 
 interface Props {
   title: string;
@@ -11,9 +13,12 @@ interface Props {
   updatedDate?: Date;
   heroImage?: string;
   category?: string;
+  locale?: Locale;
 }
 
-const { title, description, pubDate, updatedDate, heroImage, category } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, category, locale = defaultLocale } = Astro.props;
+const t = useTranslations(locale);
+const bcp47 = localeBcp47[locale];
 
 const schema = {
   '@context': 'https://schema.org',
@@ -23,38 +28,22 @@ const schema = {
   datePublished: pubDate.toISOString(),
   ...(updatedDate && { dateModified: updatedDate.toISOString() }),
   ...(heroImage && { image: heroImage }),
-  author: {
-    '@type': 'Organization',
-    name: 'Therapy Support',
-  },
+  author: { '@type': 'Organization', name: 'Therapy Support' },
   publisher: {
     '@type': 'Organization',
     name: 'Therapy Support',
-    logo: {
-      '@type': 'ImageObject',
-      url: new URL('/images/logos/therapysupport.png', Astro.site).href,
-    },
+    logo: { '@type': 'ImageObject', url: new URL('/images/logos/therapysupport.png', Astro.site).href },
   },
 };
 
-const formattedDate = pubDate.toLocaleDateString('pl-PL', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
-
-const formattedUpdatedDate = updatedDate?.toLocaleDateString('pl-PL', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const formattedDate = pubDate.toLocaleDateString(bcp47, { year: 'numeric', month: 'long', day: 'numeric' });
+const formattedUpdatedDate = updatedDate?.toLocaleDateString(bcp47, { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
-<BaseLayout title={title} description={description} schema={schema}>
-  <Header />
+<BaseLayout title={title} description={description} schema={schema} locale={locale}>
+  <Header locale={locale} />
   <main class="bg-gray-50 min-h-screen">
     <article class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-      <!-- Article Header -->
       <header class="mb-10">
         {category && (
           <span class="inline-block px-3 py-1 rounded-lg border border-sage-200 bg-sage-50/50 text-sage-700 text-xs font-semibold uppercase tracking-wider mb-4">
@@ -66,25 +55,19 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString('pl-PL', {
           <time datetime={pubDate.toISOString()} class="font-medium">{formattedDate}</time>
           {formattedUpdatedDate && (
             <span class="text-sm">
-              · Zaktualizowano: <time datetime={updatedDate!.toISOString()}>{formattedUpdatedDate}</time>
+              · <time datetime={updatedDate!.toISOString()}>{formattedUpdatedDate}</time>
             </span>
           )}
         </div>
       </header>
 
-      <!-- Hero Image -->
       {heroImage && (
         <div class="mb-12 -mx-4 sm:mx-0">
-          <img
-            src={heroImage}
-            alt={title}
-            class="w-full rounded-none sm:rounded-2xl shadow-2xl object-cover"
-            style="max-height: 500px;"
-          />
+          <img src={heroImage} alt={title}
+            class="w-full rounded-none sm:rounded-2xl shadow-2xl object-cover" style="max-height: 500px;" />
         </div>
       )}
 
-      <!-- Article Content -->
       <div class="bg-white rounded-2xl shadow-sm border border-gray-100 px-6 sm:px-12 py-10 sm:py-16">
         <div class="prose prose-lg max-w-none
           prose-headings:font-bold prose-headings:text-gray-900
@@ -111,43 +94,35 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString('pl-PL', {
         </div>
       </div>
 
-      <!-- Share/Back Section -->
       <div class="mt-12 flex items-center justify-between">
-        <a
-          href="/blog/"
-          class="inline-flex items-center gap-2 text-sage-600 hover:text-sage-700 font-semibold transition-colors"
-        >
+        <a href={localizedUrl('/blog/', locale)}
+          class="inline-flex items-center gap-2 text-sage-600 hover:text-sage-700 font-semibold transition-colors">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
           </svg>
-          Wszystkie artykuły
+          {t.home.blogAllPosts}
         </a>
       </div>
     </article>
   </main>
 
-  <!-- ===== CTA — dark teal cover ===== -->
   <section class="ts-cover ts-cover-sm relative overflow-hidden bg-brand-500 py-20 lg:py-28">
     <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-accent-400 text-xs font-bold tracking-[4px] uppercase mb-6">
-        Beta testy · Dołącz teraz
-      </p>
+      <p class="text-accent-400 text-xs font-bold tracking-[4px] uppercase mb-6">{t.pageCta.subtitle}</p>
       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-        Odzyskaj czas dla siebie<br />i swoich <em class="not-italic text-accent-400">pacjentów</em>
+        {t.pageCta.title1}<br />{t.pageCta.title2} <em class="not-italic text-accent-400">{t.pageCta.titleAccent}</em>
       </h2>
       <p class="text-white/65 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-        Jesteś terapeutą / terapeutką CBT?<br />
-        <strong>Sprawdź, jak platforma wspiera Twoją codzienną pracę.</strong><br />
-        Podsumowania sesji, które porządkują materiał kliniczny. Administracja, która nie przeszkadza.
+        {t.pageCta.desc1}<br /><strong>{t.pageCta.desc2}</strong><br />{t.pageCta.desc3}
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href={BETA_PAGE_URL}
+        <a href={localizedUrl('/betatester/', locale)}
           class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent-400 text-brand-500 font-bold text-base hover:bg-accent-300 transition-colors shadow-lg">
-          Zgłoś się do beta testów
+          {t.pageCta.button}
         </a>
       </div>
     </div>
   </section>
 
-  <Footer />
+  <Footer locale={locale} />
 </BaseLayout>

@@ -1,11 +1,18 @@
 ---
-import { mainNavigation } from '../../data/navigation';
+import type { Locale } from '../../i18n/config';
+import { defaultLocale } from '../../i18n/config';
+import { getNavigation } from '../../data/navigation';
 
-const currentPath = Astro.url.pathname;
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = defaultLocale } = Astro.props;
+const navItems = getNavigation(locale);
 ---
 
-<nav class="flex items-center gap-1" aria-label="Nawigacja główna">
-  {mainNavigation.map((item) => {
+<nav class="flex items-center gap-1" aria-label="Main navigation">
+  {navItems.map((item) => {
     return (
       <a
         href={item.href}

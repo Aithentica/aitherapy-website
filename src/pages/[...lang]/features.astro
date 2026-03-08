@@ -1,0 +1,145 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import type { Locale } from '../../i18n/config';
+import { getStaticLocalePaths, getLocaleFromParams, useTranslations, loadTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return getStaticLocalePaths();
+}
+
+const locale = getLocaleFromParams(Astro.params.lang) as Locale;
+await loadTranslations(locale);
+const t = useTranslations(locale);
+const fp = t.featuresPage;
+---
+
+<PageLayout title={fp.title} description={fp.metaDesc} locale={locale}>
+  <!-- Intro -->
+  <section class="pt-16 lg:pt-24 pb-12 lg:pb-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="inline-flex items-center px-4 py-1.5 rounded-full bg-sage-50 border border-sage-200 text-sage-700 text-sm font-extrabold mb-6">{fp.title}</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-gray-900">{fp.heading}</h1>
+      <p class="mt-6 text-lg text-gray-600 leading-relaxed">{fp.intro1}</p>
+      <p class="mt-4 text-lg text-gray-600 leading-relaxed">{fp.intro2}</p>
+    </div>
+  </section>
+
+  <!-- CBT Architecture -->
+  <section class="pt-8 lg:pt-12 pb-12 lg:pb-16 bg-sage-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-white">
+        <h3 class="text-xl font-bold mb-4">{fp.cbtArchTitle}</h3>
+        <p class="leading-relaxed mb-4">{fp.cbtArchDesc}</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1 mb-4 leading-relaxed">
+          {fp.cbtArchPoints.map((p) => <p>&rarr; {p}</p>)}
+        </div>
+        <p class="leading-relaxed">{fp.cbtArchBottom}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Showcase 1 -->
+  <section class="pt-8 lg:pt-12 pb-16 lg:pb-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-24">
+      <div class="space-y-10">
+        <div class="max-w-5xl mx-auto">
+          <div class="rounded-2xl overflow-hidden">
+            <img src="/images/screenshots/funkcjonalnosci-1.png" alt={`${fp.smartNoteTitle} & ${fp.conceptTitle}`} class="w-full h-auto" loading="lazy" />
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl border border-gray-100 p-4 lg:p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{fp.smartNoteTitle}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-2">{fp.smartNoteDesc1}</p>
+            <p class="text-sm text-gray-600 leading-relaxed">{fp.smartNoteDesc2}</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-4 lg:p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{fp.conceptTitle}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-2">{fp.conceptDesc1}</p>
+            <p class="text-sm text-gray-600 leading-relaxed mb-2">{fp.conceptDesc2}</p>
+            <p class="text-sm text-gray-600 leading-relaxed">{fp.conceptDesc3}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CBT Functions -->
+  <section class="pt-8 lg:pt-12 pb-12 lg:pb-16 bg-sage-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-white">
+        <h3 class="text-xl font-bold mb-4">{fp.cbtFuncTitle}</h3>
+        <p class="leading-relaxed mb-4">{fp.cbtFuncDesc}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-1 mb-4 leading-relaxed">
+          {fp.cbtFuncItems.map((item) => <p>&rarr; {item}</p>)}
+        </div>
+        <p class="leading-relaxed">{fp.cbtFuncBottom}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Showcase 2 -->
+  <section class="pt-8 lg:pt-12 pb-16 lg:pb-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-24">
+      <div class="space-y-10">
+        <div class="max-w-5xl mx-auto">
+          <div class="rounded-2xl overflow-hidden">
+            <img src="/images/screenshots/funkcjonalnosci-2.png" alt={`${fp.reportsTitle} & ${fp.supervisorTitle}`} class="w-full h-auto" loading="lazy" />
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl border border-gray-100 p-4 lg:p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{fp.reportsTitle}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-2">{fp.reportsDesc1}</p>
+            <p class="text-sm text-gray-600 leading-relaxed">{fp.reportsDesc2}</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-4 lg:p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{fp.supervisorTitle}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-2">{fp.supervisorDesc1}</p>
+            <p class="text-sm text-gray-600 leading-relaxed">{fp.supervisorDesc2}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow -->
+  <section class="pt-8 lg:pt-12 pb-12 lg:pb-16 bg-sage-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-white">
+        <h3 class="text-xl font-bold mb-4">{fp.workflowTitle}</h3>
+        <p class="leading-relaxed mb-4">{fp.workflowDesc}</p>
+        <p class="leading-relaxed mb-2"><strong>&rarr; {fp.workflowAfter}</strong> {fp.workflowAfterDesc}</p>
+        <p class="leading-relaxed mb-2"><strong>&rarr; {fp.workflowBetween}</strong> {fp.workflowBetweenDesc}</p>
+        <p class="leading-relaxed mb-2"><strong>&rarr; {fp.workflowDuring}</strong> {fp.workflowDuringDesc}</p>
+        <p class="leading-relaxed mb-4"><strong>&rarr; {fp.workflowBefore}</strong> {fp.workflowBeforeDesc}</p>
+        <p class="leading-relaxed">{fp.workflowBottom}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Showcase 3 -->
+  <section class="pt-8 lg:pt-12 pb-16 lg:pb-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-24">
+      <div class="space-y-10">
+        <div class="max-w-5xl mx-auto">
+          <div class="rounded-2xl overflow-hidden">
+            <img src="/images/screenshots/funkcjonalnosci-3.png" alt={`${fp.patientPortalTitle} & ${fp.practiceTitle}`} class="w-full h-auto" loading="lazy" />
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl border border-gray-100 p-4 lg:p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{fp.patientPortalTitle}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-2">{fp.patientPortalDesc1}</p>
+            <p class="text-sm text-gray-600 leading-relaxed">{fp.patientPortalDesc2}</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-4 lg:p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{fp.practiceTitle}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-2">{fp.practiceDesc1}</p>
+            <p class="text-sm text-gray-600 leading-relaxed">{fp.practiceDesc2}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

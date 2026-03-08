@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import type { Locale } from '../../../i18n/config';
+import { locales, defaultLocale } from '../../../i18n/config';
+import { getLocaleFromParams, loadTranslations } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const paths: { params: { lang?: string; slug: string }; props: any }[] = [];
+
+  for (const post of posts) {
+    // Default locale (no prefix)
+    paths.push({ params: { lang: undefined, slug: post.slug }, props: { post, locale: defaultLocale } });
+    // Other locales
+    for (const lang of locales) {
+      if (lang !== defaultLocale) {
+        paths.push({ params: { lang, slug: post.slug }, props: { post, locale: lang } });
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { post, locale } = Astro.props as { post: any; locale: Locale };
+await loadTranslations(locale);
+const { Content } = await post.render();
+---
+
+<BlogPostLayout
+  title={post.data.title}
+  description={post.data.description}
+  pubDate={post.data.pubDate}
+  category={post.data.category}
+  heroImage={post.data.heroImage}
+  locale={locale}
+>
+  <Content />
+</BlogPostLayout>

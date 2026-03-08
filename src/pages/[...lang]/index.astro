@@ -1,13 +1,20 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/layout/Header.astro';
-import Footer from '../components/layout/Footer.astro';
-import TrustLogos from '../components/sections/TrustLogos.astro';
-import { testimonials } from '../data/testimonials';
-import { faqItems } from '../data/faq';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import TrustLogos from '../../components/sections/TrustLogos.astro';
 import { getCollection } from 'astro:content';
+import type { Locale } from '../../i18n/config';
+import { localeBcp47 } from '../../i18n/config';
+import { getStaticLocalePaths, getLocaleFromParams, useTranslations, localizedUrl, loadTranslations } from '../../i18n/utils';
 
-const currentYear = new Date().getFullYear();
+export function getStaticPaths() {
+  return getStaticLocalePaths();
+}
+
+const locale = getLocaleFromParams(Astro.params.lang) as Locale;
+await loadTranslations(locale);
+const t = useTranslations(locale);
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const latestPosts = allPosts
@@ -17,92 +24,89 @@ const latestPosts = allPosts
 const features = [
   {
     icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" /></svg>`,
-    title: 'Inteligentna notatka',
-    desc: 'Więcej niż transkrypcja. AI rozróżnia mówców, wychwytuje interwencje i tworzy ustrukturowaną notatkę kliniczną (SOAP/BIRP) w mniej niż 30 sekund',
-    points: ['Rozróżnianie mówców w czasie rzeczywistym', 'Wykrywanie interwencji i kluczowych treści klinicznych', 'Notatka gotowa w mniej niż 30 sekund', 'Podgląd i edycja po sesji'],
+    title: t.home.feature1Title,
+    desc: t.home.feature1Desc,
+    points: t.home.feature1Points,
   },
   {
     icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" /></svg>`,
-    title: 'Konceptualizacja',
-    desc: 'Generowanie diagramów kognitywnych, modeli błędnego koła, map problemów i analiz ABC<br />- jednym kliknięciem',
-    points: ['Diagram kognitywny CBT generowany z treści sesji', 'Model błędnego koła i analiza ABC jednym kliknięciem', 'Eksport do PDF', 'Aktualizacja diagramu wraz z kolejnymi sesjami'],
+    title: t.home.feature2Title,
+    desc: t.home.feature2Desc,
+    points: t.home.feature2Points,
   },
   {
     icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605" /></svg>`,
-    title: 'Zestawienia',
-    desc: 'Porównanie notatek między sesjami i śledzenie wyników kwestionariuszy - cały przebieg terapii na jednym ekranie',
-    points: ['Porównanie notatek między sesjami', 'Śledzenie wyników kwestionariuszy', 'Wizualizacja postępu terapii', 'Uporządkowane podsumowanie przebiegu terapii'],
+    title: t.home.feature3Title,
+    desc: t.home.feature3Desc,
+    points: t.home.feature3Points,
   },
   {
     icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>`,
-    title: 'Bezpieczeństwo na każdym etapie',
-    desc: 'Szyfrowanie end-to-end, lokalna anonimizacja danych, pełna zgodność z RODO i AI Act',
-    points: ['Szyfrowanie end-to-end', 'Anonimizacja lokalna przed transmisją', 'Pełna zgodność z RODO i AI Act', 'Dane kliniczne są dostępne wyłącznie dla Ciebie'],
+    title: t.home.feature4Title,
+    desc: t.home.feature4Desc,
+    points: t.home.feature4Points,
   },
   {
     icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>`,
-    title: 'Współpraca z superwizorem',
-    desc: 'Materiały gotowe do omówienia - bez dodatkowego opracowywania i bez przeciążenia materiałem',
-    points: ['Materiały do superwizji bez dodatkowej pracy', 'Chronologiczny podgląd przebiegu terapii w jednym miejscu', 'Wyodrębnione kluczowe wątki, hipotezy i momenty zmiany', 'Automatycznie uporządkowany materiał gotowy do superwizji'],
+    title: t.home.feature5Title,
+    desc: t.home.feature5Desc,
+    points: t.home.feature5Points,
   },
   {
     icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>`,
-    title: 'Zarządzanie gabinetem',
-    desc: 'Spokojne prowadzenie gabinetu – mniej zadań między sesjami',
-    points: ['Kalendarz, który pomaga utrzymać uporządkowany grafik i stałe obłożenie', 'Automatyczne przypomnienia SMS ograniczające odwołania wizyt', 'Płatności w jednym miejscu, bez przełączania się między systemami', 'Narzędzia wspierające świadome planowanie pracy'],
+    title: t.home.feature6Title,
+    desc: t.home.feature6Desc,
+    points: t.home.feature6Points,
   },
 ];
+
+const bcp47 = localeBcp47[locale];
 ---
 
 <BaseLayout
   title="Therapy Support"
-  description="Zintegrowana Platforma dla Terapeutów CBT. Nowy standard w psychoterapii."
+  description={t.meta.defaultDescription}
+  locale={locale}
 >
 
-  <!-- ===== HEADER ===== -->
-  <Header />
+  <Header locale={locale} />
 
   <main style="background: #F0F4F3;">
 
-    <!-- ===== HERO — dark teal cover ===== -->
+    <!-- ===== HERO ===== -->
     <section class="ts-cover relative overflow-hidden bg-brand-500">
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-          <!-- Left: text -->
           <div>
             <p class="text-accent-400 text-xs font-bold tracking-[4px] uppercase mb-10">
-              Therapy Support · Platforma dla Terapeutów CBT
+              {t.home.heroSubtitle}
             </p>
             <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6">
-              Platforma dla<br />Terapeutów <em class="not-italic text-accent-400">CBT</em>
+              {t.home.heroTitleLine1}<br />{t.home.heroTitleLine2} <em class="not-italic text-accent-400">{t.home.heroTitleAccent}</em>
             </h1>
             <p class="text-white/65 text-lg leading-relaxed mb-10 max-w-lg">
-              Od wstępnej konsultacji i wywiadu, przez konceptualizację i plan terapii,
-              aż po notatki z sesji - całość w jednym, bezpiecznym miejscu
-              z odpowiedzialnym wsparciem AI.
-              <br /><br />Jasny obraz pacjenta, pewniejsze decyzje kliniczne.
-              <br />Mniej dokumentacji, więcej czasu na terapię.
+              {t.home.heroDesc}
+              <br /><br />{t.home.heroDesc2}
+              <br />{t.home.heroDesc3}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 mb-14">
-              <a href="/betatester/"
+              <a href={localizedUrl('/betatester/', locale)}
                 class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-accent-400 text-brand-500 font-bold text-sm hover:bg-accent-300 transition-colors shadow-lg">
-                Zgłoś się do beta testów
+                {t.home.heroCta}
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
               </a>
-              <a href="/funkcjonalnosci/"
+              <a href={localizedUrl('/features/', locale)}
                 class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-sm hover:bg-white/15 transition-colors">
-                Poznaj funkcjonalności
+                {t.home.heroCtaSecondary}
               </a>
             </div>
-            <!-- Stat chips -->
             <div class="flex flex-wrap gap-3">
               {[
-                { num: '10-15h', label: 'oszczędności miesięcznie' },
-                { num: '30s', label: 'notatka z sesji' },
-                { num: 'RODO', label: '100% zgodność' },
+                { num: t.home.stat1Num, label: t.home.stat1Label },
+                { num: t.home.stat2Num, label: t.home.stat2Label },
+                { num: t.home.stat3Num, label: t.home.stat3Label },
               ].map((s) => (
                 <div class="ts-chip">
                   <strong>{s.num}</strong>{s.label}
@@ -184,27 +188,21 @@ const features = [
       </div>
     </section>
 
-    <!-- ===== TRUST LOGOS ===== -->
-    <TrustLogos />
+    <TrustLogos locale={locale} />
 
     <!-- ===== PROBLEM ===== -->
     <section class="py-20 lg:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
-          <span class="ts-tag">Problem Terapeuty</span>
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-4">
-            Niewidzialna Praca
-          </h2>
-          <p class="text-lg text-slate-500 leading-relaxed">
-            Dokumentacja, archiwizacja, planowanie sesji, przygotowanie do superwizji,
-            konceptualizacja, fakturowanie, SMS-y do pacjentów - to wszystko zabiera <strong>czas</strong>.
-          </p>
+          <span class="ts-tag">{t.home.problemTag}</span>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-4">{t.home.problemTitle}</h2>
+          <p class="text-lg text-slate-500 leading-relaxed">{t.home.problemDesc}</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
           {[
-            { value: '100', label: 'sesji miesięcznie' },
-            { value: '20', label: 'minut pracy niewidzialnej na 1 sesję' },
-            { value: '20', label: 'godzin miesięcznie na administracji' },
+            { value: t.home.problemStat1Value, label: t.home.problemStat1Label },
+            { value: t.home.problemStat2Value, label: t.home.problemStat2Label },
+            { value: t.home.problemStat3Value, label: t.home.problemStat3Label },
           ].map((stat) => (
             <div class="ts-card text-center py-10 px-6">
               <p class="text-5xl lg:text-6xl font-extrabold text-brand-500 mb-2">{stat.value}</p>
@@ -213,7 +211,7 @@ const features = [
           ))}
         </div>
         <p class="mt-10 text-lg text-slate-500 leading-relaxed text-center max-w-3xl mx-auto">
-          <strong>My go oddajemy.</strong> Na terapię, rozwój i to, co napędza.
+          <strong>{t.home.problemBottom}</strong>
         </p>
       </div>
     </section>
@@ -222,15 +220,10 @@ const features = [
     <section class="py-20 lg:py-28 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center mb-14">
-          <span class="ts-tag">Funkcjonalności</span>
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-3">
-            Dopasowane do pracy terapeuty
-          </h2>
-          <p class="text-lg text-slate-500 leading-relaxed">
-            Lepsza praca kliniczna, mniej administracji.
-          </p>
+          <span class="ts-tag">{t.home.featuresTag}</span>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-3">{t.home.featuresTitle}</h2>
+          <p class="text-lg text-slate-500 leading-relaxed">{t.home.featuresSubtitle}</p>
         </div>
-
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f) => (
             <div class="ts-card p-6 lg:p-8 text-center flex flex-col items-center">
@@ -241,16 +234,16 @@ const features = [
               <p class="text-slate-500 text-sm leading-relaxed" set:html={f.desc} />
               {f.points && (
                 <ul class="mt-3 text-left text-slate-500 text-sm leading-relaxed space-y-1">
-                  {f.points.map((p) => <li class="flex items-start gap-2"><span class="text-brand-500 mt-0.5">→</span>{p}</li>)}
+                  {f.points.map((p) => <li class="flex items-start gap-2"><span class="text-brand-500 mt-0.5">&rarr;</span>{p}</li>)}
                 </ul>
               )}
             </div>
           ))}
         </div>
         <div class="text-center mt-10">
-          <a href="/funkcjonalnosci/"
+          <a href={localizedUrl('/features/', locale)}
             class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-500 text-white font-bold text-sm hover:bg-brand-600 transition-colors shadow-lg">
-            Dowiedz się więcej
+            {t.home.featuresLearnMore}
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
@@ -263,36 +256,30 @@ const features = [
     <section class="py-20 lg:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
-          <span class="ts-tag">Opinie</span>
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-3">
-            Czego potrzebują terapeuci?
-          </h2>
-          <p class="text-lg text-slate-500 leading-relaxed">
-            Wysłuchaliśmy potrzeb profesjonalistów zdrowia psychicznego i stworzyliśmy
-            rozwiązanie, które odpowiada na realne wyzwania codziennej praktyki.
-          </p>
+          <span class="ts-tag">{t.home.testimonialsTag}</span>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-3">{t.home.testimonialsTitle}</h2>
+          <p class="text-lg text-slate-500 leading-relaxed">{t.home.testimonialsDesc}</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
+          {t.testimonials.items.map((item) => (
             <div class="ts-card p-7">
               <div class="flex gap-1 mb-5">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <svg class:list={['w-4 h-4', i < t.rating ? 'text-yellow-400' : 'text-gray-200']}
-                    fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
               <blockquote class="text-slate-500 text-sm leading-relaxed mb-6 italic">
-                &bdquo;{t.quote}&rdquo;
+                &bdquo;{item.quote}&rdquo;
               </blockquote>
               <div class="flex items-center gap-3 pt-4 border-t border-[#E2E8F0]">
                 <div class="w-9 h-9 rounded-full bg-brand-50 flex items-center justify-center text-brand-500 font-bold text-sm flex-shrink-0">
-                  {t.name.charAt(0)}
+                  {item.name.charAt(0)}
                 </div>
                 <div>
-                  <p class="font-semibold text-neutral-900 text-sm">{t.name}</p>
-                  <p class="text-slate-500 text-xs">{t.role}</p>
+                  <p class="font-semibold text-neutral-900 text-sm">{item.name}</p>
+                  <p class="text-slate-500 text-xs">{item.role}</p>
                 </div>
               </div>
             </div>
@@ -305,13 +292,11 @@ const features = [
     <section class="py-20 lg:py-28 bg-white">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 lg:mb-16">
-          <span class="ts-tag">FAQ</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-neutral-900 mt-4 mb-3">
-            O co pytacie?
-          </h2>
+          <span class="ts-tag">{t.home.faqTag}</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-neutral-900 mt-4 mb-3">{t.home.faqTitle}</h2>
         </div>
         <div class="space-y-3">
-          {faqItems.map((item) => (
+          {t.faq.items.map((item) => (
             <div class="ts-card overflow-hidden" data-faq-item>
               <button type="button"
                 class="flex items-center justify-between w-full px-6 py-4 text-left hover:bg-[#F8FAFC] transition-colors"
@@ -328,13 +313,11 @@ const features = [
             </div>
           ))}
         </div>
-        <p class="text-slate-500 text-center mt-8">
-          Nie ma odpowiedzi na Twoje pytanie?
-        </p>
+        <p class="text-slate-500 text-center mt-8">{t.home.faqNoAnswer}</p>
         <div class="mt-4 text-center">
-          <a href="/kontakt/"
+          <a href={localizedUrl('/contact/', locale)}
             class="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-brand-500 text-brand-500 font-semibold text-sm hover:bg-brand-50 transition-colors">
-            Napisz wiadomość
+            {t.home.faqContact}
           </a>
         </div>
       </div>
@@ -345,17 +328,13 @@ const features = [
       <section class="py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="ts-section-header mb-12 text-center">
-            <span class="ts-tag">Blog</span>
-            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-3">
-              Terapia, warsztat, technologia
-            </h2>
-            <p class="text-lg text-slate-500">
-              Piszemy o tym, nad czym pracujemy i dlaczego.
-            </p>
+            <span class="ts-tag">{t.home.blogTag}</span>
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-3">{t.home.blogTitle}</h2>
+            <p class="text-lg text-slate-500">{t.home.blogSubtitle}</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {latestPosts.map((post) => (
-              <a href={`/blog/${post.slug}/`}
+              <a href={localizedUrl(`/blog/${post.slug}/`, locale)}
                 class="ts-card overflow-hidden group block hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-shadow">
                 {post.data.heroImage && (
                   <div class="aspect-[16/9] overflow-hidden bg-gray-100">
@@ -365,14 +344,12 @@ const features = [
                 )}
                 <div class="p-6">
                   <p class="ts-feature-badge inline-flex mb-3">{post.data.category}</p>
-                  <h3 class="font-display text-lg font-bold text-neutral-900 group-hover:text-brand-500 transition-colors line-clamp-2 mb-2">
-                    {post.data.title}
-                  </h3>
+                  <h3 class="font-display text-lg font-bold text-neutral-900 group-hover:text-brand-500 transition-colors line-clamp-2 mb-2">{post.data.title}</h3>
                   <p class="text-slate-500 text-sm leading-relaxed line-clamp-3 mb-4">{post.data.description}</p>
                   <div class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-[#E2E8F0]">
                     <span>{post.data.author}</span>
                     <time datetime={post.data.pubDate.toISOString()}>
-                      {post.data.pubDate.toLocaleDateString('pl-PL', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      {post.data.pubDate.toLocaleDateString(bcp47, { day: 'numeric', month: 'short', year: 'numeric' })}
                     </time>
                   </div>
                 </div>
@@ -380,181 +357,60 @@ const features = [
             ))}
           </div>
           <div class="mt-10 text-center">
-            <a href="/blog/"
+            <a href={localizedUrl('/blog/', locale)}
               class="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-brand-500 text-brand-500 font-semibold text-sm hover:bg-brand-50 transition-colors">
-              Wszystkie wpisy
+              {t.home.blogAllPosts}
             </a>
           </div>
         </div>
       </section>
     )}
 
-    <!-- ===== CTA — dark teal cover ===== -->
+    <!-- ===== CTA ===== -->
     <section class="ts-cover ts-cover-sm relative overflow-hidden bg-brand-500 py-20 lg:py-28">
       <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-accent-400 text-xs font-bold tracking-[4px] uppercase mb-6">
-          Beta testy · Dołącz teraz
-        </p>
+        <p class="text-accent-400 text-xs font-bold tracking-[4px] uppercase mb-6">{t.home.ctaSubtitle}</p>
         <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-          Odzyskaj czas dla siebie<br />i swoich <em class="not-italic text-accent-400">pacjentów</em>
+          {t.home.ctaTitle1}<br />{t.home.ctaTitle2} <em class="not-italic text-accent-400">{t.home.ctaTitleAccent}</em>
         </h2>
         <p class="text-white/65 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-          Jesteś terapeutą / terapeutką CBT?<br />
-          <strong>Sprawdź, jak platforma wspiera Twoją codzienną pracę.</strong><br />
-          Podsumowania sesji, które porządkują materiał kliniczny. Administracja, która nie przeszkadza.
+          {t.home.ctaDesc1}<br />
+          <strong>{t.home.ctaDesc2}</strong><br />
+          {t.home.ctaDesc3}
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/betatester/"
+          <a href={localizedUrl('/betatester/', locale)}
             class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent-400 text-brand-500 font-bold text-base hover:bg-accent-300 transition-colors shadow-lg">
-            Zgłoś się do beta testów
+            {t.home.ctaButton}
           </a>
-
         </div>
       </div>
     </section>
 
   </main>
 
-  <Footer />
+  <Footer locale={locale} />
 
 </BaseLayout>
 
 <style>
-  /* Hero cover: decorative blobs */
-  .ts-cover::before {
-    content: '';
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    background: rgba(59, 213, 174, 0.07);
-    top: -200px; right: -200px;
-    pointer-events: none;
-  }
-  .ts-cover::after {
-    content: '';
-    position: absolute;
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    background: rgba(227, 221, 248, 0.06);
-    bottom: -100px; left: -100px;
-    pointer-events: none;
-  }
-
-  /* Stat chips inside hero */
-  .ts-chip {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
-    padding: 10px 18px;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.4;
-  }
-  .ts-chip strong {
-    color: #3BD5AE;
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 1px;
-  }
-
-  /* Lavender section tag */
-  .ts-tag {
-    display: inline-block;
-    background: #E3DDF8;
-    color: #134A45;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 100px;
-  }
-
-  /* White card base */
-  .ts-card {
-    background: white;
-    border-radius: 20px;
-    border: 1px solid #E2E8F0;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-  }
-
-  /* Feature block */
-  .ts-feature-block {
-    background: white;
-    border-radius: 20px;
-    border: 1px solid #E2E8F0;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-    overflow: hidden;
-  }
-  .ts-feature-header {
-    padding: 28px 32px;
-    border-bottom: 1px solid #E2E8F0;
-  }
-  .ts-feature-body {
-    padding: 24px 32px;
-  }
-
-  /* DM Mono badge */
-  .ts-feature-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #F8FAFC;
-    border: 1px solid #E2E8F0;
-    border-radius: 8px;
-    padding: 4px 12px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: #134A45;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-  }
-
-  /* Arrow list */
-  .ts-arrow-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .ts-arrow-list li {
-    font-size: 13px;
-    color: #475569;
-    padding: 8px 12px;
-    background: #F8FAFC;
-    border-radius: 8px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .ts-arrow-list li::before {
-    content: '→';
-    color: #3BD5AE;
-    flex-shrink: 0;
-    font-weight: 600;
-  }
-
-  /* Section header left-aligned */
-  .ts-section-header {
-    border-bottom: 2px solid #E3DDF8;
-    padding-bottom: 24px;
-  }
+  .ts-cover::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: rgba(59, 213, 174, 0.07); top: -200px; right: -200px; pointer-events: none; }
+  .ts-cover::after { content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%; background: rgba(227, 221, 248, 0.06); bottom: -100px; left: -100px; pointer-events: none; }
+  .ts-chip { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 10px 18px; font-size: 13px; color: rgba(255, 255, 255, 0.8); line-height: 1.4; }
+  .ts-chip strong { color: #3BD5AE; display: block; font-size: 20px; font-weight: 700; margin-bottom: 1px; }
+  .ts-tag { display: inline-block; background: #E3DDF8; color: #134A45; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; }
+  .ts-card { background: white; border-radius: 20px; border: 1px solid #E2E8F0; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04); }
+  .ts-feature-badge { display: inline-flex; align-items: center; gap: 6px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 4px 12px; font-family: 'DM Mono', monospace; font-size: 11px; color: #134A45; margin-bottom: 12px; letter-spacing: 0.5px; }
+  .ts-section-header { border-bottom: 2px solid #E3DDF8; padding-bottom: 24px; }
 </style>
 
 <script is:inline>
-  // Mobile menu
-  const toggle = document.getElementById('mobile-menu-toggle');
-  const menu = document.getElementById('mobile-menu');
-  if (toggle && menu) toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
-
-  // FAQ accordion
-  document.querySelectorAll('[data-faq-btn]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('[data-faq-item]');
-      const content = item.querySelector('[data-faq-content]');
-      const arrow = item.querySelector('[data-faq-arrow]');
-      const isOpen = !content.classList.contains('hidden');
+  document.querySelectorAll('[data-faq-btn]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('[data-faq-item]');
+      var content = item.querySelector('[data-faq-content]');
+      var arrow = item.querySelector('[data-faq-arrow]');
+      var isOpen = !content.classList.contains('hidden');
       content.classList.toggle('hidden');
       arrow.classList.toggle('rotate-180');
       btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');

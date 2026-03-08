@@ -1,4 +1,5 @@
-import { BETA_PAGE_URL } from './links';
+import type { Locale } from '../i18n/config';
+import { useTranslations, localizedUrl } from '../i18n/utils';
 
 export interface NavItem {
   label: string;
@@ -6,29 +7,14 @@ export interface NavItem {
   external?: boolean;
 }
 
-export const mainNavigation: NavItem[] = [
-  {
-    label: 'Home',
-    href: '/',
-  },
-  {
-    label: 'Aplikacja',
-    href: '/funkcjonalnosci/',
-  },
-  {
-    label: 'Dołącz do beta testów',
-    href: BETA_PAGE_URL,
-  },
-  {
-    label: 'Bezpieczeństwo',
-    href: '/bezpieczenstwo/',
-  },
-  {
-    label: 'Zespół',
-    href: '/o-firmie/',
-  },
-  {
-    label: 'Kontakt',
-    href: '/kontakt/',
-  },
-];
+export function getNavigation(locale: Locale): NavItem[] {
+  const t = useTranslations(locale);
+  return [
+    { label: t.nav.home, href: localizedUrl('/', locale) },
+    { label: t.nav.app, href: localizedUrl('/features/', locale) },
+    { label: t.nav.joinBeta, href: localizedUrl('/betatester/', locale) },
+    { label: t.nav.security, href: localizedUrl('/security/', locale) },
+    { label: t.nav.team, href: localizedUrl('/about/', locale) },
+    { label: t.nav.contact, href: localizedUrl('/contact/', locale) },
+  ];
+}

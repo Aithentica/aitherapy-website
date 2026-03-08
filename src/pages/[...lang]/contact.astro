@@ -1,0 +1,111 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import type { Locale } from '../../i18n/config';
+import { getStaticLocalePaths, getLocaleFromParams, useTranslations, loadTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return getStaticLocalePaths();
+}
+
+const locale = getLocaleFromParams(Astro.params.lang) as Locale;
+await loadTranslations(locale);
+const t = useTranslations(locale);
+const cp = t.contactPage;
+---
+
+<PageLayout title={cp.title} description={cp.metaDesc} locale={locale}>
+  <section class="pt-16 lg:pt-24 pb-12 lg:pb-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="inline-flex items-center px-4 py-1.5 rounded-full bg-sage-50 border border-sage-200 text-sage-700 text-sm font-extrabold mb-6">{cp.contactTag}</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-gray-900">{cp.heading}</h1>
+      <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+        {cp.intro}<br />{cp.introLine2}
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 bg-sage-900">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <form action="https://formspree.io/f/xplaceholder" method="POST" class="space-y-6" id="contact-form">
+        <div>
+          <label for="name" class="block text-sm font-medium text-white mb-2">{cp.nameLabel}</label>
+          <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border border-sage-700 bg-sage-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-sage-600 focus:border-sage-600 outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-white mb-2">{cp.emailLabel}</label>
+          <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-sage-700 bg-sage-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-sage-600 focus:border-sage-600 outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="subject" class="block text-sm font-medium text-white mb-2">{cp.subjectLabel}</label>
+          <input type="text" id="subject" name="subject" required placeholder={cp.subjectPlaceholder} class="w-full px-4 py-3 rounded-xl border border-sage-700 bg-sage-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-sage-600 focus:border-sage-600 outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-white mb-2">{cp.messageLabel}</label>
+          <textarea id="message" name="message" required rows="6" placeholder={cp.messagePlaceholder} class="w-full px-4 py-3 rounded-xl border border-sage-700 bg-sage-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-sage-600 focus:border-sage-600 outline-none transition-colors resize-y"></textarea>
+        </div>
+        <input type="text" name="_gotcha" style="display:none" />
+        <div class="text-center">
+          <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-sage-600 text-white font-semibold text-sm hover:bg-sage-700 transition-colors shadow-lg shadow-sage-600/25 hover:shadow-sage-600/40">
+            {cp.submitButton}
+          </button>
+        </div>
+        <div id="form-success" class="hidden p-4 rounded-xl bg-sage-50 border border-sage-200 text-sage-700">
+          <p class="font-semibold">{cp.successTitle}</p>
+          <p class="text-sm mt-1">{cp.successDesc}</p>
+        </div>
+        <div id="form-error" class="hidden p-4 rounded-xl bg-red-50 border border-red-200 text-red-700">
+          <p class="font-semibold">{cp.errorTitle}</p>
+          <p class="text-sm mt-1">{cp.errorDesc}</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-md mx-auto">
+        <div class="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-sage-50 text-sage-600 mb-4">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">{cp.emailSectionTitle}</h3>
+          <p class="text-gray-600">{cp.emailSectionDesc}</p>
+          <a href="mailto:kontakt@aitherapy.support" class="text-sage-600 hover:text-sage-700 font-medium mt-2 inline-block">
+            kontakt@aitherapy.support
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script is:inline>
+  var form = document.getElementById('contact-form');
+  var successMsg = document.getElementById('form-success');
+  var errorMsg = document.getElementById('form-error');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    successMsg.classList.add('hidden');
+    errorMsg.classList.add('hidden');
+
+    try {
+      var response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+      });
+
+      if (response.ok) {
+        form.reset();
+        successMsg.classList.remove('hidden');
+      } else {
+        errorMsg.classList.remove('hidden');
+      }
+    } catch(err) {
+      errorMsg.classList.remove('hidden');
+    }
+  });
+</script>

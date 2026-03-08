@@ -1,4 +1,7 @@
 ---
+import type { Locale } from '../i18n/config';
+import { defaultLocale } from '../i18n/config';
+import { useTranslations, localizedUrl } from '../i18n/utils';
 import BaseLayout from './BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
@@ -10,9 +13,11 @@ interface Props {
   canonicalURL?: string;
   schema?: Record<string, unknown>;
   noindex?: boolean;
+  locale?: Locale;
 }
 
-const { title, description, ogImage, canonicalURL, schema, noindex } = Astro.props;
+const { title, description, ogImage, canonicalURL, schema, noindex, locale = defaultLocale } = Astro.props;
+const t = useTranslations(locale);
 ---
 
 <BaseLayout
@@ -22,8 +27,9 @@ const { title, description, ogImage, canonicalURL, schema, noindex } = Astro.pro
   canonicalURL={canonicalURL}
   schema={schema}
   noindex={noindex}
+  locale={locale}
 >
-  <Header />
+  <Header locale={locale} />
   <main>
     <slot />
   </main>
@@ -32,24 +38,24 @@ const { title, description, ogImage, canonicalURL, schema, noindex } = Astro.pro
   <section class="ts-cover ts-cover-sm relative overflow-hidden bg-brand-500 py-20 lg:py-28">
     <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <p class="text-accent-400 text-xs font-bold tracking-[4px] uppercase mb-6">
-        Beta testy · Dołącz teraz
+        {t.pageCta.subtitle}
       </p>
       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-        Odzyskaj czas dla siebie<br />i swoich <em class="not-italic text-accent-400">pacjentów</em>
+        {t.pageCta.title1}<br />{t.pageCta.title2} <em class="not-italic text-accent-400">{t.pageCta.titleAccent}</em>
       </h2>
       <p class="text-white/65 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-        Jesteś terapeutą / terapeutką CBT?<br />
-        <strong>Sprawdź, jak platforma wspiera Twoją codzienną pracę.</strong><br />
-        Podsumowania sesji, które porządkują materiał kliniczny. Administracja, która nie przeszkadza.
+        {t.pageCta.desc1}<br />
+        <strong>{t.pageCta.desc2}</strong><br />
+        {t.pageCta.desc3}
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/betatester/"
+        <a href={localizedUrl('/betatester/', locale)}
           class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent-400 text-brand-500 font-bold text-base hover:bg-accent-300 transition-colors shadow-lg">
-          Zgłoś się do beta testów
+          {t.pageCta.button}
         </a>
       </div>
     </div>
   </section>
 
-  <Footer />
+  <Footer locale={locale} />
 </BaseLayout>

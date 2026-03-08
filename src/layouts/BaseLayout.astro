@@ -1,4 +1,8 @@
 ---
+import type { Locale } from '../i18n/config';
+import { defaultLocale, localeBcp47, localeOg } from '../i18n/config';
+import { useTranslations } from '../i18n/utils';
+
 interface Props {
   title: string;
   description?: string;
@@ -6,25 +10,31 @@ interface Props {
   canonicalURL?: string;
   schema?: Record<string, unknown>;
   noindex?: boolean;
+  locale?: Locale;
 }
 
 const {
   title,
-  description = 'Zintegrowana Platforma dla Terapeutów CBT. Nowy standard w psychoterapii.',
+  description,
   ogImage = '/images/logos/therapysupport.png',
   canonicalURL = Astro.url.href,
   schema,
   noindex = false,
+  locale = defaultLocale,
 } = Astro.props;
 
-const siteName = 'Therapy Support';
+const t = useTranslations(locale);
+const desc = description || t.meta.defaultDescription;
+const siteName = t.meta.siteName;
 const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+const htmlLang = localeBcp47[locale].split('-')[0]; // 'en', 'pl', etc.
+const ogLocale = localeOg[locale];
 
 import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="pl">
+<html lang={htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,7 +47,7 @@ import '../styles/global.css';
 
     <!-- SEO -->
     <title>{fullTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={desc} />
     <link rel="canonical" href={canonicalURL} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
@@ -48,15 +58,15 @@ import '../styles/global.css';
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={desc} />
     <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
-    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:locale" content={ogLocale} />
     <meta property="og:site_name" content={siteName} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={desc} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
 
     <!-- Google Fonts -->

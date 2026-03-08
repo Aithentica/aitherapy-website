@@ -1,4 +1,14 @@
 ---
+import type { Locale } from '../../i18n/config';
+import { defaultLocale } from '../../i18n/config';
+import { useTranslations, localizedUrl } from '../../i18n/utils';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = defaultLocale } = Astro.props;
+const t = useTranslations(locale);
 ---
 
 <footer class="bg-gray-950 text-gray-300">
@@ -6,7 +16,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
       <!-- Logo & Description -->
       <div>
-        <a href="/" class="inline-block mb-4">
+        <a href={localizedUrl('/', locale)} class="inline-block mb-4">
           <img
             src="/images/logos/therapysupport-new.png"
             alt="Therapy Support"
@@ -14,39 +24,39 @@
           />
         </a>
         <p class="text-sm text-gray-400 leading-relaxed">
-          <strong class="text-gray-300">Platforma dla Terapeutów CBT</strong>
+          <strong class="text-gray-300">{t.footer.description}</strong>
           <br /><br />
-          <br />Jasny obraz pacjenta, pewniejsze decyzje kliniczne
-          <br />Mniej dokumentacji, więcej czasu na terapię
+          <br />{t.footer.descLine1}
+          <br />{t.footer.descLine2}
         </p>
       </div>
 
-      <!-- Nawigacja -->
+      <!-- Navigation -->
       <div>
-        <h3 class="text-white font-semibold text-sm mb-4">Nawigacja</h3>
+        <h3 class="text-white font-semibold text-sm mb-4">{t.footer.navTitle}</h3>
         <ul class="space-y-2.5">
-          <li><a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a></li>
-          <li><a href="/funkcjonalnosci/" class="text-sm text-gray-400 hover:text-white transition-colors">Aplikacja</a></li>
-          <li><a href="/bezpieczenstwo/" class="text-sm text-gray-400 hover:text-white transition-colors">Bezpieczeństwo</a></li>
-          <li><a href="/blog/" class="text-sm text-gray-400 hover:text-white transition-colors">Blog</a></li>
+          <li><a href={localizedUrl('/', locale)} class="text-sm text-gray-400 hover:text-white transition-colors">{t.nav.home}</a></li>
+          <li><a href={localizedUrl('/features/', locale)} class="text-sm text-gray-400 hover:text-white transition-colors">{t.footer.app}</a></li>
+          <li><a href={localizedUrl('/security/', locale)} class="text-sm text-gray-400 hover:text-white transition-colors">{t.footer.security}</a></li>
+          <li><a href={localizedUrl('/blog/', locale)} class="text-sm text-gray-400 hover:text-white transition-colors">{t.footer.blog}</a></li>
         </ul>
       </div>
 
-      <!-- Firma -->
+      <!-- Company -->
       <div>
-        <h3 class="text-white font-semibold text-sm mb-4">Firma</h3>
+        <h3 class="text-white font-semibold text-sm mb-4">{t.footer.companyTitle}</h3>
         <ul class="space-y-2.5">
-          <li><a href="/o-firmie/" class="text-sm text-gray-400 hover:text-white transition-colors">Zespół</a></li>
-          <li><a href="/kontakt/" class="text-sm text-gray-400 hover:text-white transition-colors">Kontakt</a></li>
+          <li><a href={localizedUrl('/about/', locale)} class="text-sm text-gray-400 hover:text-white transition-colors">{t.footer.team}</a></li>
+          <li><a href={localizedUrl('/contact/', locale)} class="text-sm text-gray-400 hover:text-white transition-colors">{t.footer.contact}</a></li>
         </ul>
       </div>
 
-      <!-- Dołącz -->
+      <!-- Join -->
       <div>
-        <h3 class="text-white font-semibold text-sm mb-4">Dołącz</h3>
+        <h3 class="text-white font-semibold text-sm mb-4">{t.footer.joinTitle}</h3>
         <ul class="space-y-2.5">
-          <li><a href="/betatester/" class="text-sm text-gray-400 hover:text-white transition-colors">Zostań beta testerem</a></li>
-          <li><a href="/zapisy-na-sesje-feedbackowe/" class="text-sm text-gray-400 hover:text-white transition-colors">Sesja feedbackowa</a></li>
+          <li><a href={localizedUrl('/betatester/', locale)} class="text-sm text-gray-400 hover:text-white transition-colors">{t.footer.becomeBeta}</a></li>
+          <li><a href="/zapisy-na-sesje-feedbackowe/" class="text-sm text-gray-400 hover:text-white transition-colors">{t.footer.feedbackSession}</a></li>
         </ul>
       </div>
     </div>
@@ -54,35 +64,34 @@
     <!-- EU Notice -->
     <div class="mt-12 pt-8 border-t border-gray-800">
       <p class="text-xs text-gray-500 leading-relaxed max-w-4xl mx-auto text-center">
-        Projekt &bdquo;Platforma Startowa Unicorn Hub &ndash; Edycja II&rdquo; współfinansowany ze środków Unii Europejskiej
-        w ramach działania 1.1 Platformy Startowe dla nowych pomysłów Programu Fundusze Europejskie dla Polski Wschodniej 2021-2027.
+        {t.footer.euNotice}
       </p>
     </div>
 
     <!-- Copyright -->
     <div class="mt-6 pt-6 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
       <p class="text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} Therapy Support. Wszelkie prawa zastrzeżone.
+        &copy; {new Date().getFullYear()} Therapy Support. {t.footer.copyright}
       </p>
       <div class="flex flex-wrap items-center justify-center gap-4">
         <a href="/regulamin/" class="text-xs text-gray-500 hover:text-white transition-colors">
-          Regulamin
+          {t.footer.terms}
         </a>
-        <span class="text-gray-700">•</span>
+        <span class="text-gray-700">&bull;</span>
         <a href="/polityka-prywatnosci/" class="text-xs text-gray-500 hover:text-white transition-colors">
-          Polityka prywatności
+          {t.footer.privacyPolicy}
         </a>
-        <span class="text-gray-700">•</span>
+        <span class="text-gray-700">&bull;</span>
         <a href="/cookies/" class="text-xs text-gray-500 hover:text-white transition-colors">
-          Cookies
+          {t.footer.cookies}
         </a>
-        <span class="text-gray-700">•</span>
-        <a href="/kontakt/" class="text-xs text-gray-500 hover:text-white transition-colors">
-          Kontakt
+        <span class="text-gray-700">&bull;</span>
+        <a href={localizedUrl('/contact/', locale)} class="text-xs text-gray-500 hover:text-white transition-colors">
+          {t.footer.contact}
         </a>
-        <span class="text-gray-700">•</span>
+        <span class="text-gray-700">&bull;</span>
         <a href="/ncbr/" class="text-xs text-gray-600 hover:text-gray-400 transition-colors">
-          Projekt NCBR
+          {t.footer.ncbrProject}
         </a>
       </div>
     </div>
