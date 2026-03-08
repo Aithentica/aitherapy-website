@@ -1,6 +1,6 @@
 ---
 title: "Release Notes — 8 marca 2026"
-description: "Ponad 200 commitów! Sesje wideo online (LiveKit), persistent recording, aplikacja mobilna, widget embed, chat AI ze streamingiem, branded emaile, drag & drop w kalendarzu, edytowalne przypomnienia finansowe i dziesiątki poprawek od całego zespołu."
+description: "Sesje wideo online bez Google Meet, nagrywanie które nie przerywa się przy przełączaniu zakładek, aplikacja mobilna do nagrywania z telefonu, widget rezerwacji na Twoją stronę, chat AI ze streamingiem, branded emaile i dziesiątki usprawnień zgłoszonych przez nasz zespół."
 pubDate: 2026-03-08
 heroImage: "/images/blog/release-notes-8-marca-2026.png"
 author: "Bartlomiej Glowacki"
@@ -9,343 +9,282 @@ tags: []
 draft: false
 ---
 
-To jest **największy release w historii Therapy Support** — ponad **200 commitów** od naszego ostatniego wydania 25 lutego. Zmieniło się praktycznie wszystko: od sesji wideo online, przez nagrywanie audio, po aplikację mobilną i chat AI. Poniżej pełny opis zmian.
+To jest **największa aktualizacja w historii Therapy Support**. Zmian jest tak dużo, że podzieliliśmy je na 13 sekcji — ale najważniejsza wiadomość jest prosta: **sesje wideo możesz teraz prowadzić bezpośrednio w aplikacji**, a nagrywanie działa nawet gdy przechodzisz między zakładkami.
 
-💚 **Wielkie podziękowania** dla całego zespołu: **Martyny**, **Joanny**, **Bohdana**, **Ewy**, **Magdaleny**, **Jagody**, **Marty** i **Bartłomieja** — wasze zgłoszenia i testy kształtowały ten release!
-
-* * *
-
-## 1\. 🎥 Sesje wideo online — LiveKit Integration
-
-To największa zmiana tego releasu. Therapy Support ma teraz **wbudowane sesje wideo** oparte na LiveKit — koniec z przekierowywaniem na Google Meet.
-
-### Podstawy
-
-- **Nowa trasa wideo** — sesja online otwiera się bezpośrednio w aplikacji, z kontrolkami kamery, mikrofonu i udostępniania ekranu (LiveKit SDK: `@livekit/components-react`, `livekit-client`)
-- **Stały pokój wideo per pacjent** — każdy pacjent dostaje unikalny, permanentny pokój wideo. Nie trzeba generować linków na każdą sesję
-- **Link zaproszeniowy dla pacjenta** — pacjent dołącza przez link z tokenem (`VideoInviteToken`) bez logowania. Przycisk "Dołącz" widoczny na dashboardzie pacjenta
-- **API token** — endpoint `VideoInviteToken` wystawiony w therapist session detail API
-
-### Typy spotkań
-
-- **Nowy enum `SessionMeetingType`** — każda sesja ma teraz typ: "AITS Video" lub "Google Meet" + pole `MeetingLink`
-- **Badge na liście pacjentów** — oddzielna kolumna z badge'em "AITS Video" lub "Google Meet", widoczne też w profilu
-- **Selektor typu spotkania** — klikalny "Pokój Online" w ustawieniach + możliwość zmiany domyślnego typu
-- **Migracja bazy** — pola `MeetingType`, `MeetingLink` i `VideoInviteToken` dodane do tabeli `Session`
-
-### Naprawki LiveKit
-
-- **Widoczne kontrolki** — dodany `data-lk-theme="default"` do `LiveKitRoom`, bez tego kontrolki audio/video były niewidoczne
-- **Layout LiveKitRoom** — `absolute inset-0` container + `min-h-0` zamiast `overflow-hidden` — naprawiony problem z przyciętym paskiem kontrolnym
-- **Nawigacja wstecz** — przycisk "wróć" w VideoSession używa teraz `history.back()` zamiast hardkodowanego `/sessions`
-- **Tokeny JWT** — zastąpiono LiveKit SDK standardową generacją JWT (`cc2a7b04`) — prostsze, mniej zależności
-- **Auto-zamknięcie modalu** — po zakończeniu nagrywania modal zamyka się automatycznie + odświeżenie danych sesji
-- **VITE_LIVEKIT_URL** — poprawiony endpoint LiveKit Cloud + dodany build argument do workflow dev deployment
-- **meetingType integer** — backend przyjmuje integer, frontend wysyłał string — naprawione mapowanie w obie strony
-
-### Link video w profilu terapeuty
-
-- **Przycisk kopiowania** linku video dla pacjenta bezpośrednio w profilu terapeuty (`e060fb7b`)
+💚 **Wielkie podziękowania** dla całego zespołu testerów: **Martyny**, **Joanny**, **Bohdana**, **Ewy**, **Magdaleny**, **Jagody**, **Marty** i **Bartłomieja** — Wasze zgłoszenia kształtowały ten release na każdym kroku!
 
 * * *
 
-## 2\. 🎙️ Persistent Recording — nagrywanie bez przerw (Martyna)
+## 1\. 🎥 Sesje wideo online — bez wychodzenia z aplikacji
 
-Seria commitów dedykowanych **Martynie** — nagrywanie sesji, które trwa nawet gdy terapeuta nawiguje po aplikacji.
+Do tej pory prowadzenie sesji online wymagało przełączenia się na Google Meet. Od teraz **sesje wideo odbywają się bezpośrednio w Therapy Support** — z kamerą, mikrofonem i udostępnianiem ekranu.
 
-### Jak działa persistent recording?
+### Co się zmieniło?
 
-- **Nagrywanie trwa przy nawigacji** — terapeuta może otwierać inne zakładki, przeglądać notatki, sprawdzać profil pacjenta — nagrywanie nie przerywa się
-- **Podpięcie pod przycisk Transcription** — `startPersistentRecording` uruchamiany bezpośrednio z przycisku transkrypcji w profilu sesji
-- **Live transkrypcja widoczna od razu** — obszar transkrypcji pojawia się natychmiast po starcie nagrywania, nie trzeba czekać na koniec
+- **Jeden klik** — otwierasz sesję, klikasz "Dołącz" i jesteś w pokoju wideo. Bez kopiowania linków, bez otwierania nowych zakładek
+- **Stały pokój per pacjent** — każdy pacjent ma swój pokój wideo, który działa na każdą sesję. Nie trzeba generować nowych linków
+- **Pacjent dołącza bez logowania** — pacjent dostaje link zaproszeniowy i dołącza jednym kliknięciem, bez zakładania konta. Przycisk "Dołącz do sesji" widoczny na jego dashboardzie
+- **Kopiowanie linku** — w profilu terapeuty możesz skopiować link wideo dla pacjenta i wysłać go mailem lub SMS-em
 
-### Backup audio
+### Typ spotkania: AITS Video czy Google Meet?
 
-- **Równoległy backup MP3** — podczas nagrywania system tworzy równoległy plik MP3 jako backup. Jeśli realtime transkrypcja zawiedzie, plik audio jest dostępny do pobrania i ponownego przetworzenia
-- **Alert przy przerwaniu** — wizualizacja przerwania nagrywania z komunikatem co się stało i co robić dalej
-- **Upload audio z backupu** — backup WebM pomija walidację pustego transkryptu i transkrypcję — zapisuje tylko plik do pobrania
-- **Backup upload tylko przy błędzie** — audio backup uploadowany jest wyłącznie gdy realtime transkrypcja nie powiodła się (przywrócenie diaryzacji)
+Przy każdej sesji widzisz teraz informację jakiego typu jest spotkanie — "AITS Video" albo "Google Meet". Możesz zmienić domyślny typ w ustawieniach. Na liście pacjentów i w profilu widać czytelny badge z typem spotkania.
+
+### Co naprawiliśmy w trakcie wdrażania?
+
+Podczas testów wideo pojawił się cały szereg drobnych problemów — naprawiliśmy je wszystkie:
+- Przyciski kamery i mikrofonu były niewidoczne — teraz są zawsze na swoim miejscu
+- Pasek kontrolny był przycięty na małych ekranach — poprawiony layout
+- Po zakończeniu nagrywania okno nie zamykało się automatycznie — teraz zamyka się i odświeża dane sesji
+- Przycisk "Wstecz" w sesji wideo przenosił na złą stronę — teraz wraca tam, skąd przyszedłeś
+
+* * *
+
+## 2\. 🎙️ Nagrywanie bez przerw — nawet gdy przełączasz zakładki (Martyna)
+
+Na prośbę **Martyny** przebudowaliśmy nagrywanie od podstaw. Najważniejsza zmiana: **nagrywanie nie przerywa się gdy przechodzisz między zakładkami**.
+
+### Jak to działa teraz?
+
+- Klikasz "Nagraj" — nagrywanie startuje i **trwa w tle**, nawet gdy otwierasz notatki z poprzedniej sesji, przeglądasz profil pacjenta czy sprawdzasz kalendarz
+- **Transkrypcja na żywo** — tekst pojawia się na ekranie w czasie rzeczywistym, od razu po rozpoczęciu nagrywania. Nie trzeba czekać na koniec sesji
+- Jeśli z jakiegokolwiek powodu transkrypcja na żywo nie zadziała, system automatycznie **zapisuje kopię zapasową pliku audio** (MP3). Masz **24 godziny na pobranie** nagrania i ponowne przetworzenie
+- Gdy nagrywanie zostanie przerwane (np. przez problem z połączeniem), widzisz **czytelny komunikat** co się stało i co możesz zrobić
 
 ### Pobieranie nagrania
 
-- **Przycisk pobierania** — napis "24h" informuje że plik jest dostępny przez dobę + przycisk "X" do usunięcia (SCRUM-692, Bartłomiej)
-- **Fix: przycisk znika** — naprawiony bug gdy przycisk pobierania znikał po nawigacji między sesjami (SCRUM-692, Bohdan)
+Na zgłoszenie **Bartłomieja** dodaliśmy przycisk pobierania nagrania bezpośrednio w sesji. Widać przy nim informację "24h" — tyle czasu plik jest dostępny. Na zgłoszenie **Bohdana** naprawiliśmy też problem, gdy przycisk pobierania znikał po przejściu do innej sesji.
 
 * * *
 
-## 3\. 📱 Aplikacja mobilna (MAUI)
+## 3\. 📱 Aplikacja mobilna — nagrywanie sesji z telefonu
 
-Nowy **klient mobilny** dla terapeutów — nagrywanie sesji z telefonu.
+Nowa aplikacja mobilna pozwala **nagrywać sesje bezpośrednio z telefonu** — idealna gdy prowadzisz sesję stacjonarnie i chcesz ją nagrać bez laptopa.
 
-### Funkcje
+### Co potrafi?
 
-- **Nagrywanie na telefonie** — terapeuta otwiera aplikację, wybiera sesję, nagrywa — transkrypcja automatyczna
-- **PIN lock** — zamiast pełnego logowania po wygaszeniu ekranu, szybki PIN
-- **Refresh token flow** — sesja nie wygasa podczas długich nagrywań
-- **Skip MFA dla mobile** — mobilna aplikacja pomija 2FA (sesje są chronione PINem)
-- **Pull-to-refresh** — lista sesji odświeżana gestem
-- **Close zamiast logout** — przycisk zamyka aplikację bez wylogowania (sesja trwa)
-- **Upload status i pending badges** — per-session badge informuje o statusie uploadu
+- **Nagrywanie z telefonu** — otwierasz aplikację, wybierasz sesję, naciskasz "Nagraj". Transkrypcja automatyczna
+- **Szybki PIN** zamiast pełnego logowania — gdy wracasz do aplikacji po wygaszeniu ekranu, wpisujesz tylko PIN
+- **Sesja nie wygasa** podczas długich nagrywań — nawet 2-godzinna sesja nie zostanie przerwana przez automatyczne wylogowanie
+- **Pull-to-refresh** — lista sesji odświeża się gestem, jak w każdej nowoczesnej aplikacji
+- **Statusy przesyłania** — widzisz na bieżąco czy nagranie zostało przesłane i przetworzone
 
-### Naprawa transkrypcji mobilnych
+### Co naprawiliśmy?
 
-- **Append zamiast nadpisywanie** — mobilna transkrypcja **dopisuje** do istniejących notatek sesji zamiast tworzyć osobne rekordy
-- **Async mobile transcription** — asynchroniczne przetwarzanie appends do istniejącego transkryptu
-- **Token keep-alive** — zapobieganie auto-logout podczas nagrywania + fix stale token w audio upload
-- **Idle timeout 120 min** — zwiększony z 30 do 120 minut dla długich sesji nagrywania
-
-### Nagrywanie z telefonu
-
-- **Direct-upload (SAS)** — nagrania uploadowane bezpośrednio do Azure Blob Storage przez SAS token
-- **Przycisk pobierania dla MobileRecording** — oddzielny od desktopowego (SCRUM-692)
-- **Lifecycle policy** — blob nie jest kasowany od razu po transkrypcji, lifecycle policy kasuje po 1 dniu
+Podczas testów mobilnych odkryliśmy, że transkrypcja z telefonu nadpisywała istniejące notatki zamiast dopisywać. Naprawione — teraz **mobilna transkrypcja zawsze dopisuje** do istniejących notatek sesji, nic nie ginie.
 
 * * *
 
-## 4\. 🤖 Chat AI — streaming, markdown i edytor promptu
+## 4\. 🤖 Chat AI — odpowiedzi na żywo i formatowanie
 
-Zupełnie nowy experience chatu AI w profilu pacjenta.
+Asystent AI w profilu pacjenta przeszedł dużą przebudowę. Na zgłoszenie **Joanny** zmieniliśmy sposób, w jaki AI jest dostępny podczas pracy z pacjentem.
 
-### Streaming i markdown
+### Co nowego?
 
-- **Streaming odpowiedzi** — chat AI wysyła odpowiedzi tokenami w czasie rzeczywistym, nie czekasz na pełną odpowiedź
-- **Markdown rendering** — odpowiedzi AI formatowane z nagłówkami, listami, pogrubieniami
-- **Inline chat** na profilu pacjenta — naprawa renderowania markdown
+- **Odpowiedzi pojawiają się na żywo** — nie czekasz na pełną odpowiedź, widzisz tekst pojawiający się słowo po słowie
+- **Ładne formatowanie** — odpowiedzi AI mają nagłówki, listy i pogrubienia, dzięki czemu są dużo czytelniejsze
+- **Stały widget AI** — asystent AI jest widoczny cały czas na profilu pacjenta, bez potrzeby otwierania dodatkowego okna. Na zgłoszenie **Joanny** zastąpiliśmy wyskakujący modal stałym widgetem z licznikiem kontekstu
+- **AI widzi notatki sesji** — na zgłoszenie **Bartłomieja** asystent AI bierze teraz pod uwagę notatki z bieżącej sesji i historię czatu przy generowaniu odpowiedzi
+- **Edytor promptu** — administrator może dostosować sposób, w jaki AI odpowiada, bezpośrednio z interfejsu
 
-### Trigger modal (SCRUM-681, Joanna)
+### Co naprawiliśmy?
 
-- **Persistent AI widget** zamiast trigger modalu — stały widget AI z licznikiem kontekstu, widoczny cały czas na profilu pacjenta
-- **Notatki sesji i historia czatu** w kontekście AI — asystent AI widzi notatki z bieżącej sesji i historię czatu
-- **Notatka z sesji brana pod uwagę** w analizie AI (SCRUM-676, Bartłomiej)
-- **Gear icon** dla admin preview (PromptyAI) — widoczny tylko dla roli admin, nie dla zwykłego administratora (SCRUM-681)
-- **Edytor promptu** — admin może edytować system prompt bezpośrednio z interfejsu chatu
-
-### Przycisk mózgu (ABC)
-
-- **Fix białego ekranu** po kliknięciu przycisku mózgu — brakowało tabulation do zakładki sesji
-- **SessionStorage** — poprawka dispatch event + sessionStorage dla nawigacji w obu scenariuszach (direct + tab switch)
-- **Auto-przejście** do zakładki Nagranie po zapisaniu transkryptu
+- Kliknięcie przycisku analizy ABC powodowało biały ekran — naprawione
+- Po zapisaniu transkryptu aplikacja automatycznie przechodzi do zakładki nagrania
 
 * * *
 
-## 5\. 🧩 Widget rezerwacji (Embed)
+## 5\. 🧩 Widget rezerwacji — Twój kalendarz na Twojej stronie
 
-Terapeuta może teraz **osadzić formularz rezerwacji na swojej stronie internetowej** jako iframe — **12 commitów** poświęconych tej funkcji.
+Teraz możesz **osadzić formularz rezerwacji na swojej stronie internetowej**. Pacjent widzi Twój kalendarz, wybiera termin, typ sesji i płaci — bez opuszczania Twojej strony.
 
 ### Jak to działa?
 
-1. W panelu terapeuty pojawia się **unikalny slug** (np. `jan-kowalski`) — generowany automatycznie, niezależny od profilu publicznego
-2. Klikasz "Embed" — kopiujesz gotowy kod `<iframe>` do wklejenia
-3. Pacjent widzi kalendarz, wybiera termin, typ sesji i płaci przez Stripe — bez opuszczania strony terapeuty
+1. W panelu znajdziesz swój unikalny link do widgetu
+2. Kopiujesz gotowy kod i wklejasz na swoją stronę
+3. Na Twojej stronie pojawia się formularz rezerwacji z Twoim kalendarzem
 
-### Detale
+### Co zawiera widget?
 
-- **Typy sesji** w formularzu (SCRUM-718, beta testerka)
-- **Prawdziwe logo TherapySupport** w nagłówku (SCRUM-718, Magdalena)
-- **Kompaktowy checkout** — email+tel w rzędzie, notatki w jednej linii
-- **`lang=pl`** domyślnie w generowanym kodzie iframe
-- **Stripe redirect przez `window.top`** — wyjście z iframe na stronę płatności
-- **Cookie banner i Analytics ukryte** w trybie embed
-- **Przycisk "Embed"** w panelu admin/therapists
-- **EmbedGuard** — ochrona trasy + fix duplikatu powodującego build failure
-- Embed dostępny **tylko z podpiętym Stripe Connect** + auto-slug
+- **Typy sesji** — pacjent widzi listę typów sesji, które ustawiłeś w swoim profilu. Na zgłoszenie **beta testerki** dodaliśmy tę funkcję
+- **Logo Therapy Support** w nagłówku — na zgłoszenie **Magdaleny** zamieniliśmy placeholder na prawdziwe logo
+- **Kompaktowy formularz** — wszystko mieści się w małej ramce na Twojej stronie
+- **Płatność Stripe** — pacjent przechodzi do płatności bezpośrednio z widgetu
+
+Widget jest dostępny **tylko gdy masz podpięte konto Stripe**. Administrator widzi też przycisk widgetu w panelu zarządzania terapeutami.
 
 * * *
 
-## 6\. 💰 Przypomnienia o zaległościach — edytowalne szablony
+## 6\. 💰 Przypomnienia o zaległościach — gotowe szablony, które możesz edytować
 
-Nowy **FinanceReminderModal** — reużywalny komponent do wysyłania przypomnień finansowych.
+Nowy sposób wysyłania przypomnień o zaległościach finansowych do pacjentów — przez email lub SMS.
 
-- **Edytowalne pola SMS i email** — domyślny szablon, modyfikowalny przed wysłaniem
-- **Zapis szablonów** — treść zapamiętywana na przyszłość
-- **Przycisk w profilu pacjenta** — szybki dostęp bezpośrednio z profilu
-- **Spójne kryteria** — preview i send używają tych samych kryteriów co dashboard finansowy
-- **Toast zamiast `alert()`** — inline komunikaty zamiast natywnych alertów
-- **Fix import AlertCircle** w TherapistFinance.tsx
+- **Gotowy szablon** — wiadomość jest już wypełniona, ale możesz ją zmienić przed wysłaniem
+- **Zapamiętywanie zmian** — Twoja zmodyfikowana treść zapisuje się jako szablon na przyszłość
+- **Przycisk w profilu pacjenta** — szybki dostęp do wysłania przypomnienia bezpośrednio z profilu, bez przechodzenia do sekcji finansów
+- **Spójne kwoty** — podgląd i faktyczna wysyłka pokazują te same kwoty co dashboard finansowy
 
 * * *
 
-## 7\. 📧 Branded emaile (SCRUM-354, Ewa)
+## 7\. 📧 Profesjonalne emaile z logo i brandingiem (Ewa)
 
-Wszystkie emaile wysyłane z systemu mają teraz **profesjonalny design HTML**:
+Na zgłoszenie **Ewy** wszystkie emaile wysyłane z systemu mają teraz **profesjonalny wygląd**:
 
 - Logo Therapy Support w nagłówku
-- Spójne kolory brandingowe
-- Responsywny layout — poprawne wyświetlanie na mobilnych klientach email
-- Design system dla szablonów emailowych
+- Spójne kolory i układ
+- Poprawne wyświetlanie zarówno na komputerze jak i na telefonie
+
+Koniec z prostymi, tekstowymi wiadomościami — Twoi pacjenci otrzymują emaile, które wyglądają profesjonalnie i budują zaufanie do Twojej praktyki.
 
 * * *
 
-## 8\. 📅 Kalendarz i sesje
+## 8\. 🎙️ Nagrywanie i transkrypcja — wybór języka i status diaryzacji
 
-### Pełne wsparcie kwadransów
+### Wybór języka nagrywania
 
-- **`ensureFullHour`** — normalizacja godzin w UI
-- **Time pickery** — sloty co 15 minut
-- **Kalendarz tygodniowy** — poprawny rendering sesji o :15, :30, :45
-- **AllowHalfHourSessions** — sloty co 15 min zamiast przycisków długości
+Przed rozpoczęciem nagrywania możesz teraz **wybrać język i liczbę osób** biorących udział w sesji. System dopasowuje język transkrypcji do Twojego wyboru. Domyślnie ustawiony jest polski.
 
-### Drag & drop cross-week
+Selektory języka i liczby osób są widoczne nawet jeśli coś poszło nie tak z połączeniem — możesz je zmienić i spróbować ponownie.
 
-- **Przeciąganie sesji między tygodniami** na siatce kalendarza (`09f469c5`)
-- **Fix stref zrzutu** — cross-week drag zones poprawnie wykrywają drops
+### Status rozpoznawania mówców
 
-### Inne
+Jeśli nagrywasz z telefonu, widzisz teraz **status diaryzacji** — czyli informację, czy system poprawnie rozpoznaje kto mówi (terapeuta czy pacjent).
 
-- **"Konsultacja wstępna" → "Wywiad wstępny"** + licznik sesji na dashboardzie (SCRUM-636, Joanna)
-- **Sesja odwołana na czas** nie wyświetla się jako "Nieopłacona" (SCRUM-712, Marta)
-- **Profil publiczny terapeuty** pokazuje typy sesji w kalendarzu
+### Powiadomienia o transkrypcji
 
-* * *
+Powiadomienia o przetwarzanej transkrypcji zawierają teraz **imię pacjenta i numer sesji** — od razu wiesz, której sesji dotyczy powiadomienie. Na kafelkach sesji widoczny jest też wskaźnik, że audio jest w trakcie przetwarzania.
 
-## 9\. 🔧 Klasyfikacja typu sesji (SCRUM-688, Bohdan)
+### Przesyłanie nagrań do starszych sesji
 
-Seria poprawek do automatycznej klasyfikacji sesji przez AI:
-
-- **Inline zamiast background queue** — klasyfikacja przy kliknięciu "Podsumowanie"
-- **JsonSchema fix** — Azure wymaga wszystkich pól w `required` (naprawiony schemat)
-- **Seeder nie aktualizował promptu** — naprawiona aktualizacja promptu klasyfikacji w DB
-- **Poprawka znacznika czasu** transkrypcji przesuniętego o 1h (SCRUM-677, Bohdan)
-- **ABC extraction prompt** — force update z `meaningOfThought` i `behavioralStrategy` (SCRUM-527, Jagoda)
+Na prośbę **Martyny** możesz teraz **wgrać plik audio do sesji, która już się odbyła** — na wypadek gdy nagrywanie nie było włączone podczas sesji, ale masz plik z dyktafonu.
 
 * * *
 
-## 10\. 🎙️ Nagrywanie i transkrypcja
+## 9\. 📅 Kalendarz — kwadransy i przeciąganie między tygodniami
 
-### Język nagrywania
+### Sesje co kwadrans
 
-- **Wybór języka i liczby osób** w oknie nagrywania (`91d21cf2`)
-- **Język zależny od UI** — pełne mapowanie locale → język transkrypcji
-- **Domyślny pl-PL** — fallback gdy mapowanie nie znajdzie dopasowania
-- **Selektory widoczne po błędzie** — język/osoby widoczne nawet gdy połączenie się nie udało
+Kalendarz i formularze sesji obsługują teraz **sesje zaczynające się co 15 minut** — o 9:00, 9:15, 9:30 czy 9:45. Wcześniej sloty były dostępne tylko co pełną godzinę.
 
-### Diaryzacja
+### Przeciąganie sesji między tygodniami
 
-- **Status diaryzacji** — nowy widok statusu dla transkrypcji z telefonu (`0c42f5d0`)
+Na siatce kalendarza tygodniowego możesz teraz **przeciągnąć sesję do innego tygodnia** — na przykład gdy pacjent chce przenieść wizytę o tydzień.
 
-### Transkrypcja
+### Przenoszenie sesji z konfliktem (Joanna)
 
-- **Zawsze async batch** — niezależnie od rozmiaru pliku
-- **Notification z session ID i patient name** — zlokalizowane powiadomienia
-- **Status message** w obszarze transkrypcji — notyfikacja w stylu powiadomień
-- **Audio processing indicator** — wskaźnik na kafelkach sesji i w formularzu transkrypcji
-- **Upload pliku audio/transkrypcji** do sesji historycznej (Martyna)
-- **Transkrypcja nie pojawia się** — fix brakującego pola tekstowego po zakończeniu przetwarzania
+Na zgłoszenie **Joanny** terapeuta może teraz **przenieść sesję nawet gdy nowy termin koliduje** z inną sesją. System pyta o potwierdzenie i pozwala kontynuować — bo czasem jest to celowe (np. sesja grupowa).
 
-### Hotfixy
+### Inne zmiany w sesjach
 
-- **401 na transkrypcji** — odświeżenie tokenu przed połączeniem SignalR + fix nieskończonej pętli pollingu
-- **Token expiry prevention** — proactive refresh dla długich nagrywań
-- **DbContext concurrent operation** — SemaphoreSlim w `ResolveChannelPreferencesAsync`
-- **UPLOAD_TIMEOUT_MS** — usunięty brakujący eksport z apiClient
-- **`HasProcessingTranscriptions`** — brakujący parametr w konstruktorach `SessionListItemDto`
+- Na zgłoszenie **Joanny** zmieniliśmy nazwę "Konsultacja wstępna" na **"Wywiad wstępny"** — bardziej precyzyjna terminologia kliniczna
+- Na liście "Ten tydzień" na dashboardzie widać teraz **liczbę zaplanowanych sesji**
+- Na zgłoszenie **Marty**: sesja odwołana w odpowiednim terminie **nie wyświetla się już jako "Nieopłacona"**
+- Profil publiczny terapeuty pokazuje teraz **typy sesji** w kalendarzu dostępności
 
 * * *
 
-## 11\. 📊 Application Insights (SCRUM-577)
+## 10\. 🔍 Klasyfikacja sesji i analiza AI (Bohdan, Jagoda)
 
-- **Azure Application Insights** — monitoring frontend + backend + LiveKit
-- **DEV vs PROD** — oddzielne instancje
-- **Connection string w GitHub Secrets** — bezpieczne przechowywanie
-- **LiveKit monitoring** — eventy Room + webhook endpoint (Joanna)
+### Automatyczne rozpoznawanie typu sesji (Bohdan)
+
+Na zgłoszenie **Bohdana** naprawiliśmy automatyczną klasyfikację sesji. Wcześniej system nie zawsze poprawnie rozpoznawał typ sesji po wgraniu transkrypcji. Teraz klasyfikacja działa prawidłowo — wystarczy kliknąć "Podsumowanie", a AI określi czy to była sesja standardowa, konsultacyjna, kryzysowa czy wywiad.
+
+Na zgłoszenie **Bohdana** naprawiliśmy też problem z przesunięciem znacznika czasu transkrypcji o 1 godzinę — teraz czas jest poprawny.
+
+### Analiza ABC (Jagoda)
+
+Na zgłoszenie **Jagody** zaktualizowaliśmy sposób, w jaki AI wyciąga elementy z modelu ABC (myśl-uczucie-zachowanie). Analiza uwzględnia teraz **znaczenie myśli** dla pacjenta i **strategię behawioralną** — dwa nowe pola, które pojawiają się automatycznie po analizie transkrypcji.
 
 * * *
 
-## 12\. 🎨 UI i interfejs
+## 11\. 🎨 Nowy wygląd i interfejs
 
 ### Strona logowania
 
-- **Brand colors** — nowy design z kolorami Therapy Support
-- **Usunięte strony BetaTester** — przeniesione na stronę marketingową
+Strona logowania ma teraz **nowy design** w kolorach Therapy Support — zielone akcenty i profesjonalny wygląd od pierwszego kontaktu z aplikacją.
 
 ### Dashboard
 
-- **Widoczne ramki** na panelach Revenue, Sessions, Notes (`fc43a3f7`)
-- **sessionsCount** — poprawna pluralizacja we wszystkich 7 językach + interpolacja `{{count}}`
-- **Liczba + jednostka** na dashboardzie (SCRUM-698, Bohdan)
-- **Licznik sesji** na widoku "Ten tydzień"
+- Na zgłoszenie **Bohdana**: liczba sesji na dashboardzie wyświetla się teraz poprawnie z prawidłową odmianą ("1 sesja", "3 sesje", "5 sesji") — we wszystkich 7 językach
+- Panele na dashboardzie (przychody, sesje, notatki) mają teraz widoczne ramki — łatwiej je odróżnić
 
 ### Profil pacjenta
 
-- **Reorganizacja przycisków** w profilu pacjenta (widok terapeuty) — logiczniejszy układ
-- **Reorganizacja przycisków video** na dashboardzie pacjenta
-- **formatPatientName** — centralna funkcja formatowania imion
+- Przyciski w profilu pacjenta zostały uporządkowane — logiczniejszy układ, najczęściej używane akcje na wierzchu
+- Przyciski wideo na dashboardzie pacjenta zostały przeniesione w bardziej intuicyjne miejsce
+- Formatowanie imion i nazwisk pacjentów jest teraz spójne w całej aplikacji
 
-### Przebudowa formularza rezerwacji
+### Formularz rezerwacji
 
-- **Data w headerze** — widoczna na stałe
-- **Zmieniona kolejność pól** — typ → data → dane kontaktowe
+- **Data sesji widoczna w nagłówku** formularza — nie musisz przewijać żeby zobaczyć wybraną datę
+- **Zmieniona kolejność pól** — najpierw typ sesji, potem data i godzina, na końcu dane kontaktowe. Bardziej naturalny flow
 
-### Inne
+### Tłumaczenia (Ewa)
 
-- **Przycisk Logout przywrócony** w przeglądarce zamiast niedziałającego Close (`862a4af9`)
-- **FeatureGuard** — spójność AI + professional bez ograniczeń (SCRUM-693, Bohdan)
-- **Brakujące tłumaczenia** — sessions.video, addSession.meetingType, therapist.subscription (SCRUM-702, Ewa)
-- **Tłumaczenia isOnline** w SK/CA/RU/UK/LT (SCRUM-701, Ewa)
-- **Reschedule sesji z konfliktem** po potwierdzeniu (SCRUM-719, Joanna)
-- **CalDAV REPORT** — użycie metody REPORT zamiast POST (SCRUM-705, Bartłomiej)
-- **Chrome crash prevention** — performance fixes
-- **Usunięty stary widok SessionDetails** — przekierowanie `/sessions/:id` na profil pacjenta
-- **Email opcjonalny** w AddPatientModal
+Na zgłoszenie **Ewy** dodaliśmy brakujące tłumaczenia w sekcjach wideo, typów spotkań, subskrypcji i ustawień hasła. Poprawiliśmy też tłumaczenie statusu "online" w 5 językach (słowackim, katalońskim, rosyjskim, ukraińskim i litewskim).
 
 * * *
 
-## 13\. 📋 Checklist QA
+## 12\. 🐛 Co naprawiliśmy?
 
-| Co sprawdzić | OK? |
+Poniżej lista problemów, które zgłosiliście — wszystkie naprawione w tym releasie:
+
+- **Duże pliki audio** powodowały timeout przy transkrypcji — teraz wszystkie pliki przetwarzane są w trybie wsadowym, niezależnie od rozmiaru
+- **Transkrypcja nie pojawiała się** w polu tekstowym po zakończeniu przetwarzania — naprawione
+- **Nagrywanie przerywało się** przy dłuższych sesjach z powodu wygaśnięcia sesji — teraz token odświeża się automatycznie
+- Na zgłoszenie **Bohdana**: ograniczenia funkcji AI działały niespójnie między planami — ujednolicone, plan Professional ma teraz pełny dostęp
+- Synchronizacja z kalendarzem zewnętrznym (CalDAV) nie działała poprawnie — na zgłoszenie **Bartłomieja** naprawiona metoda komunikacji
+- Zdarzało się, że aplikacja zwalniała po dłuższym czasie pracy — naprawione problemy z wydajnością, które mogły powodować zawieszanie przeglądarki
+- Przycisk "Wyloguj" w przeglądarce nie działał — przywrócony i działa poprawnie
+- Dodawanie pacjenta wymagało podania emaila, choć backend go nie wymagał — teraz email jest opcjonalny
+- Aplikacja jest stabilniejsza — naprawiliśmy kilka problemów z jednoczesnym dostępem do danych, które mogły powodować sporadyczne błędy
+
+* * *
+
+## 13\. 📋 Co warto sprawdzić?
+
+| Sprawdź to | ✅ |
 |---|---|
 | **Wideo** | |
-| Sesja wideo: dołączenie przez LiveKit, kamera + mikrofon działają | ⬜ |
-| Sesja wideo: pacjent dołącza przez link zaproszeniowy (bez logowania) | ⬜ |
-| Badge "AITS Video" / "Google Meet" na liście pacjentów | ⬜ |
-| Selektor typu spotkania w ustawieniach | ⬜ |
-| Kontrolki LiveKit widoczne (play/pause/mute) | ⬜ |
-| Przycisk kopiowania linku video w profilu terapeuty | ⬜ |
+| Otwórz sesję online i dołącz do pokoju wideo — kamera i mikrofon działają | ⬜ |
+| Wyślij pacjentowi link zaproszeniowy — pacjent dołącza bez logowania | ⬜ |
+| Na liście pacjentów widać badge "AITS Video" lub "Google Meet" | ⬜ |
+| Zmień domyślny typ spotkania w ustawieniach | ⬜ |
+| Skopiuj link wideo z profilu terapeuty | ⬜ |
 | **Nagrywanie** | |
-| Persistent recording: nagrywanie trwa przy nawigacji po app | ⬜ |
-| Backup MP3: plik dostępny do pobrania po błędzie transkrypcji | ⬜ |
-| Przycisk pobierania nagrania z info "24h" | ⬜ |
-| Live transkrypcja widoczna od razu przy starcie | ⬜ |
-| Wybór języka i liczby osób w oknie nagrywania | ⬜ |
-| Status diaryzacji widoczny | ⬜ |
-| **Mobile** | |
-| Nagrywanie z telefonu — upload i transkrypcja | ⬜ |
-| PIN lock zamiast pełnego logowania | ⬜ |
-| Pull-to-refresh na liście sesji | ⬜ |
-| Transkrypcja mobilna dopisuje do notatek (nie nadpisuje) | ⬜ |
+| Rozpocznij nagrywanie i przejdź do innej zakładki — nagrywanie trwa | ⬜ |
+| Po błędzie transkrypcji — przycisk pobierania nagrania widoczny (info "24h") | ⬜ |
+| Transkrypcja na żywo pojawia się od razu po starcie nagrywania | ⬜ |
+| Wybierz język i liczbę osób przed nagrywaniem | ⬜ |
+| Wgraj plik audio do sesji, która już się odbyła | ⬜ |
+| **Telefon** | |
+| Nagraj sesję z aplikacji mobilnej — transkrypcja pojawia się w sesji | ⬜ |
+| Po wygaszeniu ekranu — wpisz PIN i wróć do aplikacji bez logowania | ⬜ |
+| Transkrypcja z telefonu dopisuje się do notatek (nie nadpisuje) | ⬜ |
 | **Chat AI** | |
-| Streaming odpowiedzi AI w chacie | ⬜ |
-| Markdown w odpowiedziach (nagłówki, listy, bold) | ⬜ |
-| Kontekst AI: notatki sesji + historia czatu | ⬜ |
-| Gear icon edytora promptu (tylko admin) | ⬜ |
-| Przycisk mózgu (ABC): brak białego ekranu | ⬜ |
-| **Embed** | |
-| Widget rezerwacji na `/embed/:slug` | ⬜ |
-| Typy sesji widoczne w formularzu embed | ⬜ |
-| Stripe redirect wychodzi z iframe | ⬜ |
-| Przycisk Embed w panelu admina | ⬜ |
-| **Finanse** | |
-| Edytowalne pola SMS/email w modalu przypomnienia | ⬜ |
-| Toast zamiast alert() przy błędzie | ⬜ |
-| Przycisk przypomnienia w profilu pacjenta | ⬜ |
+| Otwórz chat AI w profilu pacjenta — odpowiedzi pojawiają się na żywo | ⬜ |
+| Odpowiedzi AI mają formatowanie (nagłówki, listy, pogrubienia) | ⬜ |
+| Kliknij przycisk analizy ABC — brak białego ekranu | ⬜ |
+| **Widget rezerwacji** | |
+| Otwórz swoją stronę z widgetem — formularz rezerwacji się wyświetla | ⬜ |
+| Pacjent widzi typy sesji w formularzu widgetu | ⬜ |
+| Płatność Stripe otwiera się poprawnie z widgetu | ⬜ |
+| **Finanse i przypomnienia** | |
+| Wyślij przypomnienie o zaległości z profilu pacjenta | ⬜ |
+| Zmodyfikuj treść przypomnienia i zapisz jako szablon | ⬜ |
 | **Kalendarz** | |
-| Sesja o 9:15 renderuje poprawnie | ⬜ |
-| Drag & drop sesji między tygodniami | ⬜ |
-| "Wywiad wstępny" zamiast "Konsultacja wstępna" | ⬜ |
-| Sesja odwołana na czas ≠ "Nieopłacona" | ⬜ |
-| **Transkrypcja** | |
-| Async batch: brak timeoutów na dużych plikach | ⬜ |
-| Brak nieskończonego pollingu przy błędzie | ⬜ |
-| Audio processing indicator na kafelkach sesji | ⬜ |
+| Utwórz sesję o 9:15 — wyświetla się poprawnie w kalendarzu | ⬜ |
+| Przeciągnij sesję do innego tygodnia na siatce kalendarza | ⬜ |
+| Przenieś sesję na termin kolidujący z inną — po potwierdzeniu działa | ⬜ |
+| Odwołana sesja nie wyświetla się jako "Nieopłacona" | ⬜ |
+| **Emaile** | |
+| Sprawdź email z systemu — logo i branding widoczne | ⬜ |
 | **Inne** | |
-| Login: nowy design z brand colors | ⬜ |
-| Branded emaile HTML (logo + kolory) | ⬜ |
-| Ramki na panelach dashboard | ⬜ |
-| Application Insights: błędy widoczne w Azure Portal | ⬜ |
-| CalDAV REPORT: synchronizacja z kalendarzem zewnętrznym | ⬜ |
+| Nowy wygląd strony logowania | ⬜ |
+| Liczba sesji na dashboardzie wyświetla się poprawnie (1 sesja / 3 sesje) | ⬜ |
 
 * * *
 
-To był **absolutnie rekordowy sprint** — ponad 200 commitów, 13 dużych obszarów zmian, nowy klient mobilny, wbudowane wideo i kompletnie nowy experience nagrywania. Dziękujemy całemu zespołowi!
+To był **rekordowy sprint** — sesje wideo, aplikacja mobilna, przebudowane nagrywanie i dziesiątki usprawnień. Dziękujemy całemu zespołowi za nieocenione zgłoszenia i cierpliwość w testach!
 
 _Artykuł przygotowany przez zespół Therapy Support_
