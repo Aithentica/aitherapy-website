@@ -45,6 +45,17 @@ Rules:
 - `src/i18n/config.ts` — locale list, BCP47 codes, OG metadata
 - `src/i18n/utils.ts` — `loadTranslations`, `useTranslations`, `localizedUrl`, `getStaticLocalePaths`
 
+### Blog — two collections (pl + en)
+Blog posts are split into two Astro content collections:
+- `src/content/blog/` — Polish posts, shown only on `/pl/blog/`
+- `src/content/blog-en/` — English posts, shown on all other locales (`/blog/`, `/sk/blog/`, `/ca/blog/`, `/ru/blog/`, `/uk/blog/`, `/lt/blog/`)
+
+Categories:
+- Polish: `Inne`, `Artykuły Naukowe`, `Wydarzenia`
+- English: `Other`, `Scientific Articles`, `Events`
+
+When adding a new blog post, create **both** versions (pl in `blog/`, en in `blog-en/`).
+
 ## Commands
 - `npm run build` — build the site
 - `npm run dev` — local dev server
