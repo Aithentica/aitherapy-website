@@ -16,7 +16,10 @@ const locale = getLocaleFromParams(Astro.params.lang) as Locale;
 await loadTranslations(locale);
 const t = useTranslations(locale);
 
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const isPolish = locale === 'pl';
+const allPosts = isPolish
+  ? await getCollection('blog', ({ data }) => !data.draft)
+  : await getCollection('blog-en', ({ data }) => !data.draft);
 const latestPosts = allPosts
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
   .slice(0, 3);
