@@ -15,6 +15,7 @@ const sk: TranslationKeys = {
     security: 'Bezpečnosť',
     team: 'Tím',
     contact: 'Kontakt',
+    tutorials: 'Tutoriály',
     login: 'Prihlásiť sa',
     openMenu: 'Otvoriť menu',
     closeMenu: 'Zavrieť menu',
@@ -370,6 +371,19 @@ const sk: TranslationKeys = {
     heading: 'Blog',
     subtitle: 'Novinky, vedecké články a udalosti zo sveta AI v psychoterapii.',
     readMore: 'Čítať viac',
+  },
+
+  // ─── TUTORIALS PAGE ────────────────────────────────────
+  tutorialsPage: {
+    title: 'Tutoriály — Therapy Support',
+    metaDesc: 'Pozrite si video tutoriály o používaní platformy Therapy Support. Návody krok za krokom pre terapeutov.',
+    heading: 'Tutoriály',
+    subtitle: 'Naučte sa používať platformu pomocou našich video návodov krok za krokom.',
+    loading: 'Načítavanie videí...',
+    noVideos: 'Zatiaľ nie sú dostupné žiadne tutoriály. Skúste to neskôr!',
+    errorLoading: 'Nepodarilo sa načítať videá. Skúste to prosím neskôr.',
+    watchOnYoutube: 'Pozrieť na YouTube',
+    allTutorials: 'Zobraziť všetky tutoriály na YouTube',
   },
 
   // ─── 404 ──────────────────────────────────────────────

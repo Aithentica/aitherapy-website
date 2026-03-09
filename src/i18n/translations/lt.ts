@@ -15,6 +15,7 @@ const lt: TranslationKeys = {
     security: 'Saugumas',
     team: 'Komanda',
     contact: 'Kontaktai',
+    tutorials: 'Mokymai',
     login: 'Prisijungti',
     openMenu: 'Atidaryti meniu',
     closeMenu: 'Uždaryti meniu',
@@ -370,6 +371,19 @@ const lt: TranslationKeys = {
     heading: 'Tinklaraštis',
     subtitle: 'Naujienos, moksliniai straipsniai ir renginiai iš DI psichoterapijos pasaulio.',
     readMore: 'Skaityti daugiau',
+  },
+
+  // ─── TUTORIALS PAGE ────────────────────────────────────
+  tutorialsPage: {
+    title: 'Mokymai — Therapy Support',
+    metaDesc: 'Žiūrėkite vaizdo pamokas apie Therapy Support platformos naudojimą. Žingsnis po žingsnio vadovai terapeutams.',
+    heading: 'Mokymai',
+    subtitle: 'Sužinokite, kaip naudotis platforma, naudodamiesi mūsų vaizdo vadovais žingsnis po žingsnio.',
+    loading: 'Įkeliami vaizdo įrašai...',
+    noVideos: 'Kol kas nėra pamokų. Patikrinkite vėliau!',
+    errorLoading: 'Nepavyko įkelti vaizdo įrašų. Pabandykite vėliau.',
+    watchOnYoutube: 'Žiūrėti YouTube',
+    allTutorials: 'Visos pamokos YouTube',
   },
 
   // ─── 404 ──────────────────────────────────────────────

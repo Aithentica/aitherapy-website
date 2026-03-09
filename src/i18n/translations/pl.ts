@@ -15,6 +15,7 @@ const pl: TranslationKeys = {
     security: 'Bezpieczeństwo',
     team: 'Zespół',
     contact: 'Kontakt',
+    tutorials: 'Tutoriale',
     login: 'Logowanie',
     openMenu: 'Otwórz menu',
     closeMenu: 'Zamknij menu',
@@ -370,6 +371,19 @@ const pl: TranslationKeys = {
     heading: 'Blog',
     subtitle: 'Aktualności, artykuły naukowe i wydarzenia ze świata AI w psychoterapii.',
     readMore: 'Czytaj dalej',
+  },
+
+  // ─── TUTORIALS PAGE ────────────────────────────────────
+  tutorialsPage: {
+    title: 'Tutoriale — Therapy Support',
+    metaDesc: 'Obejrzyj tutoriale wideo dotyczące platformy Therapy Support. Przewodniki krok po kroku dla terapeutów.',
+    heading: 'Tutoriale',
+    subtitle: 'Naucz się korzystać z platformy dzięki naszym przewodnikom wideo krok po kroku.',
+    loading: 'Ładowanie filmów...',
+    noVideos: 'Brak dostępnych tutoriali. Sprawdź ponownie wkrótce!',
+    errorLoading: 'Nie udało się załadować filmów. Spróbuj ponownie później.',
+    watchOnYoutube: 'Obejrzyj na YouTube',
+    allTutorials: 'Zobacz wszystkie tutoriale na YouTube',
   },
 
   // ─── 404 ──────────────────────────────────────────────

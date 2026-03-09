@@ -13,6 +13,7 @@ const en = {
     security: 'Security',
     team: 'Team',
     contact: 'Contact',
+    tutorials: 'Tutorials',
     login: 'Log In',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
@@ -368,6 +369,19 @@ const en = {
     heading: 'Blog',
     subtitle: 'News, scientific articles and events from the world of AI in psychotherapy.',
     readMore: 'Read more',
+  },
+
+  // ─── TUTORIALS PAGE ────────────────────────────────────
+  tutorialsPage: {
+    title: 'Tutorials — Therapy Support',
+    metaDesc: 'Watch video tutorials on how to use the Therapy Support platform. Step-by-step guides for therapists.',
+    heading: 'Tutorials',
+    subtitle: 'Learn how to use the platform with our step-by-step video guides.',
+    loading: 'Loading videos...',
+    noVideos: 'No tutorials available yet. Check back soon!',
+    errorLoading: 'Failed to load videos. Please try again later.',
+    watchOnYoutube: 'Watch on YouTube',
+    allTutorials: 'See all tutorials on YouTube',
   },
 
   // ─── 404 ──────────────────────────────────────────────

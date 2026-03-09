@@ -15,6 +15,7 @@ export function getNavigation(locale: Locale): NavItem[] {
     { label: t.nav.joinBeta, href: localizedUrl('/betatester/', locale) },
     { label: t.nav.security, href: localizedUrl('/security/', locale) },
     { label: t.nav.team, href: localizedUrl('/about/', locale) },
+    { label: t.nav.tutorials, href: localizedUrl('/tutorials/', locale) },
     { label: t.nav.contact, href: localizedUrl('/contact/', locale) },
   ];
 }

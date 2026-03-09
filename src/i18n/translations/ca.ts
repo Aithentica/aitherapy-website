@@ -15,6 +15,7 @@ const ca: TranslationKeys = {
     security: 'Seguretat',
     team: 'Equip',
     contact: 'Contacte',
+    tutorials: 'Tutorials',
     login: 'Inicia sessió',
     openMenu: 'Obrir menú',
     closeMenu: 'Tancar menú',
@@ -370,6 +371,19 @@ const ca: TranslationKeys = {
     heading: 'Blog',
     subtitle: 'Notícies, articles científics i esdeveniments del món de la IA en psicoteràpia.',
     readMore: 'Llegeix més',
+  },
+
+  // ─── TUTORIALS PAGE ────────────────────────────────────
+  tutorialsPage: {
+    title: 'Tutorials — Therapy Support',
+    metaDesc: 'Mira els vídeo tutorials sobre com utilitzar la plataforma Therapy Support. Guies pas a pas per a terapeutes.',
+    heading: 'Tutorials',
+    subtitle: 'Aprèn a utilitzar la plataforma amb les nostres guies de vídeo pas a pas.',
+    loading: 'Carregant vídeos...',
+    noVideos: "Encara no hi ha tutorials disponibles. Torna aviat!",
+    errorLoading: 'No s\'han pogut carregar els vídeos. Torna-ho a provar més tard.',
+    watchOnYoutube: 'Veure a YouTube',
+    allTutorials: 'Veure tots els tutorials a YouTube',
   },
 
   // ─── 404 ──────────────────────────────────────────────
