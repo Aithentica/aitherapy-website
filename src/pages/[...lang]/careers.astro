@@ -12,7 +12,7 @@ await loadTranslations(locale);
 const t = useTranslations(locale);
 const cp = t.careersPage;
 
-const jobs = [
+const jobsPl = [
   {
     emoji: '🧠',
     title: 'Customer Success Manager',
@@ -107,6 +107,104 @@ const jobs = [
     ],
   },
 ];
+
+const jobsEn = [
+  {
+    emoji: '🧠',
+    title: 'Customer Success Manager',
+    form: 'B2B, full-time',
+    salary: '8,000 – 10,000 PLN net/month',
+    location: 'Remote / Warsaw',
+    about: 'Therapy Support is a Polish SaaS platform for CBT psychotherapists — we automate session documentation, generate clinical notes, and support practice management. We are a small, agile team (CEO, CTO, expert psychotherapist) with a real product and first paying clients.',
+    lookingFor: 'We are looking for someone who will become the face of Therapy Support for our clients — therapists who need someone to listen, onboard them, and ensure the platform truly works for them.',
+    tasks: [
+      'Run 1:1 onboarding sessions with new therapists (Zoom, screen share)',
+      'Be the first point of contact for clients — answer questions, solve problems',
+      'Validate reports — distinguish bugs from user errors, create precise dev tickets',
+      'Test new features before release from a therapist\'s perspective',
+      'Record short videos and tutorials for onboarding and social media',
+      'Write about your client experiences — posts, case studies, LinkedIn',
+      'Build the platform\'s knowledge base and FAQ',
+      'Monitor client activity and identify churn risk',
+    ],
+    requirements: [
+      'Someone who enjoys talking to people and has natural patience',
+      'Comfortable on camera — recordings, reels, short videos are our standard',
+      'Someone who likes writing about their work — LinkedIn, notes, posts',
+      'Experience in customer service, CSM, or SaaS (seniority not required)',
+      'Curiosity about psychotherapy / mental health — a plus',
+      'Ability to describe technical problems in simple language',
+    ],
+    aiBenefitIntro: '🤖 Working in an AI-first environment — our biggest benefit',
+    aiBenefitDesc: 'We are a company where AI is not an add-on — it\'s the default way of working.',
+    aiBenefits: [
+      'Everyone on the team gets Claude Pro paid by the company from day one',
+      'Every process — from onboarding to documentation to communication — is designed with AI',
+      'No time wasted on routine tasks — AI prepares drafts, summaries, tickets, emails',
+      'Your client meetings are recorded and transcribed — AI takes notes for you',
+      'We teach you how to really work with AI (not just "use ChatGPT") — we invest in AI fluency for every team member',
+      'You work on a product built on AI — you understand the client from the inside',
+    ],
+    aiQuote: 'At Therapy Support, the only thing AI can\'t replace is the relationship with the client. And that\'s exactly why we\'re looking for you.',
+    perks: [
+      '8,000 – 10,000 PLN net / B2B',
+      'Claude Pro paid by the company',
+      'Full access to our AI tool stack',
+      'Remote-first, flexible hours',
+      'Real impact on the product — your feedback goes straight to the team',
+      'Equity opportunity for those who stay with us long-term',
+    ],
+  },
+  {
+    emoji: '🚀',
+    title: 'Partnerships & GTM Manager',
+    form: 'B2B, full-time',
+    salary: '10,500 – 14,500 PLN net/month base + success fees',
+    location: 'Remote / Warsaw (domestic & international travel)',
+    about: 'Therapy Support is a Polish SaaS platform for CBT psychotherapists — we automate session documentation, generate clinical notes, and support practice management. We have a research partnership with the Polish Academy of Sciences Institute of Psychology, an NCBR grant in progress, and European ambitions — we want to become the standard for CBT documentation in the EU.',
+    lookingFor: 'We\'re looking for someone who will create the go-to-market strategy and own its results — from the first cold call to a signed partnership with a European CBT association.',
+    tasks: [
+      'Build and execute GTM strategy for the partnership channel — psychotherapy schools, CBT associations, training centers in Poland and Europe',
+      'Define ICP, test entry channels, own metrics — CAC, conversion, time-to-close',
+      'Call, travel, pitch, and close — group licenses, pilots, recommendations in training programs',
+      'Represent Therapy Support at conferences (PTTPB Katowice May 2026, EABCT Brussels September 2026)',
+      'Appear on our social media — conference coverage, behind the scenes, personal reflections on working in CBT SaaS',
+      'Report to CEO — KPIs: pipeline, signed partnerships, channel revenue',
+    ],
+    requirements: [
+      'Min. 5 years in B2B sales, GTM, or partnership development',
+      'Think like a strategist, act like a salesperson',
+      'Fluent English — MUST',
+      'Second EU language (German, French, Spanish) = big plus',
+      'Comfortable on camera — recordings, reels, LinkedIn is our standard',
+      'Experience in health-tech, edu-tech, or wellness = ideal',
+      'Willingness to travel 2–4 times per month',
+      'Self-starter — you build from scratch, no existing playbook',
+    ],
+    aiBenefitIntro: '🤖 Working in an AI-first environment — our biggest benefit',
+    aiBenefitDesc: 'We are a company where AI is not an add-on — it\'s the default way of working.',
+    aiBenefits: [
+      'Everyone on the team gets Claude Pro paid by the company from day one',
+      'Every process is designed with AI — drafts, summaries, emails, presentations',
+      'Your meetings are recorded and transcribed — AI takes notes for you',
+      'We teach you how to really work with AI — not just "use ChatGPT"',
+      'You work on a product built on AI — you understand the client from the inside',
+    ],
+    aiQuote: 'At Therapy Support, the only thing AI can\'t replace is the relationship with the partner. And that\'s exactly why we\'re looking for you.',
+    perks: [
+      '10,500 – 14,500 PLN net base / B2B',
+      'Success fee: 3,000 PLN per Polish partnership, 5,000 PLN per international',
+      'Claude Pro paid by the company',
+      'Full access to our AI tool stack',
+      'Remote-first, flexible hours',
+      'Real GTM ownership — you build the department from scratch',
+      'Equity for those who stay with us long-term',
+      'Ticket and accreditation for PTTPB Katowice (May 2026) and EABCT Brussels (September 2026)',
+    ],
+  },
+];
+
+const jobs = locale === 'pl' ? jobsPl : jobsEn;
 ---
 
 <PageLayout title={cp.title} description={cp.metaDesc} locale={locale}>
@@ -173,7 +271,7 @@ const jobs = [
 
                 <!-- Tasks -->
                 <div>
-                  <h4 class="text-lg font-bold text-gray-900 mb-3">Co będziesz robić?</h4>
+                  <h4 class="text-lg font-bold text-gray-900 mb-3">{cp.sectionTasks}</h4>
                   <ul class="space-y-2">
                     {job.tasks.map((task) => (
                       <li class="flex items-start gap-2 text-gray-700">
@@ -186,7 +284,7 @@ const jobs = [
 
                 <!-- Requirements -->
                 <div>
-                  <h4 class="text-lg font-bold text-gray-900 mb-3">Kogo szukamy?</h4>
+                  <h4 class="text-lg font-bold text-gray-900 mb-3">{cp.sectionRequirements}</h4>
                   <ul class="space-y-2">
                     {job.requirements.map((req) => (
                       <li class="flex items-start gap-2 text-gray-700">
@@ -214,7 +312,7 @@ const jobs = [
 
                 <!-- Perks -->
                 <div>
-                  <h4 class="text-lg font-bold text-gray-900 mb-3">Co oferujemy?</h4>
+                  <h4 class="text-lg font-bold text-gray-900 mb-3">{cp.sectionPerks}</h4>
                   <ul class="space-y-2">
                     {job.perks.map((perk) => (
                       <li class="flex items-start gap-2 text-gray-700">

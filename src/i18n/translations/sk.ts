@@ -401,6 +401,9 @@ const sk: TranslationKeys = {
     applyStep2: 'Odkaz na váš LinkedIn alebo čokoľvek, čo ukazuje, ako píšete / tvoríte',
     applyEmail: 'kontakt@aitherapy.support',
     noPositions: 'Momentálne žiadne otvorené pozície. Sledujte nás na LinkedIn!',
+    sectionTasks: 'What will you do?',
+    sectionRequirements: 'Who are we looking for?',
+    sectionPerks: 'What do we offer?',
   },
 
   // ─── 404 ──────────────────────────────────────────────

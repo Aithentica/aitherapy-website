@@ -401,6 +401,9 @@ const ca: TranslationKeys = {
     applyStep2: 'Un enllaç al teu LinkedIn o qualsevol cosa que mostri com escrius / crees',
     applyEmail: 'kontakt@aitherapy.support',
     noPositions: 'No hi ha posicions obertes en aquest moment. Segueix-nos a LinkedIn!',
+    sectionTasks: 'What will you do?',
+    sectionRequirements: 'Who are we looking for?',
+    sectionPerks: 'What do we offer?',
   },
 
   // ─── 404 ──────────────────────────────────────────────

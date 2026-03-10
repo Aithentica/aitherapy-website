@@ -399,6 +399,9 @@ const en = {
     applyStep2: 'A link to your LinkedIn or anything that shows how you write / create',
     applyEmail: 'kontakt@aitherapy.support',
     noPositions: 'No open positions at the moment. Follow us on LinkedIn!',
+    sectionTasks: 'What will you do?',
+    sectionRequirements: 'Who are we looking for?',
+    sectionPerks: 'What do we offer?',
   },
 
   // ─── 404 ──────────────────────────────────────────────
