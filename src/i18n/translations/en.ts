@@ -14,6 +14,7 @@ const en = {
     team: 'Team',
     contact: 'Contact',
     tutorials: 'Tutorials',
+    careers: 'Careers',
     login: 'Log In',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
@@ -382,6 +383,22 @@ const en = {
     errorLoading: 'Failed to load videos. Please try again later.',
     watchOnYoutube: 'Watch on YouTube',
     allTutorials: 'See all tutorials on YouTube',
+  },
+
+  // ─── CAREERS ────────────────────────────────────────
+  careersPage: {
+    title: 'Careers — Therapy Support',
+    metaDesc: 'Join our team. We are looking for people who want to build the future of psychotherapy documentation.',
+    heroTag: 'Join Us',
+    heroTitle: 'Build the Future of Therapy with Us',
+    heroDesc: 'We are a small, agile team (CEO, CTO, expert psychotherapist) with a real product and first paying clients. We are looking for people who share our mission.',
+    openPositions: 'Open Positions',
+    applyTitle: 'How to Apply?',
+    applyDesc: 'Send us:',
+    applyStep1: 'A short video (1-2 min) — tell us who you are and why this role interests you',
+    applyStep2: 'A link to your LinkedIn or anything that shows how you write / create',
+    applyEmail: 'kontakt@aitherapy.support',
+    noPositions: 'No open positions at the moment. Follow us on LinkedIn!',
   },
 
   // ─── 404 ──────────────────────────────────────────────

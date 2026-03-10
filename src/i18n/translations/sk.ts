@@ -16,6 +16,7 @@ const sk: TranslationKeys = {
     team: 'Tím',
     contact: 'Kontakt',
     tutorials: 'Tutoriály',
+    careers: 'Kariéra',
     login: 'Prihlásiť sa',
     openMenu: 'Otvoriť menu',
     closeMenu: 'Zavrieť menu',
@@ -384,6 +385,22 @@ const sk: TranslationKeys = {
     errorLoading: 'Nepodarilo sa načítať videá. Skúste to prosím neskôr.',
     watchOnYoutube: 'Pozrieť na YouTube',
     allTutorials: 'Zobraziť všetky tutoriály na YouTube',
+  },
+
+  // ─── CAREERS ────────────────────────────────────────
+  careersPage: {
+    title: 'Kariéra — Therapy Support',
+    metaDesc: 'Pridajte sa k nášmu tímu. Hľadáme ľudí, ktorí chcú budovať budúcnosť psychoterapeutickej dokumentácie.',
+    heroTag: 'Pridajte sa k nám',
+    heroTitle: 'Budujte budúcnosť terapie s nami',
+    heroDesc: 'Sme malý, flexibilný tím (CEO, CTO, odborná psychoterapeutka) s reálnym produktom a prvými platiacimi klientmi. Hľadáme ľudí, ktorí zdieľajú našu misiu.',
+    openPositions: 'Otvorené pozície',
+    applyTitle: 'Ako sa prihlásiť?',
+    applyDesc: 'Pošlite nám:',
+    applyStep1: 'Krátke video (1-2 min) — povedzte nám, kto ste a prečo vás táto pozícia zaujíma',
+    applyStep2: 'Odkaz na váš LinkedIn alebo čokoľvek, čo ukazuje, ako píšete / tvoríte',
+    applyEmail: 'kontakt@aitherapy.support',
+    noPositions: 'Momentálne žiadne otvorené pozície. Sledujte nás na LinkedIn!',
   },
 
   // ─── 404 ──────────────────────────────────────────────

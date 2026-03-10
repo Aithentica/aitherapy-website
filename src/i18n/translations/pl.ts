@@ -16,6 +16,7 @@ const pl: TranslationKeys = {
     team: 'Zespół',
     contact: 'Kontakt',
     tutorials: 'Tutoriale',
+    careers: 'Kariera',
     login: 'Logowanie',
     openMenu: 'Otwórz menu',
     closeMenu: 'Zamknij menu',
@@ -384,6 +385,22 @@ const pl: TranslationKeys = {
     errorLoading: 'Nie udało się załadować filmów. Spróbuj ponownie później.',
     watchOnYoutube: 'Obejrzyj na YouTube',
     allTutorials: 'Zobacz wszystkie tutoriale na YouTube',
+  },
+
+  // ─── CAREERS ────────────────────────────────────────
+  careersPage: {
+    title: 'Kariera — Therapy Support',
+    metaDesc: 'Dołącz do naszego zespołu. Szukamy osób, które chcą budować przyszłość dokumentacji psychoterapeutycznej.',
+    heroTag: 'Dołącz do nas',
+    heroTitle: 'Buduj przyszłość terapii razem z nami',
+    heroDesc: 'Jesteśmy małym, zwinnym zespołem (CEO, CTO, psychoterapeutka-ekspertka) z realnym produktem i pierwszymi płacącymi klientami. Szukamy osób, które podzielają naszą misję.',
+    openPositions: 'Otwarte stanowiska',
+    applyTitle: 'Jak aplikować?',
+    applyDesc: 'Wyślij nam:',
+    applyStep1: 'Krótki filmik (1-2 min) — powiedz kim jesteś i dlaczego ta rola Cię interesuje',
+    applyStep2: 'Link do swojego LinkedIn lub czegokolwiek, co pokazuje jak piszesz / tworzysz',
+    applyEmail: 'kontakt@aitherapy.support',
+    noPositions: 'Brak otwartych stanowisk w tej chwili. Śledź nas na LinkedIn!',
   },
 
   // ─── 404 ──────────────────────────────────────────────

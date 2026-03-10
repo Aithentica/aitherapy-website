@@ -16,6 +16,7 @@ const lt: TranslationKeys = {
     team: 'Komanda',
     contact: 'Kontaktai',
     tutorials: 'Mokymai',
+    careers: 'Karjera',
     login: 'Prisijungti',
     openMenu: 'Atidaryti meniu',
     closeMenu: 'Uždaryti meniu',
@@ -384,6 +385,22 @@ const lt: TranslationKeys = {
     errorLoading: 'Nepavyko įkelti vaizdo įrašų. Pabandykite vėliau.',
     watchOnYoutube: 'Žiūrėti YouTube',
     allTutorials: 'Visos pamokos YouTube',
+  },
+
+  // ─── CAREERS ────────────────────────────────────────
+  careersPage: {
+    title: 'Karjera — Therapy Support',
+    metaDesc: 'Prisijunkite prie mūsų komandos. Ieškome žmonių, kurie nori kurti psichoterapinės dokumentacijos ateitį.',
+    heroTag: 'Prisijunkite',
+    heroTitle: 'Kurkite terapijos ateitį kartu su mumis',
+    heroDesc: 'Esame maža, lanksti komanda (CEO, CTO, ekspertė psichoterapeutė) su realiu produktu ir pirmaisiais mokančiais klientais. Ieškome žmonių, kurie dalijasi mūsų misija.',
+    openPositions: 'Atviros pozicijos',
+    applyTitle: 'Kaip kandidatuoti?',
+    applyDesc: 'Atsiųskite mums:',
+    applyStep1: 'Trumpą vaizdo įrašą (1-2 min) — papasakokite, kas esate ir kodėl jus domina ši pozicija',
+    applyStep2: 'Nuorodą į savo LinkedIn arba bet ką, kas parodo, kaip rašote / kuriate',
+    applyEmail: 'kontakt@aitherapy.support',
+    noPositions: 'Šiuo metu nėra atvirų pozicijų. Sekite mus LinkedIn!',
   },
 
   // ─── 404 ──────────────────────────────────────────────

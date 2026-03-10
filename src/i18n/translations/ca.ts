@@ -16,6 +16,7 @@ const ca: TranslationKeys = {
     team: 'Equip',
     contact: 'Contacte',
     tutorials: 'Tutorials',
+    careers: 'Carrera',
     login: 'Inicia sessió',
     openMenu: 'Obrir menú',
     closeMenu: 'Tancar menú',
@@ -384,6 +385,22 @@ const ca: TranslationKeys = {
     errorLoading: 'No s\'han pogut carregar els vídeos. Torna-ho a provar més tard.',
     watchOnYoutube: 'Veure a YouTube',
     allTutorials: 'Veure tots els tutorials a YouTube',
+  },
+
+  // ─── CAREERS ────────────────────────────────────────
+  careersPage: {
+    title: 'Carrera — Therapy Support',
+    metaDesc: 'Uneix-te al nostre equip. Busquem persones que vulguin construir el futur de la documentació psicoterapèutica.',
+    heroTag: 'Uneix-te',
+    heroTitle: 'Construeix el futur de la teràpia amb nosaltres',
+    heroDesc: 'Som un equip petit i àgil (CEO, CTO, psicoterapeuta experta) amb un producte real i primers clients de pagament. Busquem persones que comparteixin la nostra missió.',
+    openPositions: 'Posicions obertes',
+    applyTitle: 'Com aplicar?',
+    applyDesc: 'Envia\'ns:',
+    applyStep1: 'Un vídeo curt (1-2 min) — explica\'ns qui ets i per què t\'interessa aquesta posició',
+    applyStep2: 'Un enllaç al teu LinkedIn o qualsevol cosa que mostri com escrius / crees',
+    applyEmail: 'kontakt@aitherapy.support',
+    noPositions: 'No hi ha posicions obertes en aquest moment. Segueix-nos a LinkedIn!',
   },
 
   // ─── 404 ──────────────────────────────────────────────

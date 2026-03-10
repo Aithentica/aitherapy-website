@@ -1,0 +1,174 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import type { Locale } from '../../i18n/config';
+import { getStaticLocalePaths, getLocaleFromParams, useTranslations, loadTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return getStaticLocalePaths();
+}
+
+const locale = getLocaleFromParams(Astro.params.lang) as Locale;
+await loadTranslations(locale);
+const t = useTranslations(locale);
+const cp = t.careersPage;
+
+const jobs = [
+  {
+    emoji: '🧠',
+    title: 'Customer Success Manager',
+    form: 'B2B, full-time',
+    salary: '8 000 – 10 000 PLN netto/mc',
+    location: 'Remote / Warszawa',
+    about: 'Therapy Support to polska platforma SaaS dla psychoterapeutów CBT — automatyzujemy dokumentację sesji, generujemy notatki kliniczne i wspieramy prowadzenie gabinetu. Jesteśmy małym, zwinnym zespołem (CEO, CTO, psychoterapeutka-ekspertka) z realnym produktem i pierwszymi płacącymi klientami.',
+    lookingFor: 'Szukamy osoby, która stanie się twarzą Therapy Support wobec naszych klientów — terapeutów, którzy potrzebują kogoś, kto ich wysłucha, wdroży i zadba o to, żeby platforma naprawdę działała dla nich.',
+    tasks: [
+      'Prowadzić onboardingi 1:1 z nowymi terapeutami (Zoom, screenShare)',
+      'Być pierwszym kontaktem dla klientów — odpowiadać na pytania, rozwiązywać problemy',
+      'Walidować zgłoszenia — odróżniać bug od user error, tworzyć precyzyjne tickety dla devu',
+      'Testować nowe funkcje przed releasem z perspektywy terapeuty',
+      'Nagrywać krótkie filmy i tutoriale do onboardingu i mediów społecznościowych',
+      'Pisać o swoich doświadczeniach z klientami — posty, case studies, LinkedIn',
+      'Budować bazę wiedzy i FAQ platformy',
+      'Monitorować aktywność klientów i wyłapywać ryzyko churnu',
+    ],
+    requirements: [
+      'Osoby, która lubi rozmawiać z ludźmi i ma naturalną cierpliwość',
+      'Kogoś niestroniącego od kamerki — nagrania, rolki, krótkie wideo to u nas standard',
+      'Osoby, która chętnie pisze o tym co robi — LinkedIn, notatki, posty',
+      'Z doświadczeniem w obsłudze klienta, CSM lub SaaS (nie wymagamy seniority)',
+      'Ciekawości tematu psychoterapii / mental health — mile widziana',
+      'Umiejętności dobrego opisywania problemów technicznych prostym językiem',
+    ],
+    aiBenefitIntro: '🤖 Praca w środowisku AI-first — to nasz biggest benefit',
+    aiBenefitDesc: 'Jesteśmy firmą, gdzie AI nie jest dodatkiem — jest domyślnym sposobem pracy.',
+    aiBenefits: [
+      'Każdy w zespole ma Claude Pro opłacony przez firmę od pierwszego dnia',
+      'Każdy proces — od onboardingu, przez dokumentację, po komunikację — jest zaprojektowany z AI',
+      'Nie musisz tracić czasu na rutynowe zadania — AI przygotowuje drafty, podsumowania, tickety, maile',
+      'Twoje spotkania z klientami zostają nagrywane i transkrybowane — AI robi notatki za Ciebie',
+      'Uczymy Cię jak pracować z AI naprawdę (nie tylko "użyj ChatGPT") — inwestujemy w rozwój AI fluency każdego członka zespołu',
+      'Pracujesz nad produktem, który sam jest oparty o AI — rozumiesz klienta od środka',
+    ],
+    aiQuote: 'W Therapy Support jedyna rzecz, której AI nie zastąpi, to relacja z klientem. I właśnie dlatego Cię szukamy.',
+    perks: [
+      '8 000 – 10 000 PLN netto / B2B',
+      'Claude Pro opłacony przez firmę',
+      'Pełny dostęp do naszego stack\'u AI narzędzi',
+      'Remote-first, elastyczne godziny',
+      'Realny wpływ na produkt — Twój feedback trafia prosto do zespołu',
+      'Możliwość equity dla osób, które zostaną z nami na dłużej',
+    ],
+  },
+];
+---
+
+<PageLayout title={cp.title} description={cp.metaDesc} locale={locale}>
+  <!-- Hero -->
+  <section class="pt-16 lg:pt-24 pb-12 lg:pb-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="inline-flex items-center px-4 py-1.5 rounded-full bg-sage-50 border border-sage-200 text-sage-700 text-sm font-extrabold mb-6">{cp.heroTag}</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-gray-900">{cp.heroTitle}</h1>
+      <p class="mt-6 text-lg text-gray-600 leading-relaxed">{cp.heroDesc}</p>
+    </div>
+  </section>
+
+  <!-- Job listings -->
+  <section class="pb-16 lg:pb-24 bg-sage-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-10 text-center">{cp.openPositions}</h2>
+
+      {jobs.map((job) => (
+        <article class="bg-white rounded-2xl shadow-sm overflow-hidden mb-8">
+          <!-- Job header -->
+          <div class="bg-brand-500 px-8 py-6">
+            <h3 class="text-2xl font-bold text-white">{job.emoji} {job.title}</h3>
+            <div class="flex flex-wrap gap-4 mt-3 text-brand-100 text-sm">
+              <span>{job.form}</span>
+              <span>•</span>
+              <span>{job.salary}</span>
+              <span>•</span>
+              <span>{job.location}</span>
+            </div>
+          </div>
+
+          <div class="px-8 py-8 space-y-8">
+            <!-- About -->
+            <div>
+              <p class="text-gray-700 leading-relaxed">{job.about}</p>
+              <p class="mt-4 text-gray-700 leading-relaxed font-medium">{job.lookingFor}</p>
+            </div>
+
+            <!-- Tasks -->
+            <div>
+              <h4 class="text-lg font-bold text-gray-900 mb-3">Co będziesz robić?</h4>
+              <ul class="space-y-2">
+                {job.tasks.map((task) => (
+                  <li class="flex items-start gap-2 text-gray-700">
+                    <span class="text-brand-500 mt-1 flex-shrink-0">▸</span>
+                    <span>{task}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Requirements -->
+            <div>
+              <h4 class="text-lg font-bold text-gray-900 mb-3">Kogo szukamy?</h4>
+              <ul class="space-y-2">
+                {job.requirements.map((req) => (
+                  <li class="flex items-start gap-2 text-gray-700">
+                    <span class="text-brand-500 mt-1 flex-shrink-0">▸</span>
+                    <span>{req}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- AI benefit -->
+            <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">{job.aiBenefitIntro}</h4>
+              <p class="text-gray-600 mb-4">{job.aiBenefitDesc}</p>
+              <ul class="space-y-2">
+                {job.aiBenefits.map((benefit) => (
+                  <li class="flex items-start gap-2 text-gray-700">
+                    <span class="text-accent-400 mt-1 flex-shrink-0">✦</span>
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+              <p class="mt-4 text-gray-800 font-medium italic">{job.aiQuote}</p>
+            </div>
+
+            <!-- Perks -->
+            <div>
+              <h4 class="text-lg font-bold text-gray-900 mb-3">Co oferujemy?</h4>
+              <ul class="space-y-2">
+                {job.perks.map((perk) => (
+                  <li class="flex items-start gap-2 text-gray-700">
+                    <span class="text-brand-500 flex-shrink-0">✅</span>
+                    <span>{perk}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Apply -->
+            <div class="bg-brand-50 rounded-xl p-6 border border-brand-200">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">{cp.applyTitle}</h4>
+              <p class="text-gray-700 mb-3">{cp.applyDesc}</p>
+              <ol class="space-y-2 list-decimal list-inside text-gray-700">
+                <li>{cp.applyStep1}</li>
+                <li>{cp.applyStep2}</li>
+              </ol>
+              <p class="mt-4">
+                <a href={`mailto:${cp.applyEmail}`} class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-brand-500 text-white font-semibold hover:bg-brand-600 transition-colors">
+                  {cp.applyEmail}
+                </a>
+              </p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</PageLayout>
