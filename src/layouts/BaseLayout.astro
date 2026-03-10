@@ -38,6 +38,25 @@ import '../styles/global.css';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+    (function(){
+      // Only redirect if user hasn't chosen a locale yet and is on the default (en) version
+      if (sessionStorage.getItem('locale-chosen')) return;
+      var path = window.location.pathname;
+      var supported = ['pl','sk','ca','ru','uk','lt'];
+      // If already on a locale-prefixed path, mark as chosen and skip
+      var prefix = path.split('/')[1];
+      if (supported.indexOf(prefix) !== -1) {
+        sessionStorage.setItem('locale-chosen', '1');
+        return;
+      }
+      var lang = (navigator.language || '').slice(0, 2).toLowerCase();
+      if (supported.indexOf(lang) !== -1) {
+        sessionStorage.setItem('locale-chosen', '1');
+        window.location.replace('/' + lang + path);
+      }
+    })();
+    </script>
     <meta name="generator" content={Astro.generator} />
 
     <!-- Favicons -->
