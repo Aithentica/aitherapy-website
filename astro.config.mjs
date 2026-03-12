@@ -5,8 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // IMPORTANT: Subdomain for testing - change to https://aitherapy.support after QA
-  site: 'https://new.aitherapy.support',
+  site: 'https://aitherapy.support',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'pl', 'sk', 'ca', 'ru', 'uk', 'lt'],

@@ -64,13 +64,7 @@ npm run preview
 
 ## 🌐 Deployment
 
-### Testing Subdomain
-
-The site is deployed to `https://new.aitherapy.support` for testing.
-
-### Production Domain
-
-After QA approval, the site will be deployed to `https://aitherapy.support`
+The site is deployed to `https://aitherapy.support`.
 
 ### Azure Configuration
 
@@ -109,22 +103,6 @@ draft: false
 Static pages are in `src/pages/` as `.astro` files.
 
 ## 🔧 Configuration
-
-### Update Site URL
-
-When switching from test to production:
-
-1. Update `astro.config.mjs`:
-   ```javascript
-   site: 'https://aitherapy.support',
-   ```
-
-2. Update `public/robots.txt`:
-   ```
-   Sitemap: https://aitherapy.support/sitemap-index.xml
-   ```
-
-3. Rebuild and deploy
 
 ## 📊 Analytics
 
