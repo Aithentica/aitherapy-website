@@ -51,14 +51,38 @@ Blog posts are split into two Astro content collections:
 - `src/content/blog-en/` — English posts, shown on all other locales (`/blog/`, `/sk/blog/`, `/ca/blog/`, `/ru/blog/`, `/uk/blog/`, `/lt/blog/`)
 
 Categories:
-- Polish: `Inne`, `Artykuły Naukowe`, `Wydarzenia`
-- English: `Other`, `Scientific Articles`, `Events`
+- Polish: `Inne`, `Artykuły Naukowe`, `Wydarzenia`, `Z Życia Startupu`, `Rozwój Produktu`
+- English: `Other`, `Scientific Articles`, `Events`, `Startup Life`, `Product Updates`
 
 When adding a new blog post, create **both** versions (pl in `blog/`, en in `blog-en/`).
 
 ## Commands
 - `npm run build` — build the site
 - `npm run dev` — local dev server
+
+### Hero images — styl grafik (nano-banana)
+Blog hero images mają spójny styl wizualny. Przy generowaniu nowych grafik przez nano-banana:
+
+**Styl:** Flat illustration / soft watercolor — miękkie, pastelowe tło z organicznymi kształtami (blob shapes), postaci w stylu editorial illustration (uproszczone, ale proporcjonalne). Białe lub bardzo jasne tło. Bez ciężkich cieni, bez 3D, bez fotorealizmu.
+
+**Paleta kolorów tła:** pastelowy fiolet, pastelowy róż, pastelowy miętowy/teal, delikatny żółty/peach — mieszane w gradientowych blobsach za postaciami.
+
+**Postaci:** Współcześni profesjonaliści (terapeuci, ludzie przy laptopach). Casual-business styl ubioru. Naturalne proporcje, uproszczone rysy twarzy, przyjazny wyraz.
+
+**Elementy dodatkowe:** Drobne ikony/symbole (kalendarz, wykres, tablet, dzwonek) unoszące się wokół postaci. Linie i detale w stylu line-art.
+
+**Format:** PNG, białe tło, proporcje ok. 1:1 lub 4:3, min. 1024px szerokości.
+
+**Referencje — ZAWSZE dołącz 2–3 z tych plików jako reference images przy generowaniu:**
+- `public/images/blog/release-notes-8-marca-2026.png` — kobieta przy laptopie, ikony tech
+- `public/images/blog/release-notes-25-lutego-2026.png` — kobieta przy biurku, dashboard
+- `public/images/blog/terapeuta-decyduje-ai-porzadkuje-webinar.png` — osoba z tabletem i notatkami
+- `public/images/blog/beta-testy-dzien-2.png` — trzy osoby, team
+- `public/images/blog/witamy-ewe-w-zespole.png` — uścisk dłoni, powitanie
+- `public/images/blog/release-notes-12-lutego-2026.png` — prezentacja, spotkanie zespołu
+- `public/images/blog/wirtualny-szpital-ai.png` — dwie osoby rozmawiające, dashboard w tle
+
+**Wyjątki:** Infografiki (np. `generatywna-ai-zwieksza.png`) i zdjęcia stockowe (np. `jak-sztuczna-inteligencja-wspiera.png`) to starsze posty — nowe grafiki powinny trzymać się stylu ilustracji.
 
 ## Important rules
 - Never link CTA buttons directly to `app.aitherapy.support` — always go through `/betatester/` first

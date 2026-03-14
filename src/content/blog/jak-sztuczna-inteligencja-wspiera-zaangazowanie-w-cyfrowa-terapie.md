@@ -3,8 +3,8 @@ title: "Jak sztuczna inteligencja wspiera zaangażowanie w cyfrową terapię? Cz
 description: "Nowe badanie z JMIR testuje, czy sztuczna inteligencja wspierająca naturalne przetwarzanie języka zwiększa wytrwałość pacjentów w cyfrową CBT. Wyniki są obiecujące dla wytrwałości w leczeniu, ale zaskakujące dla wyników klinicznych. Co powinni wiedzieć terapeuci?"
 pubDate: 2026-01-28
 author: "Bartlomiej Glowacki"
-category: "Inne"
-tags: []
+category: "Artykuły Naukowe"
+tags: ["AI", "Badania", "CBT"]
 draft: false
 heroImage: "/images/blog/jak-sztuczna-inteligencja-wspiera.png"
 ---

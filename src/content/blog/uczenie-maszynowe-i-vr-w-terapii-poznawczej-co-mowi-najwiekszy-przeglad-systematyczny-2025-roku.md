@@ -4,7 +4,7 @@ description: "Przegląd 141 badań pokazuje, jak uczenie maszynowe i rzeczywisto
 pubDate: 2026-01-04
 author: "Bartlomiej Glowacki"
 category: "Artykuły Naukowe"
-tags: []
+tags: ["AI", "Badania", "VR", "CBT"]
 draft: false
 heroImage: "/images/blog/uczenie-maszynowe-i-vr.jpeg"
 ---

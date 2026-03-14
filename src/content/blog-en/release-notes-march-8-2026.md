@@ -4,8 +4,8 @@ description: "Online video sessions without Google Meet, recording that doesn't 
 pubDate: 2026-03-08
 heroImage: "/images/blog/release-notes-8-marca-2026.png"
 author: "Bartlomiej Glowacki"
-category: "Other"
-tags: []
+category: "Product Updates"
+tags: ["Updates"]
 draft: false
 ---
 

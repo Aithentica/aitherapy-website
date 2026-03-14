@@ -6,8 +6,8 @@ description: "Dzisiejszy release zawiera krytyczne poprawki stabilności i nowe 
 pubDate: 2026-02-12
 heroImage: "/images/blog/release-notes-12-lutego-2026.png"
 author: "Bartlomiej Glowacki"
-category: "Inne"
-tags: []
+category: "Rozwój Produktu"
+tags: ["Aktualizacje"]
 draft: false
 ---
 

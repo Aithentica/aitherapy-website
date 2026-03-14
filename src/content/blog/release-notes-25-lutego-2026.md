@@ -4,8 +4,8 @@ description: "Największy release od miesięcy! Przebudowany interfejs, dynamicz
 pubDate: 2026-02-25
 heroImage: "/images/blog/release-notes-25-lutego-2026.png"
 author: "Bartlomiej Glowacki"
-category: "Inne"
-tags: []
+category: "Rozwój Produktu"
+tags: ["Aktualizacje"]
 draft: false
 ---
 

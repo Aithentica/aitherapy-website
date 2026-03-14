@@ -3,8 +3,8 @@ title: "Generatywna AI zwiększa zaangażowanie pacjentów w terapię. Co mówi 
 description: "Badanie z Nature Communications (styczeń 2026) pokazuje, że generatywna AI zwiększa zaangażowanie pacjentów w cyfrowe narzędzia CBT. Jednak wyniki symptomów są porównywalne. Czytamy wyniki z perspektywy terapeuta i zastanawiamy się nad implikacjami dla praktyki.\""
 pubDate: 2026-01-23
 author: "Bartlomiej Glowacki"
-category: "Inne"
-tags: []
+category: "Artykuły Naukowe"
+tags: ["AI", "Badania", "CBT"]
 draft: false
 heroImage: "/images/blog/generatywna-ai-zwieksza.png"
 ---

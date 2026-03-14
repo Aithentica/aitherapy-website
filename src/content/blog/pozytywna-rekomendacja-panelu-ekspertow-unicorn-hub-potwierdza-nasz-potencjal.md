@@ -3,8 +3,8 @@ title: "Pozytywna rekomendacja Panelu Ekspertów Unicorn Hub – potwierdza nasz
 description: "Otrzymaliśmy pozytywną rekomendację Panelu Ekspertów Unicorn Hub! Potwierdzenie potencjału Therapy Support to dopiero początek naszej drogi do tworzenia inteligentnego, odpowiedzialnego zaplecza dla terapii."
 pubDate: 2026-01-23
 author: "Bartlomiej Glowacki"
-category: "Inne"
-tags: []
+category: "Z Życia Startupu"
+tags: ["Inkubator", "Startup"]
 draft: false
 heroImage: "/images/blog/pozytywna-rekomendacja.jpg"
 ---

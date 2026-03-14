@@ -4,8 +4,8 @@ description: "Drugi dzień beta testów za nami! Nasza testerka przetestowała a
 pubDate: 2026-02-11
 heroImage: "/images/blog/beta-testy-dzien-2.png"
 author: "Bartlomiej Glowacki"
-category: "Inne"
-tags: []
+category: "Z Życia Startupu"
+tags: ["Beta", "Produkt"]
 draft: false
 ---
 

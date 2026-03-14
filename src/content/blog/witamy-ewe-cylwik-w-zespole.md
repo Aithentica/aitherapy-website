@@ -3,8 +3,8 @@ title: "Witamy Ewę Cylwik w zespole Therapy Support!"
 description: "Od lutego Ewa dba o to, żeby Therapy Support mówiło Waszym językiem. Jasne komunikaty, przejrzyste instrukcje i wsparcie, które naprawdę pomaga."
 pubDate: 2026-02-16
 author: "Bartlomiej Glowacki"
-category: "Inne"
-tags: ["zespół", "komunikacja"]
+category: "Z Życia Startupu"
+tags: ["Zespół", "Komunikacja"]
 draft: false
 heroImage: "/images/blog/witamy-ewe-w-zespole.png"
 ---

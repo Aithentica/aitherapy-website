@@ -4,8 +4,8 @@ description: "Sesje wideo online bez Google Meet, nagrywanie które nie przerywa
 pubDate: 2026-03-08
 heroImage: "/images/blog/release-notes-8-marca-2026.png"
 author: "Bartlomiej Glowacki"
-category: "Inne"
-tags: []
+category: "Rozwój Produktu"
+tags: ["Aktualizacje"]
 draft: false
 ---
 

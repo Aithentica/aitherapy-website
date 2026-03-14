@@ -3,8 +3,8 @@ title: "Welcome Ewa Cylwik to the Therapy Support team!"
 description: "Since February, Ewa has been making sure Therapy Support speaks your language. Clear messages, transparent instructions, and support that truly helps."
 pubDate: 2026-02-16
 author: "Bartlomiej Glowacki"
-category: "Other"
-tags: ["team", "communication"]
+category: "Startup Life"
+tags: ["Team", "Communication"]
 draft: false
 heroImage: "/images/blog/witamy-ewe-w-zespole.png"
 ---

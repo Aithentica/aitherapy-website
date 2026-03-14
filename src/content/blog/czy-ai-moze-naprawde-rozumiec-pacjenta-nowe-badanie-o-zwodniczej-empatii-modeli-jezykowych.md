@@ -4,7 +4,7 @@ description: "Naukowcy porównali sesje terapeutyczne prowadzone przez ludzi i m
 pubDate: 2026-01-03
 author: "Bartlomiej Glowacki"
 category: "Artykuły Naukowe"
-tags: []
+tags: ["AI", "Badania", "EtykaAI"]
 draft: false
 heroImage: "/images/blog/czy-ai-moze-naprawde-rozumiec.jpeg"
 ---

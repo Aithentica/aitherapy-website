@@ -3,8 +3,8 @@ title: "Update funkcjonalności AITherapySupport – co nowego po spotkaniu z ek
 description: "Jeszcze raz bardzo dziękujemy za ostatnie spotkanie z naszą ekspertką CBT. Powołujemy się na nie w wielu naszych wewnętrznych rozmowach 😊 Tak jak obiecaliśmy, przesyłamy update funkcjonalności, o któ"
 pubDate: 2026-01-30
 author: "Bartlomiej Glowacki"
-category: "Inne"
-tags: []
+category: "Rozwój Produktu"
+tags: ["CBT", "Produkt"]
 draft: false
 heroImage: "/images/blog/update-funkcjonalnosci.jpg"
 ---
